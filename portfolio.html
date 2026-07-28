@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Digital Marketing &amp; Design Projects - Prosengit Kundu</title>
+    <meta name="description" content="Explore Prosengit Kundu's portfolio: SEO campaigns, Google Ads, Meta Ads, Graphic Design, WordPress websites, and Lead Generation projects with real results.">
+    <link rel="canonical" href="https://prosengitkundu.github.io/portfolio.html">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Poppins:wght@400;500;600;700&amp;display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-font { font-family: 'Poppins', system_ui, sans-serif; }
+        .portfolio-card { transition: all .4s cubic-bezier(0.23,1,0.32,1); }
+        .portfolio-card:hover { transform: translateY(-10px); }
+    </style>
+</head>
+<body class="bg-[#F8FAFC] dark:bg-[#111827]">
+    <nav class="sticky top-0 z-50 bg-white/95 dark:bg-[#111827]/95 border-b px-8 py-5 flex justify-between items-center max-w-screen-2xl mx-auto">
+        <div class="flex items-center gap-x-3">
+            <div class="w-9 h-9 bg-gradient-to-br from-[#0A66C2] to-[#16A34A] rounded-2xl flex items-center justify-center"><span class="text-white font-bold">PK</span></div>
+            <div class="font-bold text-xl">Prosengit Kundu</div>
+        </div>
+        <div class="hidden md:flex gap-x-8 text-sm">
+            <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a>
+            <a href="portfolio.html" class="font-semibold text-[#0A66C2]">Portfolio</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
+        </div>
+        <details class="md:hidden relative"><summary class="list-none cursor-pointer px-4 py-2 border rounded-2xl text-sm font-semibold">Menu</summary><div class="absolute right-0 top-12 z-10 w-48 bg-white dark:bg-gray-800 border rounded-2xl p-4 shadow-xl grid gap-3 text-sm"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div></details>
+        <a href="contact.html" class="px-6 py-3 bg-[#0A66C2] text-white rounded-3xl text-sm font-semibold">Start a Project</a>
+    </nav>
+
+    <div class="max-w-screen-2xl mx-auto px-8 pt-14">
+        <div>
+            <div class="text-xs tracking-[3px] font-semibold text-[#F59E0B]">SELECTED WORK</div>
+            <h1 class="text-6xl heading-font tracking-tighter font-bold mt-2">Featured Projects</h1>
+            <p class="max-w-2xl mt-5 text-gray-600 dark:text-gray-300">The visuals below are concept work samples created to show the type of strategy, design direction, and deliverables I can produce. Replace them with approved client work as your project library grows.</p>
+        </div>
+        
+        <!-- Filters -->
+        <div class="flex flex-wrap gap-2 mt-8" id="filters">
+            <button onclick="filterPortfolio('all')" class="active px-5 py-2 text-sm font-medium rounded-full bg-[#0A66C2] text-white">All Projects</button>
+            <button onclick="filterPortfolio('seo')" class="px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">SEO</button>
+            <button onclick="filterPortfolio('ads')" class="px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">Ads</button>
+            <button onclick="filterPortfolio('design')" class="px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">Design</button>
+            <button onclick="filterPortfolio('web')" class="px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">Web</button>
+        </div>
+    </div>
+
+    <div class="max-w-screen-2xl mx-auto px-8 py-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+        <!-- Populated via JS -->
+    </div>
+
+    <script>
+        const projects = [
+            {id:1, cat:'seo', title:'Local SEO Domination', client:'GreenLeaf Agro', industry:'Agriculture', desc:'A concept campaign showing how local SEO can organize search opportunities and growth reporting.', result:'340% traffic direction', tech:'SEO, Local SEO, Content', duration:'6 months', image:'assets/images/portfolio-seo.svg'},
+            {id:2, cat:'ads', title:'Meta Ads Lead Campaign', client:'TechNova Ltd', industry:'SaaS', desc:'A paid media concept focused on qualified lead generation, audience testing, and retargeting.', result:'1,850 lead direction', tech:'Meta Ads, Retargeting', duration:'3 months', image:'assets/images/portfolio-ads.svg'},
+            {id:3, cat:'design', title:'Brand Identity &amp; Logo', client:'UrbanNest', industry:'Real Estate', desc:'A visual identity concept showing a logo system, palette, typography, and reusable brand direction.', result:'Recognition direction', tech:'Photoshop, Illustrator', duration:'3 weeks', image:'assets/images/portfolio-brand.svg'},
+            {id:4, cat:'web', title:'WordPress E-commerce Site', client:'Khulna Mart', industry:'Retail', desc:'A responsive ecommerce concept designed around clear categories, mobile usability, and conversion.', result:'Speed-first concept', tech:'WordPress, SEO', duration:'5 weeks', image:'assets/images/portfolio-website.svg'},
+            {id:5, cat:'ads', title:'YouTube Ads Campaign', client:'SkillUp BD', industry:'Education', desc:'A video advertising concept for course promotion, audience intent, and measurable campaign growth.', result:'4.2x ROAS direction', tech:'YouTube Ads, Video SEO', duration:'4 months', image:'assets/images/portfolio-youtube.svg'},
+            {id:6, cat:'seo', title:'Technical SEO Overhaul', client:'MedCare Clinic', industry:'Healthcare', desc:'A technical SEO concept showing how structure, metadata, local visibility, and monitoring work together.', result:'Ranking direction', tech:'Technical SEO, Schema', duration:'7 months', image:'assets/images/portfolio-technical.svg'}
+        ];
+        
+        function renderPortfolio(filter = 'all') {
+            const container = document.getElementById('portfolio-grid');
+            container.innerHTML = '';
+            const filtered = filter === 'all' ? projects : projects.filter(p => p.cat === filter);
+            
+            filtered.forEach(p => {
+                const card = document.createElement('div');
+                card.className = `portfolio-card bg-white dark:bg-gray-800 border rounded-3xl overflow-hidden`;
+                card.innerHTML = `
+                    <div class="aspect-video bg-gray-100 dark:bg-gray-700"><img src="${p.image}" alt="${p.title} project preview" class="w-full h-full object-cover" width="900" height="520" loading="lazy" decoding="async"></div>
+                    <div class="p-6">
+                        <div class="uppercase text-xs font-semibold tracking-widest text-[#0A66C2]">${p.cat.toUpperCase()} / CONCEPT WORK</div>
+                        <div class="font-bold text-xl mt-2">${p.title}</div>
+                        <div class="text-sm mt-1">${p.client} • ${p.industry}</div>
+                        <div class="mt-4 text-sm">${p.desc}</div>
+                        
+                        <div class="flex justify-between items-center mt-7 pt-4 border-t text-xs">
+                            <div><span class="font-medium">${p.result}</span></div>
+                            <div class="text-gray-400">${p.duration}</div>
+                        </div>
+                        <button onclick="viewProject(${p.id})" class="mt-5 text-sm px-5 py-2 border border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white rounded-3xl w-full text-center font-semibold transition-colors">View Case Study</button>
+                    </div>`;
+                container.appendChild(card);
+            });
+        }
+        
+        function filterPortfolio(cat) {
+            document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active', 'bg-[#0A66C2]', 'text-white'));
+            event.target.classList.add('active', 'bg-[#0A66C2]', 'text-white');
+            renderPortfolio(cat);
+        }
+        
+        function viewProject(id) {
+            window.location.href = `portfolio-details.html?id=${id}`;
+        }
+        
+        window.onload = () => renderPortfolio('all');
+    </script>
+    
+    <footer class="px-8 py-8 text-sm text-gray-500 max-w-screen-2xl mx-auto">© 2025 Prosengit Kundu • <a href="index.html">Home</a></footer>
+</body>
+</html>

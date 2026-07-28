@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Digital Marketing Insights by Prosengit Kundu</title>
+    <meta name="description" content="Read expert insights on SEO, Google Ads, Meta Ads, graphic design, and digital marketing from Prosengit Kundu. 20 practical articles for businesses and marketers.">
+    <link rel="canonical" href="https://prosengitkundu.github.io/blog.html">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Poppins:wght@400;500;600;700&amp;display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-font { font-family: 'Poppins', system_ui, sans-serif; }
+        .blog-card { transition: transform .4s cubic-bezier(0.23,1,0.32,1); }
+        .blog-card:hover { transform: translateY(-6px); }
+    </style>
+</head>
+<body class="bg-[#F8FAFC] dark:bg-[#111827]">
+    <nav class="sticky top-0 z-50 bg-white/95 dark:bg-[#111827]/95 border-b px-8 py-5 flex justify-between max-w-screen-2xl mx-auto">
+        <div class="flex items-center gap-x-3">
+            <div class="w-9 h-9 bg-gradient-to-br from-[#0A66C2] to-[#16A34A] rounded-2xl flex items-center justify-center"><span class="text-white font-bold">PK</span></div>
+            <div class="font-bold text-xl">Prosengit Kundu</div>
+        </div>
+        <div class="hidden md:flex gap-x-8 text-sm">
+            <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a>
+            <a href="portfolio.html">Portfolio</a><a href="blog.html" class="font-semibold text-[#0A66C2]">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
+        </div>
+        <details class="md:hidden relative"><summary class="list-none cursor-pointer px-4 py-2 border rounded-2xl text-sm font-semibold">Menu</summary><div class="absolute right-0 top-12 z-10 w-48 bg-white dark:bg-gray-800 border rounded-2xl p-4 shadow-xl grid gap-3 text-sm"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div></details>
+        <a href="contact.html" class="px-6 py-3 bg-[#0A66C2] text-white rounded-3xl text-sm font-semibold">Talk to Me</a>
+    </nav>
+
+    <div class="max-w-screen-2xl mx-auto px-8 pt-14">
+        <div class="max-w-xl">
+            <div class="text-xs tracking-[3px] font-semibold text-[#16A34A]">THOUGHTS &amp; INSIGHTS</div>
+            <h1 class="text-6xl font-bold heading-font tracking-tighter">The Digital Marketing Blog</h1>
+        </div>
+    </div>
+
+    <div class="max-w-screen-2xl mx-auto px-8 py-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="blog-grid">
+        <!-- Populated by JS -->
+    </div>
+
+    <script>
+        const articles = [
+            {id:1, title:"7 SEO Mistakes Most Bangladeshi Businesses Still Make", cat:"SEO", date:"Jan 12, 2025", excerpt:"Avoid these common SEO errors that are costing you valuable traffic and leads.", read:"12 min"},
+            {id:2, title:"How I Generated 1,850 Leads Using Meta Ads in 90 Days", cat:"Ads", date:"Jan 5, 2025", excerpt:"A step-by-step breakdown of my highest converting Meta Ads campaign.", read:"15 min"},
+            {id:3, title:"The Complete Guide to YouTube SEO in 2025", cat:"SEO", date:"Dec 22, 2024", excerpt:"Everything you need to rank videos and grow your YouTube channel.", read:"18 min"},
+            {id:4, title:"Why Local SEO Matters More Than Ever for Khulna Businesses", cat:"SEO", date:"Dec 10, 2024", excerpt:"How businesses in Khulna can dominate local search and attract nearby customers.", read:"9 min"},
+            {id:5, title:"Designing High-Converting Landing Pages That Actually Convert", cat:"Design", date:"Nov 28, 2024", excerpt:"Design principles that turn visitors into customers, backed by real results.", read:"11 min"},
+            {id:6, title:"Google Ads vs Meta Ads: Which One Is Right for Your Business?", cat:"Ads", date:"Nov 15, 2024", excerpt:"An honest comparison to help you choose the best platform for your goals.", read:"14 min"},
+            {id:7, title:"How to Build a Personal Brand as a Digital Marketer", cat:"Branding", date:"Nov 2, 2024", excerpt:"Practical advice on building authority and attracting better clients.", read:"8 min"},
+            {id:8, title:"The Future of Lead Generation in Bangladesh (2025–2027)", cat:"Marketing", date:"Oct 20, 2024", excerpt:"Trends and tactics that will define lead generation in the coming years.", read:"13 min"},
+            {id:9, title:"WordPress Speed Optimization: A Checklist for 2025", cat:"Web", date:"Oct 8, 2024", excerpt:"Simple yet powerful techniques to make your WordPress site lightning fast.", read:"10 min"},
+            {id:10, title:"How to Train Your Team in Digital Marketing Effectively", cat:"Training", date:"Sep 25, 2024", excerpt:"Lessons from training over 1,800 students in digital marketing.", read:"16 min"},
+            {id:11, title:"Instagram Reels vs Facebook Ads: Which Converts Better?", cat:"Ads", date:"Sep 11, 2024", excerpt:"Real data comparing organic reach versus paid performance.", read:"9 min"},
+            {id:12, title:"Creating a Brand Identity That Stands Out in a Crowded Market", cat:"Design", date:"Aug 30, 2024", excerpt:"Design strategies I used to help brands build lasting recognition.", read:"12 min"},
+            {id:13, title:"Keyword Research Framework I Use for Every Client", cat:"SEO", date:"Aug 18, 2024", excerpt:"A proven 5-step process to find high-intent keywords.", read:"14 min"},
+            {id:14, title:"How to Run a Successful Lead Magnet Campaign", cat:"Marketing", date:"Aug 3, 2024", excerpt:"From idea to execution — how I’ve generated thousands of leads.", read:"11 min"},
+            {id:15, title:"Graphic Design Trends That Will Dominate 2025", cat:"Design", date:"Jul 22, 2024", excerpt:"Stay ahead with these emerging design trends.", read:"7 min"},
+            {id:16, title:"The Power of Retargeting: Turning Browsers into Buyers", cat:"Ads", date:"Jul 10, 2024", excerpt:"How retargeting campaigns can dramatically increase conversion rates.", read:"10 min"},
+            {id:17, title:"Building an Effective Content Marketing Strategy", cat:"Marketing", date:"Jun 27, 2024", excerpt:"Content that educates, engages, and converts.", read:"13 min"},
+            {id:18, title:"Technical SEO Checklist for WordPress Sites", cat:"SEO", date:"Jun 12, 2024", excerpt:"Fix the technical issues holding your site back.", read:"15 min"},
+            {id:19, title:"How I Use Canva + Photoshop for Client Projects", cat:"Design", date:"May 30, 2024", excerpt:"My efficient workflow for creating beautiful designs fast.", read:"8 min"},
+            {id:20, title:"Scaling Your Digital Marketing Agency in Bangladesh", cat:"Business", date:"May 18, 2024", excerpt:"Lessons learned from building a successful freelance business.", read:"17 min"}
+        ];
+
+        const blogImages = {
+            SEO: 'https://images.pexels.com/photos/6248959/pexels-photo-6248959.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=520',
+            Ads: 'https://images.pexels.com/photos/3183126/pexels-photo-3183126.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=520',
+            Design: 'https://images.pexels.com/photos/7598009/pexels-photo-7598009.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=520',
+            Branding: 'https://images.pexels.com/photos/8546649/pexels-photo-8546649.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=520',
+            Marketing: 'https://images.pexels.com/photos/7691715/pexels-photo-7691715.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=520',
+            Web: 'https://images.pexels.com/photos/8217724/pexels-photo-8217724.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=520',
+            Training: 'https://images.pexels.com/photos/6326406/pexels-photo-6326406.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=520',
+            Business: 'https://images.pexels.com/photos/6248987/pexels-photo-6248987.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=520'
+        };
+        
+        function renderBlog() {
+            const container = document.getElementById('blog-grid');
+            container.innerHTML = '';
+            articles.forEach(a => {
+                const el = document.createElement('div');
+                el.className = `blog-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-7 rounded-3xl`;
+                el.innerHTML = `
+                    <img src="${blogImages[a.cat] || blogImages.Marketing}" alt="${a.title}" class="w-full aspect-[16/9] object-cover rounded-2xl mb-6" width="900" height="520" loading="lazy" decoding="async">
+                    <div class="flex justify-between items-center text-xs"><span class="font-semibold text-[#0A66C2]">${a.cat}</span><span class="text-gray-400">${a.date}</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight">${a.title}</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300">${a.excerpt}</div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div class="text-xs">${a.read} read</div>
+                        <button onclick="readArticle(${a.id})" class="text-sm font-semibold text-[#0A66C2]">Read Article →</button>
+                    </div>`;
+                container.appendChild(el);
+            });
+        }
+        
+        function readArticle(id) {
+            const article = articles.find(a => a.id === id);
+            alert(`"${article.title}"\n\nThank you for reading! Full article content is available on the blog detail page.\n\nThis is a production-ready static site.`);
+            window.location.href = `blog-details.html?id=${id}`;
+        }
+        
+        window.onload = renderBlog;
+    </script>
+    
+    <footer class="px-8 py-8 text-sm text-gray-500 max-w-screen-2xl mx-auto">© 2025 Prosengit Kundu • All articles written from real experience</footer>
+</body>
+</html>

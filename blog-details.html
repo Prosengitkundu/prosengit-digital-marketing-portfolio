@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Article | Prosengit Kundu</title>
+    <meta name="description" content="Read expert digital marketing articles by Prosengit Kundu.">
+    <link rel="canonical" href="https://prosengitkundu.github.io/blog-details.html">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Poppins:wght@400;500;600;700&amp;display=swap'); body{font-family:'Inter',system_ui,sans-serif}</style>
+</head>
+<body class="bg-[#F8FAFC] dark:bg-[#111827]">
+    <nav class="sticky top-0 z-50 bg-white/95 dark:bg-[#111827]/95 border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-screen-2xl mx-auto px-8 py-5 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-x-3"><span class="w-9 h-9 bg-gradient-to-br from-[#0A66C2] to-[#16A34A] rounded-2xl flex items-center justify-center text-white font-bold">PK</span><span class="font-bold text-xl">Prosengit Kundu</span></a>
+            <div class="hidden lg:flex gap-x-7 text-sm font-medium"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="blog.html" class="text-[#0A66C2]">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
+            <details class="lg:hidden relative"><summary class="list-none cursor-pointer px-4 py-2 border rounded-2xl text-sm font-semibold">Menu</summary><div class="absolute right-0 top-12 z-10 w-48 bg-white dark:bg-gray-800 border rounded-2xl p-4 shadow-xl grid gap-3 text-sm"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div></details>
+            <a href="blog.html" class="text-sm font-semibold">All Articles</a>
+        </div>
+    </nav>
+    
+    <div class="max-w-3xl mx-auto px-8 pt-16 pb-20">
+        <div id="article-content"></div>
+        <div class="mt-16 pt-8 border-t">
+            <a href="contact.html" class="inline-block px-8 py-4 bg-[#0A66C2] text-white font-semibold rounded-3xl">Want to work together? Let's talk.</a>
+        </div>
+    </div>
+    
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const id = parseInt(params.get('id')) || 1;
+        const articles = [
+            {id:1,title:"7 SEO Mistakes Most Bangladeshi Businesses Still Make",cat:"SEO",date:"Jan 12, 2025",content:"Most businesses in Bangladesh are missing out on massive organic traffic because of a few common SEO mistakes. In this article, I break down the top 7 issues I see repeatedly and how to fix them."},
+            {id:2,title:"How I Generated 1,850 Leads Using Meta Ads in 90 Days",cat:"Ads",date:"Jan 5, 2025",content:"A complete breakdown of the Meta Ads campaign that generated 1,850 qualified leads in just three months. Includes targeting, creative strategy, and retargeting tactics."}
+        ];
+        const article = articles.find(a => a.id === id) || articles[0];
+        const articleImage = article.cat === 'SEO'
+            ? 'https://images.pexels.com/photos/6248959/pexels-photo-6248959.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=680'
+            : 'https://images.pexels.com/photos/3183126/pexels-photo-3183126.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=680';
+
+        document.getElementById('article-content').innerHTML = `
+            <div class="text-xs font-semibold text-[#0A66C2]">${article.cat} • ${article.date}</div>
+            <h1 class="text-6xl heading-font tracking-tighter font-bold mt-4">${article.title}</h1>
+            <img src="${articleImage}" alt="${article.title}" class="w-full aspect-[16/9] object-cover rounded-3xl mt-10" width="1200" height="680" fetchpriority="high">
+            <div class="prose prose-lg mt-10 text-gray-600 dark:text-gray-300">
+                <p>${article.content}</p>
+                <p>This is a production-ready static blog article. In a real deployment, the full article content would appear here.</p>
+            </div>`;
+    </script>
+</body>
+</html>
