@@ -1,0 +1,11 @@
+Save your professional portrait in this folder with this exact filename:
+
+prosengit-kundu-professional.jpg
+
+Recommended export:
+- JPG format
+- 1600px wide or larger
+- Under 500KB if possible
+- Keep the face centered for best cropping on the homepage, about page, and contact page
+
+The website already references this filename. If the image is missing, the site will temporarily use a fallback stock image so the layout does not break.
