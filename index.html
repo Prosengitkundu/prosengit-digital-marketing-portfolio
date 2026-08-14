@@ -281,20 +281,6 @@
     </style>
 </head>
 <body class="smooth-scroll bg-[#F8FAFC] text-[#111827] dark:bg-[#111827] dark:text-[#f1f5f9]">
-    <!-- LOADING SCREEN -->
-    <div id="loader" class="fixed inset-0 bg-white dark:bg-[#111827] z-[9999] flex items-center justify-center">
-        <div class="text-center">
-            <div class="w-20 h-20 mx-auto mb-6 relative">
-                <div class="w-20 h-20 border-4 border-[#0A66C2] border-t-transparent rounded-full animate-spin"></div>
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="w-8 h-8 bg-[#16A34A] rounded-full"></div>
-                </div>
-            </div>
-            <p class="text-[#0A66C2] font-semibold tracking-[3px] text-sm">PREMIUM PORTFOLIO</p>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Loading experience...</p>
-        </div>
-    </div>
-
     <!-- NAVIGATION -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 dark:bg-[#111827]/95 border-b border-gray-200 dark:border-gray-800">
         <div class="max-w-screen-2xl mx-auto">
@@ -493,22 +479,22 @@
                 
                 <div class="space-y-7">
                     <div class="timeline-item pl-9">
-                        <div class="text-sm font-semibold">2021 — Present</div>
+                        <div class="text-sm font-semibold">2020 — Present</div>
                         <div class="font-medium">Freelance Digital Marketing Expert &amp; Graphic Designer</div>
                         <div class="text-xs text-gray-500">Khulna, Bangladesh</div>
                     </div>
                     <div class="timeline-item pl-9">
-                        <div class="text-sm font-semibold">2019 — 2024</div>
+                        <div class="text-sm font-semibold">2019 — Present</div>
                         <div class="font-medium">Ad-hoc Database &amp; Digital Marketing Trainer</div>
                         <div class="text-xs text-gray-500">Department of Youth Development, Khulna</div>
                     </div>
                     <div class="timeline-item pl-9">
-                        <div class="text-sm font-semibold">2018 — 2022</div>
+                        <div class="text-sm font-semibold">2022 — 2025</div>
                         <div class="font-medium">Former Digital Marketing Level-3 Trainer</div>
                         <div class="text-xs text-gray-500">Technical Training Center (TTC), Khulna</div>
                     </div>
                     <div class="timeline-item pl-9">
-                        <div class="text-sm font-semibold">2017 — 2020</div>
+                        <div class="text-sm font-semibold">2019 — Present</div>
                         <div class="font-medium">Graphic Design Trainer</div>
                         <div class="text-xs text-gray-500">ARICHO IT, Khulna</div>
                     </div>
@@ -870,7 +856,7 @@
                 </div>
                 <div class="flex gap-x-5 mt-4 md:mt-0">
                     <a href="https://www.linkedin.com/in/prosengitkundu/" target="_blank" rel="noopener" class="hover:text-white">LinkedIn</a>
-                    <a href="https://github.com/" target="_blank" rel="noopener" class="hover:text-white">GitHub</a>
+                    
                 </div>
             </div>
         </div>
@@ -885,14 +871,6 @@
     <script>
         // All JS functionality inline for GitHub Pages compatibility
         window.onload = function() {
-            const loader = document.getElementById('loader');
-            if (loader) {
-                setTimeout(() => {
-                    loader.style.transition = 'opacity 0.5s ease';
-                    loader.style.opacity = '0';
-                    setTimeout(() => loader.style.display = 'none', 500);
-                }, 1100);
-            }
             initScrollAnimations();
             initStatsCounter();
             initTypingAnimation();
