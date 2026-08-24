@@ -175,9 +175,9 @@ function renderPortfolioOnHome() {
     if (!container) return;
     
     const projects = [
-        {cat: 'seo', title: 'Local SEO Domination', client: 'GreenLeaf Agro', result: '340% traffic'},
-        {cat: 'ads', title: 'Meta Ads Lead Campaign', client: 'TechNova Ltd', result: '1,850 leads'},
-        {cat: 'design', title: 'Brand Identity Design', client: 'UrbanNest', result: '+65% recognition'}
+        {cat: 'Web Development', title: 'Custom Business Website — HTML/CSS/JS', client: 'Demo project · Local services', result: 'Fast, responsive, SEO-friendly build', id: 1},
+        {cat: 'SEO', title: 'Local SEO Growth System', client: 'Demo project · Local business', result: 'Audit → keywords → GBP plan', id: 4},
+        {cat: 'Lead Generation', title: 'B2B Targeted Lead List', client: 'Demo project · B2B', result: 'Verified, outreach-ready database', id: 9}
     ];
     
     container.innerHTML = projects.map(p => `
@@ -186,6 +186,7 @@ function renderPortfolioOnHome() {
             <div class="font-bold mt-2">${p.title}</div>
             <div class="text-sm mt-1">${p.client}</div>
             <div class="mt-7 text-sm font-medium">${p.result}</div>
+            <a href="portfolio-details.html?id=${p.id}" class="inline-block mt-4 text-sm text-[#0A66C2] font-semibold">View case study →</a>
         </div>
     `).join('');
 }
@@ -196,16 +197,16 @@ function renderBlogOnHome() {
     if (!container) return;
     
     const blogs = [
-        {title: "7 SEO Mistakes Most Bangladeshi Businesses Make", cat: "SEO"},
-        {title: "How I Generated 1,850 Leads Using Meta Ads", cat: "Ads"},
-        {title: "The Complete Guide to YouTube SEO in 2025", cat: "SEO"}
+        {title: "How to Choose the Right SEO Service for Your Business", cat: "SEO", id: 1},
+        {title: "Google Ads vs Meta Ads: Choosing the Right Platform", cat: "Paid Ads", id: 9},
+        {title: "HTML vs WordPress for Business Websites: An Honest Comparison", cat: "Web Development", id: 14}
     ];
     
     container.innerHTML = blogs.map(b => `
         <div class="blog-card bg-white dark:bg-gray-800 p-7 rounded-3xl border">
             <div class="text-xs font-semibold text-[#16A34A]">${b.cat}</div>
             <div class="font-bold mt-3">${b.title}</div>
-            <a href="blog.html" class="block mt-4 text-sm text-[#0A66C2]">Read more →</a>
+            <a href="blog-details.html?id=${b.id}" class="block mt-4 text-sm text-[#0A66C2]">Read more →</a>
         </div>
     `).join('');
 }
