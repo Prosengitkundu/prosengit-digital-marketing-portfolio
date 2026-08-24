@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
-  <title id="title">Brand identity design concept artwork</title>
-  <desc id="desc">A warm design board concept showing a geometric monogram, typography, and color palette.</desc>
-  <rect width="1200" height="700" rx="42" fill="#f4efe7"/>
-  <rect x="72" y="72" width="1056" height="556" rx="28" fill="#fffaf2" stroke="#d8c9b2" stroke-width="3"/>
-  <circle cx="260" cy="325" r="125" fill="#0a66c2"/><path d="M195 388 L260 230 L325 388 L285 388 L260 325 L235 388 Z" fill="#f59e0b"/><text x="470" y="275" fill="#111827" font-family="Georgia, serif" font-size="54" font-weight="700">URBANNEST</text><text x="475" y="315" fill="#657080" font-family="Arial, sans-serif" font-size="18" letter-spacing="5">IDENTITY SYSTEM</text>
-  <line x1="475" y1="365" x2="1020" y2="365" stroke="#d8c9b2" stroke-width="3"/><circle cx="520" cy="445" r="30" fill="#0a66c2"/><circle cx="610" cy="445" r="30" fill="#16a34a"/><circle cx="700" cy="445" r="30" fill="#f59e0b"/><circle cx="790" cy="445" r="30" fill="#111827"/><text x="475" y="540" fill="#657080" font-family="Arial, sans-serif" font-size="18">Logo, colors, type, templates</text>
-</svg>
