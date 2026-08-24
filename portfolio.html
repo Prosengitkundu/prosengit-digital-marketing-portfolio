@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Digital Marketing &amp; Design Projects - Prosengit Kundu</title>
-    <meta name="description" content="Explore Prosengit Kundu's portfolio: SEO campaigns, Google Ads, Meta Ads, Graphic Design, WordPress websites, and Lead Generation projects with real results.">
+    <title>Portfolio | SEO, Custom Web Development, Ads &amp; Lead Generation Work Samples - Prosengit Kundu</title>
+    <meta name="description" content="Work samples and case studies by Prosengit Kundu: custom HTML/CSS/JavaScript websites, landing pages, SEO audits, keyword research, Meta Ads &amp; Google Ads campaign blueprints, B2B lead lists and graphic design — with full project breakdowns.">
+    <meta name="keywords" content="web development portfolio Bangladesh, SEO work samples, custom website project, Meta Ads campaign case study, B2B lead generation sample, graphic design portfolio">
+    <meta name="author" content="Prosengit Kundu">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://prosengitkundu.github.io/portfolio.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://prosengitkundu.github.io/portfolio.html">
+    <meta property="og:title" content="Portfolio | Digital Marketing &amp; Web Development Work Samples">
+    <meta property="og:description" content="Custom-coded websites, SEO systems, ad campaign blueprints, lead generation databases and design work — every sample fully explained.">
+    <meta property="og:image" content="https://prosengitkundu.github.io/assets/images/work/business-website-design.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Poppins:wght@400;500;600;700&amp;display=swap');
         body { font-family: 'Inter', system_ui, sans-serif; }
         .heading-font { font-family: 'Poppins', system_ui, sans-serif; }
-        .portfolio-card { transition: all .4s cubic-bezier(0.23,1,0.32,1); }
-        .portfolio-card:hover { transform: translateY(-10px); }
+        .portfolio-card { transition: transform .4s cubic-bezier(0.23,1,0.32,1), box-shadow .4s ease; }
+        .portfolio-card:hover { transform: translateY(-10px); box-shadow: 0 24px 48px -18px rgb(15 23 42 / .28); }
+        .filter-btn { transition: all .25s ease; }
+        .filter-btn.active { background-color: #0A66C2; color: #fff; border-color: #0A66C2; }
     </style>
 </head>
 <body class="bg-[#F8FAFC] dark:bg-[#111827]">
@@ -29,76 +40,86 @@
         <a href="contact.html" class="px-6 py-3 bg-[#0A66C2] text-white rounded-3xl text-sm font-semibold">Start a Project</a>
     </nav>
 
-    <div class="max-w-screen-2xl mx-auto px-8 pt-14">
-        <div>
-            <div class="text-xs tracking-[3px] font-semibold text-[#F59E0B]">SELECTED WORK</div>
-            <h1 class="text-6xl heading-font tracking-tighter font-bold mt-2">Featured Projects</h1>
-            <p class="max-w-2xl mt-5 text-gray-600 dark:text-gray-300">The visuals below are concept work samples created to show the type of strategy, design direction, and deliverables I can produce. Replace them with approved client work as your project library grows.</p>
+    <div class="max-w-screen-2xl mx-auto px-8 pt-14 pb-10">
+        <div class="max-w-3xl">
+            <div class="text-xs tracking-[3px] font-semibold text-[#F59E0B]">WORK SAMPLES &amp; CASE STUDIES</div>
+            <h1 class="text-5xl md:text-6xl heading-font tracking-tighter font-bold mt-3">Portfolio</h1>
+            <p class="mt-5 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">A complete look at how I work: custom-coded websites, SEO systems, advertising blueprints, lead generation databases and design work — each presented as a full case study with the goal, the process, the tools and the deliverables. Every sample below is a <strong>clearly labeled demo/concept project</strong> created to demonstrate my working method and deliverable quality; genuine client projects are published here in the same format as they are approved for sharing.</p>
+            <div class="mt-6 p-5 bg-blue-50 dark:bg-gray-800 border border-blue-100 dark:border-gray-700 rounded-2xl text-sm text-gray-600 dark:text-gray-300"><strong>Honest work-sample policy:</strong> I never present demo work as client work or claim results that were not achieved and verified. What you see here is exactly what you would receive — same structure, same depth, same standards.</div>
         </div>
-        
+
         <!-- Filters -->
-        <div class="flex flex-wrap gap-2 mt-8" id="filters">
-            <button onclick="filterPortfolio('all')" class="active px-5 py-2 text-sm font-medium rounded-full bg-[#0A66C2] text-white">All Projects</button>
-            <button onclick="filterPortfolio('seo')" class="px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">SEO</button>
-            <button onclick="filterPortfolio('ads')" class="px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">Ads</button>
-            <button onclick="filterPortfolio('design')" class="px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">Design</button>
-            <button onclick="filterPortfolio('web')" class="px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">Web</button>
+        <div class="flex flex-wrap gap-2 mt-10" id="filters" role="group" aria-label="Filter projects by category">
+            <button onclick="filterPortfolio('all', this)" class="filter-btn active px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">All Projects</button>
+            <button onclick="filterPortfolio('web', this)" class="filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">Web Development</button>
+            <button onclick="filterPortfolio('seo', this)" class="filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">SEO</button>
+            <button onclick="filterPortfolio('lead', this)" class="filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">Lead Generation</button>
+            <button onclick="filterPortfolio('ads', this)" class="filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">Paid Ads</button>
+            <button onclick="filterPortfolio('design', this)" class="filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">Graphic Design</button>
         </div>
     </div>
 
-    <div class="max-w-screen-2xl mx-auto px-8 py-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+    <div class="max-w-screen-2xl mx-auto px-8 pb-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
         <!-- Populated via JS -->
     </div>
 
+    <!-- What each category includes -->
+    <section class="bg-white dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800">
+        <div class="max-w-screen-2xl mx-auto px-8 py-16">
+            <div class="max-w-3xl mb-10"><div class="text-xs tracking-[3px] font-semibold text-[#0A66C2]">WHAT YOU'LL FIND IN EACH CATEGORY</div><h2 class="text-4xl heading-font font-bold mt-3">Deliverables, not just pictures</h2><p class="mt-4 text-gray-600 dark:text-gray-300">Every case study opens into the full project: objective, my role, tools, work completed and outcome. Here is what each category typically contains.</p></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6 text-sm">
+                <div class="bg-[#F8FAFC] dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-6"><div class="font-bold text-[#0A66C2]">Web Development</div><ul class="mt-4 space-y-2 text-gray-600 dark:text-gray-300 list-disc pl-4"><li>Custom HTML/CSS/JS builds</li><li>Responsive layouts</li><li>Landing pages</li><li>Portfolio &amp; business sites</li><li>Performance details</li></ul></div>
+                <div class="bg-[#F8FAFC] dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-6"><div class="font-bold text-[#16A34A]">SEO</div><ul class="mt-4 space-y-2 text-gray-600 dark:text-gray-300 list-disc pl-4"><li>Technical audits</li><li>Keyword research maps</li><li>Local SEO systems</li><li>On-page examples</li><li>Reporting structures</li></ul></div>
+                <div class="bg-[#F8FAFC] dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-6"><div class="font-bold text-[#F59E0B]">Lead Generation</div><ul class="mt-4 space-y-2 text-gray-600 dark:text-gray-300 list-disc pl-4"><li>B2B lead databases</li><li>Prospect research</li><li>Verification workflows</li><li>Data cleaning examples</li><li>Outreach-ready formats</li></ul></div>
+                <div class="bg-[#F8FAFC] dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-6"><div class="font-bold text-[#DB2777]">Paid Ads</div><ul class="mt-4 space-y-2 text-gray-600 dark:text-gray-300 list-disc pl-4"><li>Campaign structures</li><li>Audience plans</li><li>Creative test frameworks</li><li>Tracking checklists</li><li>Optimization routines</li></ul></div>
+                <div class="bg-[#F8FAFC] dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-6"><div class="font-bold text-[#7C3AED]">Graphic Design</div><ul class="mt-4 space-y-2 text-gray-600 dark:text-gray-300 list-disc pl-4"><li>Social media designs</li><li>YouTube thumbnails</li><li>Promotional graphics</li><li>Template systems</li><li>Brand consistency sets</li></ul></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-8 py-16 text-center">
+        <h2 class="text-4xl heading-font font-bold">Want work like this for your business?</h2>
+        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">Every sample above maps to a service with clear, starting-from pricing — for Bangladesh and international clients.</p>
+        <div class="flex flex-wrap gap-4 justify-center mt-8">
+            <a href="pricing.html" class="px-8 py-4 bg-[#0A66C2] text-white font-bold rounded-3xl">View Pricing</a>
+            <a href="contact.html" class="px-8 py-4 border border-gray-300 dark:border-gray-600 font-bold rounded-3xl">Discuss Your Project</a>
+        </div>
+    </section>
+
+    <script src="assets/js/projects.js"></script>
     <script>
-        const projects = [
-            {id:1, cat:'seo', title:'Local SEO Domination', client:'GreenLeaf Agro', industry:'Agriculture', desc:'A concept campaign showing how local SEO can organize search opportunities and growth reporting.', result:'340% traffic direction', tech:'SEO, Local SEO, Content', duration:'6 months', image:'assets/images/portfolio-seo.svg'},
-            {id:2, cat:'ads', title:'Meta Ads Lead Campaign', client:'TechNova Ltd', industry:'SaaS', desc:'A paid media concept focused on qualified lead generation, audience testing, and retargeting.', result:'1,850 lead direction', tech:'Meta Ads, Retargeting', duration:'3 months', image:'assets/images/portfolio-ads.svg'},
-            {id:3, cat:'design', title:'Brand Identity &amp; Logo', client:'UrbanNest', industry:'Real Estate', desc:'A visual identity concept showing a logo system, palette, typography, and reusable brand direction.', result:'Recognition direction', tech:'Photoshop, Illustrator', duration:'3 weeks', image:'assets/images/portfolio-brand.svg'},
-            {id:4, cat:'web', title:'WordPress E-commerce Site', client:'Khulna Mart', industry:'Retail', desc:'A responsive ecommerce concept designed around clear categories, mobile usability, and conversion.', result:'Speed-first concept', tech:'WordPress, SEO', duration:'5 weeks', image:'assets/images/portfolio-website.svg'},
-            {id:5, cat:'ads', title:'YouTube Ads Campaign', client:'SkillUp BD', industry:'Education', desc:'A video advertising concept for course promotion, audience intent, and measurable campaign growth.', result:'4.2x ROAS direction', tech:'YouTube Ads, Video SEO', duration:'4 months', image:'assets/images/portfolio-youtube.svg'},
-            {id:6, cat:'seo', title:'Technical SEO Overhaul', client:'MedCare Clinic', industry:'Healthcare', desc:'A technical SEO concept showing how structure, metadata, local visibility, and monitoring work together.', result:'Ranking direction', tech:'Technical SEO, Schema', duration:'7 months', image:'assets/images/portfolio-technical.svg'}
-        ];
-        
         function renderPortfolio(filter = 'all') {
             const container = document.getElementById('portfolio-grid');
-            container.innerHTML = '';
-            const filtered = filter === 'all' ? projects : projects.filter(p => p.cat === filter);
-            
-            filtered.forEach(p => {
-                const card = document.createElement('div');
-                card.className = `portfolio-card bg-white dark:bg-gray-800 border rounded-3xl overflow-hidden`;
-                card.innerHTML = `
-                    <div class="aspect-video bg-gray-100 dark:bg-gray-700"><img src="${p.image}" alt="${p.title} project preview" class="w-full h-full object-cover" width="900" height="520" loading="lazy" decoding="async"></div>
-                    <div class="p-6">
-                        <div class="uppercase text-xs font-semibold tracking-widest text-[#0A66C2]">${p.cat.toUpperCase()} / CONCEPT WORK</div>
-                        <div class="font-bold text-xl mt-2">${p.title}</div>
-                        <div class="text-sm mt-1">${p.client} • ${p.industry}</div>
-                        <div class="mt-4 text-sm">${p.desc}</div>
-                        
-                        <div class="flex justify-between items-center mt-7 pt-4 border-t text-xs">
-                            <div><span class="font-medium">${p.result}</span></div>
-                            <div class="text-gray-400">${p.duration}</div>
+            const list = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.cat === filter);
+            container.innerHTML = list.map(p => `
+                <div class="portfolio-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl overflow-hidden flex flex-col">
+                    <div class="aspect-video bg-gray-100 dark:bg-gray-700 relative">
+                        <img src="${p.image}" alt="${p.title} — work sample preview by Prosengit Kundu" class="w-full h-full object-cover" width="900" height="520" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://images.pexels.com/photos/270360/pexels-photo-270360.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=520';">
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#111827]/85 text-white text-[10px] font-bold tracking-widest">DEMO PROJECT</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="uppercase text-xs font-semibold tracking-widest text-[#0A66C2]">${(PROJECT_CATEGORIES[p.cat] || p.cat).toUpperCase()}</div>
+                        <div class="font-bold text-xl mt-2 leading-snug">${p.title}</div>
+                        <div class="text-sm mt-1 text-gray-500">${p.industry}</div>
+                        <div class="mt-4 text-sm text-gray-600 dark:text-gray-300 leading-relaxed flex-1">${p.focus}</div>
+                        <div class="flex justify-between items-center mt-6 pt-4 border-t border-gray-100 dark:border-gray-700 text-xs">
+                            <div class="font-medium">${p.duration}</div>
+                            <div class="text-gray-400">${p.work.length} deliverables shown</div>
                         </div>
-                        <button onclick="viewProject(${p.id})" class="mt-5 text-sm px-5 py-2 border border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white rounded-3xl w-full text-center font-semibold transition-colors">View Case Study</button>
-                    </div>`;
-                container.appendChild(card);
-            });
+                        <a href="portfolio-details.html?id=${p.id}" class="mt-5 text-sm px-5 py-3 border border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white rounded-3xl w-full text-center font-semibold transition-colors">View Case Study</a>
+                    </div>
+                </div>`).join('');
         }
-        
-        function filterPortfolio(cat) {
-            document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active', 'bg-[#0A66C2]', 'text-white'));
-            event.target.classList.add('active', 'bg-[#0A66C2]', 'text-white');
+
+        function filterPortfolio(cat, btn) {
+            document.querySelectorAll('#filters .filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
             renderPortfolio(cat);
         }
-        
-        function viewProject(id) {
-            window.location.href = `portfolio-details.html?id=${id}`;
-        }
-        
-        window.onload = () => renderPortfolio('all');
+
+        renderPortfolio('all');
     </script>
-    
-    <footer class="px-8 py-8 text-sm text-gray-500 max-w-screen-2xl mx-auto">© 2025 Prosengit Kundu • <a href="index.html">Home</a></footer>
+
+    <footer class="px-8 py-8 text-sm text-gray-500 max-w-screen-2xl mx-auto">© 2026 Prosengit Kundu • <a href="index.html">Home</a> • <a href="pricing.html">Pricing</a></footer>
 </body>
 </html>
