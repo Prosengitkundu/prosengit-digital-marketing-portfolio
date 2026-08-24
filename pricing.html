@@ -48,29 +48,44 @@
       ]
     }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap');
-        body { font-family: 'Inter', system_ui, sans-serif; }
-        .heading-font { font-family: 'Poppins', system_ui, sans-serif; }
-        .package-card { transition: transform .35s ease, box-shadow .35s ease; }
-        .package-card:hover { transform: translateY(-8px); box-shadow: 0 24px 50px -18px rgb(15 23 42 / .32); }
-        .check-list li { position: relative; padding-left: 1.5rem; }
-        .check-list li::before { content: '✓'; position: absolute; left: 0; color: #16A34A; font-weight: 700; }
-        .check-list-dark li::before { color: #60A5FA; }
-        .price-table td, .price-table th { padding: .8rem 1rem; text-align: left; }
-        .price-table tr + tr { border-top: 1px solid #e5e7eb; }
-        .dark .price-table tr + tr { border-color: #374151; }
-        .price-table th { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: #64748b; }
-        .price-table td { font-size: .875rem; }
-        .bdt { font-weight: 700; color: #0A66C2; white-space: nowrap; }
-        .usd { font-weight: 700; color: #16A34A; white-space: nowrap; }
-    </style>
-</head>
-<body class="bg-[#F8FAFC] text-[#111827] dark:bg-[#111827] dark:text-slate-100">
-    <nav class="sticky top-0 z-50 bg-white/95 dark:bg-[#111827]/95 border-b border-gray-200 dark:border-gray-800"><div class="max-w-screen-2xl mx-auto px-8 py-5 flex justify-between items-center"><a href="index.html" class="flex items-center gap-x-3"><span class="w-9 h-9 bg-gradient-to-br from-[#0A66C2] to-[#16A34A] rounded-2xl flex items-center justify-center text-white font-bold">PK</span><span class="font-bold text-xl heading-font">Prosengit Kundu</span></a><div class="hidden lg:flex gap-x-7 text-sm font-medium"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html" class="text-[#0A66C2]">Pricing</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div><details class="lg:hidden relative"><summary class="list-none cursor-pointer px-4 py-2 border rounded-2xl text-sm font-semibold">Menu</summary><div class="absolute right-0 top-12 z-10 w-48 bg-white dark:bg-gray-800 border rounded-2xl p-4 shadow-xl grid gap-3 text-sm"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div></details><a href="contact.html" class="px-6 py-3 bg-[#0A66C2] text-white rounded-3xl text-sm font-semibold">Ask a Question</a></div></nav>
 
-    <header class="max-w-screen-2xl mx-auto px-8 pt-16 pb-14"><div class="grid lg:grid-cols-12 gap-12 items-center"><div class="lg:col-span-7"><div class="text-xs tracking-[3px] font-semibold text-[#16A34A]">CLEAR SCOPE. HONEST PRICING. FLEXIBLE START.</div><h1 class="text-5xl md:text-7xl heading-font tracking-tighter font-bold mt-3 leading-[1.04]">Pricing built around your project, not a fixed menu.</h1><p class="text-lg text-gray-600 dark:text-gray-300 mt-6 max-w-2xl leading-relaxed">Every package below is a <strong>starting point</strong>. SEO, custom-coded web development, paid advertising, lead generation and complete growth plans — each with a clear scope, clear deliverables and a price you can plan around. You can start small and scale only when the results justify it.</p><div class="flex flex-wrap gap-3 mt-6"><span class="px-4 py-2 rounded-full bg-white dark:bg-gray-800 border text-sm font-semibold">🇧🇩 Bangladesh clients: BDT (৳)</span><span class="px-4 py-2 rounded-full bg-white dark:bg-gray-800 border text-sm font-semibold">🌍 International clients: USD ($)</span></div><p class="text-sm text-gray-500 mt-4">All package prices are “starting from” rates — the final quote depends on your project scope and requirements.</p><div class="flex flex-wrap gap-3 mt-8"><a href="#packages" class="px-7 py-4 bg-[#0A66C2] text-white font-semibold rounded-3xl">Compare Packages</a><a href="#price-list" class="px-7 py-4 border border-gray-300 dark:border-gray-600 font-semibold rounded-3xl">Full Price List</a></div></div><div class="lg:col-span-5"><img src="https://images.pexels.com/photos/3183126/pexels-photo-3183126.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1000&amp;h=760" alt="Marketing team discussing a business strategy" class="w-full h-[300px] md:h-[420px] object-cover rounded-[2rem] shadow-2xl" width="1000" height="760" fetchpriority="high"></div></div></header>
+    <!-- ===== Shared design system (same loading + hover effects on every page) ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+        @layer base {
+            /* Tailwind v4 defaults a bare `border` to currentColor, which made
+               borders look different from page to page. One shared colour. */
+            *, ::before, ::after, ::backdrop {
+                border-color: var(--color-gray-200, currentcolor);
+            }
+            .dark *, .dark ::before, .dark ::after, .dark ::backdrop {
+                border-color: var(--color-gray-700, currentcolor);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        /* Apply the saved theme before paint so pages never flash. */
+        (function () {
+            try {
+                var t = localStorage.getItem('pk-theme');
+                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="assets/js/site.js" defer></script>
+</head>
+<body class="site-body">
+<div class="page-shell">
+    
+
+    <header class="max-w-screen-2xl mx-auto px-8 pt-16 pb-14"><div class="grid lg:grid-cols-12 gap-12 items-center"><div class="lg:col-span-7"><div class="text-xs tracking-[3px] font-semibold text-[#16A34A]">CLEAR SCOPE. HONEST PRICING. FLEXIBLE START.</div><h1 class="text-5xl md:text-7xl heading-font tracking-tighter font-bold mt-3 leading-[1.04]">Pricing built around your project, not a fixed menu.</h1><p class="text-lg text-gray-600 dark:text-gray-300 mt-6 max-w-2xl leading-relaxed">Every package below is a <strong>starting point</strong>. SEO, custom-coded web development, paid advertising, lead generation and complete growth plans — each with a clear scope, clear deliverables and a price you can plan around. You can start small and scale only when the results justify it.</p><div class="flex flex-wrap gap-3 mt-6"><span class="px-4 py-2 rounded-full bg-white dark:bg-gray-800 border text-sm font-semibold">🇧🇩 Bangladesh clients: BDT (৳)</span><span class="px-4 py-2 rounded-full bg-white dark:bg-gray-800 border text-sm font-semibold">🌍 International clients: USD ($)</span></div><p class="text-sm text-gray-500 mt-4">All package prices are “starting from” rates — the final quote depends on your project scope and requirements.</p><div class="flex flex-wrap gap-3 mt-8"><a href="#packages" class="premium-btn px-7 py-4 bg-[#0A66C2] text-white font-semibold rounded-3xl">Compare Packages</a><a href="#price-list" class="premium-btn px-7 py-4 border border-gray-300 dark:border-gray-600 font-semibold rounded-3xl">Full Price List</a></div></div><div class="lg:col-span-5"><img src="https://images.pexels.com/photos/3183126/pexels-photo-3183126.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1000&amp;h=760" alt="Marketing team discussing a business strategy" class="w-full h-[300px] md:h-[420px] object-cover rounded-[2rem] shadow-2xl" width="1000" height="760" fetchpriority="high"></div></div></header>
 
     <main>
         <!-- ============ 1. FEATURED PRICING PACKAGES ============ -->
@@ -96,7 +111,7 @@
                         <li>Image SEO</li>
                         <li>Basic SEO Report</li>
                     </ul>
-                    <a href="contact.html?plan=SEO%20Starter" class="mt-8 block text-center px-5 py-3 border border-[#0A66C2] text-[#0A66C2] font-semibold rounded-3xl">Get Started</a>
+                    <a href="contact.html?plan=SEO%20Starter" class="premium-btn mt-8 block text-center px-5 py-3 border border-[#0A66C2] text-[#0A66C2] font-semibold rounded-3xl">Get Started</a>
                 </article>
 
                 <!-- SEO GROWTH -->
@@ -120,7 +135,7 @@
                         <li>Content Recommendations</li>
                         <li>Performance Reporting</li>
                     </ul>
-                    <a href="contact.html?plan=SEO%20Growth" class="mt-8 block text-center px-5 py-3 bg-[#0A66C2] text-white font-semibold rounded-3xl">Choose SEO Growth</a>
+                    <a href="contact.html?plan=SEO%20Growth" class="premium-btn mt-8 block text-center px-5 py-3 bg-[#0A66C2] text-white font-semibold rounded-3xl">Choose SEO Growth</a>
                 </article>
 
                 <!-- CUSTOM WEBSITE -->
@@ -144,7 +159,7 @@
                         <li>Image Optimization</li>
                         <li>Sitemap + Robots.txt</li>
                     </ul>
-                    <a href="contact.html?plan=Custom%20Website" class="mt-8 block text-center px-5 py-3 bg-[#F59E0B] text-[#111827] font-bold rounded-3xl">Build My Website</a>
+                    <a href="contact.html?plan=Custom%20Website" class="premium-btn mt-8 block text-center px-5 py-3 bg-[#F59E0B] text-[#111827] font-bold rounded-3xl">Build My Website</a>
                 </article>
 
                 <!-- LEAD GENERATION -->
@@ -165,7 +180,7 @@
                         <li>Data Cleaning</li>
                         <li>Data Organization</li>
                     </ul>
-                    <a href="contact.html?plan=Lead%20Generation" class="mt-8 block text-center px-5 py-3 border border-[#16A34A] text-[#16A34A] font-semibold rounded-3xl">Generate My Leads</a>
+                    <a href="contact.html?plan=Lead%20Generation" class="premium-btn mt-8 block text-center px-5 py-3 border border-[#16A34A] text-[#16A34A] font-semibold rounded-3xl">Generate My Leads</a>
                 </article>
 
                 <!-- PAID ADVERTISING -->
@@ -187,7 +202,7 @@
                         <li>Performance Analysis</li>
                     </ul>
                     <p class="mt-4 text-xs text-gray-500 border-l-2 border-[#F59E0B] pl-3"><strong>Note:</strong> Advertising budget is separate — ad spend is paid by you directly to Google or Meta.</p>
-                    <a href="contact.html?plan=Paid%20Advertising" class="mt-6 block text-center px-5 py-3 border border-[#0A66C2] text-[#0A66C2] font-semibold rounded-3xl">Start Advertising</a>
+                    <a href="contact.html?plan=Paid%20Advertising" class="premium-btn mt-6 block text-center px-5 py-3 border border-[#0A66C2] text-[#0A66C2] font-semibold rounded-3xl">Start Advertising</a>
                 </article>
 
                 <!-- DIGITAL GROWTH -->
@@ -210,7 +225,7 @@
                         <li>Conversion Recommendations</li>
                         <li>Performance Reporting</li>
                     </ul>
-                    <a href="contact.html?plan=Digital%20Growth" class="mt-8 block text-center px-5 py-3 bg-[#16A34A] text-white font-semibold rounded-3xl">Grow My Business</a>
+                    <a href="contact.html?plan=Digital%20Growth" class="premium-btn mt-8 block text-center px-5 py-3 bg-[#16A34A] text-white font-semibold rounded-3xl">Grow My Business</a>
                 </article>
             </div>
 
@@ -222,8 +237,8 @@
                     <p class="text-sm text-gray-600 dark:text-gray-300 mt-3 leading-relaxed">My primary web development service is <strong>custom, raw-code development</strong>: hand-written HTML5, modern CSS3 and vanilla JavaScript. A custom-coded website gives you full control over structure, design flexibility, performance and SEO implementation — with no bloated themes or plugin dependencies. <strong>WordPress</strong> remains available as an additional option for clients who specifically want a CMS, but it is not the default recommendation.</p>
                 </div>
                 <div class="md:col-span-4 grid gap-3">
-                    <a href="contact.html?plan=Custom%20Website" class="text-center px-5 py-3 bg-[#111827] dark:bg-[#F59E0B] dark:text-[#111827] text-white font-semibold rounded-3xl">Get a Custom Website Quote</a>
-                    <a href="#price-list" class="text-center px-5 py-3 border border-gray-300 dark:border-gray-600 font-semibold rounded-3xl">See Web Development Prices</a>
+                    <a href="contact.html?plan=Custom%20Website" class="premium-btn text-center px-5 py-3 bg-[#111827] dark:bg-[#F59E0B] dark:text-[#111827] text-white font-semibold rounded-3xl">Get a Custom Website Quote</a>
+                    <a href="#price-list" class="premium-btn text-center px-5 py-3 border border-gray-300 dark:border-gray-600 font-semibold rounded-3xl">See Web Development Prices</a>
                 </div>
             </div>
         </div></section>
@@ -253,7 +268,7 @@
                     <div class="text-xs tracking-[3px] font-semibold text-[#16A34A]">FREE DIGITAL GROWTH CHECK</div>
                     <h2 class="text-4xl heading-font font-bold mt-3">Not Sure Which Service You Need?</h2>
                     <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">Get a <strong>free mini analysis</strong> before you invest in digital marketing. Share your website and goals, and I will tell you honestly where the biggest opportunity is — even if that means starting smaller than you planned.</p>
-                    <a href="contact.html?service=Free%20Digital%20Growth%20Check" class="inline-block mt-7 px-8 py-4 bg-[#16A34A] text-white font-bold rounded-3xl">Get My Free Analysis</a>
+                    <a href="contact.html?service=Free%20Digital%20Growth%20Check" class="premium-btn inline-block mt-7 px-8 py-4 bg-[#16A34A] text-white font-bold rounded-3xl">Get My Free Analysis</a>
                     <p class="text-xs text-gray-500 mt-5 max-w-md">This is a mini analysis designed to identify opportunities. A complete audit or detailed strategy is available as a paid service.</p>
                 </div>
                 <div class="lg:col-span-6">
@@ -277,8 +292,8 @@
             <h2 class="text-4xl heading-font font-bold mt-3">Talk through your project before you decide anything.</h2>
             <p class="mt-4 text-blue-100 text-lg leading-relaxed">Have a website, SEO, advertising or lead generation challenge? Let's discuss your goals and identify the right direction for your project — no pressure, no obligation.</p>
             <div class="flex flex-wrap gap-4 justify-center mt-8">
-                <a href="contact.html?service=Free%20Consultation" class="px-8 py-4 bg-white text-[#0A66C2] font-bold rounded-3xl">Book Free Consultation</a>
-                <a href="https://wa.me/8801701059499?text=Hi%20Prosengit%2C%20I%27d%20like%20a%20free%2015-minute%20consultation." target="_blank" rel="noopener" class="px-8 py-4 border-2 border-white font-bold rounded-3xl">💬 WhatsApp Me Directly</a>
+                <a href="contact.html?service=Free%20Consultation" class="premium-btn px-8 py-4 bg-white text-[#0A66C2] font-bold rounded-3xl">Book Free Consultation</a>
+                <a href="https://wa.me/8801701059499?text=Hi%20Prosengit%2C%20I%27d%20like%20a%20free%2015-minute%20consultation." target="_blank" rel="noopener" class="premium-btn px-8 py-4 border-2 border-white font-bold rounded-3xl">💬 WhatsApp Me Directly</a>
             </div>
         </div></section>
 
@@ -300,13 +315,12 @@
             <h2 class="text-4xl md:text-5xl heading-font font-bold mt-3">Need a Custom Package?</h2>
             <p class="mt-4 text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto">Every business has different goals and requirements. If you need a customized combination of services, I can create a package based on your project scope, goals and budget.</p>
             <div class="flex flex-wrap gap-4 justify-center mt-8">
-                <a href="contact.html?plan=Custom%20Package" class="px-8 py-4 bg-[#F59E0B] text-[#111827] font-bold rounded-3xl">Request Custom Quote</a>
-                <a href="portfolio.html" class="px-8 py-4 border-2 border-gray-600 font-bold rounded-3xl">See Work Samples First</a>
+                <a href="contact.html?plan=Custom%20Package" class="premium-btn px-8 py-4 bg-[#F59E0B] text-[#111827] font-bold rounded-3xl">Request Custom Quote</a>
+                <a href="portfolio.html" class="premium-btn px-8 py-4 border-2 border-gray-600 font-bold rounded-3xl">See Work Samples First</a>
             </div>
         </div></section>
     </main>
-
-    <footer class="bg-[#111827] text-gray-300 px-8 py-8 text-sm border-t border-gray-800"><div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between gap-4"><div>© 2026 Prosengit Kundu</div><div class="flex flex-wrap gap-5"><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a><a href="terms.html" class="hover:text-white">Terms</a><a href="disclaimer.html" class="hover:text-white">Disclaimer</a><a href="index.html" class="hover:text-white">Home</a></div></div></footer>
+</div>
 
     <script>
     /* =====================================================================

@@ -1,2 +1,75 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Privacy Policy | Prosengit Kundu</title><script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script></head>
-<body class="bg-[#F8FAFC] dark:bg-[#111827]"><div class="max-w-3xl mx-auto px-8 py-16"><h1 class="text-5xl font-bold">Privacy Policy</h1><div class="prose mt-8 text-gray-600">We respect your privacy. This portfolio site does not collect or store personal data beyond what you voluntarily submit via the contact form. All submissions are handled securely.</div><a href="index.html" class="mt-10 inline-block">← Back to Home</a></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Prosengit Kundu</title>
+    <meta name="description" content="Privacy policy for the Prosengit Kundu digital marketing portfolio website — what data is collected, how it is used, and your choices.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://prosengitkundu.top/privacy-policy.html">
+
+    <!-- ===== Shared design system (same loading + hover effects on every page) ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+        @layer base {
+            /* Tailwind v4 defaults a bare `border` to currentColor, which made
+               borders look different from page to page. One shared colour. */
+            *, ::before, ::after, ::backdrop {
+                border-color: var(--color-gray-200, currentcolor);
+            }
+            .dark *, .dark ::before, .dark ::after, .dark ::backdrop {
+                border-color: var(--color-gray-700, currentcolor);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        /* Apply the saved theme before paint so pages never flash. */
+        (function () {
+            try {
+                var t = localStorage.getItem('pk-theme');
+                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="assets/js/site.js" defer></script>
+</head>
+<body class="site-body">
+<div class="page-shell">
+    <main class="legal-page reveal">
+        <div class="eyebrow">Legal</div>
+        <h1 class="heading-font">Privacy Policy</h1>
+        <p>This privacy policy explains what information this website collects, how it is used, and the choices available to you. It applies to <strong>prosengitkundu.top</strong> and the services described on it.</p>
+
+        <h2>Information collected</h2>
+        <p>This portfolio website does not require an account and does not collect personal data beyond what you voluntarily provide. If you use the contact form, you may submit your name, email address, phone number, company name, service interest and message. Contact enquiries are sent directly to my email inbox and are used only to respond to your request and to discuss a possible project.</p>
+
+        <h2>Cookies and local storage</h2>
+        <p>No advertising or tracking cookies are set by this website. Your light/dark theme preference is stored in your browser's local storage so the site remembers your choice on your next visit. You can clear it at any time from your browser settings.</p>
+
+        <h2>Third-party services</h2>
+        <p>Fonts, styling libraries and some images are loaded from third-party content delivery networks. Those providers may record standard technical request data such as your IP address and browser type, subject to their own privacy policies.</p>
+
+        <h2>How your information is used</h2>
+        <p>Enquiry details are used only to reply to you, prepare a quote, and deliver an agreed service. Your information is never sold, rented or shared with unrelated third parties. Project details shared during an engagement are treated as confidential.</p>
+
+        <h2>Data retention and your rights</h2>
+        <p>Enquiry emails are retained for as long as needed to serve you and to keep reasonable business records. You may request a copy, correction or deletion of your personal information at any time by emailing <a href="mailto:Prosengit95@gmail.com" class="text-[#0A66C2] font-semibold">Prosengit95@gmail.com</a>.</p>
+
+        <h2>Contact</h2>
+        <p>Questions about this policy? Email <a href="mailto:Prosengit95@gmail.com" class="text-[#0A66C2] font-semibold">Prosengit95@gmail.com</a> or call <a href="tel:+8801701059499" class="text-[#0A66C2] font-semibold">+880 1701-059499</a>.</p>
+
+        <div class="mt-10 flex flex-wrap gap-3">
+            <a href="index.html" class="btn btn-primary">Back to Home</a>
+            <a href="contact.html" class="btn btn-outline">Contact Me</a>
+        </div>
+    </main>
+</div>
+</body>
+</html>

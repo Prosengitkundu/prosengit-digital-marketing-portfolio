@@ -15,32 +15,44 @@
     <meta property="og:description" content="Custom-coded websites, SEO systems, ad campaign blueprints, lead generation databases and design work — every sample fully explained.">
     <meta property="og:image" content="https://prosengitkundu.top/assets/images/work/business-website-design.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Poppins:wght@400;500;600;700&amp;display=swap');
-        body { font-family: 'Inter', system_ui, sans-serif; }
-        .heading-font { font-family: 'Poppins', system_ui, sans-serif; }
-        .portfolio-card { transition: transform .4s cubic-bezier(0.23,1,0.32,1), box-shadow .4s ease; }
-        .portfolio-card:hover { transform: translateY(-10px); box-shadow: 0 24px 48px -18px rgb(15 23 42 / .28); }
-        .filter-btn { transition: all .25s ease; }
-        .filter-btn.active { background-color: #0A66C2; color: #fff; border-color: #0A66C2; }
-    </style>
-</head>
-<body class="bg-[#F8FAFC] dark:bg-[#111827]">
-    <nav class="sticky top-0 z-50 bg-white/95 dark:bg-[#111827]/95 border-b px-8 py-5 flex justify-between items-center max-w-screen-2xl mx-auto">
-        <div class="flex items-center gap-x-3">
-            <div class="w-9 h-9 bg-gradient-to-br from-[#0A66C2] to-[#16A34A] rounded-2xl flex items-center justify-center"><span class="text-white font-bold">PK</span></div>
-            <div class="font-bold text-xl">Prosengit Kundu</div>
-        </div>
-        <div class="hidden md:flex gap-x-8 text-sm">
-            <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a>
-            <a href="portfolio.html" class="font-semibold text-[#0A66C2]">Portfolio</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
-        </div>
-        <details class="md:hidden relative"><summary class="list-none cursor-pointer px-4 py-2 border rounded-2xl text-sm font-semibold">Menu</summary><div class="absolute right-0 top-12 z-10 w-48 bg-white dark:bg-gray-800 border rounded-2xl p-4 shadow-xl grid gap-3 text-sm"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div></details>
-        <a href="contact.html" class="px-6 py-3 bg-[#0A66C2] text-white rounded-3xl text-sm font-semibold">Start a Project</a>
-    </nav>
 
-    <div class="max-w-screen-2xl mx-auto px-8 pt-14 pb-10">
+    <!-- ===== Shared design system (same loading + hover effects on every page) ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+        @layer base {
+            /* Tailwind v4 defaults a bare `border` to currentColor, which made
+               borders look different from page to page. One shared colour. */
+            *, ::before, ::after, ::backdrop {
+                border-color: var(--color-gray-200, currentcolor);
+            }
+            .dark *, .dark ::before, .dark ::after, .dark ::backdrop {
+                border-color: var(--color-gray-700, currentcolor);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        /* Apply the saved theme before paint so pages never flash. */
+        (function () {
+            try {
+                var t = localStorage.getItem('pk-theme');
+                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="assets/js/site.js" defer></script>
+</head>
+<body class="site-body">
+<div class="page-shell">
+    
+
+    <div class="max-w-screen-2xl mx-auto px-8 pt-16 pb-10">
         <div class="max-w-3xl">
             <div class="text-xs tracking-[3px] font-semibold text-[#F59E0B]">WORK SAMPLES &amp; CASE STUDIES</div>
             <h1 class="text-5xl md:text-6xl heading-font tracking-tighter font-bold mt-3">Portfolio</h1>
@@ -81,10 +93,11 @@
         <h2 class="text-4xl heading-font font-bold">Want work like this for your business?</h2>
         <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">Every sample above maps to a service with clear, starting-from pricing — for Bangladesh and international clients.</p>
         <div class="flex flex-wrap gap-4 justify-center mt-8">
-            <a href="pricing.html" class="px-8 py-4 bg-[#0A66C2] text-white font-bold rounded-3xl">View Pricing</a>
-            <a href="contact.html" class="px-8 py-4 border border-gray-300 dark:border-gray-600 font-bold rounded-3xl">Discuss Your Project</a>
+            <a href="pricing.html" class="premium-btn px-8 py-4 bg-[#0A66C2] text-white font-bold rounded-3xl">View Pricing</a>
+            <a href="contact.html" class="premium-btn px-8 py-4 border border-gray-300 dark:border-gray-600 font-bold rounded-3xl">Discuss Your Project</a>
         </div>
     </section>
+</div>
 
     <script src="assets/js/projects.js"></script>
     <script>
@@ -106,7 +119,7 @@
                             <div class="font-medium">${p.duration}</div>
                             <div class="text-gray-400">${p.work.length} deliverables shown</div>
                         </div>
-                        <a href="portfolio-details.html?id=${p.id}" class="mt-5 text-sm px-5 py-3 border border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white rounded-3xl w-full text-center font-semibold transition-colors">View Case Study</a>
+                        <a href="portfolio-details.html?id=${p.id}" class="premium-btn mt-5 text-sm px-5 py-3 border border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white rounded-3xl w-full text-center font-semibold transition-colors">View Case Study</a>
                     </div>
                 </div>`).join('');
         }
@@ -119,7 +132,5 @@
 
         renderPortfolio('all');
     </script>
-
-    <footer class="px-8 py-8 text-sm text-gray-500 max-w-screen-2xl mx-auto">© 2026 Prosengit Kundu • <a href="index.html">Home</a> • <a href="pricing.html">Pricing</a></footer>
 </body>
 </html>

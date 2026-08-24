@@ -1,2 +1,81 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Terms of Service | Prosengit Kundu</title><script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script></head>
-<body class="bg-[#F8FAFC] dark:bg-[#111827]"><div class="max-w-3xl mx-auto px-8 py-16"><h1 class="text-5xl font-bold">Terms &amp; Conditions</h1><div class="prose mt-8 text-gray-600">All services provided by Prosengit Kundu are subject to agreed scope and timelines. Payment terms are discussed before project commencement.</div><a href="index.html" class="mt-10 inline-block">← Back to Home</a></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms &amp; Conditions | Prosengit Kundu</title>
+    <meta name="description" content="Terms and conditions for digital marketing, SEO, web development, lead generation and training services provided by Prosengit Kundu.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://prosengitkundu.top/terms.html">
+
+    <!-- ===== Shared design system (same loading + hover effects on every page) ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+        @layer base {
+            /* Tailwind v4 defaults a bare `border` to currentColor, which made
+               borders look different from page to page. One shared colour. */
+            *, ::before, ::after, ::backdrop {
+                border-color: var(--color-gray-200, currentcolor);
+            }
+            .dark *, .dark ::before, .dark ::after, .dark ::backdrop {
+                border-color: var(--color-gray-700, currentcolor);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        /* Apply the saved theme before paint so pages never flash. */
+        (function () {
+            try {
+                var t = localStorage.getItem('pk-theme');
+                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="assets/js/site.js" defer></script>
+</head>
+<body class="site-body">
+<div class="page-shell">
+    <main class="legal-page reveal">
+        <div class="eyebrow">Legal</div>
+        <h1 class="heading-font">Terms &amp; Conditions</h1>
+        <p>These terms describe how I work with clients. They apply to all digital marketing, SEO, web development, lead generation, graphic design, consultation and training services provided by <strong>Prosengit Kundu</strong>.</p>
+
+        <h2>Scope of work</h2>
+        <p>Every project begins with a written scope: what is included, what is delivered, the timeline and the price. Work outside that agreed scope is quoted separately before it starts. Prices published on this website are <em>starting from</em> rates — your final quote depends on the actual requirements of your project.</p>
+
+        <h2>Payment terms</h2>
+        <p>Payment terms are confirmed before a project begins. Larger projects are typically split into an advance and a final payment on delivery. Monthly retainers are billed per cycle. Advertising budgets are always separate from service fees and are paid by you directly to Google, Meta or the relevant platform.</p>
+
+        <h2>Timelines and revisions</h2>
+        <p>Delivery timelines start once the required materials, access and approvals are provided. A reasonable number of revisions is included in each deliverable, as stated in the project scope; additional rounds may be quoted separately.</p>
+
+        <h2>Client responsibilities</h2>
+        <p>You agree to provide accurate information, timely feedback and lawful access to any accounts, content or assets needed for the work. You retain ownership of your accounts, domains, ad budgets and brand materials at all times.</p>
+
+        <h2>Results and limitations</h2>
+        <p>Digital marketing depends on factors outside any single provider's control, including competition, budget, seasonality and platform policy changes. I do not guarantee specific rankings, traffic, sales or advertising outcomes. I do guarantee professional execution, honest reporting and clear communication.</p>
+
+        <h2>Ownership and confidentiality</h2>
+        <p>On final payment, deliverables created specifically for you become yours to use. Project information shared with me is treated as confidential and is not disclosed without permission. Work samples are only published as portfolio pieces with your consent.</p>
+
+        <h2>Cancellation</h2>
+        <p>Either side may end an engagement with reasonable written notice. Work completed up to the cancellation date remains payable, and completed deliverables are handed over.</p>
+
+        <h2>Contact</h2>
+        <p>Questions about these terms? Email <a href="mailto:Prosengit95@gmail.com" class="text-[#0A66C2] font-semibold">Prosengit95@gmail.com</a> or call <a href="tel:+8801701059499" class="text-[#0A66C2] font-semibold">+880 1701-059499</a>.</p>
+
+        <div class="mt-10 flex flex-wrap gap-3">
+            <a href="index.html" class="btn btn-primary">Back to Home</a>
+            <a href="pricing.html" class="btn btn-outline">View Pricing</a>
+        </div>
+    </main>
+</div>
+</body>
+</html>
