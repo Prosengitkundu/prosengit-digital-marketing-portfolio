@@ -1,0 +1,6 @@
+# robots.txt - Prosengit Kundu (https://prosengitkundu.top)
+User-agent: *
+Allow: /
+Disallow: /thank-you.html
+
+Sitemap: https://prosengitkundu.top/sitemap.xml

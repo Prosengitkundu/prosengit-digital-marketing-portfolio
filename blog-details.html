@@ -6,7 +6,7 @@
     <title>Blog Article | Prosengit Kundu</title>
     <meta name="description" content="In-depth digital marketing, SEO and web development guides by Prosengit Kundu.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://prosengitkundu.github.io/blog-details.html">
+    <link rel="canonical" href="https://prosengitkundu.top/blog-details.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Blog Article | Prosengit Kundu">
     <meta property="og:description" content="In-depth digital marketing, SEO and web development guides.">
@@ -105,7 +105,7 @@
         // Metadata
         document.title = `${article.title} | Prosengit Kundu Blog`;
         document.querySelector('meta[name="description"]').setAttribute('content', article.excerpt);
-        document.querySelector('link[rel="canonical"]').setAttribute('href', `https://prosengitkundu.github.io/blog-details.html?id=${article.id}`);
+        document.querySelector('link[rel="canonical"]').setAttribute('href', `https://prosengitkundu.top/blog-details.html?id=${article.id}`);
         document.querySelector('meta[property="og:title"]').setAttribute('content', article.title);
         document.querySelector('meta[property="og:description"]').setAttribute('content', article.excerpt);
 
@@ -118,9 +118,9 @@
             "headline": article.title,
             "description": article.excerpt,
             "datePublished": article.date,
-            "author": {"@type": "Person", "name": "Prosengit Kundu", "url": "https://prosengitkundu.github.io/"},
+            "author": {"@type": "Person", "name": "Prosengit Kundu", "url": "https://prosengitkundu.top/"},
             "publisher": {"@type": "Person", "name": "Prosengit Kundu"},
-            "mainEntityOfPage": `https://prosengitkundu.github.io/blog-details.html?id=${article.id}`
+            "mainEntityOfPage": `https://prosengitkundu.top/blog-details.html?id=${article.id}`
         });
         document.head.appendChild(schema);
 
