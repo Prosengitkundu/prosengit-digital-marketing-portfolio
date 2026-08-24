@@ -6,36 +6,55 @@
     <title>Contact Prosengit Kundu | Digital Marketing Expert in Khulna</title>
     <meta name="description" content="Get in touch with Prosengit Kundu for digital marketing, SEO, ads, graphic design, or training services. Based in Khulna, Bangladesh.">
     <link rel="canonical" href="https://prosengitkundu.top/contact.html">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Poppins:wght@400;500;600;700&amp;display=swap');
-        body { font-family: 'Inter', system_ui, sans-serif; }
-    </style>
-</head>
-<body class="bg-[#F8FAFC] dark:bg-[#111827]">
-    <nav class="sticky top-0 z-50 bg-white/95 dark:bg-[#111827]/95 border-b px-8 py-5 flex justify-between max-w-screen-2xl mx-auto">
-        <div class="flex items-center gap-x-3">
-            <div class="w-9 h-9 bg-gradient-to-br from-[#0A66C2] to-[#16A34A] rounded-2xl flex items-center justify-center"><span class="text-white font-bold">PK</span></div>
-            <div class="font-bold text-xl">Prosengit Kundu</div>
-        </div>
-        <div class="hidden md:flex gap-x-8 text-sm">
-            <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
-            <a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html" class="font-semibold text-[#0A66C2]">Contact</a>
-        </div>
-        <details class="md:hidden relative"><summary class="list-none cursor-pointer px-4 py-2 border rounded-2xl text-sm font-semibold">Menu</summary><div class="absolute right-0 top-12 z-10 w-48 bg-white dark:bg-gray-800 border rounded-2xl p-4 shadow-xl grid gap-3 text-sm"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div></details>
-        <a href="https://wa.me/8801701059499" class="px-6 py-3 bg-[#16A34A] text-white rounded-3xl text-sm font-semibold">WhatsApp Me</a>
-    </nav>
 
-    <<div class="max-w-screen-2xl mx-auto px-8 pt-20 pb-20">
+    <!-- ===== Shared design system (same loading + hover effects on every page) ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+        @layer base {
+            /* Tailwind v4 defaults a bare `border` to currentColor, which made
+               borders look different from page to page. One shared colour. */
+            *, ::before, ::after, ::backdrop {
+                border-color: var(--color-gray-200, currentcolor);
+            }
+            .dark *, .dark ::before, .dark ::after, .dark ::backdrop {
+                border-color: var(--color-gray-700, currentcolor);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        /* Apply the saved theme before paint so pages never flash. */
+        (function () {
+            try {
+                var t = localStorage.getItem('pk-theme');
+                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="assets/js/site.js" defer></script>
+</head>
+<body class="site-body">
+<div class="page-shell">
+    
+
+    <div class="max-w-screen-2xl mx-auto px-8 pt-16 pb-20">
     <div class="grid lg:grid-cols-2 gap-20 items-center">
             <div>
-                <img src="assets/images/prosengit-kundu-professional.jpg" onerror="this.onerror=null;this.src='https://images.pexels.com/photos/8217724/pexels-photo-8217724.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=900&amp;h=520';" alt="Prosengit Kundu professional portrait" <img src="assets/images/prosengit-kundu-professional.jpg"
-onerror="this.onerror=null;this.src='https://images.pexels.com/photos/8217724/pexels-photo-8217724.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=520';"
-alt="Prosengit Kundu professional portrait"
-class="w-full max-w-xl h-auto object-contain rounded-3xl shadow-2xl mb-8 mx-auto"
-width="900"
-height="520"
-fetchpriority="high"> width="900" height="520" fetchpriority="high">
+                <div class="media-zoom mb-8 max-w-xl mx-auto shadow-2xl">
+                    <img src="assets/images/prosengit-kundu-professional.jpg"
+                         onerror="this.onerror=null;this.src='https://images.pexels.com/photos/8217724/pexels-photo-8217724.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=900&amp;h=520';"
+                         alt="Prosengit Kundu professional portrait"
+                         class="w-full h-auto object-contain"
+                         width="900"
+                         height="520"
+                         fetchpriority="high">
+                </div>
                 <div class="text-xs font-semibold tracking-widest">LET'S CONNECT</div>
                 <h1 class="text-7xl heading-font tracking-tighter font-bold mt-3">Ready to grow<br>your business?</h1>
                 <div id="selectedPlanNotice" class="hidden mt-6 max-w-md rounded-2xl border border-[#0A66C2]/20 bg-[#0A66C2]/5 px-5 py-4 text-sm text-[#0A66C2]"></div>
@@ -56,7 +75,7 @@ fetchpriority="high"> width="900" height="520" fetchpriority="high">
                 </div>
                 
                 <div class="mt-10">
-                    <a href="https://wa.me/8801701059499" target="_blank" class="inline-block px-7 py-4 bg-[#16A34A] text-white text-sm font-semibold rounded-3xl">Chat on WhatsApp</a>
+                    <a href="https://wa.me/8801701059499" target="_blank" class="premium-btn inline-block px-7 py-4 bg-[#16A34A] text-white text-sm font-semibold rounded-3xl">Chat on WhatsApp</a>
                 </div>
 
                 <div class="mt-12 grid grid-cols-2 gap-5 text-sm">
@@ -86,29 +105,28 @@ fetchpriority="high"> width="900" height="520" fetchpriority="high">
                         </select>
                     </div>
                     <div><label class="block text-xs font-medium mb-1.5">Message</label><textarea id="message" rows="5" class="w-full px-5 py-4 border rounded-3xl bg-white dark:bg-gray-800" placeholder="Tell me about your project..."></textarea></div>
-                    <button type="submit" class="w-full py-4 bg-[#0A66C2] text-white font-semibold rounded-3xl">Send Message</button>
+                    <button type="submit" class="premium-btn w-full py-4 bg-[#0A66C2] text-white font-semibold rounded-3xl">Send Message</button>
                 </form>
             </div>
         </div>
     </div>
 
     <section class="max-w-screen-2xl mx-auto px-8 pb-20 grid md:grid-cols-2 gap-8">
-        <div class="bg-white dark:bg-gray-800 border rounded-3xl p-8">
+        <div class="u-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-8">
             <div class="text-xs tracking-[3px] font-semibold text-[#0A66C2]">WHERE I WORK</div>
             <h2 class="text-3xl font-bold mt-3">Khulna, Bangladesh and remote</h2>
             <p class="text-sm text-gray-600 dark:text-gray-300 mt-4 leading-relaxed">I work with clients in Bangladesh and internationally through email, WhatsApp, video calls, and collaborative online tools. Consultations can be scheduled around your time zone.</p>
-            <a href="https://www.google.com/maps/search/Khulna,+Bangladesh" target="_blank" rel="noopener" class="inline-block mt-6 px-6 py-3 border border-[#0A66C2] text-[#0A66C2] font-semibold rounded-3xl">Open Khulna on Google Maps</a>
+            <a href="https://www.google.com/maps/search/Khulna,+Bangladesh" target="_blank" rel="noopener" class="premium-btn inline-block mt-6 px-6 py-3 border border-[#0A66C2] text-[#0A66C2] font-semibold rounded-3xl">Open Khulna on Google Maps</a>
         </div>
-        <div class="bg-white dark:bg-gray-800 border rounded-3xl p-8">
+        <div class="u-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-8">
             <div class="text-xs tracking-[3px] font-semibold text-[#16A34A]">WHAT HAPPENS NEXT</div>
             <h2 class="text-3xl font-bold mt-3">A clear conversation before a commitment</h2>
             <ol class="mt-5 space-y-4 text-sm text-gray-600 dark:text-gray-300"><li><b class="text-[#16A34A]">01.</b> I review your goals, website, or campaign context.</li><li><b class="text-[#16A34A]">02.</b> I suggest the most useful service or package.</li><li><b class="text-[#16A34A]">03.</b> We confirm scope, price, delivery, and communication.</li></ol>
             <a href="faq.html" class="inline-block mt-6 text-sm font-semibold text-[#16A34A]">Read common questions →</a>
         </div>
     </section>
+</div>
 
-    <footer class="px-8 py-8 text-sm text-gray-500 max-w-screen-2xl mx-auto">© 2025 Prosengit Kundu • <a href="index.html">Back to Home</a></footer>
-    
     <script>
         const params = new URLSearchParams(window.location.search);
         const selectedPlan = params.get('plan');

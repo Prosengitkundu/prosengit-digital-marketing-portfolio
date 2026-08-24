@@ -4,19 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disclaimer | Prosengit Kundu</title>
-    <meta name="description" content="Disclaimer for the Prosengit Kundu digital marketing portfolio website.">
+    <meta name="description" content="Disclaimer for the Prosengit Kundu digital marketing portfolio website — results, demo work samples, testimonials and third-party content.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://prosengitkundu.top/disclaimer.html">
+
+    <!-- ===== Shared design system (same loading + hover effects on every page) ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+        @layer base {
+            /* Tailwind v4 defaults a bare `border` to currentColor, which made
+               borders look different from page to page. One shared colour. */
+            *, ::before, ::after, ::backdrop {
+                border-color: var(--color-gray-200, currentcolor);
+            }
+            .dark *, .dark ::before, .dark ::after, .dark ::backdrop {
+                border-color: var(--color-gray-700, currentcolor);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        /* Apply the saved theme before paint so pages never flash. */
+        (function () {
+            try {
+                var t = localStorage.getItem('pk-theme');
+                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="assets/js/site.js" defer></script>
 </head>
-<body class="bg-[#F8FAFC] text-[#111827]">
-    <main class="max-w-3xl mx-auto px-8 py-16">
-        <div class="text-xs uppercase tracking-widest font-semibold text-[#0A66C2]">LEGAL</div>
-        <h1 class="text-5xl font-bold mt-3">Disclaimer</h1>
-        <div class="mt-8 space-y-5 text-gray-600 leading-relaxed">
-            <p>The information on this website is provided for general information and educational purposes. It does not guarantee specific marketing, ranking, advertising, sales, or business results.</p>
-            <p>Project outcomes and pricing are provided to explain the nature of the services. Any testimonials published on this website are intended to be permission-based and accurately attributed. Actual results depend on the client's industry, budget, competition, implementation, and other market conditions.</p>
-            <p>Third-party images are used through external image CDNs and remain subject to their respective licenses.</p>
+<body class="site-body">
+<div class="page-shell">
+    <main class="legal-page reveal">
+        <div class="eyebrow">Legal</div>
+        <h1 class="heading-font">Disclaimer</h1>
+        <p>The information on this website is provided for general information and educational purposes. It does not guarantee specific marketing, ranking, advertising, sales or business results.</p>
+
+        <h2>Results</h2>
+        <p>Project outcomes and prices are published to explain the nature of the services offered. Actual results depend on your industry, budget, competition, implementation quality and wider market conditions. No specific ranking, traffic, lead volume or revenue outcome is promised.</p>
+
+        <h2>Work samples</h2>
+        <p>Portfolio items marked <strong>demo</strong> or <strong>concept</strong> were created to demonstrate working method and deliverable quality. They are never presented as client work, and no results are claimed for them. Genuine client projects are published in the same format only after the client approves sharing.</p>
+
+        <h2>Testimonials</h2>
+        <p>Testimonials marked <strong>sample</strong> are illustrative placeholders shown while verified client feedback is collected. Verified testimonials are labelled as such and published with permission and accurate attribution.</p>
+
+        <h2>Third-party content</h2>
+        <p>Some images are loaded from external image services and remain subject to their respective licenses. Links to third-party websites are provided for convenience; I am not responsible for their content, policies or availability.</p>
+
+        <h2>Professional advice</h2>
+        <p>Nothing on this website constitutes legal, financial or tax advice. Please consult an appropriately qualified professional for those matters.</p>
+
+        <div class="mt-10 flex flex-wrap gap-3">
+            <a href="index.html" class="btn btn-primary">Back to Home</a>
+            <a href="portfolio.html" class="btn btn-outline">See Work Samples</a>
         </div>
-        <a href="index.html" class="inline-block mt-10 px-7 py-3 bg-[#0A66C2] text-white font-semibold rounded-3xl">Back to Home</a>
     </main>
+</div>
 </body>
 </html>

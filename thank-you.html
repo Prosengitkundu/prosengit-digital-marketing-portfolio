@@ -1,12 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Thank You | Prosengit Kundu</title><script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script></head>
-<body class="bg-[#F8FAFC] dark:bg-[#111827] flex items-center justify-center min-h-screen">
-<div class="max-w-md text-center px-6">
-    <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#0A66C2] to-[#16A34A] text-white rounded-full flex items-center justify-center text-4xl">✓</div>
-    <h1 class="text-5xl font-bold heading-font mt-8 tracking-tight">Thank you!</h1>
-    <p class="mt-4 text-lg">Your message has been received. I'll get back to you within 24 hours.</p>
-    <a href="index.html" class="mt-8 inline-block px-8 py-4 bg-[#0A66C2] text-white font-semibold rounded-3xl">Back to Homepage</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Prosengit Kundu</title>
+    <meta name="description" content="Thank you for getting in touch with Prosengit Kundu — your message has been received.">
+    <meta name="robots" content="noindex, follow">
+
+    <!-- ===== Shared design system (same loading + hover effects on every page) ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+        @layer base {
+            /* Tailwind v4 defaults a bare `border` to currentColor, which made
+               borders look different from page to page. One shared colour. */
+            *, ::before, ::after, ::backdrop {
+                border-color: var(--color-gray-200, currentcolor);
+            }
+            .dark *, .dark ::before, .dark ::after, .dark ::backdrop {
+                border-color: var(--color-gray-700, currentcolor);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        /* Apply the saved theme before paint so pages never flash. */
+        (function () {
+            try {
+                var t = localStorage.getItem('pk-theme');
+                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="assets/js/site.js" defer></script>
+</head>
+<body class="site-body">
+<div class="page-shell">
+    <main class="center-page">
+        <div class="max-w-xl reveal">
+            <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#0A66C2] to-[#16A34A] text-white rounded-3xl flex items-center justify-center text-4xl floating">✓</div>
+            <h1 class="text-5xl md:text-6xl font-bold heading-font mt-8 tracking-tighter" id="thankHeading">Thank you!</h1>
+            <p class="mt-5 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">Your message has been received. I usually reply within 24 hours during business days — Saturday to Thursday, 10:00 AM to 8:00 PM (BST).</p>
+            <p class="mt-3 text-sm text-gray-500">Need a faster answer? Message me on WhatsApp and I will get back to you as soon as I am free.</p>
+            <div class="flex flex-wrap gap-3 justify-center mt-9">
+                <a href="index.html" class="btn btn-primary">Back to Homepage</a>
+                <a href="https://wa.me/8801701059499" target="_blank" rel="noopener" class="btn btn-outline">Chat on WhatsApp</a>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-4 mt-14 text-left">
+                <a href="portfolio.html" class="u-card block p-5 rounded-3xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+                    <div class="text-xs tracking-widest font-semibold text-[#0A66C2] relative z-10">PORTFOLIO</div>
+                    <div class="font-semibold mt-1 relative z-10">See case studies</div>
+                </a>
+                <a href="pricing.html" class="u-card block p-5 rounded-3xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+                    <div class="text-xs tracking-widest font-semibold text-[#16A34A] relative z-10">PRICING</div>
+                    <div class="font-semibold mt-1 relative z-10">Compare packages</div>
+                </a>
+                <a href="blog.html" class="u-card block p-5 rounded-3xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+                    <div class="text-xs tracking-widest font-semibold text-[#F59E0B] relative z-10">BLOG</div>
+                    <div class="font-semibold mt-1 relative z-10">Read practical guides</div>
+                </a>
+            </div>
+        </div>
+    </main>
 </div>
+
+    <script>
+        (function () {
+            var name = new URLSearchParams(window.location.search).get('name');
+            if (!name) return;
+            var clean = name.replace(/[<>]/g, '').trim().slice(0, 40);
+            if (clean) document.getElementById('thankHeading').textContent = 'Thank you, ' + clean + '!';
+        })();
+    </script>
 </body>
 </html>

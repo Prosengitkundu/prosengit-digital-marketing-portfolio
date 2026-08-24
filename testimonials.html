@@ -18,25 +18,42 @@
     <meta name="twitter:title" content="Client Testimonials | Prosengit Kundu">
     <meta name="twitter:description" content="Feedback from businesses and learners around the world.">
     <meta name="twitter:image" content="https://prosengitkundu.top/assets/images/prosengit-kundu-professional.jpg">
+
+    <!-- ===== Shared design system (same loading + hover effects on every page) ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap');
-        body { font-family: 'Inter', system_ui, sans-serif; }
-        .heading-font { font-family: 'Poppins', system_ui, sans-serif; }
-        .t-card { transition: transform .35s ease, box-shadow .35s ease; }
-        .t-card:hover { transform: translateY(-6px); box-shadow: 0 22px 44px -18px rgb(15 23 42 / .25); }
-        .avatar { width: 3rem; height: 3rem; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; font-size: .95rem; }
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+        @layer base {
+            /* Tailwind v4 defaults a bare `border` to currentColor, which made
+               borders look different from page to page. One shared colour. */
+            *, ::before, ::after, ::backdrop {
+                border-color: var(--color-gray-200, currentcolor);
+            }
+            .dark *, .dark ::before, .dark ::after, .dark ::backdrop {
+                border-color: var(--color-gray-700, currentcolor);
+            }
+        }
     </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        /* Apply the saved theme before paint so pages never flash. */
+        (function () {
+            try {
+                var t = localStorage.getItem('pk-theme');
+                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="assets/js/site.js" defer></script>
 </head>
-<body class="bg-[#F8FAFC] text-[#111827] dark:bg-[#111827] dark:text-slate-100">
-    <nav class="sticky top-0 z-50 bg-white/95 dark:bg-[#111827]/95 border-b border-gray-200 dark:border-gray-800">
-        <div class="max-w-screen-2xl mx-auto px-8 py-5 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-x-3"><span class="w-9 h-9 bg-gradient-to-br from-[#0A66C2] to-[#16A34A] rounded-2xl flex items-center justify-center text-white font-bold">PK</span><span class="font-bold text-xl heading-font">Prosengit Kundu</span></a>
-            <div class="hidden lg:flex gap-x-7 text-sm font-medium"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="testimonials.html" class="text-[#0A66C2]">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
-            <details class="lg:hidden relative"><summary class="list-none cursor-pointer px-4 py-2 border rounded-2xl text-sm font-semibold">Menu</summary><div class="absolute right-0 top-12 z-10 w-48 bg-white dark:bg-gray-800 border rounded-2xl p-4 shadow-xl grid gap-3 text-sm"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div></details>
-            <a href="contact.html" class="px-6 py-3 bg-[#0A66C2] text-white rounded-3xl text-sm font-semibold">Work With Me</a>
-        </div>
-    </nav>
+<body class="site-body">
+<div class="page-shell">
+    
 
     <header class="max-w-4xl mx-auto px-8 pt-16 pb-12 text-center">
         <div class="text-xs tracking-[3px] font-semibold text-[#16A34A]">CLIENT &amp; LEARNER FEEDBACK</div>
@@ -70,12 +87,11 @@
                 <div><label for="reviewText" class="block text-sm font-semibold mb-2">Your testimonial</label><textarea id="reviewText" required rows="5" class="w-full border rounded-2xl px-5 py-4 bg-white dark:bg-gray-800" placeholder="Please share your honest experience."></textarea></div>
                 <div><label for="reviewLink" class="block text-sm font-semibold mb-2">Public profile or business link (optional)</label><input id="reviewLink" type="url" class="w-full border rounded-2xl px-5 py-3.5 bg-white dark:bg-gray-800" placeholder="https://"></div>
                 <label class="flex gap-3 items-start text-sm text-gray-600 dark:text-gray-300"><input id="reviewPermission" type="checkbox" required class="mt-1"><span>I give permission for this testimonial to be reviewed and, if approved, published on this website with accurate attribution.</span></label>
-                <button type="submit" class="px-8 py-4 bg-[#0A66C2] text-white font-semibold rounded-3xl">Prepare Email Submission</button>
+                <button type="submit" class="premium-btn px-8 py-4 bg-[#0A66C2] text-white font-semibold rounded-3xl">Prepare Email Submission</button>
             </form>
         </div>
     </section>
-
-    <footer class="bg-[#111827] text-gray-300 px-8 py-8 text-sm"><div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between gap-4"><div>© 2026 Prosengit Kundu</div><div class="flex gap-5"><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a><a href="index.html" class="hover:text-white">Home</a></div></div></footer>
+</div>
 
     <script>
     /* =====================================================================

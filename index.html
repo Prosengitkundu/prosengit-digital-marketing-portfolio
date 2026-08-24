@@ -49,298 +49,43 @@
     }
     </script>
     
-    <!-- Tailwind CSS via CDN -->
+    <!-- ===== Shared design system (same loading + hover effects on every page) ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Poppins:wght@400;500;600;700&amp;display=swap');
-        
-        :root {
-            --primary: #0A66C2;
-            --secondary: #16A34A;
-            --accent: #F59E0B;
-            --dark: #111827;
-            --bg: #F8FAFC;
-            --white: #FFFFFF;
-        }
-        
-        body {
-            font-family: 'Inter', system_ui, sans-serif;
-        }
-        
-        .heading-font {
-            font-family: 'Poppins', 'Inter', system_ui, sans-serif;
-        }
-
-        .nav-active {
-            color: #0A66C2;
-            font-weight: 600;
-        }
-
-        .section {
-            scroll-margin-top: 80px;
-        }
-
-        .premium-shadow {
-            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15);
-        }
-
-        .glass {
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(20px);
-        }
-
-        .luxury-gradient {
-            background: linear-gradient(135deg, #0A66C2, #16A34A);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .nav-link {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .nav-link:hover {
-            color: #0A66C2;
-            transform: translateY(-1px);
-        }
-
-        .service-card, .portfolio-card, .pricing-card {
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        
-        .service-card:hover, .portfolio-card:hover, .pricing-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.2);
-        }
-
-        .stat-number {
-            font-variant-numeric: tabular-nums;
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .typing-cursor::after {
-            content: '|';
-            animation: blink 1s step-end infinite;
-        }
-
-        @keyframes blink {
-            from, to { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        .progress-bar {
-            transition: width 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .premium-btn {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        
-        .premium-btn::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 40%;
-            height: 200%;
-            background: linear-gradient(
-                120deg,
-                transparent,
-                rgba(255,255,255,0.4),
-                transparent
-            );
-            transition: 0.6s;
-        }
-        
-        .premium-btn:hover::after {
-            left: 150%;
-        }
-
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-
-        .floating {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .parallax-bg {
-            background-attachment: fixed;
-        }
-
-        .modern-card {
-            transition: transform 0.4s cubic-bezier(0.23, 1.0, 0.32, 1), 
-                        box-shadow 0.4s cubic-bezier(0.23, 1.0, 0.32, 1);
-        }
-
-        .modern-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.1);
-        }
-
-        .skill-bar {
-            height: 6px;
-            background: linear-gradient(to right, #0A66C2, #16A34A);
-            border-radius: 9999px;
-            transition: width 1.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .portfolio-filter-btn {
-            transition: all 0.3s ease;
-        }
-        
-        .portfolio-filter-btn.active {
-            background-color: #0A66C2;
-            color: white;
-            box-shadow: 0 10px 15px -3px rgb(10 102 194 / 0.3);
-        }
-
-        .nav-scrolled {
-            background: rgba(248, 250, 252, 0.95);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05);
-        }
-
-        .dark .nav-scrolled {
-            background: rgba(17, 24, 39, 0.95);
-        }
-
-        .blog-card {
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        .blog-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .modal {
-            animation: modalPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        @keyframes modalPop {
-            from { transform: scale(0.8) translateY(40px); opacity: 0; }
-            to { transform: scale(1) translateY(0); opacity: 1; }
-        }
-
-        .stagger-item {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        
-        .timeline-item {
-            position: relative;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(#0A66C2, #16A34A);
-        }
-        
-        .section-header {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-header::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(to right, #0A66C2, #16A34A);
-            border-radius: 9999px;
-        }
-
-        .dark {
-            --bg: #111827;
-        }
-        
-        .dark body {
-            background-color: #111827;
-            color: #f1f5f9;
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+        @layer base {
+            /* Tailwind v4 defaults a bare `border` to currentColor, which made
+               borders look different from page to page. One shared colour. */
+            *, ::before, ::after, ::backdrop {
+                border-color: var(--color-gray-200, currentcolor);
+            }
+            .dark *, .dark ::before, .dark ::after, .dark ::backdrop {
+                border-color: var(--color-gray-700, currentcolor);
+            }
         }
     </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        /* Apply the saved theme before paint so pages never flash. */
+        (function () {
+            try {
+                var t = localStorage.getItem('pk-theme');
+                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="assets/js/site.js" defer></script>
 </head>
-<body class="smooth-scroll bg-[#F8FAFC] text-[#111827] dark:bg-[#111827] dark:text-[#f1f5f9]">
-    <!-- NAVIGATION -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 dark:bg-[#111827]/95 border-b border-gray-200 dark:border-gray-800">
-        <div class="max-w-screen-2xl mx-auto">
-            <div class="px-8 py-5 flex items-center justify-between">
-                <!-- Logo -->
-                <div class="flex items-center gap-x-3">
-                    <div class="w-10 h-10 bg-gradient-to-br from-[#0A66C2] to-[#16A34A] rounded-2xl flex items-center justify-center">
-                        <span class="text-white font-bold text-2xl">PK</span>
-                    </div>
-                    <div>
-                        <div class="font-bold text-2xl tracking-tighter heading-font">Prosengit Kundu</div>
-                        <div class="text-[10px] text-gray-500 -mt-1">DIGITAL MARKETING EXPERT</div>
-                    </div>
-                </div>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden lg:flex items-center gap-x-9 text-sm font-medium">
-                    <a href="index.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-[#0A66C2]">Home</a>
-                    <a href="about.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-[#0A66C2]">About</a>
-                    <a href="services.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-[#0A66C2]">Services</a>
-                    <a href="pricing.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-[#0A66C2]">Pricing</a>
-                    <a href="portfolio.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-[#0A66C2]">Portfolio</a>
-                    <a href="blog.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-[#0A66C2]">Blog</a>
-                    <a href="testimonials.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-[#0A66C2]">Testimonials</a>
-                    <a href="faq.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-[#0A66C2]">FAQ</a>
-                    <a href="contact.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-[#0A66C2]">Contact</a>
-                </div>
-
-                <div class="flex items-center gap-x-3">
-                    <!-- Dark Mode Toggle -->
-                    <button id="darkModeToggle" 
-                            class="w-11 h-11 flex items-center justify-center rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-xl">
-                        <span id="darkIcon">🌙</span>
-                    </button>
-                    
-                    <!-- Hire Me Button -->
-                    <a href="contact.html" 
-                       class="hidden md:block px-6 py-3.5 text-sm font-semibold bg-[#0A66C2] hover:bg-[#084e96] text-white rounded-3xl transition-all premium-btn flex items-center gap-x-2">
-                        <span>Hire Me</span>
-                    </a>
-                    
-                    <!-- Mobile Menu -->
-                    <button id="mobileMenuBtn" class="lg:hidden w-11 h-11 flex items-center justify-center rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-800">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div id="mobileMenu" class="hidden lg:hidden px-8 pb-6 border-t border-gray-100 dark:border-gray-800">
-                <div class="grid gap-3 pt-5 text-sm font-medium">
-                    <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
+<body class="site-body">
+<div class="page-shell">
     <!-- HERO / HOME SECTION -->
-    <section id="home" class="section pt-24 min-h-screen flex items-center bg-[#F8FAFC] dark:bg-[#111827]">
-        <div class="max-w-screen-2xl mx-auto px-8 pt-12 pb-20">
+    <section id="home" class="section flex items-center bg-[#F8FAFC] dark:bg-[#111827]">
+        <div class="max-w-screen-2xl mx-auto px-8 pt-16 pb-20">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 <!-- Hero Content -->
                 <div class="lg:col-span-7">
@@ -370,13 +115,6 @@
                            class="premium-btn inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 dark:border-gray-600 hover:bg-white dark:hover:bg-gray-800 font-semibold rounded-3xl text-base transition-all">
                             View My Work
                         </a>
-                        <button onclick="downloadCV()" 
-                                class="premium-btn inline-flex items-center justify-center px-7 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 font-semibold rounded-3xl text-base transition-all">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v-4m0 0l4 4m-4-4l4-4m12 0v4m0-4l-4 4m4-4l-4-4" />
-                            </svg>
-                            Download CV
-                        </button>
                     </div>
                     
                     <!-- Trust Bar -->
@@ -644,7 +382,7 @@
             <div class="text-xs mt-2 text-gray-500 text-center">Starting from</div>
                 <div class="text-xs mt-3 text-gray-500">For small businesses taking the first step in SEO</div>
                 <ul class="text-sm mt-6 space-y-[13px]"><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>SEO Audit</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Keyword Research</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>On-Page SEO</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Meta, Headings &amp; Image SEO</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Basic SEO Report</span></li></ul>
-                <a href="contact.html?plan=SEO%20Starter" class="mt-6 block text-center w-full py-3 text-sm font-semibold border border-[#0A66C2] text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white rounded-3xl transition-colors">Get Started</a>
+                <a href="contact.html?plan=SEO%20Starter" class="premium-btn mt-6 block text-center w-full py-3 text-sm font-semibold border border-[#0A66C2] text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white rounded-3xl transition-colors">Get Started</a>
             </div><div class="pricing-card relative bg-white dark:bg-gray-800 border-2 border-[#0A66C2] p-8 rounded-3xl">
                 <div class="absolute -top-3 right-6 bg-[#0A66C2] text-white text-xs font-semibold px-4 py-1 rounded-full">POPULAR</div>
                 <div class="font-semibold">SEO Growth</div>
@@ -655,7 +393,7 @@
             <div class="text-xs mt-2 text-gray-500 text-center">Starting from</div>
                 <div class="text-xs mt-3 text-gray-500">For businesses needing ongoing, structured SEO</div>
                 <ul class="text-sm mt-6 space-y-[13px]"><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Complete SEO Audit</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Competitor Analysis</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Technical SEO</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Internal Linking</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Content Recommendations</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Performance Reporting</span></li></ul>
-                <a href="contact.html?plan=SEO%20Growth" class="mt-6 block text-center w-full py-3 text-sm font-semibold bg-[#0A66C2] text-white rounded-3xl transition-colors">Choose SEO Growth</a>
+                <a href="contact.html?plan=SEO%20Growth" class="premium-btn mt-6 block text-center w-full py-3 text-sm font-semibold bg-[#0A66C2] text-white rounded-3xl transition-colors">Choose SEO Growth</a>
             </div><div class="pricing-card relative bg-[#111827] text-white border border-[#1F3A5F] p-8 rounded-3xl">
                 <div class="absolute -top-3 right-6 bg-[#F59E0B] text-[#111827] text-white text-xs font-semibold px-4 py-1 rounded-full">BEST FOR BUSINESSES</div>
                 <div class="font-semibold">Custom Website</div>
@@ -666,7 +404,7 @@
             <div class="text-xs mt-2 text-gray-500 text-center">Starting from</div>
                 <div class="text-xs mt-3 text-slate-400">Hand-coded HTML, CSS &amp; JavaScript — fast, responsive, SEO-friendly</div>
                 <ul class="text-sm mt-6 space-y-[13px]"><li class="flex gap-x-2"><span class="text-[#60A5FA]">✓</span> <span>Custom HTML/CSS/JavaScript</span></li><li class="flex gap-x-2"><span class="text-[#60A5FA]">✓</span> <span>Responsive Design (5–8 Pages)</span></li><li class="flex gap-x-2"><span class="text-[#60A5FA]">✓</span> <span>SEO-Friendly Structure</span></li><li class="flex gap-x-2"><span class="text-[#60A5FA]">✓</span> <span>Contact Form + Social Integration</span></li><li class="flex gap-x-2"><span class="text-[#60A5FA]">✓</span> <span>Sitemap &amp; Robots.txt</span></li></ul>
-                <a href="contact.html?plan=Custom%20Website" class="mt-6 block text-center w-full py-3 text-sm font-semibold bg-[#F59E0B] text-[#111827] rounded-3xl transition-colors">Build My Website</a>
+                <a href="contact.html?plan=Custom%20Website" class="premium-btn mt-6 block text-center w-full py-3 text-sm font-semibold bg-[#F59E0B] text-[#111827] rounded-3xl transition-colors">Build My Website</a>
             </div><div class="pricing-card relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 rounded-3xl">
                 
                 <div class="font-semibold">Lead Generation</div>
@@ -677,7 +415,7 @@
             <div class="text-xs mt-2 text-gray-500 text-center">Starting from</div>
                 <div class="text-xs mt-3 text-gray-500">Verified, targeted prospect lists for sales teams</div>
                 <ul class="text-sm mt-6 space-y-[13px]"><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Target Audience Research</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Prospect &amp; Business Research</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Targeted Lead Lists</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Contact Research</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Data Cleaning &amp; Organization</span></li></ul>
-                <a href="contact.html?plan=Lead%20Generation" class="mt-6 block text-center w-full py-3 text-sm font-semibold border border-[#16A34A] text-[#16A34A] hover:bg-[#16A34A] hover:text-white rounded-3xl transition-colors">Generate My Leads</a>
+                <a href="contact.html?plan=Lead%20Generation" class="premium-btn mt-6 block text-center w-full py-3 text-sm font-semibold border border-[#16A34A] text-[#16A34A] hover:bg-[#16A34A] hover:text-white rounded-3xl transition-colors">Generate My Leads</a>
             </div><div class="pricing-card relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 rounded-3xl">
                 
                 <div class="font-semibold">Paid Advertising</div>
@@ -688,7 +426,7 @@
             <div class="text-xs mt-2 text-gray-500 text-center">Starting from</div>
                 <div class="text-xs mt-3 text-gray-500">Google Ads &amp; Meta Ads managed with structure</div>
                 <ul class="text-sm mt-6 space-y-[13px]"><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Campaign Strategy &amp; Audience Research</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Campaign Setup</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Google Ads / Meta Ads</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Monitoring &amp; Optimization</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Performance Analysis</span></li></ul>
-                <a href="contact.html?plan=Paid%20Advertising" class="mt-6 block text-center w-full py-3 text-sm font-semibold border border-[#0A66C2] text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white rounded-3xl transition-colors">Start Advertising</a>
+                <a href="contact.html?plan=Paid%20Advertising" class="premium-btn mt-6 block text-center w-full py-3 text-sm font-semibold border border-[#0A66C2] text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white rounded-3xl transition-colors">Start Advertising</a>
             </div><div class="pricing-card relative bg-white dark:bg-gray-800 border-2 border-[#16A34A] p-8 rounded-3xl">
                 <div class="absolute -top-3 right-6 bg-[#16A34A] text-white text-xs font-semibold px-4 py-1 rounded-full">COMPLETE SOLUTION</div>
                 <div class="font-semibold">Digital Growth</div>
@@ -699,7 +437,7 @@
             <div class="text-xs mt-2 text-gray-500 text-center">Starting from</div>
                 <div class="text-xs mt-3 text-gray-500">One coordinated plan: SEO + social + leads + ads</div>
                 <ul class="text-sm mt-6 space-y-[13px]"><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>SEO Strategy &amp; Keyword Research</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Website Optimization</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Social Media Strategy</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Lead Generation</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Paid Ads Strategy</span></li><li class="flex gap-x-2"><span class="text-[#16A34A]">✓</span> <span>Performance Reporting</span></li></ul>
-                <a href="contact.html?plan=Digital%20Growth" class="mt-6 block text-center w-full py-3 text-sm font-semibold bg-[#16A34A] text-white rounded-3xl transition-colors">Grow My Business</a>
+                <a href="contact.html?plan=Digital%20Growth" class="premium-btn mt-6 block text-center w-full py-3 text-sm font-semibold bg-[#16A34A] text-white rounded-3xl transition-colors">Grow My Business</a>
             </div></div>
         <p class="text-center text-sm text-gray-500 mt-10">All prices are starting-from rates — final pricing depends on project scope and requirements. Bangladesh clients are quoted in BDT, international clients in USD. <a href="pricing.html" class="text-[#0A66C2] font-semibold">See the full price list →</a></p>
     </section>
@@ -713,11 +451,11 @@
                 <p class="text-sm text-gray-500 dark:text-gray-400 mt-3">Concept work samples showing possible campaign, branding, website, and SEO directions.</p>
             </div>
             <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="portfolio-filters">
-                <button onclick="filterPortfolio('all')" class="portfolio-filter-btn active px-5 py-2 text-sm font-medium rounded-full bg-[#0A66C2] text-white">All</button>
-                <button onclick="filterPortfolio('seo')" class="portfolio-filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">SEO</button>
-                <button onclick="filterPortfolio('ads')" class="portfolio-filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">Ads</button>
-                <button onclick="filterPortfolio('design')" class="portfolio-filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">Design</button>
-                <button onclick="filterPortfolio('web')" class="portfolio-filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">Web</button>
+                <button type="button" data-filter="all" onclick="filterPortfolio('all')" class="portfolio-filter-btn active px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">All</button>
+                <button type="button" data-filter="seo" onclick="filterPortfolio('seo')" class="portfolio-filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">SEO</button>
+                <button type="button" data-filter="ads" onclick="filterPortfolio('ads')" class="portfolio-filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">Ads</button>
+                <button type="button" data-filter="design" onclick="filterPortfolio('design')" class="portfolio-filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">Design</button>
+                <button type="button" data-filter="web" onclick="filterPortfolio('web')" class="portfolio-filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">Web</button>
             </div>
         </div>
         
@@ -784,7 +522,7 @@
                         </div>
                         
                         <div class="mt-9">
-                            <a href="https://wa.me/8801701059499" target="_blank" class="inline-flex px-7 py-[13px] bg-[#16A34A] text-white text-sm font-semibold rounded-3xl items-center gap-x-2">
+                            <a href="https://wa.me/8801701059499" target="_blank" class="premium-btn inline-flex px-7 py-[13px] bg-[#16A34A] text-white text-sm font-semibold rounded-3xl items-center gap-x-2">
                                 <span>Chat on WhatsApp</span>
                             </a>
                         </div>
@@ -832,139 +570,21 @@
                             <textarea id="message" rows="4" class="w-full border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 px-5 py-4 rounded-3xl text-sm" placeholder="Tell me about your goals..."></textarea>
                         </div>
                         
-                        <button type="submit" class="w-full py-4 bg-[#0A66C2] hover:bg-[#084e96] text-white font-semibold rounded-3xl transition-all">Send Message</button>
+                        <button type="submit" class="premium-btn w-full py-4 bg-[#0A66C2] hover:bg-[#084e96] text-white font-semibold rounded-3xl transition-all">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-[#111827] text-gray-300 px-8 pt-16 pb-8">
-        <div class="max-w-screen-2xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-center justify-between text-sm">
-                <div>© 2025 Prosengit Kundu. All rights reserved.</div>
-                <div class="flex gap-x-6 mt-4 md:mt-0 text-xs">
-                    <a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a>
-                    <a href="terms.html" class="hover:text-white">Terms</a>
-                    <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
-                </div>
-                <div class="flex gap-x-5 mt-4 md:mt-0">
-                    <a href="https://www.linkedin.com/in/prosengitkundu/" target="_blank" rel="noopener" class="hover:text-white">LinkedIn</a>
-                    
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top -->
-    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="backToTop" 
-            class="hidden fixed bottom-7 right-7 bg-[#0A66C2] text-white w-12 h-12 rounded-2xl items-center justify-center shadow-xl z-50">
-        ↑
-    </button>
+</div>
 
     <script>
-        // All JS functionality inline for GitHub Pages compatibility
-        window.onload = function() {
-            initScrollAnimations();
-            initStatsCounter();
-            initTypingAnimation();
-            initDarkMode();
-            initNavbar();
-            initBackToTop();
-            renderPortfolioOnHome('all');
-            renderBlogOnHome();
-        };
-
-        function initDarkMode() {
-            const toggle = document.getElementById('darkModeToggle');
-            if (!toggle) return;
-            const icon = document.getElementById('darkIcon');
-            
-            if (localStorage.getItem('darkMode') === 'true') {
-                document.documentElement.classList.add('dark');
-                if (icon) icon.textContent = '☀️';
-            }
-            
-            toggle.onclick = () => {
-                document.documentElement.classList.toggle('dark');
-                const isDark = document.documentElement.classList.contains('dark');
-                localStorage.setItem('darkMode', isDark);
-                if (icon) icon.textContent = isDark ? '☀️' : '🌙';
-            };
-        }
-
-        function initNavbar() {
-            const navbar = document.getElementById('navbar');
-            const menuButton = document.getElementById('mobileMenuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            if (menuButton && mobileMenu) {
-                menuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-            }
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) navbar.classList.add('nav-scrolled');
-                else navbar.classList.remove('nav-scrolled');
-            });
-        }
-
-        function initTypingAnimation() {
-            const typingEl = document.getElementById('typing-text');
-            if (!typingEl) return;
-            const titles = ["Digital Marketing Expert", "Professional Trainer", "Graphic Designer", "SEO Specialist", "Freelancer"];
-            let i = 0, c = 0, deleting = false;
-            
-            function type() {
-                const curr = titles[i];
-                if (!deleting) {
-                    typingEl.innerHTML = curr.substring(0, c + 1) + '<span class="typing-cursor"></span>';
-                    c++;
-                    if (c === curr.length) { deleting = true; setTimeout(type, 1500); } else setTimeout(type, 85);
-                } else {
-                    typingEl.innerHTML = curr.substring(0, c - 1) + '<span class="typing-cursor"></span>';
-                    c--;
-                    if (c === 0) { deleting = false; i = (i + 1) % titles.length; setTimeout(type, 350); } else setTimeout(type, 35);
-                }
-            }
-            setTimeout(type, 800);
-        }
-
-        function initStatsCounter() {
-            const stats = document.querySelectorAll('.stat-number');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        stats.forEach(stat => animateCounter(stat, parseInt(stat.dataset.target)));
-                        observer.disconnect();
-                    }
-                });
-            });
-            const sec = document.querySelector('#home');
-            if (sec) observer.observe(sec);
-        }
-        
-        function animateCounter(el, target) {
-            let cur = 0;
-            const inc = target > 100 ? Math.ceil(target / 65) : 1;
-            const timer = setInterval(() => {
-                cur += inc;
-                if (cur >= target) { el.textContent = target.toLocaleString(); clearInterval(timer); }
-                else el.textContent = cur.toLocaleString();
-            }, 22);
-        }
-
-        function initScrollAnimations() {
-            const els = document.querySelectorAll('.service-card, .portfolio-card, .pricing-card');
-            const obs = new IntersectionObserver((entries) => {
-                entries.forEach((e, idx) => {
-                    if (e.isIntersecting) {
-                        setTimeout(() => e.target.style.opacity = '1', idx * 90);
-                        obs.unobserve(e.target);
-                    }
-                });
-            });
-            els.forEach(el => { el.style.opacity = '0.95'; obs.observe(el); });
-        }
-
+        /* ------------------------------------------------------------------
+           Homepage-only content rendering.
+           Loader, header, footer, dark mode, reveals, counters, typing and
+           hover effects all come from the shared assets/js/site.js.
+           ------------------------------------------------------------------ */
         const homeProjects = [
             {cat: 'web', title: 'Custom Business Website', client: 'Demo project · HTML/CSS/JS', result: 'Fast, responsive, SEO-friendly custom-coded build', image: 'assets/images/work/business-website-design.jpg', id: 1},
             {cat: 'seo', title: 'Local SEO Growth System', client: 'Demo project · Local business', result: 'Audit → keyword map → Google Business Profile plan', image: 'assets/images/work/seo-analytics-dashboard.jpg', id: 4},
@@ -981,7 +601,7 @@
             container.innerHTML = items.map(project => `
                 <article class="portfolio-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">
                     <img src="${project.image}" alt="${project.title} project preview" class="w-full aspect-video object-cover" width="900" height="520" loading="lazy" decoding="async">
-                    <div class="p-7">
+                    <div class="p-7 relative z-10">
                         <div class="flex gap-2 items-center"><span class="text-xs font-semibold tracking-widest text-[#0A66C2]">${project.cat.toUpperCase()}</span><span class="px-2 py-0.5 rounded-full bg-[#111827] text-white text-[9px] font-bold tracking-widest">DEMO</span></div>
                         <div class="font-bold text-xl mt-2">${project.title}</div>
                         <div class="text-sm mt-1 text-gray-500">${project.client}</div>
@@ -989,12 +609,14 @@
                         <a href="portfolio-details.html?id=${project.id}" class="inline-block mt-4 text-sm font-semibold text-[#0A66C2]">View case study →</a>
                     </div>
                 </article>`).join('');
+            if (window.pkReveal) window.pkReveal(container);
         }
 
         function filterPortfolio(category) {
-            document.querySelectorAll('#portfolio-filters button').forEach(button => button.classList.remove('active', 'bg-[#0A66C2]', 'text-white'));
-            const activeButton = Array.from(document.querySelectorAll('#portfolio-filters button')).find(button => button.textContent.trim().toLowerCase() === (category === 'all' ? 'all' : category));
-            if (activeButton) activeButton.classList.add('active', 'bg-[#0A66C2]', 'text-white');
+            document.querySelectorAll('#portfolio-filters button').forEach(button => button.classList.remove('active'));
+            const activeButton = Array.from(document.querySelectorAll('#portfolio-filters button'))
+                .find(button => button.dataset.filter === category);
+            if (activeButton) activeButton.classList.add('active');
             renderPortfolioOnHome(category);
         }
 
@@ -1009,12 +631,13 @@
             container.innerHTML = articles.map(article => `
                 <article class="blog-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">
                     <img src="${article.image}" alt="${article.title}" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
-                    <div class="p-7">
+                    <div class="p-7 relative z-10">
                         <div class="text-xs font-semibold text-[#16A34A]">${article.cat}</div>
                         <div class="font-bold text-xl mt-3 leading-tight">${article.title}</div>
                         <a href="blog-details.html?id=${article.id}" class="block mt-5 text-sm text-[#0A66C2] font-semibold">Read Full Article →</a>
                     </div>
                 </article>`).join('');
+            if (window.pkReveal) window.pkReveal(container);
         }
 
         const homeTestimonials = [
@@ -1022,44 +645,31 @@
             {name: 'Emily Johnson', role: 'Marketing Consultant', country: 'Canada', service: 'Custom Web Development', color: '#DB2777', text: 'A fast, clean, hand-coded site — no bloated theme, excellent Core Web Vitals, proper on-page SEO built in from the start. Delivers when he says he will.'},
             {name: 'Daniel Carter', role: 'Digital Agency Owner', country: 'Australia', service: 'B2B Lead Generation', color: '#16A34A', text: 'Verified, targeted prospect list that exceeded the brief — clean formatting, decision-maker titles, verified emails, minimal bounce rates. Lead generation done as a craft.'}
         ];
+
         function renderTestimonialsOnHome() {
             const c = document.getElementById('home-testimonials');
             if (!c) return;
             c.innerHTML = homeTestimonials.map(t => `
-                <div class="modern-card p-7 bg-white dark:bg-gray-800 border rounded-3xl">
-                    <div class="text-[#F59E0B] tracking-widest text-sm">★★★★★</div>
-                    <p class="text-sm mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">“${t.text}”</p>
-                    <div class="mt-5 pt-4 border-t flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm" style="background:${t.color}">${t.name.split(' ').map(w => w[0]).slice(0,2).join('')}</div>
-                        <div>
-                            <div class="font-bold text-sm">${t.name} <span class="ml-1 px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-900 text-gray-400 text-[9px] font-bold tracking-widest">SAMPLE</span></div>
-                            <div class="text-xs text-gray-500">${t.role} · ${t.country}</div>
-                            <div class="text-xs text-[#0A66C2] font-semibold">${t.service}</div>
+                <div class="modern-card p-7 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl">
+                    <div class="relative z-10">
+                        <div class="text-[#F59E0B] tracking-widest text-sm">★★★★★</div>
+                        <p class="text-sm mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">“${t.text}”</p>
+                        <div class="mt-5 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center gap-3">
+                            <div class="avatar" style="background:${t.color}">${t.name.split(' ').map(w => w[0]).slice(0,2).join('')}</div>
+                            <div>
+                                <div class="font-bold text-sm">${t.name} <span class="ml-1 px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-900 text-gray-400 text-[9px] font-bold tracking-widest">SAMPLE</span></div>
+                                <div class="text-xs text-gray-500">${t.role} · ${t.country}</div>
+                                <div class="text-xs text-[#0A66C2] font-semibold">${t.service}</div>
+                            </div>
                         </div>
                     </div>
                 </div>`).join('');
+            if (window.pkReveal) window.pkReveal(c);
         }
+
+        renderPortfolioOnHome('all');
+        renderBlogOnHome();
         renderTestimonialsOnHome();
-
-        function initBackToTop() {
-            const btn = document.getElementById('backToTop');
-            if (!btn) return;
-            window.onscroll = () => btn.style.display = window.scrollY > 650 ? 'flex' : 'none';
-        }
-
-        function downloadCV() {
-            alert('CV download started. In production this would download a PDF file.');
-        }
-
-        function selectPlan(plan) {
-            window.location.href = `contact.html?plan=${plan}`;
-        }
-
-        function submitContactForm(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value || 'Friend';
-            window.location.href = `thank-you.html?name=${encodeURIComponent(name)}`;
-        }
     </script>
 </body>
 </html>
