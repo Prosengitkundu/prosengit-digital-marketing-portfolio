@@ -559,47 +559,43 @@
                 
                 <!-- Contact Form -->
                 <div>
-                    <form id="contactForm" onsubmit="submitContactForm(event)" class="space-y-5">
-                        <div class="grid grid-cols-2 gap-5">
-                            <div>
-                                <label for="name" class="block text-xs font-medium mb-1.5">Full Name</label>
-                                <input type="text" id="name" class="w-full border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 px-5 py-3.5 rounded-3xl text-sm" required>
-                            </div>
-                            <div>
-                                <label for="company" class="block text-xs font-medium mb-1.5">Business / Company</label>
-                                <input type="text" id="company" class="w-full border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 px-5 py-3.5 rounded-3xl text-sm">
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-2 gap-5">
-                            <div>
-                                <label for="email" class="block text-xs font-medium mb-1.5">Email Address</label>
-                                <input type="email" id="email" class="w-full border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 px-5 py-3.5 rounded-3xl text-sm" required>
-                            </div>
-                            <div>
-                                <label for="phone" class="block text-xs font-medium mb-1.5">Phone Number</label>
-                                <input type="tel" id="phone" value="+880" class="w-full border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 px-5 py-3.5 rounded-3xl text-sm" required>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label for="service" class="block text-xs font-medium mb-1.5">Project / Service Interest</label>
-                            <select id="service" class="w-full border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 px-5 py-3.5 rounded-3xl text-sm">
-                                <option>SEO &amp; Google Ads</option>
-                                <option>Meta &amp; Social Ads</option>
-                                <option>Graphic Design &amp; Branding</option>
-                                <option>Full Digital Marketing Package</option>
-                                <option>Training &amp; Consulting</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-xs font-medium mb-1.5">Project Details</label>
-                            <textarea id="message" rows="4" class="w-full border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 px-5 py-4 rounded-3xl text-sm" placeholder="Tell me about your goals..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="premium-btn w-full py-4 bg-[#0A66C2] hover:bg-[#084e96] text-white font-semibold rounded-3xl transition-all">Send Message</button>
-                    </form>
+                   <form action="https://formspree.io/f/mkjngqob" method="POST" class="space-y-5">
+    <div class="grid grid-cols-2 gap-5">
+        <div>
+            <label for="name" class="block text-xs font-medium mb-1.5">Full Name</label>
+            <input type="text" id="name" name="name" class="w-full border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 px-5 py-3.5 rounded-3xl text-sm" required>
+        </div>
+        <div>
+            <label for="company" class="block text-xs font-medium mb-1.5">Business / Company</label>
+            <input type="text" id="company" name="company" class="w-full border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 px-5 py-3.5 rounded-3xl text-sm">
+        </div>
+    </div>
+    <div class="grid grid-cols-2 gap-5">
+        <div>
+            <label for="email" class="block text-xs font-medium mb-1.5">Email Address</label>
+            <input type="email" id="email" name="email" class="w-full border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 px-5 py-3.5 rounded-3xl text-sm" required>
+        </div>
+        <div>
+            <label for="phone" class="block text-xs font-medium mb-1.5">Phone Number</label>
+            <input type="tel" id="phone" name="phone" value="+880" class="w-full border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 px-5 py-3.5 rounded-3xl text-sm" required>
+        </div>
+    </div>
+    <div>
+        <label for="service" class="block text-xs font-medium mb-1.5">Project / Service Interest</label>
+        <select id="service" name="service" class="w-full border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 px-5 py-3.5 rounded-3xl text-sm">
+            <option value="SEO & Google Ads">SEO &amp; Google Ads</option>
+            <option value="Meta & Social Ads">Meta &amp; Social Ads</option>
+            <option value="Graphic Design & Branding">Graphic Design &amp; Branding</option>
+            <option value="Full Digital Marketing Package">Full Digital Marketing Package</option>
+            <option value="Training & Consulting">Training &amp; Consulting</option>
+        </select>
+    </div>
+    <div>
+        <label for="message" class="block text-xs font-medium mb-1.5">Project Details</label>
+        <textarea id="message" name="message" rows="4" class="w-full border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 px-5 py-4 rounded-3xl text-sm" placeholder="Tell me about your goals..."></textarea>
+    </div>
+    <button type="submit" class="premium-btn w-full py-4 bg-[#0A66C2] hover:bg-[#084e96] text-white font-semibold rounded-3xl transition-all">Send Message</button>
+</form>
                 </div>
             </div>
         </div>

@@ -136,28 +136,27 @@
             </div>
             
             <!-- Form -->
-            <div>
-                <form id="contactForm" onsubmit="submitContactForm(event)" class="space-y-6">
-                    <div class="grid grid-cols-2 gap-6">
-                        <div><label for="name" class="block text-xs font-medium mb-1.5">Full Name</label><input type="text" id="name" class="w-full px-5 py-3.5 border rounded-3xl bg-white dark:bg-gray-800" required></div>
-                        <div><label for="company" class="block text-xs font-medium mb-1.5">Company</label><input type="text" id="company" class="w-full px-5 py-3.5 border rounded-3xl bg-white dark:bg-gray-800"></div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-6">
-                        <div><label for="email" class="block text-xs font-medium mb-1.5">Email</label><input type="email" id="email" class="w-full px-5 py-3.5 border rounded-3xl bg-white dark:bg-gray-800" required></div>
-                        <div><label for="phone" class="block text-xs font-medium mb-1.5">Phone</label><input type="tel" id="phone" value="+880" class="w-full px-5 py-3.5 border rounded-3xl bg-white dark:bg-gray-800" required></div>
-                    </div>
-                    <div><label for="service" class="block text-xs font-medium mb-1.5">Service Interest</label>
-                        <select id="service" class="w-full px-5 py-3.5 border rounded-3xl bg-white dark:bg-gray-800">
-                            <option>General Inquiry</option>
-                            <option>SEO Services</option><option>Web Development (Custom HTML/CSS/JS)</option><option>WordPress Website</option>
-                            <option>Landing Page</option><option>Google Ads</option><option>Meta &amp; Social Ads</option><option>Lead Generation</option>
-                            <option>Social Media Management</option><option>Graphic Design</option>
-                            <option>Full Digital Marketing Package</option><option>Free Digital Growth Check</option><option>Free Consultation (15 min)</option><option>Training &amp; Consulting</option>
-                        </select>
-                    </div>
-                    <div><label for="message" class="block text-xs font-medium mb-1.5">Message</label><textarea id="message" rows="5" class="w-full px-5 py-4 border rounded-3xl bg-white dark:bg-gray-800" placeholder="Tell me about your project..."></textarea></div>
-                    <button type="submit" class="premium-btn w-full py-4 bg-[#0A66C2] text-white font-semibold rounded-3xl">Send Message</button>
-                </form>
+            <form id="contactForm" action="https://formspree.io/f/mkjngqob" method="POST" class="space-y-6">
+    <div class="grid grid-cols-2 gap-6">
+        <div><label for="name" class="block text-xs font-medium mb-1.5">Full Name</label><input type="text" id="name" name="name" class="w-full px-5 py-3.5 border rounded-3xl bg-white dark:bg-gray-800" required></div>
+        <div><label for="company" class="block text-xs font-medium mb-1.5">Company</label><input type="text" id="company" name="company" class="w-full px-5 py-3.5 border rounded-3xl bg-white dark:bg-gray-800"></div>
+    </div>
+    <div class="grid grid-cols-2 gap-6">
+        <div><label for="email" class="block text-xs font-medium mb-1.5">Email</label><input type="email" id="email" name="email" class="w-full px-5 py-3.5 border rounded-3xl bg-white dark:bg-gray-800" required></div>
+        <div><label for="phone" class="block text-xs font-medium mb-1.5">Phone</label><input type="tel" id="phone" name="phone" value="+880" class="w-full px-5 py-3.5 border rounded-3xl bg-white dark:bg-gray-800" required></div>
+    </div>
+    <div><label for="service" class="block text-xs font-medium mb-1.5">Service Interest</label>
+        <select id="service" name="service" class="w-full px-5 py-3.5 border rounded-3xl bg-white dark:bg-gray-800">
+            <option>General Inquiry</option>
+            <option>SEO Services</option><option>Web Development (Custom HTML/CSS/JS)</option><option>WordPress Website</option>
+            <option>Landing Page</option><option>Google Ads</option><option>Meta &amp; Social Ads</option><option>Lead Generation</option>
+            <option>Social Media Management</option><option>Graphic Design</option>
+            <option>Full Digital Marketing Package</option><option>Free Digital Growth Check</option><option>Free Consultation (15 min)</option><option>Training &amp; Consulting</option>
+        </select>
+    </div>
+    <div><label for="message" class="block text-xs font-medium mb-1.5">Message</label><textarea id="message" name="message" rows="5" class="w-full px-5 py-4 border rounded-3xl bg-white dark:bg-gray-800" placeholder="Tell me about your project..."></textarea></div>
+    <button type="submit" class="premium-bin w-full py-4 bg-[#0A66C2] text-white font-semibold rounded-3xl">Send Message</button>
+</form>
             </div>
         </div>
     </div>
@@ -257,15 +256,19 @@
             notice.classList.remove('hidden');
             document.getElementById('service').value = serviceValueMap[selectedService];
         }
-
-        function submitContactForm(e) {
-            e.preventDefault();
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value
-            };
-            window.location.href = `thank-you.html?name=${encodeURIComponent(formData.name)}`;
+if (selectedPlan) {
+            const notice = document.getElementById('selectedPlanNotice');
+            notice.textContent = `${selectedPlan} selected. Share a few details and I will prepare the next steps with a clear quote.`;
+            notice.classList.remove('hidden');
+            const serviceSelect = document.getElementById('service');
+            if (planServiceMap[selectedPlan]) serviceSelect.value = planServiceMap[selectedPlan];
+        } else if (selectedService && serviceValueMap[selectedService]) {
+            const notice = document.getElementById('selectedPlanNotice');
+            notice.textContent = `${selectedService} request noted. Fill in the form and I will get back to you.`;
+            notice.classList.remove('hidden');
+            document.getElementById('service').value = serviceValueMap[selectedService];
         }
+    </script>
     </script>
 </body>
 </html>
