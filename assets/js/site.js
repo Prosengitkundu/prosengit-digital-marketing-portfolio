@@ -553,6 +553,9 @@
         buildFooter();
         buildFloatingActions();
 
+        var fy = document.getElementById('footerYear');
+        if (fy) fy.textContent = YEAR;
+
         initHeader();
         initTheme();
         initLinks();
