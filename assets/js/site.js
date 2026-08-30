@@ -543,7 +543,20 @@
     }
 
     /* ----------------------------------------------------------------------
-       11. Boot
+       11. On-site chat assistant ("Ask Prosengit")
+       Loads assets/js/chatbot.js once, so the assistant appears on every page.
+       ---------------------------------------------------------------------- */
+    function loadChatbot() {
+        if (window.PkChatbot || document.getElementById('pk-chatbot-script')) return;
+        var s = document.createElement('script');
+        s.id = 'pk-chatbot-script';
+        s.src = 'assets/js/chatbot.js';
+        s.async = true;
+        document.head.appendChild(s);
+    }
+
+    /* ----------------------------------------------------------------------
+       12. Boot
        ---------------------------------------------------------------------- */
     function boot() {
         document.body.classList.add('site-body', 'is-loading');
@@ -564,6 +577,7 @@
         initCounters();
         observeReveals(document);
         watchDynamicContent();
+        loadChatbot();
     }
 
     if (document.readyState === 'loading') {
