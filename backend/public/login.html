@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin Login — Prosengit CMS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+  <div class="login-wrap">
+    <form class="login-card" id="loginForm" novalidate>
+      <div class="mark">PK</div>
+      <h1 class="login-title">Prosengit CMS</h1>
+      <p class="login-sub">Sign in to manage your website</p>
+      <div class="login-error" id="loginError"></div>
+      <div class="field">
+        <label for="username">Username</label>
+        <input class="input" type="text" id="username" name="username" autocomplete="username" autofocus required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input class="input" type="password" id="password" name="password" autocomplete="current-password" required>
+      </div>
+      <button class="btn btn-primary login-btn" type="submit" id="loginBtn">
+        <span id="loginBtnText">Sign In</span>
+      </button>
+      <p class="login-note">Protected area. Unauthorized access is prohibited.</p>
+    </form>
+  </div>
+  <script src="/admin/js/login.js"></script>
+</body>
+</html>
