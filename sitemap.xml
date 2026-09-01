@@ -1,108 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    
-    <!-- Main Pages -->
+
     <url>
         <loc>https://prosengitkundu.top/</loc>
-        <lastmod>2026-08-24</lastmod>
+        <lastmod>2026-08-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/about.html</loc>
-        <lastmod>2026-08-24</lastmod>
+        <lastmod>2026-08-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/services.html</loc>
-        <lastmod>2026-08-24</lastmod>
+        <lastmod>2026-08-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/portfolio.html</loc>
-        <lastmod>2026-08-24</lastmod>
+        <lastmod>2026-08-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://prosengitkundu.top/portfolio-details.html</loc>
-        <lastmod>2026-08-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
         <loc>https://prosengitkundu.top/pricing.html</loc>
-        <lastmod>2026-08-24</lastmod>
+        <lastmod>2026-08-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-
-    <!-- Blog Pages -->
     <url>
         <loc>https://prosengitkundu.top/blog.html</loc>
-        <lastmod>2026-08-24</lastmod>
+        <lastmod>2026-08-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://prosengitkundu.top/blog-details.html</loc>
-        <lastmod>2026-08-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <!-- Extra Pages -->
-    <url>
         <loc>https://prosengitkundu.top/testimonials.html</loc>
-        <lastmod>2026-08-24</lastmod>
+        <lastmod>2026-08-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/faq.html</loc>
-        <lastmod>2026-08-24</lastmod>
+        <lastmod>2026-08-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/contact.html</loc>
-        <lastmod>2026-08-24</lastmod>
+        <lastmod>2026-08-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://prosengitkundu.top/thank-you.html</loc>
-        <lastmod>2026-08-24</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.1</priority>
-    </url>
-
-    <!-- Legal Pages -->
-    <url>
         <loc>https://prosengitkundu.top/disclaimer.html</loc>
-        <lastmod>2026-08-24</lastmod>
+        <lastmod>2026-08-25</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/privacy-policy.html</loc>
-        <lastmod>2026-08-24</lastmod>
+        <lastmod>2026-08-25</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/terms.html</loc>
-        <lastmod>2026-08-24</lastmod>
+        <lastmod>2026-08-25</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://prosengitkundu.top/404.html</loc>
-        <lastmod>2026-08-24</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.1</priority>
     </url>
 
 </urlset>
