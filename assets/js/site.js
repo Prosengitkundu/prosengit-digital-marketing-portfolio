@@ -18,6 +18,7 @@
     var NAV_ITEMS = [
         { label: 'Home',         href: 'index.html' },
         { label: 'About',        href: 'about.html' },
+        { label: 'Team',         href: 'team.html' },
         { label: 'Services',     href: 'services.html' },
         { label: 'Pricing',      href: 'pricing.html' },
         { label: 'Portfolio',    href: 'portfolio.html' },
@@ -31,7 +32,12 @@
     var NAV_ALIASES = {
         'portfolio-details.html': 'portfolio.html',
         'blog-details.html': 'blog.html',
-        'thank-you.html': 'contact.html'
+        'thank-you.html': 'contact.html',
+        'team-eitykona.html': 'team.html',
+        'team-nilanjana.html': 'team.html',
+        'team-sarna.html': 'team.html',
+        'team-shamim.html': 'team.html',
+        'team-priyanka.html': 'team.html'
     };
 
     var CONTACT = {
@@ -212,7 +218,7 @@
     function buildFooter() {
         if (document.querySelector('.site-footer')) return;
 
-        var quick = ['Home', 'About', 'Services', 'Pricing', 'Portfolio'].map(function (label) {
+        var quick = ['Home', 'About', 'Team', 'Services', 'Pricing', 'Portfolio'].map(function (label) {
             var item = NAV_ITEMS.filter(function (i) { return i.label === label; })[0];
             return '<a href="' + item.href + '">' + item.label + '</a>';
         }).join('');
