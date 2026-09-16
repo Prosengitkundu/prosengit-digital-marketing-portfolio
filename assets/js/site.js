@@ -16,46 +16,38 @@
        Config
        ---------------------------------------------------------------------- */
     var NAV_ITEMS = [
-        { label: 'Home',     href: 'index.html' },
-        { label: 'Services', href: 'services.html' },
-        { label: 'Work',     href: 'portfolio.html' },
-        { label: 'Insights', href: 'blog.html' },
-        { label: 'About',    href: 'about.html' },
-        { label: 'Pricing',  href: 'pricing.html' },
-        { label: 'FAQ',      href: 'faq.html' },
-        { label: 'Contact',  href: 'contact.html' }
+        { label: 'Home',         href: 'index.html' },
+        { label: 'About',        href: 'about.html' },
+        { label: 'Team',         href: 'team.html' },
+        { label: 'Services',     href: 'services.html' },
+        { label: 'Pricing',      href: 'pricing.html' },
+        { label: 'Portfolio',    href: 'portfolio.html' },
+        { label: 'Blog',         href: 'blog.html' },
+        { label: 'Testimonials', href: 'testimonials.html' },
+        { label: 'FAQ',          href: 'faq.html' },
+        { label: 'Contact',      href: 'contact.html' }
     ];
 
     /* Pages that are "children" of a main nav item */
     var NAV_ALIASES = {
-        'seo-services.html': 'services.html',
-        'meta-ads.html': 'services.html',
-        'google-youtube-ads.html': 'services.html',
-        'web-development.html': 'services.html',
-        'wordpress-development.html': 'services.html',
-        'b2b-lead-generation.html': 'services.html',
-        'local-seo.html': 'services.html',
-        'digital-marketing-consulting.html': 'services.html',
         'portfolio-details.html': 'portfolio.html',
         'blog-details.html': 'blog.html',
         'thank-you.html': 'contact.html',
-        'testimonials.html': 'about.html',
-        'team.html': 'about.html',
-        'team-eitykona.html': 'about.html',
-        'team-nilanjana.html': 'about.html',
-        'team-sarna.html': 'about.html',
-        'team-shamim.html': 'about.html',
-        'team-priyanka.html': 'about.html'
+        'team-eitykona.html': 'team.html',
+        'team-nilanjana.html': 'team.html',
+        'team-sarna.html': 'team.html',
+        'team-shamim.html': 'team.html',
+        'team-priyanka.html': 'team.html'
     };
 
     var CONTACT = {
         phone: '+880 1701-059499',
         phoneHref: 'tel:+8801701059499',
         whatsapp: 'https://wa.me/8801701059499',
-        email: 'prosengit95@gmail.com',
+        email: 'Prosengit95@gmail.com',
         linkedin: 'https://www.linkedin.com/in/prosengitkundu/',
         facebook: 'https://www.facebook.com/Prosengit95',
-        location: 'Khulna, Bangladesh · remote worldwide'
+        location: 'Khulna, Bangladesh'
     };
 
     var YEAR = new Date().getFullYear();
@@ -226,21 +218,15 @@
     function buildFooter() {
         if (document.querySelector('.site-footer')) return;
 
-        var quick = ['Home', 'About', 'Services', 'Work', 'Insights', 'Pricing'].map(function (label) {
+        var quick = ['Home', 'About', 'Team', 'Services', 'Pricing', 'Portfolio'].map(function (label) {
             var item = NAV_ITEMS.filter(function (i) { return i.label === label; })[0];
             return '<a href="' + item.href + '">' + item.label + '</a>';
         }).join('');
 
-        var serviceLinks = '<a href="seo-services.html">SEO services</a>' +
-            '<a href="meta-ads.html">Meta Ads management</a>' +
-            '<a href="web-development.html">Website development</a>' +
-            '<a href="b2b-lead-generation.html">B2B lead generation</a>' +
-            '<a href="local-seo.html">Local SEO</a>';
-
-        var more = '<a href="faq.html">FAQ</a>' +
+        var more = '<a href="blog.html">Blog</a>' +
+            '<a href="testimonials.html">Testimonials</a>' +
+            '<a href="faq.html">FAQ</a>' +
             '<a href="contact.html">Contact</a>' +
-            '<a href="privacy-policy.html">Privacy Policy</a>' +
-            '<a href="terms.html">Terms</a>' +
             '<a href="disclaimer.html">Disclaimer</a>';
 
         var footer = el(
@@ -254,7 +240,7 @@
                                 '<span class="footer-brand__role">Digital Marketing Expert</span>' +
                             '</span>' +
                         '</a>' +
-                        '<p class="site-footer__about">Digital marketing, SEO, advertising and web development support from Khulna, Bangladesh for businesses and remote clients worldwide.</p>' +
+                        '<p class="site-footer__about">Digital Marketing Expert, SEO Specialist and custom web developer based in Khulna, Bangladesh — helping businesses grow with SEO, paid ads, lead generation and hand-coded websites.</p>' +
                         '<div class="social-row">' +
                             '<a href="' + CONTACT.linkedin + '" target="_blank" rel="noopener" aria-label="LinkedIn">' +
                                 '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.6c0-1.34-.03-3.07-1.9-3.07-1.9 0-2.2 1.46-2.2 2.97V21H9z"/></svg>' +
@@ -270,10 +256,6 @@
                     '<div>' +
                         '<h3>Explore</h3>' +
                         '<div class="site-footer__links">' + quick + '</div>' +
-                    '</div>' +
-                    '<div>' +
-                        '<h3>Services</h3>' +
-                        '<div class="site-footer__links">' + serviceLinks + '</div>' +
                     '</div>' +
                     '<div>' +
                         '<h3>More</h3>' +
@@ -601,8 +583,7 @@
         initCounters();
         observeReveals(document);
         watchDynamicContent();
-        /* The legacy chatbot is intentionally not loaded: the refreshed site uses
-           direct service pages and a human contact path rather than scripted claims. */
+        loadChatbot();
     }
 
     if (document.readyState === 'loading') {
