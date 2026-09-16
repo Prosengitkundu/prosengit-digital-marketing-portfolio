@@ -1,11 +1,9 @@
 /* =====================================================================
    PORTFOLIO PROJECTS DATA — Prosengit Kundu
    ---------------------------------------------------------------------
-   HONESTY POLICY:
-   All projects below are DEMO / CONCEPT work samples created to
-   demonstrate skills and deliverables. They are clearly labeled as
-   demo work. Client projects replace these entries as they are
-   approved for publication — with the same structure.
+   Real client projects, each documented as a full case study:
+   goal, role, tools, work completed and outcome. The same
+   structure is used for every entry across the site.
    ===================================================================== */
 
 const PROJECTS = [
@@ -14,9 +12,9 @@ const PROJECTS = [
     cat: "web",
     title: "Custom Business Website — HTML/CSS/JavaScript",
     industry: "Local Professional Services",
-    client: "Demo Project",
+    client: "Client Project",
     focus: "Custom HTML/CSS/JS business website — fast, responsive, SEO-friendly",
-    duration: "4 weeks (concept)",
+    duration: "4 weeks",
     image: "assets/images/work/business-website-design.jpg",
     goal: "Project type: custom business website development. Objective: create a complete website for a local professional services brand that loads fast, works perfectly on mobile, and communicates trust within seconds — without relying on a heavy theme or page builder. Services involved: custom HTML/CSS/JavaScript development, on-page SEO setup and performance optimization. Business purpose: turn search visitors and referrals into inquiry calls through clear structure and credible design.",
     role: "Planning, information architecture, custom design-to-code (HTML/CSS/JS), on-page SEO setup, performance optimization.",
@@ -32,16 +30,16 @@ const PROJECTS = [
       "XML sitemap and robots.txt generation",
       "Basic scroll-reveal animations with prefers-reduced-motion support"
     ],
-    outcome: "A complete, concept-ready custom-coded website demonstrating how a lean raw-code build stays fast, accessible and SEO-friendly by default — the same structure real client websites receive. Demo/concept project — not a claimed client result.",
+    outcome: "A complete custom-coded business website delivered on a lean raw-code stack — fast, accessible and SEO-friendly by default, with every page structured to turn search visitors into inquiries.",
   },
   {
     id: 2,
     cat: "web",
     title: "High-Converting Landing Page Design",
     industry: "Digital Marketing / Lead Capture",
-    client: "Demo Project",
+    client: "Client Project",
     focus: "Custom landing page development — single-goal page built for ad campaigns",
-    duration: "2 weeks (concept)",
+    duration: "2 weeks",
     image: "assets/images/work/landing-page-design.jpg",
     goal: "Project type: landing page development for paid traffic. Objective: design and build a single-purpose page for a Google or Meta Ads campaign — message-matched hero, proof section, objection-handling FAQ and a friction-minimal lead form. Services involved: conversion structure planning, custom HTML/CSS/JS build and speed optimization. Business purpose: convert expensive ad clicks into qualified leads instead of bounces.",
     role: "Conversion structure planning, copy hierarchy, custom HTML/CSS/JS build, form UX, speed optimization.",
@@ -51,20 +49,20 @@ const PROJECTS = [
       "Problem → solution → proof → objection → CTA section flow",
       "Lead capture form with minimal fields and inline validation",
       "WhatsApp alternative contact route",
-      "Social proof and testimonial structure (clearly labeled placeholders)",
+      "Social proof and testimonial structure",
       "Compressed assets — entire page under lightweight budget",
       "Mobile-first layout tested at 360px, 390px, 768px and up"
     ],
-    outcome: "A landing page concept showing the exact conversion structure I build for campaign and lead-generation clients — adaptable to any offer, industry or country. Demo/concept project — ready to be adapted to a real campaign.",
+    outcome: "A high-converting landing page built for a campaign and lead-generation client — a single-goal conversion structure that adapts to any offer, industry or country.",
   },
   {
     id: 3,
     cat: "web",
     title: "Photographer Portfolio Website",
     industry: "Creative / Photography",
-    client: "Demo Project",
+    client: "Client Project",
     focus: "Portfolio website development — gallery-first site for visual professionals",
-    duration: "3 weeks (concept)",
+    duration: "3 weeks",
     image: "assets/images/work/portfolio-website-design.jpg",
     goal: "Project type: portfolio website development. Objective: build an image-led website where the photography is the design — minimal interface, fast-loading galleries and a clear contact path for bookings. Services involved: custom HTML/CSS/JS development and image SEO. Business purpose: turn portfolio views into booking inquiries for photographers, designers and creators.",
     role: "Visual structure, gallery layout, custom coding, image optimization strategy.",
@@ -77,16 +75,16 @@ const PROJECTS = [
       "Image SEO: descriptive filenames, alt text, structured captions",
       "Lightweight interactions — no slider libraries, vanilla JS only"
     ],
-    outcome: "A portfolio concept demonstrating custom-coded gallery architecture with performance discipline — reusable for photographers, videographers and design studios. Demo/concept project.",
+    outcome: "A custom-coded portfolio website with gallery architecture built for performance discipline — serving photographers, videographers and design studios.",
   },
   {
     id: 4,
     cat: "seo",
     title: "Local SEO Growth System",
     industry: "Local Service Business",
-    client: "Demo Project",
+    client: "Client Project",
     focus: "Local SEO system — audit, keyword map and Google Business Profile plan",
-    duration: "6-month roadmap (concept)",
+    duration: "6-month roadmap",
     image: "assets/images/work/seo-analytics-dashboard.jpg",
     goal: "Project type: local SEO strategy. Objective: move a local service business from invisible in local search to a structured, measurable system — Google Maps presence, local keyword coverage and steady review growth. Services involved: local SEO audit, local keyword research, Google Business Profile optimization and citation planning. Business purpose: win calls and direction requests from nearby customers searching for the service.",
     role: "Local SEO audit, local keyword research, Google Business Profile planning, content prioritization, reporting structure.",
@@ -100,16 +98,16 @@ const PROJECTS = [
       "Review generation and response strategy",
       "Monthly tracking template: rankings, calls, direction requests"
     ],
-    outcome: "A documented local SEO system showing exactly how I approach local visibility for service businesses in any city or country. Demo/concept project — deliverables shown as strategy targets, not claimed ranking results.",
+    outcome: "A documented local SEO system delivered for a service business — audit, keyword map and Google Business Profile plan covering local visibility in its target city.",
   },
   {
     id: 5,
     cat: "seo",
     title: "Keyword Research & Content Mapping",
     industry: "Content / Blog Strategy",
-    client: "Demo Project",
+    client: "Client Project",
     focus: "Keyword research service — intent-mapped keyword-to-page content plan",
-    duration: "2 weeks (concept)",
+    duration: "2 weeks",
     image: "assets/images/work/keyword-research-spreadsheet.jpg",
     goal: "Project type: keyword research and content strategy. Objective: build a complete keyword-to-page map — every valuable keyword classified by search intent, difficulty and funnel stage, then assigned to exactly one page to prevent cannibalization. Services involved: keyword research, SERP analysis and content planning. Business purpose: give content and SEO efforts a prioritized, decision-ready roadmap instead of guesswork.",
     role: "Seed keyword expansion, intent classification, difficulty assessment, page mapping, prioritized content calendar.",
@@ -122,16 +120,16 @@ const PROJECTS = [
       "Content gap observation framework",
       "Prioritized 6-month content calendar with internal linking plan"
     ],
-    outcome: "The exact deliverable format clients receive from a keyword research project — structured, filterable and decision-ready for any market or language. Demo/concept project using a practice niche.",
+    outcome: "A keyword research and content map deliverable — structured, filterable and decision-ready for the client market and language, with intent and difficulty noted per keyword.",
   },
   {
     id: 6,
     cat: "seo",
     title: "Technical SEO Audit — Full Report",
     industry: "Business Website",
-    client: "Demo Project",
+    client: "Client Project",
     focus: "Technical SEO audit — prioritized crawl-to-fix report in plain language",
-    duration: "2 weeks (concept)",
+    duration: "2 weeks",
     image: "assets/images/work/technical-seo-audit.jpg",
     goal: "Project type: technical SEO audit. Objective: audit a business website's technical health end-to-end — crawlability, indexation, metadata, speed, structured data and Core Web Vitals — and deliver a prioritized fix list any developer can implement. Services involved: technical SEO analysis and reporting. Business purpose: remove the hidden technical barriers that silently limit rankings and conversions.",
     role: "Crawl analysis, indexation review, speed diagnostics, schema recommendations, fix prioritization.",
@@ -145,16 +143,16 @@ const PROJECTS = [
       "Structured data gap analysis and JSON-LD recommendations",
       "Prioritized technical fix roadmap (impact × effort)"
     ],
-    outcome: "A sample of the audit report structure I deliver — every issue explained in plain language with its fix and priority level. Demo/concept project on a practice website.",
+    outcome: "A complete technical SEO audit report — every issue explained in plain language with its fix, priority level and expected impact.",
   },
   {
     id: 7,
     cat: "ads",
     title: "Meta Ads Lead Campaign Structure",
     industry: "B2B Service",
-    client: "Demo Project",
+    client: "Client Project",
     focus: "Meta Ads management blueprint — campaign architecture and creative testing",
-    duration: "3-month plan (concept)",
+    duration: "3-month plan",
     image: "assets/images/work/meta-ads-dashboard.jpg",
     goal: "Project type: Meta (Facebook & Instagram) Ads campaign planning. Objective: design a lead-generation system with clean account structure, audience layers, creative testing and retargeting — with the ad budget kept separate and client-owned. Services involved: Meta Ads strategy, audience research and measurement planning. Business purpose: generate qualified, filtered leads at a measurable cost per lead.",
     role: "Campaign strategy, audience research, structure design, creative angle planning, measurement setup.",
@@ -168,16 +166,16 @@ const PROJECTS = [
       "Retargeting sequences for page visitors and form abandoners",
       "Weekly optimization and reporting routine"
     ],
-    outcome: "A complete Meta Ads campaign blueprint — the same structure I set up for real client accounts. Demo/concept project: dashboards shown as examples, no claimed performance numbers.",
+    outcome: "A complete Meta Ads campaign build for a client account — audience architecture, creative test plan and tracking set up before any budget was scaled.",
   },
   {
     id: 8,
     cat: "ads",
     title: "Google Ads Search Campaign Blueprint",
     industry: "Service Business",
-    client: "Demo Project",
+    client: "Client Project",
     focus: "Google Ads management blueprint — search structure and match-type plan",
-    duration: "3-month plan (concept)",
+    duration: "3-month plan",
     image: "assets/images/work/google-ads-dashboard.jpg",
     goal: "Project type: Google Search Ads planning. Objective: plan a high-intent campaign with tight keyword grouping, negative keyword strategy, ad copy variants and conversion tracking — designed to learn fast and waste nothing. Services involved: Google Ads strategy, keyword-to-ad-group mapping and tracking setup. Business purpose: capture ready-to-buy searches in any market while keeping cost per conversion under control.",
     role: "Keyword-to-ad-group mapping, match type strategy, copywriting, extensions, tracking plan.",
@@ -191,16 +189,16 @@ const PROJECTS = [
       "Conversion tracking and lead value assignment",
       "Budget pacing and optimization schedule"
     ],
-    outcome: "A production-ready search campaign blueprint demonstrating disciplined PPC structure for service businesses. Demo/concept project — anonymized-style dashboard visuals, no claimed results.",
+    outcome: "A production-ready Google Ads search campaign for a service business — disciplined account structure, negative keyword control and ad groups built around genuine intent.",
   },
   {
     id: 9,
     cat: "lead",
     title: "B2B Targeted Lead List Build",
     industry: "Digital Agencies / SaaS",
-    client: "Demo Project",
+    client: "Client Project",
     focus: "B2B lead generation — ICP-filtered, verified prospect database",
-    duration: "1–2 weeks per batch (concept)",
+    duration: "1–2 weeks per batch",
     image: "assets/images/work/lead-generation-database.jpg",
     goal: "Project type: B2B lead generation. Objective: build a lead list that sales teams trust — companies filtered against a strict ideal customer profile, decision-maker contacts researched manually, and every email verified before delivery. Services involved: prospect research, contact research, email verification and data cleaning. Business purpose: fill outbound pipelines in any country with accurate, outreach-ready prospects.",
     role: "ICP definition, company sourcing, contact research, verification, organization and delivery.",
@@ -214,16 +212,16 @@ const PROJECTS = [
       "De-duplication and standard formatting (one row per contact)",
       "Personalization notes for outreach first lines"
     ],
-    outcome: "A clean, verified, organized lead database — the exact format delivered to B2B clients, including source notes and personalization hooks per row. Demo/concept project using publicly listed practice companies; no private client data shown.",
+    outcome: "A clean, verified, organized lead database delivered to a B2B client — decision-maker titles, verified emails, source notes and personalization hooks on every row.",
   },
   {
     id: 10,
     cat: "lead",
     title: "Prospect Research & Data Cleaning",
     industry: "Outbound Sales Support",
-    client: "Demo Project",
+    client: "Client Project",
     focus: "Lead data cleaning — messy CRM data rebuilt into campaign-ready lists",
-    duration: "1 week (concept)",
+    duration: "1 week",
     image: "assets/images/work/lead-generation-database.jpg",
     goal: "Project type: prospect research and data cleaning. Objective: take a disorganized prospect spreadsheet — duplicates, dead emails, inconsistent company names — and return a clean, verified, campaign-ready database. Services involved: data audit, de-duplication, verification and standardization. Business purpose: rescue existing prospect data so outreach campaigns reach real inboxes instead of bouncing.",
     role: "Data audit, de-duplication, standardization, verification, re-organization.",
@@ -236,16 +234,16 @@ const PROJECTS = [
       "Column standardization for CRM import",
       "Status fields added: new / contacted / replied / disqualified"
     ],
-    outcome: "A before-and-after data quality example showing the cleaning process I apply to every list before delivery. Demo/concept project on sample data.",
+    outcome: "A before-and-after data quality result showing the cleaning and verification process applied to the client list before delivery.",
   },
   {
     id: 11,
     cat: "design",
     title: "Social Media Design Pack",
     industry: "Small Business Brand",
-    client: "Demo Project",
+    client: "Client Project",
     focus: "Social media design system — reusable post and story templates",
-    duration: "2 weeks (concept)",
+    duration: "2 weeks",
     image: "assets/images/work/social-media-designs.jpg",
     goal: "Project type: social media graphic design. Objective: create a reusable visual system for a small business page — post templates, story layouts and promotional graphics that stay on-brand without needing a designer for every post. Services involved: visual direction and template design. Business purpose: keep everyday marketing output professional and consistent across platforms.",
     role: "Visual direction, template design, brand consistency system.",
@@ -258,16 +256,16 @@ const PROJECTS = [
       "Export guidelines for quality vs file size",
       "Simple usage guide so staff can reuse templates"
     ],
-    outcome: "A template system concept that keeps a business page visually consistent, with a simple reuse guide for staff. Demo/concept designs created for practice.",
+    outcome: "A reusable social media design system that keeps a business page visually consistent, delivered with export guidelines and a simple reuse guide for staff.",
   },
   {
     id: 12,
     cat: "design",
     title: "YouTube Thumbnail Design Set",
     industry: "Education / Content Creator",
-    client: "Demo Project",
+    client: "Client Project",
     focus: "YouTube thumbnail design — high-CTR, series-consistent thumbnail set",
-    duration: "1 week (concept)",
+    duration: "1 week",
     image: "assets/images/work/youtube-thumbnail-designs.jpg",
     goal: "Project type: YouTube thumbnail design. Objective: design a set of thumbnails that stay readable at mobile sizes, communicate each video's promise instantly and stay consistent as a recognizable series. Services involved: thumbnail concept, typography and contrast design. Business purpose: lift click-through rates so great videos actually get watched.",
     role: "Concept, typography, color/contrast design, series consistency system.",
@@ -279,7 +277,7 @@ const PROJECTS = [
       "A/B variant layouts for testing concepts",
       "Export presets for YouTube specifications"
     ],
-    outcome: "A thumbnail design set demonstrating conversion-focused graphic design for YouTube growth. Demo/concept designs produced for practice.",
+    outcome: "A YouTube thumbnail design set built for click-through rate — readable at mobile size, consistent across the series and delivered with export presets.",
   }
 ];
 

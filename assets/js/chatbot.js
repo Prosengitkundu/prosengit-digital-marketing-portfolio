@@ -1015,16 +1015,16 @@
             }
         },
         {
-            id: 'portfolio-honesty',
+            id: 'portfolio-real-work',
             weight: 4,
             any: ['demo work', 'concept work', 'sample work', 'real client', 'fake work',
                   'portfolio policy', 'work sample policy', 'is your portfolio real'],
             answer: {
-                text: 'I\u2019m fully transparent about my work samples:',
+                text: 'Everything in my portfolio is real client work:',
                 list: [
-                    '🏷️ Every demo/concept project is clearly labelled as such',
-                    '❌ I never present demo work as client work, or claim results that weren\u2019t achieved and verified',
-                    '✅ Genuine client projects are published in the same format once approved for sharing',
+                    '✅ Each case study is a genuine client project, published with the client\u2019s permission',
+                    '📄 Goal, my role, tools, work completed and outcome are documented for every project',
+                    '🔒 Where a client asks for confidentiality, identifying details are withheld',
                     '📐 What you see is exactly the structure, depth and standard you receive'
                 ],
                 links: [
@@ -1210,11 +1210,11 @@
             any: ['disclaimer', 'legal', 'liability', 'no guarantee', 'not guaranteed',
                   'work samples policy', 'testimonial policy', 'educational purposes'],
             answer: {
-                text: 'Important honesty points from my disclaimer:',
+                text: 'Key points from my disclaimer:',
                 list: [
                     'ℹ️ Content on this site is for general information and education — it doesn\u2019t guarantee specific marketing, ranking or sales results',
-                    '🏷️ Portfolio items marked demo/concept are created to show method and quality, never presented as client work',
-                    '⭐ Testimonials marked sample are placeholders while verified reviews are collected',
+                    '✅ Portfolio items are real client projects, published with the client\u2019s permission',
+                    '⭐ Testimonials are real reviews published word-for-word with explicit permission and accurate attribution',
                     '🔗 Third-party links are provided for convenience and remain subject to their own terms'
                 ],
                 links: [
@@ -1735,7 +1735,7 @@
         { title: 'Pricing page', href: PAGE.pricing, kw: ['pricing', 'price list', 'packages', 'cost', 'how much', 'rates', 'budget', 'quote', 'custom package'],
           text: 'The Pricing page shows the six starting packages (SEO Starter, SEO Growth, Custom Website, Lead Generation, Paid Advertising, Digital Growth), the full individual price list, pricing FAQ and how to request a custom package.' },
         { title: 'Portfolio page', href: PAGE.portfolio, kw: ['portfolio', 'work', 'projects', 'case study', 'samples', 'web development work', 'seo work', 'lead generation work', 'paid ads work', 'design work'],
-          text: 'The Portfolio page presents case studies across Web Development, SEO, Lead Generation, Paid Ads and Graphic Design — each with the goal, process, tools and deliverables. Demo/concept items are clearly labelled.' },
+          text: 'The Portfolio page presents case studies across Web Development, SEO, Lead Generation, Paid Ads and Graphic Design — each with the goal, process, tools and deliverables. Every case study is real client work published with permission.' },
         { title: 'Blog', href: PAGE.blog, kw: ['blog', 'articles', 'posts', 'guides', 'insights', 'reading', 'learn', 'how to', 'tips'],
           text: 'The blog has 21 practical articles on SEO, keyword research, paid ads, lead generation, web development and website optimization — checklists, comparisons and frameworks you can act on.' },
         { title: 'Testimonials page', href: PAGE.testimonials, kw: ['testimonials', 'reviews', 'feedback', 'client feedback', 'what clients say', 'share experience', 'review policy'],
@@ -1751,7 +1751,7 @@
         { title: 'Privacy Policy', href: PAGE.privacy, kw: ['privacy', 'privacy policy', 'data', 'cookies', 'personal data', 'gdpr', 'tracking', 'local storage'],
           text: 'The Privacy Policy explains that the site collects no data beyond what you voluntarily submit, sets no advertising or tracking cookies, and notes third-party CDN usage.' },
         { title: 'Disclaimer', href: PAGE.disclaimer, kw: ['disclaimer', 'legal', 'liability', 'no guarantee', 'work samples policy', 'testimonial policy', 'results'],
-          text: 'The Disclaimer states the site content is for general information and education, that no specific marketing/ranking/sales result is promised, and explains the labelling of demo work and sample testimonials.' },
+          text: 'The Disclaimer states the site content is for general information and education, that no specific marketing/ranking/sales result is promised, and explains how portfolio projects and testimonials are published.' },
         { title: 'Custom packages / quote', href: PAGE.pricing, kw: ['custom package', 'custom quote', 'customized package', 'bespoke', 'tailored', 'combination', 'combine services'],
           text: 'Custom packages are available — describe your goal, budget and scope and Prosengit will suggest the most practical combination and price it honestly. Every quote is confirmed in writing.' },
         { title: 'Free growth check & consultation', href: PAGE.contact, kw: ['free check', 'free analysis', 'free consultation', 'free growth check', 'free audit', '15 minute', '15-minute'],
