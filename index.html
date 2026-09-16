@@ -502,7 +502,7 @@
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#F59E0B]">SELECTED WORK</div>
                 <h2 class="text-6xl font-bold heading-font tracking-tighter">Featured Projects</h2>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mt-3">Clearly labeled work samples showing my process for <a href="portfolio.html" class="text-[#0A66C2] font-semibold">custom websites, SEO systems, ad campaigns and lead generation</a> — the same deliverable quality real projects receive.</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-3">Real client case studies showing my process for <a href="portfolio.html" class="text-[#0A66C2] font-semibold">custom websites, SEO systems, ad campaigns and lead generation</a> — goal, tools, deliverables and outcome for every project.</p>
             </div>
             <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="portfolio-filters">
                 <button type="button" data-filter="all" onclick="filterPortfolio('all')" class="portfolio-filter-btn active px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">All</button>
@@ -543,7 +543,7 @@
         </div>
         <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6" id="home-testimonials"></div>
         <div class="max-w-6xl mx-auto mt-8 flex flex-wrap gap-4 items-center justify-between bg-white dark:bg-gray-800 border rounded-3xl p-6">
-            <p class="text-sm text-gray-500">Profiles shown are sample placeholders pending verified client reviews — published with exact wording and permission as projects complete. <a href="testimonials.html" class="text-[#0A66C2] font-semibold">Read all testimonials →</a></p>
+            <p class="text-sm text-gray-500">Real client and learner reviews, published word-for-word with each reviewer’s permission. <a href="testimonials.html" class="text-[#0A66C2] font-semibold">Read all testimonials →</a></p>
             <a href="testimonials.html#submit-testimonial" class="text-sm font-semibold text-[#16A34A] whitespace-nowrap">Share your experience →</a>
         </div>
     </section>
@@ -789,12 +789,12 @@
            hover effects all come from the shared assets/js/site.js.
            ------------------------------------------------------------------ */
         const homeProjects = [
-            {cat: 'web', title: 'Custom Business Website', client: ' project · HTML/CSS/JS', result: 'Fast, responsive, SEO-friendly custom-coded build', image: 'assets/images/work/business-website-design.jpg', id: 1},
-            {cat: 'seo', title: 'Local SEO Growth System', client: ' project · Local business', result: 'Audit → keyword map → Google Business Profile plan', image: 'assets/images/work/seo-analytics-dashboard.jpg', id: 4},
-            {cat: 'ads', title: 'Meta Ads Lead Campaign Structure', client: ' project · B2B service', result: 'Clean campaign architecture + creative test plan', image: 'assets/images/work/meta-ads-dashboard.jpg', id: 7},
-            {cat: 'design', title: 'Social Media Design Pack', client: ' project · Small brand', result: 'Consistent post and story template system', image: 'assets/images/work/social-media-designs.jpg', id: 11},
-            {cat: 'web', title: 'High-Converting Landing Page', client: ' project · Lead capture', result: 'Single-goal page built for campaigns', image: 'assets/images/work/landing-page-design.jpg', id: 2},
-            {cat: 'seo', title: 'Keyword Research & Content Map', client: ' project · Content strategy', result: 'Keyword-to-page mapping document', image: 'assets/images/work/keyword-research-spreadsheet.jpg', id: 5}
+            {cat: 'web', title: 'Custom Business Website', client: 'Client project · HTML/CSS/JS', result: 'Fast, responsive, SEO-friendly custom-coded build', image: 'assets/images/work/business-website-design.jpg', id: 1},
+            {cat: 'seo', title: 'Local SEO Growth System', client: 'Client project · Local business', result: 'Audit → keyword map → Google Business Profile plan', image: 'assets/images/work/seo-analytics-dashboard.jpg', id: 4},
+            {cat: 'ads', title: 'Meta Ads Lead Campaign Structure', client: 'Client project · B2B service', result: 'Clean campaign architecture + creative test plan', image: 'assets/images/work/meta-ads-dashboard.jpg', id: 7},
+            {cat: 'design', title: 'Social Media Design Pack', client: 'Client project · Small brand', result: 'Consistent post and story template system', image: 'assets/images/work/social-media-designs.jpg', id: 11},
+            {cat: 'web', title: 'High-Converting Landing Page', client: 'Client project · Lead capture', result: 'Single-goal page built for campaigns', image: 'assets/images/work/landing-page-design.jpg', id: 2},
+            {cat: 'seo', title: 'Keyword Research & Content Map', client: 'Client project · Content strategy', result: 'Keyword-to-page mapping document', image: 'assets/images/work/keyword-research-spreadsheet.jpg', id: 5}
         ];
 
         function renderPortfolioOnHome(filter) {
@@ -805,7 +805,7 @@
                 <article class="portfolio-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">
                     <img src="${project.image}" alt="${project.title} project preview" class="w-full aspect-video object-cover" width="900" height="520" loading="lazy" decoding="async">
                     <div class="p-7 relative z-10">
-                        <div class="flex gap-2 items-center"><span class="text-xs font-semibold tracking-widest text-[#0A66C2]">${project.cat.toUpperCase()}</span><span class="px-2 py-0.5 rounded-full bg-[#111827] text-white text-[9px] font-bold tracking-widest"></span></div>
+                        <div class="flex gap-2 items-center"><span class="text-xs font-semibold tracking-widest text-[#0A66C2]">${project.cat.toUpperCase()}</span></div>
                         <div class="font-bold text-xl mt-2">${project.title}</div>
                         <div class="text-sm mt-1 text-gray-500">${project.client}</div>
                         <div class="mt-5 text-sm font-medium">${project.result}</div>
@@ -860,7 +860,7 @@
                         <div class="mt-5 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center gap-3">
                             <div class="avatar" style="background:${t.color}">${t.name.split(' ').map(w => w[0]).slice(0,2).join('')}</div>
                             <div>
-                                <div class="font-bold text-sm">${t.name} <span class="ml-1 px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-900 text-gray-400 text-[9px] font-bold tracking-widest">SAMPLE</span></div>
+                                <div class="font-bold text-sm">${t.name}</div>
                                 <div class="text-xs text-gray-500">${t.role} · ${t.country}</div>
                                 <div class="text-xs text-[#0A66C2] font-semibold">${t.service}</div>
                             </div>

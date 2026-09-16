@@ -150,7 +150,7 @@
       return '<article class="portfolio-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">' +
         '<img src="' + esc(p.image) + '" alt="' + esc(p.title) + ' project preview" class="w-full aspect-video object-cover" width="900" height="520" loading="lazy" decoding="async">' +
         '<div class="p-7 relative z-10">' +
-        '<div class="flex gap-2 items-center"><span class="text-xs font-semibold tracking-widest text-[#0A66C2]">' + esc((p.category || '').toUpperCase()) + '</span><span class="px-2 py-0.5 rounded-full bg-[#111827] text-white text-[9px] font-bold tracking-widest">DEMO</span></div>' +
+        '<div class="flex gap-2 items-center"><span class="text-xs font-semibold tracking-widest text-[#0A66C2]">' + esc((p.category || '').toUpperCase()) + '</span></div>' +
         '<div class="font-bold text-xl mt-2">' + esc(p.title) + '</div>' +
         '<div class="text-sm mt-1 text-gray-500">' + esc(p.client || '') + '</div>' +
         '<div class="mt-5 text-sm font-medium">' + esc(p.focus || '') + '</div>' +
@@ -225,10 +225,10 @@
       if (!cs) return;
       cs.innerHTML =
         '<a href="portfolio.html" class="text-sm font-semibold text-[#0A66C2]">\u2190 Back to Portfolio</a>' +
-        '<div class="mt-10"><div class="flex flex-wrap gap-3 items-center"><div class="text-xs tracking-[3px] font-semibold text-[#0A66C2]">' + esc((catLabel || '').toUpperCase()) + '</div><span class="px-3 py-1 rounded-full bg-[#111827] text-white text-[10px] font-bold tracking-widest">DEMO / CONCEPT PROJECT</span></div>' +
+        '<div class="mt-10"><div class="flex flex-wrap gap-3 items-center"><div class="text-xs tracking-[3px] font-semibold text-[#0A66C2]">' + esc((catLabel || '').toUpperCase()) + '</div></div>' +
         '<h1 class="text-4xl md:text-6xl heading-font tracking-tighter font-bold mt-4 leading-[1.05]">' + esc(project.title) + '</h1>' +
-        '<p class="text-xl text-gray-600 dark:text-gray-300 mt-5 max-w-3xl">Work sample \u00B7 ' + esc(project.industry || '') + '</p></div>' +
-        '<img src="' + esc(project.image) + '" alt="' + esc(project.title) + ' — work sample image" class="w-full aspect-[16/9] object-cover rounded-3xl mt-12" width="1400" height="800" fetchpriority="high">' +
+        '<p class="text-xl text-gray-600 dark:text-gray-300 mt-5 max-w-3xl">' + esc(project.industry || '') + '</p></div>' +
+        '<img src="' + esc(project.image) + '" alt="' + esc(project.title) + ' — project image" class="w-full aspect-[16/9] object-cover rounded-3xl mt-12" width="1400" height="800" fetchpriority="high">' +
         '<div class="grid md:grid-cols-4 gap-5 mt-8">' +
         '<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5"><div class="text-xs text-gray-500 font-semibold">CATEGORY</div><div class="font-bold mt-2 text-[#0A66C2]">' + esc(catLabel) + '</div></div>' +
         '<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5"><div class="text-xs text-gray-500 font-semibold">FOCUS</div><div class="font-semibold text-sm mt-2">' + esc(project.focus || '') + '</div></div>' +

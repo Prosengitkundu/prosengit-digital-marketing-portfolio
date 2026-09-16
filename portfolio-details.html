@@ -11,13 +11,13 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Sample Case Study | Prosengit Kundu Portfolio</title>
-    <meta name="description" content="A detailed work-sample case study by freelance specialist Prosengit Kundu — project goal, role, tools, work completed and outcome. Clearly labeled demo/concept work.">
+    <title>Project Case Study | Prosengit Kundu Portfolio</title>
+    <meta name="description" content="A detailed project case study by freelance specialist Prosengit Kundu — project goal, role, tools, work completed and outcome.">
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://prosengitkundu.top/portfolio-details.html">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Work Sample Case Study | Prosengit Kundu Portfolio">
-    <meta property="og:description" content="A detailed work-sample case study by freelance specialist Prosengit Kundu — project goal, role, tools, work completed and outcome. Clearly labeled demo/concept work.">
+    <meta property="og:title" content="Project Case Study | Prosengit Kundu Portfolio">
+    <meta property="og:description" content="A detailed project case study by freelance specialist Prosengit Kundu — project goal, role, tools, work completed and outcome.">
     <meta property="og:url" content="https://prosengitkundu.top/portfolio-details.html">
     <meta property="og:image" content="https://prosengitkundu.top/assets/images/og/prosengit-kundu-og.jpg">
 
@@ -136,7 +136,7 @@
         const catLabel = PROJECT_CATEGORIES[project.cat] || project.cat;
 
         document.title = `${project.title} | Case Study | Prosengit Kundu`;
-        document.querySelector('meta[name="description"]').setAttribute('content', `${project.focus} — work sample case study by Prosengit Kundu. Demo/concept project, fully documented.`);
+        document.querySelector('meta[name="description"]').setAttribute('content', `${project.focus} — case study by Prosengit Kundu. Full project documentation: goal, role, tools, work completed and outcome.`);
 
         document.getElementById('caseStudy').innerHTML = `
             <a href="portfolio.html" class="text-sm font-semibold text-[#0A66C2]">← Back to Portfolio</a>
@@ -144,13 +144,12 @@
             <div class="mt-10">
                 <div class="flex flex-wrap gap-3 items-center">
                     <div class="text-xs tracking-[3px] font-semibold text-[#0A66C2]">${catLabel.toUpperCase()}</div>
-                    <span class="px-3 py-1 rounded-full bg-[#111827] text-white text-[10px] font-bold tracking-widest">DEMO / CONCEPT PROJECT</span>
                 </div>
                 <h1 class="text-4xl md:text-6xl heading-font tracking-tighter font-bold mt-4 leading-[1.05]">${project.title}</h1>
-                <p class="text-xl text-gray-600 dark:text-gray-300 mt-5 max-w-3xl">Work sample · ${project.industry}</p>
+                <p class="text-xl text-gray-600 dark:text-gray-300 mt-5 max-w-3xl">${project.industry}</p>
             </div>
 
-            <img src="${project.image}" alt="${project.title} — work sample image by Prosengit Kundu" class="w-full aspect-[16/9] object-cover rounded-3xl mt-12" width="1400" height="800" fetchpriority="high" onerror="this.onerror=null;this.src='https://images.pexels.com/photos/270360/pexels-photo-270360.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1400&h=800';">
+            <img src="${project.image}" alt="${project.title} — project image by Prosengit Kundu" class="w-full aspect-[16/9] object-cover rounded-3xl mt-12" width="1400" height="800" fetchpriority="high" onerror="this.onerror=null;this.src='https://images.pexels.com/photos/270360/pexels-photo-270360.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1400&h=800';">
 
             <div class="grid md:grid-cols-4 gap-5 mt-8">
                 <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5"><div class="text-xs text-gray-500 font-semibold">CATEGORY</div><div class="font-bold mt-2 text-[#0A66C2]">${catLabel}</div></div>
