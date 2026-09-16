@@ -18,6 +18,7 @@
     var NAV_ITEMS = [
         { label: 'Home',         href: 'index.html' },
         { label: 'About',        href: 'about.html' },
+        { label: 'Team',         href: 'team.html' },
         { label: 'Services',     href: 'services.html' },
         { label: 'Pricing',      href: 'pricing.html' },
         { label: 'Portfolio',    href: 'portfolio.html' },
@@ -31,7 +32,12 @@
     var NAV_ALIASES = {
         'portfolio-details.html': 'portfolio.html',
         'blog-details.html': 'blog.html',
-        'thank-you.html': 'contact.html'
+        'thank-you.html': 'contact.html',
+        'team-eitykona.html': 'team.html',
+        'team-nilanjana.html': 'team.html',
+        'team-sarna.html': 'team.html',
+        'team-shamim.html': 'team.html',
+        'team-priyanka.html': 'team.html'
     };
 
     var CONTACT = {
@@ -212,7 +218,7 @@
     function buildFooter() {
         if (document.querySelector('.site-footer')) return;
 
-        var quick = ['Home', 'About', 'Services', 'Pricing', 'Portfolio'].map(function (label) {
+        var quick = ['Home', 'About', 'Team', 'Services', 'Pricing', 'Portfolio'].map(function (label) {
             var item = NAV_ITEMS.filter(function (i) { return i.label === label; })[0];
             return '<a href="' + item.href + '">' + item.label + '</a>';
         }).join('');
@@ -234,7 +240,7 @@
                                 '<span class="footer-brand__role">Digital Marketing Expert</span>' +
                             '</span>' +
                         '</a>' +
-                        '<p class="site-footer__about">Digital Marketing Expert, SEO Specialist and custom web developer based in Khulna, Bangladesh — helping businesses grow with SEO, paid ads, lead generation and hand-coded websites.</p>' +
+                        '<p class="site-footer__about">Prosengit Kundu — freelance digital marketing expert, SEO specialist and custom web developer based in Khulna, Bangladesh, providing remote SEO, Google & Meta Ads, B2B lead generation and hand-coded website services for businesses in the USA, UK, Canada, Australia and worldwide.</p>' +
                         '<div class="social-row">' +
                             '<a href="' + CONTACT.linkedin + '" target="_blank" rel="noopener" aria-label="LinkedIn">' +
                                 '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.6c0-1.34-.03-3.07-1.9-3.07-1.9 0-2.2 1.46-2.2 2.97V21H9z"/></svg>' +
@@ -442,10 +448,10 @@
 
         var titles = [
             'Digital Marketing Expert',
-            'SEO Specialist',
-            'Web Developer',
-            'Professional Trainer',
-            'Graphic Designer'
+            'SEO & Performance Marketing Specialist',
+            'Freelance Web Developer',
+            'Google & Meta Ads Specialist',
+            'Professional Trainer'
         ];
 
         if (prefersReducedMotion) {
@@ -543,7 +549,20 @@
     }
 
     /* ----------------------------------------------------------------------
-       11. Boot
+       11. On-site chat assistant ("Ask Prosengit")
+       Loads assets/js/chatbot.js once, so the assistant appears on every page.
+       ---------------------------------------------------------------------- */
+    function loadChatbot() {
+        if (window.PkChatbot || document.getElementById('pk-chatbot-script')) return;
+        var s = document.createElement('script');
+        s.id = 'pk-chatbot-script';
+        s.src = 'assets/js/chatbot.js';
+        s.async = true;
+        document.head.appendChild(s);
+    }
+
+    /* ----------------------------------------------------------------------
+       12. Boot
        ---------------------------------------------------------------------- */
     function boot() {
         document.body.classList.add('site-body', 'is-loading');
@@ -564,6 +583,7 @@
         initCounters();
         observeReveals(document);
         watchDynamicContent();
+        loadChatbot();
     }
 
     if (document.readyState === 'loading') {
