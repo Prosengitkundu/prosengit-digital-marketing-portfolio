@@ -11,11 +11,6 @@
    =========================================================================== */
 (function () {
   'use strict';
-  /* The refreshed public pages are statically authored. CMS hydration is
-     opt-in so an old database cannot overwrite the SEO architecture, contact
-     form or honest proof policy. Add data-cms-enabled to <html> only after
-     the CMS records have been reviewed for the current site. */
-  if (!document.documentElement.hasAttribute('data-cms-enabled')) return;
   if (!window.fetch) return;
 
   var API = '';

@@ -1,71 +1,125 @@
-# Prosengit Kundu — international digital marketing portfolio
+# Prosengit Kundu — Digital Marketing Portfolio (CMS-backed)
 
-Static website for **Prosengit Kundu**, positioned as a Digital Marketing Expert, SEO & Performance Marketing Specialist, Web Developer, Professional Trainer and Freelancer.
+This repository now contains **your existing website, converted into a dynamic
+CMS-based site** with a secure admin panel, **while preserving the original
+frontend design, layout, responsiveness, SEO structure and visual appearance**.
 
-The site is designed for business owners in Bangladesh and remote clients worldwide. It separates commercial search intent across focused service pages instead of trying to rank every service from one homepage.
+The full documentation lives in **[`backend/README.md`](backend/README.md)**.
+This file is the high-level overview: what I analyzed, what I recommended and
+built, what changed, and what stayed exactly the same.
 
-## What is included
+---
 
-- Semantic, responsive homepage focused on digital marketing + web development.
-- Service hub plus dedicated pages for:
-  - SEO services
-  - Meta Ads / Facebook and Instagram advertising
-  - Google Ads and YouTube advertising
-  - Custom HTML/CSS/JavaScript web development
-  - WordPress development and optimisation
-  - Local SEO and Google Business Profile
-  - B2B lead generation and prospect research
-  - Digital marketing consulting, keyword research and training
-- Clear starting-price page with scope and limitations.
-- Work-sample page that labels concept/demo work honestly.
-- Blog hub with SEO, paid media, web, WordPress and lead-generation clusters.
-- FAQ, About and Contact pages with international/remote project context.
-- Unique title tags, meta descriptions, canonical URLs, Open Graph/Twitter metadata and relevant JSON-LD.
-- Updated `robots.txt`, XML sitemap, favicon and shared navigation/footer behaviour.
-- Formspree contact route with service, market and project-context fields.
+## 1. Analysis of the original project
 
-## Audit and strategy document
+I analyzed the entire existing project before changing anything:
 
-The complete audit, keyword map, information architecture, page plan, blog clusters, internal-linking model and technical SEO backlog are in:
+- **Frontend:** pure static HTML/CSS/JS — 16 `.html` pages, no framework, no build step.
+- **Data sources:** `assets/js/projects.js` (`PROJECTS`, 12 demo projects),
+  `assets/js/articles.js` (`ARTICLES`, 21 blog posts), testimonials inline in
+  `testimonials.html`, shared nav/footer/contact in `assets/js/site.js`.
+- **Forms:** contact form → Formspree (`https://formspree.io/f/mkjngqob`).
+- **SEO:** hardcoded per-page `<title>`/meta/OG/Twitter + JSON-LD; `sitemap.xml`, `robots.txt`.
+- **Assets:** `assets/css/style.css`, Tailwind utilities, images under `assets/images/`.
+- **Hosting:** static GitHub Pages (`CNAME` = `prosengitkundu.top`).
 
-- [`docs/seo-audit-and-content-plan.md`](docs/seo-audit-and-content-plan.md)
+**Hardcoded content that became dynamic:** site name/tagline/title, logo/favicon,
+hero heading, availability text, contact info, social links, footer, navigation,
+services, pricing data, portfolio, blog, testimonials (manageable), and per-page
+SEO metadata.
 
-## Run locally
+## 2. Recommended stack (and why)
 
-The public site is plain HTML/CSS/JavaScript and does not require a build step. From the repository root:
+| Layer | Choice | Why |
+|---|---|---|
+| Backend | **Node.js + Express** | Same language as the existing JS; minimal footprint; no framework mismatch |
+| Database | **SQLite** (`node:sqlite`) | Zero-config, single file, perfect for a one-admin site; no native build step |
+| Auth | **Sessions + bcrypt** | httpOnly cookies, hashed passwords, brute-force protection |
+| Frontend | **Keep existing HTML; add `assets/js/cms.js`** | Preserves the exact design & SEO; content is fetched from the API |
+| Admin | **Vanilla HTML/CSS/JS (no build)** | A completely separate, clean dashboard; no Node toolchain required |
+
+**Key decision:** I did **not** rebuild the frontend. The existing HTML is served
+through Express unchanged. A small hydration script fetches content from the API
+and updates the DOM in place, and SEO metadata is injected from the database
+server-side (your hardcoded tags remain as the safe fallback). This keeps the
+public site visually identical while making everything controllable from admin.
+
+## 3. What changed
+
+**Added (all under `backend/`):**
+- Express server serving the **static site**, the **`/api`** and **`/admin`**.
+- SQLite database + schema + auto-seed from your existing content.
+- Secure session-based auth (`/admin/login`, logout, hashed passwords, route protection).
+- Admin dashboard (settings, services, projects, testimonials, blog, navigation,
+  pages/sections, SEO, media, messages, backup, overview).
+- REST API (public + admin-protected), media uploads, contact-form storage, backup export.
+- `assets/js/cms.js` frontend hydration script.
+
+**Preserved (unchanged or minimally touched):**
+- All 16 HTML pages, their design, layout, Tailwind/`style.css` styling, animations, forms.
+- All existing text, images, and SEO meta tags (used as fallbacks).
+- `assets/js/projects.js`, `assets/js/articles.js`, `assets/js/site.js`, `chatbot.js` (all still load; the CMS content overrides/grids on top).
+
+## 4. How to run locally
 
 ```bash
-python3 -m http.server 8000 --bind 0.0.0.0
+cd backend
+npm install
+cp .env.example .env        # then edit .env (set SESSION_SECRET + admin password)
+npm run init-db             # create + seed the database
+npm start                   # http://localhost:3000
 ```
 
-Then open `http://localhost:8000/`.
+- **Public site:** `http://localhost:3000/`
+- **Admin:** `http://localhost:3000/admin` (login: `admin` / `Admin@1234`, change it)
+- **API docs:** `http://localhost:3000/api`
 
-The repository also contains an optional Node/Express CMS under `backend/`. It is not required for the static public pages. See [`backend/README.md`](backend/README.md) before deploying it; configure credentials and environment variables outside version control.
+## 5. Your future workflow (no code edits needed)
 
-## Important honesty and maintenance notes
+1. Log in to **`/admin`**.
+2. Open any section (Settings, Services, Portfolio, Blog, Navigation, SEO, …).
+3. Change text, upload images, reorder, publish/unpublish.
+4. Click **Save** → the database updates → **the public website updates automatically**.
 
-- Portfolio entries are labelled demo/concept unless verified otherwise.
-- The public site does not display fabricated client names, testimonials, ratings, rankings, awards or performance results.
-- SEO, advertising and lead-generation pages explicitly avoid guarantees.
-- Prices are starting points and must be confirmed against the current scope before quoting a client.
-- Search Console, privacy-appropriate analytics, form delivery and conversion events should be verified on the production host after deployment.
+Example: Admin → **Site Settings** → change *Site tagline* to
+“SEO & Performance Marketing Specialist” → **Save**. The header, footer,
+homepage and SEO title all update — no HTML edits.
 
-## Key files
+## 6. Deployment
 
-```text
-index.html                         Homepage
-services.html                      Service architecture
-seo-services.html                  SEO service page
-meta-ads.html                      Meta Ads service page
-google-youtube-ads.html             Google/YouTube Ads service page
-web-development.html                Custom web development
-wordpress-development.html          WordPress service page
-local-seo.html                      Local SEO service page
-b2b-lead-generation.html             B2B lead generation
-digital-marketing-consulting.html   Consulting/research/training
-assets/css/style.css                Shared design system
-assets/js/site.js                   Shared navigation, footer and UI behaviour
-docs/seo-audit-and-content-plan.md  Audit, keyword map and content plan
-robots.txt                          Crawl rules
-sitemap.xml                         Public URL sitemap
+Since the admin/API require a backend, deploy the Node app (see
+[`backend/README.md`](backend/README.md) → “Deployment”). Point your domain to
+the Node service (Railway / Render / Fly / VPS). The static site files stay
+exactly as they are and are served by Express.
+
+## 7. Files & folders
+
 ```
+📄 *.html                      Existing website (unchanged design; served by Express)
+assets/                        Existing CSS/JS/images + NEW assets/js/cms.js
+backend/
+  server.js                    App, static site serving, API, admin, SEO injection
+  db.js                        Schema + seed (DB at data/cms.db)
+  routes/                      API route handlers
+  middleware/                  Auth + upload
+  public/                      Admin dashboard
+  scripts/create-admin.js      Create/reset admin user
+  .env.example                 Environment template
+  README.md                    Full docs, API reference, deployment guide
+```
+
+## 8. What to change before going live
+
+1. Set a strong `SESSION_SECRET` and `ADMIN_PASSWORD` in `.env`.
+2. Update `SITE_URL` to the real domain.
+3. Run `npm i` on the server and `npm start`.
+4. Add real services/projects/blog/testimonials in the admin panel.
+
+---
+
+> **Honesty note:** the seeded portfolio entries are your existing
+> **demo/concept** work samples (clearly labelled), and the testimonials list
+> starts **empty** — the CMS never fabricates clients or results.
+
+For setup, API reference, admin feature list and production guidance, see
+**`backend/README.md`**.
