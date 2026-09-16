@@ -280,7 +280,7 @@ function defaultSettings() {
     logo: '',
     logo_text: 'PK',
     favicon: '',
-    email: 'Prosengit95@gmail.com',
+    email: 'prosengit95@gmail.com',
     phone: '+880 1701-059499',
     phone_href: 'tel:+8801701059499',
     whatsapp: 'https://wa.me/8801701059499',
