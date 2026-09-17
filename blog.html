@@ -31,6 +31,9 @@
     <meta name="twitter:description" content="Practical, freelance-tested guides on SEO, keyword research, Google & Meta Ads, B2B lead generation, web development and digital marketing strategy by Prosengit Kundu.">
     <meta name="twitter:image" content="https://prosengitkundu.top/assets/images/og/prosengit-kundu-og.jpg">
     <link rel="canonical" href="https://prosengitkundu.top/blog.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <!-- ===== Shared design system (same loading + hover effects on every page) ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -109,7 +112,7 @@
             <div class="text-xs tracking-[3px] font-semibold text-[#16A34A]">PRACTICAL GUIDES &amp; INSIGHTS</div>
             <h1 class="text-5xl md:text-6xl font-bold heading-font tracking-tighter mt-3">The Digital Marketing &amp; Web Development Blog</h1>
             <p class="text-lg text-gray-600 dark:text-gray-300 mt-5 leading-relaxed">In-depth, experience-based guides on SEO, international SEO, keyword research, Google &amp; Meta Ads, B2B lead generation, custom-coded web development, WordPress optimization and YouTube marketing. Every article is written to be useful first — the kind of checklist, framework and comparison you can act on the same day you read it. No fluff, no recycled hype, no invented statistics.</p>
-            <p class="text-base text-gray-500 dark:text-gray-400 mt-4 leading-relaxed max-w-3xl">New here? Start with <a href="blog-details.html?id=1" class="text-[#0A66C2] font-semibold">how to choose the right SEO service</a>, <a href="blog-details.html?id=22" class="text-[#0A66C2] font-semibold">the international SEO guide</a> or <a href="blog-details.html?id=23" class="text-[#0A66C2] font-semibold">the Google Ads management guide</a> — then explore the clusters below by topic.</p>
+            <p class="text-base text-gray-500 dark:text-gray-400 mt-4 leading-relaxed max-w-3xl">New here? Start with <a href="/blog/how-to-choose-seo-service.html" class="text-[#0A66C2] font-semibold">how to choose the right SEO service</a>, <a href="/blog/international-seo-guide.html" class="text-[#0A66C2] font-semibold">the international SEO guide</a> or <a href="/blog/google-ads-management-guide.html" class="text-[#0A66C2] font-semibold">the Google Ads management guide</a> — then explore the clusters below by topic.</p>
         </div>
 
         <!-- Category filters -->
@@ -198,7 +201,7 @@
     <script>
         function cardHTML(a, featured = false) {
             return `
-            <a href="blog-details.html?id=${a.id}" class="blog-card ${featured ? 'md:col-span-2 lg:col-span-3 grid md:grid-cols-2' : ''} bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+            <a href="${a.url}" class="blog-card ${featured ? 'md:col-span-2 lg:col-span-3 grid md:grid-cols-2' : ''} bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
                 <img src="${a.img}" alt="${a.title} — article cover" class="w-full ${featured ? 'h-full min-h-[260px]' : 'aspect-[16/9]'} object-cover" width="900" height="520" loading="lazy" decoding="async">
                 <div class="p-7">
                     <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">${a.cat}</span><span class="text-gray-400">${a.date}</span><span class="text-gray-400">·</span><span class="text-gray-400">${a.read}</span></div>
