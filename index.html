@@ -505,7 +505,7 @@
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#F59E0B]">SELECTED WORK</div>
                 <h2 class="text-6xl font-bold heading-font tracking-tighter">Featured Projects</h2>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mt-3">Selected <a href="portfolio.html" class="text-[#0A66C2] font-semibold">practice case studies</a> showing the approach behind custom websites, SEO systems, ad campaigns and lead generation — research, tools, deliverables and honest project status.</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-3">Real client case studies showing my process for <a href="portfolio.html" class="text-[#0A66C2] font-semibold">custom websites, SEO systems, ad campaigns and lead generation</a> — goal, tools, deliverables and outcome for every project.</p>
             </div>
             <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="portfolio-filters">
                 <button type="button" data-filter="all" onclick="filterPortfolio('all')" class="portfolio-filter-btn active px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">All</button>
@@ -527,7 +527,7 @@
             <div>
                 <div class="text-xs uppercase tracking-widest font-semibold text-[#16A34A]">INSIGHTS</div>
                 <h2 class="text-6xl font-bold heading-font tracking-tighter">Latest from the blog</h2>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mt-3 max-w-xl">Practical guides on SEO, paid ads, lead generation and web development — focused on clear, evidence-aware methods. <a href="blog.html" class="text-[#0A66C2] font-semibold">Browse all articles →</a></p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-3 max-w-xl">Practical guides on SEO, paid ads, lead generation and web development — written from real freelance work. <a href="blog.html" class="text-[#0A66C2] font-semibold">Browse all articles →</a></p>
             </div>
             <a href="blog.html" class="text-sm font-medium flex items-center gap-x-1 hidden md:flex">View all articles <span class="text-xl">→</span></a>
         </div>
@@ -785,19 +785,20 @@
     </footer>
 </div>
 
-    <script src="assets/js/projects.js"></script>
     <script>
         /* ------------------------------------------------------------------
            Homepage-only content rendering.
            Loader, header, footer, dark mode, reveals, counters, typing and
            hover effects all come from the shared assets/js/site.js.
            ------------------------------------------------------------------ */
-        // Featured cards resolve from the shared PROJECTS registry. This keeps the
-        // homepage route in lockstep with the portfolio case-study slug.
-        const featuredProjectIds = [1, 4, 7, 11, 2, 5];
-        const homeProjects = featuredProjectIds
-            .map(id => PROJECTS.find(project => project.id === id))
-            .filter(Boolean);
+        const homeProjects = [
+            {cat: 'web', title: 'Custom Business Website', client: 'Client project · HTML/CSS/JS', result: 'Fast, responsive, SEO-friendly custom-coded build', image: 'assets/images/work/business-website-design.jpg', id: 1, url: 'portfolio/custom-business-website.html'},
+            {cat: 'seo', title: 'Local SEO Growth System', client: 'Client project · Local business', result: 'Audit → keyword map → Google Business Profile plan', image: 'assets/images/work/seo-analytics-dashboard.jpg', id: 4, url: 'portfolio/local-seo-growth-system.html'},
+            {cat: 'ads', title: 'Meta Ads Lead Campaign Structure', client: 'Client project · B2B service', result: 'Clean campaign architecture + creative test plan', image: 'assets/images/work/meta-ads-dashboard.jpg', id: 7, url: 'portfolio/meta-ads-lead-campaign.html'},
+            {cat: 'design', title: 'Social Media Design Pack', client: 'Client project · Small brand', result: 'Consistent post and story template system', image: 'assets/images/work/social-media-designs.jpg', id: 11, url: 'portfolio/social-media-design-pack.html'},
+            {cat: 'web', title: 'High-Converting Landing Page', client: 'Client project · Lead capture', result: 'Single-goal page built for campaigns', image: 'assets/images/work/landing-page-design.jpg', id: 2, url: 'portfolio/high-converting-landing-page-design.html'},
+            {cat: 'seo', title: 'Keyword Research & Content Map', client: 'Client project · Content strategy', result: 'Keyword-to-page mapping document', image: 'assets/images/work/keyword-research-spreadsheet.jpg', id: 5, url: 'portfolio/keyword-research-content-mapping.html'}
+        ];
 
         function renderPortfolioOnHome(filter) {
             const container = document.getElementById('portfolio-grid');
@@ -805,12 +806,12 @@
             const items = filter === 'all' ? homeProjects : homeProjects.filter(project => project.cat === filter);
             container.innerHTML = items.map(project => `
                 <article class="portfolio-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">
-                    <img src="${project.image}" alt="${project.imageAlt}" class="w-full aspect-video object-cover" width="1000" height="558" loading="lazy" decoding="async">
+                    <img src="${project.image}" alt="${project.title} project preview" class="w-full aspect-video object-cover" width="900" height="520" loading="lazy" decoding="async">
                     <div class="p-7 relative z-10">
                         <div class="flex gap-2 items-center"><span class="text-xs font-semibold tracking-widest text-[#0A66C2]">${project.cat.toUpperCase()}</span></div>
                         <div class="font-bold text-xl mt-2">${project.title}</div>
-                        <div class="text-sm mt-1 text-gray-500">${project.projectType}</div>
-                        <div class="mt-5 text-sm font-medium">${project.summary}</div>
+                        <div class="text-sm mt-1 text-gray-500">${project.client}</div>
+                        <div class="mt-5 text-sm font-medium">${project.result}</div>
                         <a href="${project.url}" class="inline-block mt-4 text-sm font-semibold text-[#0A66C2]">View case study →</a>
                     </div>
                 </article>`).join('');
@@ -829,9 +830,9 @@
             const container = document.getElementById('blog-grid');
             if (!container) return;
             const articles = [
-                {title: 'How to Choose the Right SEO Service for Your Business', cat: 'SEO', url: '/blog/how-to-choose-seo-service.html', image: 'assets/images/work/seo-analytics-dashboard.webp'},
-                {title: 'Google Ads vs Meta Ads: Choosing the Right Platform', cat: 'Paid Ads', url: '/blog/google-ads-vs-meta-ads.html', image: 'assets/images/work/meta-ads-dashboard.webp'},
-                {title: 'HTML vs WordPress for Business Websites: An Honest Comparison', cat: 'Web Development', url: '/blog/html-vs-wordpress.html', image: 'assets/images/work/business-website-design.webp'}
+                {title: 'How to Choose the Right SEO Service for Your Business', cat: 'SEO', id: 1, url: 'blog/how-to-choose-seo-service.html', image: 'assets/images/work/seo-analytics-dashboard.jpg'},
+                {title: 'Google Ads vs Meta Ads: Choosing the Right Platform', cat: 'Paid Ads', id: 9, url: 'blog/google-ads-vs-meta-ads.html', image: 'assets/images/work/meta-ads-dashboard.jpg'},
+                {title: 'HTML vs WordPress for Business Websites: An Honest Comparison', cat: 'Web Development', id: 14, url: 'blog/html-vs-wordpress.html', image: 'assets/images/work/business-website-design.jpg'}
             ];
             container.innerHTML = articles.map(article => `
                 <article class="blog-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">
