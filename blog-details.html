@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEO & Digital Marketing Guides | Prosengit Kundu Blog</title>
     <meta name="description" content="In-depth, practical SEO, digital marketing and web development guides by freelance specialist Prosengit Kundu — keyword research, ads, lead generation and international SEO.">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="noindex, follow">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://prosengitkundu.top/blog-details.html">
@@ -180,80 +180,22 @@
     <script src="assets/js/articles.js"></script>
     <script>
         const params = new URLSearchParams(window.location.search);
-        const id = parseInt(params.get('id')) || 1;
-        const idx = Math.max(0, ARTICLES.findIndex(a => a.id === id));
-        // Legacy URL handler: send ?id=N visitors to the static article page
-        // (content now lives in crawlable static HTML under /blog/).
+        // Legacy fallback router. This page is a noindex fallback only — all
+        // article content now lives in crawlable static HTML under /blog/.
+        //   • Old links like /blog-details.html?id=N  -> redirect to /blog/{slug}.html
+        //   • A bare /blog-details.html (no ?id=)      -> redirect to /blog.html
+        // The page never renders article content itself, so it can never become
+        // an indexable duplicate of a static article page.
         (function () {
-            if (!params.get('id')) return; // bare URL keeps legacy behaviour
-            const legacy = ARTICLES.find(a => a.id === id);
-            if (legacy && legacy.url) { window.location.replace(legacy.url); }
+            const rawId = params.get('id');
+            if (rawId !== null) {
+                const id = parseInt(rawId, 10);
+                const legacy = ARTICLES.find(a => a.id === id);
+                if (legacy && legacy.url) { window.location.replace(legacy.url); return; }
+            }
+            // No id, or an id that does not resolve to a real article.
+            window.location.replace('/blog.html');
         })();
-
-        const article = ARTICLES[idx];
-
-        // Metadata
-        document.title = `${article.title} | Prosengit Kundu Blog`;
-        document.querySelector('meta[name="description"]').setAttribute('content', article.excerpt);
-        document.querySelector('link[rel="canonical"]').setAttribute('href', `https://prosengitkundu.top/blog-details.html?id=${article.id}`);
-        document.querySelector('meta[property="og:title"]').setAttribute('content', article.title);
-        document.querySelector('meta[property="og:description"]').setAttribute('content', article.excerpt);
-
-        // Article schema
-        const schema = document.createElement('script');
-        schema.type = 'application/ld+json';
-        schema.textContent = JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": article.title,
-            "description": article.excerpt,
-            "datePublished": article.date,
-            "author": {"@type": "Person", "name": "Prosengit Kundu", "url": "https://prosengitkundu.top/"},
-            "publisher": {"@type": "Person", "name": "Prosengit Kundu"},
-            "mainEntityOfPage": `https://prosengitkundu.top/blog-details.html?id=${article.id}`
-        });
-        document.head.appendChild(schema);
-
-        // Content
-        document.getElementById('a-cat').textContent = article.cat;
-        document.getElementById('a-date').textContent = article.date;
-        document.getElementById('a-read').textContent = article.read;
-        document.getElementById('a-title').textContent = article.title;
-        var mDesc = document.querySelector('meta[name="description"]');
-        if (mDesc && article.excerpt) mDesc.setAttribute('content', article.excerpt);
-        document.getElementById('a-excerpt').textContent = article.excerpt;
-        const img = document.getElementById('a-img');
-        img.src = article.img;
-        img.alt = article.title + ' — illustrated article cover';
-        document.getElementById('a-body').innerHTML = article.body;
-
-        // Table of contents from H2s
-        const toc = document.getElementById('a-toc');
-        const h2s = document.querySelectorAll('#a-body h2');
-        h2s.forEach((h2, i) => {
-            h2.id = 's-' + i;
-            const a = document.createElement('a');
-            a.href = '#s-' + i;
-            a.textContent = h2.textContent;
-            toc.appendChild(a);
-        });
-        if (!h2s.length) toc.innerHTML = '<p class="text-sm text-gray-400">Article sections listed here.</p>';
-
-        // Related articles (same category, excluding current)
-        const related = ARTICLES.filter(a => a.cat === article.cat && a.id !== article.id).slice(0, 3);
-        const relWrap = document.getElementById('a-related');
-        relWrap.innerHTML = related.length ? related.map(r => `
-            <a href="${r.url}" class="block group">
-                <div class="text-xs font-semibold text-[#0A66C2]">${r.cat}</div>
-                <div class="font-semibold text-sm mt-1 group-hover:text-[#0A66C2] leading-snug">${r.title}</div>
-                <div class="text-xs text-gray-400 mt-1">${r.read}</div>
-            </a>`).join('') : '<p class="text-sm text-gray-400">Explore other categories for more guides.</p>';
-
-        // Prev / next
-        const prev = ARTICLES[idx - 1], next = ARTICLES[idx + 1];
-        document.getElementById('prev-next').innerHTML = `
-            ${prev ? `<a href="${prev.url}" class="block p-5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl group"><div class="text-xs text-gray-400">← Previous</div><div class="font-semibold mt-1 group-hover:text-[#0A66C2]">${prev.title}</div></a>` : '<div></div>'}
-            ${next ? `<a href="${next.url}" class="block p-5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl group text-right"><div class="text-xs text-gray-400">Next →</div><div class="font-semibold mt-1 group-hover:text-[#0A66C2]">${next.title}</div></a>` : ''}`;
     </script>
 </body>
 </html>

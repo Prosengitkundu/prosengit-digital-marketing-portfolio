@@ -24,6 +24,11 @@
   function get(path) { return fetch(API + path, { credentials: 'same-origin' }).then(function (r) { return r.json().then(function (d) { if (!d.success) throw new Error(d.error); return d.data; }); }); }
   function safe(fn) { try { fn(); } catch (e) { /* never break the page */ } }
   function initials(name) { return (name || '').split(' ').map(function (w) { return w[0]; }).slice(0, 2).join('').toUpperCase(); }
+  // Prefer the static-slug URL that lives on each record (project.url / article.url).
+  // The site's canonical architecture is /portfolio/{slug}.html and /blog/{slug}.html;
+  // only fall back to a legacy ?id= link if a record has no static url at all.
+  function projectUrl(p) { return (p && p.url) ? p.url : 'portfolio-details.html?id=' + esc(p && p.id); }
+  function articleUrl(a) { return (a && a.url) ? a.url : 'blog-details.html?id=' + esc(a && a.id); }
   function colorFor(name) {
     var colors = ['#0A66C2', '#DB2777', '#16A34A', '#F59E0B', '#7C3AED'];
     var sum = 0; for (var i = 0; i < (name || '').length; i++) sum += name.charCodeAt(i);
@@ -154,7 +159,7 @@
         '<div class="font-bold text-xl mt-2">' + esc(p.title) + '</div>' +
         '<div class="text-sm mt-1 text-gray-500">' + esc(p.client || '') + '</div>' +
         '<div class="mt-5 text-sm font-medium">' + esc(p.focus || '') + '</div>' +
-        '<a href="portfolio-details.html?id=' + esc(p.id) + '" class="inline-block mt-4 text-sm font-semibold text-[#0A66C2]">View case study \u2192</a></div></article>';
+        '<a href="' + esc(projectUrl(p)) + '" class="inline-block mt-4 text-sm font-semibold text-[#0A66C2]">View case study \u2192</a></div></article>';
     }).join('');
     if (window.pkReveal) window.pkReveal(container);
   }
@@ -168,7 +173,7 @@
         '<div class="p-7 relative z-10">' +
         '<div class="text-xs font-semibold text-[#16A34A]">' + esc(a.category || '') + '</div>' +
         '<div class="font-bold text-xl mt-3 leading-tight">' + esc(a.title) + '</div>' +
-        '<a href="blog-details.html?id=' + esc(a.id) + '" class="block mt-5 text-sm text-[#0A66C2] font-semibold">Read Full Article \u2192</a></div></article>';
+        '<a href="' + esc(articleUrl(a)) + '" class="block mt-5 text-sm text-[#0A66C2] font-semibold">Read Full Article \u2192</a></div></article>';
     }).join('');
     if (window.pkReveal) window.pkReveal(container);
   }
@@ -240,8 +245,8 @@
         '<div class="mt-16 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-8 md:p-10"><div class="text-xs tracking-[3px] font-semibold text-[#0A66C2]">WORK COMPLETED</div><h2 class="text-3xl heading-font font-bold mt-3">Deliverables in detail</h2><ul class="grid md:grid-cols-2 gap-4 mt-7 text-gray-600 dark:text-gray-300">' + (project.work || []).map(function (item) { return '<li class="border-l-2 border-[#0A66C2] pl-4">' + esc(item) + '</li>'; }).join('') + '</ul></div>' +
         '<div class="mt-12"><div class="text-xs tracking-[3px] font-semibold text-[#16A34A]">OUTCOME</div><h2 class="text-3xl heading-font font-bold mt-3">Honest status of this work</h2><p class="mt-4 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">' + esc(project.outcome || '') + '</p></div>' +
         '<div class="mt-14 flex flex-wrap justify-between gap-4 border-t border-gray-200 dark:border-gray-700 pt-8">' +
-        (prev ? '<a href="portfolio-details.html?id=' + esc(prev.id) + '" class="text-sm font-semibold text-[#0A66C2]">\u2190 ' + esc(prev.title) + '</a>' : '<span></span>') +
-        (next ? '<a href="portfolio-details.html?id=' + esc(next.id) + '" class="text-sm font-semibold text-[#0A66C2]">' + esc(next.title) + ' \u2192</a>' : '') + '</div>';
+        (prev ? '<a href="' + esc(projectUrl(prev)) + '" class="text-sm font-semibold text-[#0A66C2]">\u2190 ' + esc(prev.title) + '</a>' : '<span></span>') +
+        (next ? '<a href="' + esc(projectUrl(next)) + '" class="text-sm font-semibold text-[#0A66C2]">' + esc(next.title) + ' \u2192</a>' : '') + '</div>';
       if (project.title) document.title = project.title + ' | Case Study | Prosengit Kundu';
     }).catch(function () {});
   }
