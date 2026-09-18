@@ -65,7 +65,7 @@ const absImg = img => /^https?:/.test(img) ? img : `${SITE}/${img.replace(/^\.\/
 function absolutize(html) {
   return html
     .replace(/(href|src)="assets\//g, '$1="/assets/')
-    .replace(/href="((?:index|about|team|services|pricing|portfolio|blog|testimonials|faq|contact|privacy-policy|terms|disclaimer|404|thank-you|team-eitykona|team-nilanjana|team-sarna|team-shamim|team-priyanka)\.html)/g, 'href="/$1"')
+    .replace(/href="((?:index|about|team|services|pricing|portfolio|blog|testimonials|faq|contact|privacy-policy|terms|disclaimer|404|thank-you|team-eitykona|team-nilanjana|team-sarna|team-shamim|team-priyanka)\.html)/g, 'href="/$1')
     .replace(/href="(portfolio-details|blog-details)\.html/g, 'href="/$1.html');
 }
 
@@ -74,6 +74,11 @@ function setHead(prologue, { title, description, url, image, type, extraHead }) 
   let h = prologue;
   h = h.replace(/<title>[^<]*<\/title>/, `<title>${esc(title)}</title>`);
   h = h.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${esc(description)}"`);
+  /* Published blog articles and portfolio case studies are real, indexable
+     content pages — always force index,follow here regardless of what the
+     noindex fallback template (blog-details.html / portfolio-details.html,
+     which stay noindex because they only render via query-string + JS) says. */
+  h = h.replace(/<meta name="robots" content="[^"]*"/, `<meta name="robots" content="index, follow"`);
   h = h.replace(/<meta property="og:type" content="[^"]*"/, `<meta property="og:type" content="${type}"`);
   h = h.replace(/<meta property="og:url" content="[^"]*"/, `<meta property="og:url" content="${url}"`);
   h = h.replace(/<meta property="og:title" content="[^"]*"/, `<meta property="og:title" content="${esc(title)}"`);
