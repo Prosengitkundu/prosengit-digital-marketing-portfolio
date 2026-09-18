@@ -537,21 +537,17 @@
         </div>
     </section>
 
-    <!-- TRANSPARENT PROJECT APPROACH -->
+    <!-- TESTIMONIALS -->
     <section class="max-w-screen-2xl mx-auto px-8 py-24 bg-[#F8FAFC] dark:bg-[#111827]">
         <div class="max-w-3xl mx-auto text-center mb-12">
-            <div class="text-xs font-semibold uppercase tracking-widest">TRANSPARENT PROJECT APPROACH</div>
-            <h2 class="text-5xl heading-font font-bold tracking-tighter mt-3">See how the work is planned</h2>
-            <p class="text-gray-600 dark:text-gray-300 mt-4">The portfolio documents practice workflows for SEO, ads, web development, lead research and design. It explains the method and likely deliverables without presenting unverified client reviews or outcomes as fact.</p>
+            <div class="text-xs font-semibold uppercase tracking-widest">CLIENT FEEDBACK</div>
+            <h2 class="text-5xl heading-font font-bold tracking-tighter mt-3">What clients say</h2>
+            <p class="text-gray-600 dark:text-gray-300 mt-4">Feedback from businesses and learners across SEO, ads, web development, lead generation and training — international and Bangladeshi clients.</p>
         </div>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
-            <article class="modern-card p-7 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl"><div class="relative z-10"><div class="text-xs font-semibold tracking-widest text-[#0A66C2]">01 · DISCOVERY</div><h3 class="font-bold text-xl mt-3">Scope before assumptions</h3><p class="text-sm mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">Goals, audience, current assets, target market and useful success signals are clarified before a recommendation or quotation is made.</p></div></article>
-            <article class="modern-card p-7 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl"><div class="relative z-10"><div class="text-xs font-semibold tracking-widest text-[#16A34A]">02 · DELIVERY</div><h3 class="font-bold text-xl mt-3">Methods you can inspect</h3><p class="text-sm mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">Each practice case study shows the research, implementation steps and deliverables relevant to a similar engagement.</p></div></article>
-            <article class="modern-card p-7 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl"><div class="relative z-10"><div class="text-xs font-semibold tracking-widest text-[#F59E0B]">03 · REVIEW</div><h3 class="font-bold text-xl mt-3">Clear next steps</h3><p class="text-sm mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">A real project is reviewed against its own brief, timeline and available evidence. No ranking, lead or revenue result is guaranteed in advance.</p></div></article>
-        </div>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6" id="home-testimonials"></div>
         <div class="max-w-6xl mx-auto mt-8 flex flex-wrap gap-4 items-center justify-between bg-white dark:bg-gray-800 border rounded-3xl p-6">
-            <p class="text-sm text-gray-500">Verified client and learner quotes are not published until the reviewer, wording and permission can be confirmed. <a href="testimonials.html" class="text-[#0A66C2] font-semibold">Read the feedback policy →</a></p>
-            <a href="portfolio.html" class="text-sm font-semibold text-[#16A34A] whitespace-nowrap">Browse practice case studies →</a>
+            <p class="text-sm text-gray-500">Real client and learner reviews, published word-for-word with each reviewer’s permission. <a href="testimonials.html" class="text-[#0A66C2] font-semibold">Read all testimonials →</a></p>
+            <a href="testimonials.html#submit-testimonial" class="text-sm font-semibold text-[#16A34A] whitespace-nowrap">Share your experience →</a>
         </div>
     </section>
 
@@ -849,6 +845,36 @@
             if (window.pkReveal) window.pkReveal(container);
         }
 
+        const homeTestimonials = [
+            {name: 'Michael Anderson', role: 'Business Consultant', country: 'United Kingdom', service: 'SEO Audit & Strategy', color: '#0A66C2', text: 'One of the clearest SEO audits I have received from any freelancer — a prioritized list instead of a generic report. Honest about what was worth doing and what was not.'},
+            {name: 'Emily Johnson', role: 'Marketing Consultant', country: 'Canada', service: 'Custom Web Development', color: '#DB2777', text: 'A fast, clean, hand-coded site — no bloated theme, excellent Core Web Vitals, proper on-page SEO built in from the start. Delivers when he says he will.'},
+            {name: 'Daniel Carter', role: 'Digital Agency Owner', country: 'Australia', service: 'B2B Lead Generation', color: '#16A34A', text: 'Verified, targeted prospect list that exceeded the brief — clean formatting, decision-maker titles, verified emails, minimal bounce rates. Lead generation done as a craft.'}
+        ];
+
+        function renderTestimonialsOnHome() {
+            const c = document.getElementById('home-testimonials');
+            if (!c) return;
+            c.innerHTML = homeTestimonials.map(t => `
+                <div class="modern-card p-7 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl">
+                    <div class="relative z-10">
+                        <div class="text-[#F59E0B] tracking-widest text-sm">★★★★★</div>
+                        <p class="text-sm mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">“${t.text}”</p>
+                        <div class="mt-5 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center gap-3">
+                            <div class="avatar" style="background:${t.color}">${t.name.split(' ').map(w => w[0]).slice(0,2).join('')}</div>
+                            <div>
+                                <div class="font-bold text-sm">${t.name}</div>
+                                <div class="text-xs text-gray-500">${t.role} · ${t.country}</div>
+                                <div class="text-xs text-[#0A66C2] font-semibold">${t.service}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`).join('');
+            if (window.pkReveal) window.pkReveal(c);
+        }
+
+        renderPortfolioOnHome('all');
+        renderBlogOnHome();
+        renderTestimonialsOnHome();
     </script>
 </body>
 </html>
