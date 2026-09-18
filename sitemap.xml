@@ -1,351 +1,353 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
     <url>
         <loc>https://prosengitkundu.top/</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/about.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/services.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/portfolio.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/pricing.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/testimonials.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/faq.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/contact.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/team.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://prosengitkundu.top/team-eitykona.html</loc>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://prosengitkundu.top/team-eitykona.html</loc>
-        <lastmod>2026-09-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
         <loc>https://prosengitkundu.top/team-nilanjana.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/team-sarna.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/team-shamim.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/team-priyanka.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/disclaimer.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/privacy-policy.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/terms.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/how-to-choose-seo-service.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/what-is-keyword-research.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/serp-analysis-seo-strategy.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/on-page-seo-checklist-small-business.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/technical-seo-basics-new-websites.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/seo-friendly-website-essentials.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/improve-website-search-visibility.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/seo-vs-google-ads.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/google-ads-vs-meta-ads.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/power-of-retargeting.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/how-to-generate-b2b-leads.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/build-targeted-lead-list.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/professional-business-website-trust.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/html-vs-wordpress.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/responsive-web-design-seo.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/high-converting-landing-pages.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/website-speed-seo.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/image-seo-optimization.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/small-business-digital-marketing.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/social-media-marketing-small-business.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/freelance-portfolio-guide.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/international-seo-guide.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/google-ads-management-guide.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/meta-ads-guide.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/local-seo-google-business-profile.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/wordpress-seo-optimization.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/youtube-seo-marketing.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/blog/b2b-lead-generation-international-markets.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/portfolio/custom-business-website.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/portfolio/high-converting-landing-page-design.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/portfolio/photographer-portfolio-website.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/portfolio/local-seo-growth-system.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/portfolio/keyword-research-content-mapping.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/portfolio/technical-seo-audit-report.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/portfolio/meta-ads-lead-campaign.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/portfolio/google-ads-search-campaign.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/portfolio/b2b-targeted-lead-list.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/portfolio/prospect-research-data-cleaning.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/portfolio/social-media-design-pack.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://prosengitkundu.top/portfolio/youtube-thumbnail-design-set.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.6</priority>
     </url>
+
 </urlset>
