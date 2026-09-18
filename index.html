@@ -505,7 +505,7 @@
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#F59E0B]">SELECTED WORK</div>
                 <h2 class="text-6xl font-bold heading-font tracking-tighter">Featured Projects</h2>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mt-3">Real client case studies showing my process for <a href="portfolio.html" class="text-[#0A66C2] font-semibold">custom websites, SEO systems, ad campaigns and lead generation</a> — goal, tools, deliverables and outcome for every project.</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-3">Selected <a href="portfolio.html" class="text-[#0A66C2] font-semibold">practice case studies</a> showing the approach behind custom websites, SEO systems, ad campaigns and lead generation — research, tools, deliverables and honest project status.</p>
             </div>
             <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="portfolio-filters">
                 <button type="button" data-filter="all" onclick="filterPortfolio('all')" class="portfolio-filter-btn active px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">All</button>
@@ -527,7 +527,7 @@
             <div>
                 <div class="text-xs uppercase tracking-widest font-semibold text-[#16A34A]">INSIGHTS</div>
                 <h2 class="text-6xl font-bold heading-font tracking-tighter">Latest from the blog</h2>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mt-3 max-w-xl">Practical guides on SEO, paid ads, lead generation and web development — written from real freelance work. <a href="blog.html" class="text-[#0A66C2] font-semibold">Browse all articles →</a></p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-3 max-w-xl">Practical guides on SEO, paid ads, lead generation and web development — focused on clear, evidence-aware methods. <a href="blog.html" class="text-[#0A66C2] font-semibold">Browse all articles →</a></p>
             </div>
             <a href="blog.html" class="text-sm font-medium flex items-center gap-x-1 hidden md:flex">View all articles <span class="text-xl">→</span></a>
         </div>
@@ -537,17 +537,21 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
+    <!-- TRANSPARENT PROJECT APPROACH -->
     <section class="max-w-screen-2xl mx-auto px-8 py-24 bg-[#F8FAFC] dark:bg-[#111827]">
         <div class="max-w-3xl mx-auto text-center mb-12">
-            <div class="text-xs font-semibold uppercase tracking-widest">CLIENT FEEDBACK</div>
-            <h2 class="text-5xl heading-font font-bold tracking-tighter mt-3">What clients say</h2>
-            <p class="text-gray-600 dark:text-gray-300 mt-4">Feedback from businesses and learners across SEO, ads, web development, lead generation and training — international and Bangladeshi clients.</p>
+            <div class="text-xs font-semibold uppercase tracking-widest">TRANSPARENT PROJECT APPROACH</div>
+            <h2 class="text-5xl heading-font font-bold tracking-tighter mt-3">See how the work is planned</h2>
+            <p class="text-gray-600 dark:text-gray-300 mt-4">The portfolio documents practice workflows for SEO, ads, web development, lead research and design. It explains the method and likely deliverables without presenting unverified client reviews or outcomes as fact.</p>
         </div>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6" id="home-testimonials"></div>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+            <article class="modern-card p-7 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl"><div class="relative z-10"><div class="text-xs font-semibold tracking-widest text-[#0A66C2]">01 · DISCOVERY</div><h3 class="font-bold text-xl mt-3">Scope before assumptions</h3><p class="text-sm mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">Goals, audience, current assets, target market and useful success signals are clarified before a recommendation or quotation is made.</p></div></article>
+            <article class="modern-card p-7 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl"><div class="relative z-10"><div class="text-xs font-semibold tracking-widest text-[#16A34A]">02 · DELIVERY</div><h3 class="font-bold text-xl mt-3">Methods you can inspect</h3><p class="text-sm mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">Each practice case study shows the research, implementation steps and deliverables relevant to a similar engagement.</p></div></article>
+            <article class="modern-card p-7 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl"><div class="relative z-10"><div class="text-xs font-semibold tracking-widest text-[#F59E0B]">03 · REVIEW</div><h3 class="font-bold text-xl mt-3">Clear next steps</h3><p class="text-sm mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">A real project is reviewed against its own brief, timeline and available evidence. No ranking, lead or revenue result is guaranteed in advance.</p></div></article>
+        </div>
         <div class="max-w-6xl mx-auto mt-8 flex flex-wrap gap-4 items-center justify-between bg-white dark:bg-gray-800 border rounded-3xl p-6">
-            <p class="text-sm text-gray-500">Real client and learner reviews, published word-for-word with each reviewer’s permission. <a href="testimonials.html" class="text-[#0A66C2] font-semibold">Read all testimonials →</a></p>
-            <a href="testimonials.html#submit-testimonial" class="text-sm font-semibold text-[#16A34A] whitespace-nowrap">Share your experience →</a>
+            <p class="text-sm text-gray-500">Verified client and learner quotes are not published until the reviewer, wording and permission can be confirmed. <a href="testimonials.html" class="text-[#0A66C2] font-semibold">Read the feedback policy →</a></p>
+            <a href="portfolio.html" class="text-sm font-semibold text-[#16A34A] whitespace-nowrap">Browse practice case studies →</a>
         </div>
     </section>
 
@@ -785,20 +789,19 @@
     </footer>
 </div>
 
+    <script src="assets/js/projects.js"></script>
     <script>
         /* ------------------------------------------------------------------
            Homepage-only content rendering.
            Loader, header, footer, dark mode, reveals, counters, typing and
            hover effects all come from the shared assets/js/site.js.
            ------------------------------------------------------------------ */
-        const homeProjects = [
-            {cat: 'web', title: 'Custom Business Website', client: 'Client project · HTML/CSS/JS', result: 'Fast, responsive, SEO-friendly custom-coded build', image: 'assets/images/work/business-website-design.jpg', id: 1},
-            {cat: 'seo', title: 'Local SEO Growth System', client: 'Client project · Local business', result: 'Audit → keyword map → Google Business Profile plan', image: 'assets/images/work/seo-analytics-dashboard.jpg', id: 4},
-            {cat: 'ads', title: 'Meta Ads Lead Campaign Structure', client: 'Client project · B2B service', result: 'Clean campaign architecture + creative test plan', image: 'assets/images/work/meta-ads-dashboard.jpg', id: 7},
-            {cat: 'design', title: 'Social Media Design Pack', client: 'Client project · Small brand', result: 'Consistent post and story template system', image: 'assets/images/work/social-media-designs.jpg', id: 11},
-            {cat: 'web', title: 'High-Converting Landing Page', client: 'Client project · Lead capture', result: 'Single-goal page built for campaigns', image: 'assets/images/work/landing-page-design.jpg', id: 2},
-            {cat: 'seo', title: 'Keyword Research & Content Map', client: 'Client project · Content strategy', result: 'Keyword-to-page mapping document', image: 'assets/images/work/keyword-research-spreadsheet.jpg', id: 5}
-        ];
+        // Featured cards resolve from the shared PROJECTS registry. This keeps the
+        // homepage route in lockstep with the portfolio case-study slug.
+        const featuredProjectIds = [1, 4, 7, 11, 2, 5];
+        const homeProjects = featuredProjectIds
+            .map(id => PROJECTS.find(project => project.id === id))
+            .filter(Boolean);
 
         function renderPortfolioOnHome(filter) {
             const container = document.getElementById('portfolio-grid');
@@ -806,12 +809,12 @@
             const items = filter === 'all' ? homeProjects : homeProjects.filter(project => project.cat === filter);
             container.innerHTML = items.map(project => `
                 <article class="portfolio-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">
-                    <img src="${project.image}" alt="${project.title} project preview" class="w-full aspect-video object-cover" width="900" height="520" loading="lazy" decoding="async">
+                    <img src="${project.image}" alt="${project.imageAlt}" class="w-full aspect-video object-cover" width="1000" height="558" loading="lazy" decoding="async">
                     <div class="p-7 relative z-10">
                         <div class="flex gap-2 items-center"><span class="text-xs font-semibold tracking-widest text-[#0A66C2]">${project.cat.toUpperCase()}</span></div>
                         <div class="font-bold text-xl mt-2">${project.title}</div>
-                        <div class="text-sm mt-1 text-gray-500">${project.client}</div>
-                        <div class="mt-5 text-sm font-medium">${project.result}</div>
+                        <div class="text-sm mt-1 text-gray-500">${project.projectType}</div>
+                        <div class="mt-5 text-sm font-medium">${project.summary}</div>
                         <a href="${project.url}" class="inline-block mt-4 text-sm font-semibold text-[#0A66C2]">View case study →</a>
                     </div>
                 </article>`).join('');
@@ -830,9 +833,9 @@
             const container = document.getElementById('blog-grid');
             if (!container) return;
             const articles = [
-                {title: 'How to Choose the Right SEO Service for Your Business', cat: 'SEO', id: 1, image: 'assets/images/work/seo-analytics-dashboard.jpg'},
-                {title: 'Google Ads vs Meta Ads: Choosing the Right Platform', cat: 'Paid Ads', id: 9, image: 'assets/images/work/meta-ads-dashboard.jpg'},
-                {title: 'HTML vs WordPress for Business Websites: An Honest Comparison', cat: 'Web Development', id: 14, image: 'assets/images/work/business-website-design.jpg'}
+                {title: 'How to Choose the Right SEO Service for Your Business', cat: 'SEO', url: '/blog/how-to-choose-seo-service.html', image: 'assets/images/work/seo-analytics-dashboard.webp'},
+                {title: 'Google Ads vs Meta Ads: Choosing the Right Platform', cat: 'Paid Ads', url: '/blog/google-ads-vs-meta-ads.html', image: 'assets/images/work/meta-ads-dashboard.webp'},
+                {title: 'HTML vs WordPress for Business Websites: An Honest Comparison', cat: 'Web Development', url: '/blog/html-vs-wordpress.html', image: 'assets/images/work/business-website-design.webp'}
             ];
             container.innerHTML = articles.map(article => `
                 <article class="blog-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">
@@ -846,36 +849,6 @@
             if (window.pkReveal) window.pkReveal(container);
         }
 
-        const homeTestimonials = [
-            {name: 'Michael Anderson', role: 'Business Consultant', country: 'United Kingdom', service: 'SEO Audit & Strategy', color: '#0A66C2', text: 'One of the clearest SEO audits I have received from any freelancer — a prioritized list instead of a generic report. Honest about what was worth doing and what was not.'},
-            {name: 'Emily Johnson', role: 'Marketing Consultant', country: 'Canada', service: 'Custom Web Development', color: '#DB2777', text: 'A fast, clean, hand-coded site — no bloated theme, excellent Core Web Vitals, proper on-page SEO built in from the start. Delivers when he says he will.'},
-            {name: 'Daniel Carter', role: 'Digital Agency Owner', country: 'Australia', service: 'B2B Lead Generation', color: '#16A34A', text: 'Verified, targeted prospect list that exceeded the brief — clean formatting, decision-maker titles, verified emails, minimal bounce rates. Lead generation done as a craft.'}
-        ];
-
-        function renderTestimonialsOnHome() {
-            const c = document.getElementById('home-testimonials');
-            if (!c) return;
-            c.innerHTML = homeTestimonials.map(t => `
-                <div class="modern-card p-7 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl">
-                    <div class="relative z-10">
-                        <div class="text-[#F59E0B] tracking-widest text-sm">★★★★★</div>
-                        <p class="text-sm mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">“${t.text}”</p>
-                        <div class="mt-5 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center gap-3">
-                            <div class="avatar" style="background:${t.color}">${t.name.split(' ').map(w => w[0]).slice(0,2).join('')}</div>
-                            <div>
-                                <div class="font-bold text-sm">${t.name}</div>
-                                <div class="text-xs text-gray-500">${t.role} · ${t.country}</div>
-                                <div class="text-xs text-[#0A66C2] font-semibold">${t.service}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>`).join('');
-            if (window.pkReveal) window.pkReveal(c);
-        }
-
-        renderPortfolioOnHome('all');
-        renderBlogOnHome();
-        renderTestimonialsOnHome();
     </script>
 </body>
 </html>
