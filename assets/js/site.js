@@ -64,6 +64,9 @@
     }
 
     function activeNavHref() {
+        var path = window.location.pathname || '/';
+        if (path.indexOf('/portfolio/') === 0) return 'portfolio.html';
+        if (path.indexOf('/blog/') === 0) return 'blog.html';
         var page = currentPage();
         return NAV_ALIASES[page] || page;
     }
@@ -554,11 +557,26 @@
        ---------------------------------------------------------------------- */
     function loadChatbot() {
         if (window.PkChatbot || document.getElementById('pk-chatbot-script')) return;
-        var s = document.createElement('script');
-        s.id = 'pk-chatbot-script';
-        s.src = 'assets/js/chatbot.js';
-        s.async = true;
-        document.head.appendChild(s);
+        function appendChatbot() {
+            if (window.PkChatbot || document.getElementById('pk-chatbot-script')) return;
+            var script = document.createElement('script');
+            script.id = 'pk-chatbot-script';
+            script.src = '/assets/js/chatbot.js';
+            script.async = true;
+            document.head.appendChild(script);
+        }
+        // The generated index supplies case-study titles and routes before the
+        // assistant starts, including on nested /portfolio/ URLs.
+        if (Array.isArray(window.PK_PORTFOLIO_INDEX)) { appendChatbot(); return; }
+        var registry = document.getElementById('pk-portfolio-index-script');
+        if (registry) { registry.addEventListener('load', appendChatbot, { once: true }); return; }
+        registry = document.createElement('script');
+        registry.id = 'pk-portfolio-index-script';
+        registry.src = '/assets/js/portfolio-index.js';
+        registry.async = true;
+        registry.onload = appendChatbot;
+        registry.onerror = appendChatbot;
+        document.head.appendChild(registry);
     }
 
     /* ----------------------------------------------------------------------

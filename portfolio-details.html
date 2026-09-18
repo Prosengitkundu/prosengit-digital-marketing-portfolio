@@ -76,7 +76,9 @@
     </header>
     
 
-    <main id="caseStudy" class="max-w-5xl mx-auto px-8 pt-16 pb-16"></main>
+    <main id="caseStudy" class="max-w-5xl mx-auto px-8 pt-16 pb-16">
+        <noscript><p class="text-gray-600 dark:text-gray-300">This legacy address requires JavaScript to open the correct case study. Please <a href="portfolio.html" class="text-[#0A66C2] font-semibold">browse the portfolio</a>.</p></noscript>
+    </main>
 
     <section class="bg-[#0A66C2] text-white"><div class="max-w-3xl mx-auto px-8 py-16 text-center"><h2 class="text-4xl heading-font font-bold">Have a similar project in mind?</h2><p class="mt-4 text-blue-100">Share your goal and I will suggest a practical, focused starting point — with clear pricing before any commitment.</p><div class="flex flex-wrap gap-4 justify-center mt-7"><a href="contact.html" class="premium-btn inline-block px-8 py-4 bg-white text-[#0A66C2] font-bold rounded-3xl">Discuss Your Project</a><a href="pricing.html" class="premium-btn inline-block px-8 py-4 border-2 border-white font-bold rounded-3xl">See Pricing</a></div></div></section>
 <footer class="site-footer">
@@ -133,71 +135,14 @@
 
     <script src="assets/js/projects.js"></script>
     <script>
-        const idParam = parseInt(new URLSearchParams(window.location.search).get('id')) || 1;
-        const idx = Math.max(0, PROJECTS.findIndex(p => p.id === idParam));
-        // Legacy URL handler: send ?id=N visitors to the static case-study page.
+        /* Legacy support only. Public case studies use /portfolio/<stable-slug>.html.
+           A numeric ID remains available for existing links, but it always resolves
+           through the shared project registry rather than constructing a URL. */
         (function () {
-            if (!new URLSearchParams(window.location.search).get('id')) return;
-            const legacy = PROJECTS.find(p => p.id === idParam);
-            if (legacy && legacy.url) { window.location.replace(legacy.url); }
+            const legacyId = Number(new URLSearchParams(window.location.search).get('id'));
+            const project = PROJECTS.find(item => item.id === legacyId);
+            window.location.replace(project ? project.url : 'portfolio.html');
         })();
-
-        const project = PROJECTS[idx];
-        const catLabel = PROJECT_CATEGORIES[project.cat] || project.cat;
-
-        document.title = `${project.title} | Case Study | Prosengit Kundu`;
-        document.querySelector('meta[name="description"]').setAttribute('content', `${project.focus} — case study by Prosengit Kundu. Full project documentation: goal, role, tools, work completed and outcome.`);
-
-        document.getElementById('caseStudy').innerHTML = `
-            <a href="portfolio.html" class="text-sm font-semibold text-[#0A66C2]">← Back to Portfolio</a>
-
-            <div class="mt-10">
-                <div class="flex flex-wrap gap-3 items-center">
-                    <div class="text-xs tracking-[3px] font-semibold text-[#0A66C2]">${catLabel.toUpperCase()}</div>
-                </div>
-                <h1 class="text-4xl md:text-6xl heading-font tracking-tighter font-bold mt-4 leading-[1.05]">${project.title}</h1>
-                <p class="text-xl text-gray-600 dark:text-gray-300 mt-5 max-w-3xl">${project.industry}</p>
-            </div>
-
-            <img src="${project.image}" alt="${project.title} — project image by Prosengit Kundu" class="w-full aspect-[16/9] object-cover rounded-3xl mt-12" width="1400" height="800" fetchpriority="high" onerror="this.onerror=null;this.src='https://images.pexels.com/photos/270360/pexels-photo-270360.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1400&h=800';">
-
-            <div class="grid md:grid-cols-4 gap-5 mt-8">
-                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5"><div class="text-xs text-gray-500 font-semibold">CATEGORY</div><div class="font-bold mt-2 text-[#0A66C2]">${catLabel}</div></div>
-                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5"><div class="text-xs text-gray-500 font-semibold">FOCUS</div><div class="font-semibold text-sm mt-2">${project.focus}</div></div>
-                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5"><div class="text-xs text-gray-500 font-semibold">TIMELINE</div><div class="font-bold mt-2">${project.duration}</div></div>
-                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5"><div class="text-xs text-gray-500 font-semibold">TYPE</div><div class="font-bold mt-2">${project.client}</div></div>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-12 mt-16">
-                <div>
-                    <div class="text-xs tracking-[3px] font-semibold text-[#16A34A]">PROJECT GOAL</div>
-                    <h2 class="text-3xl heading-font font-bold mt-3">What this project set out to do</h2>
-                    <p class="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">${project.goal}</p>
-                </div>
-                <div>
-                    <div class="text-xs tracking-[3px] font-semibold text-[#F59E0B]">MY ROLE</div>
-                    <h2 class="text-3xl heading-font font-bold mt-3">Responsibilities &amp; tools</h2>
-                    <p class="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">${project.role}</p>
-                    <div class="mt-5 bg-blue-50 dark:bg-gray-800 border border-blue-100 dark:border-gray-700 rounded-2xl p-5 text-sm"><span class="font-semibold text-[#0A66C2]">Tools &amp; technology:</span> <span class="text-gray-600 dark:text-gray-300">${project.tools}</span></div>
-                </div>
-            </div>
-
-            <div class="mt-16 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-8 md:p-10">
-                <div class="text-xs tracking-[3px] font-semibold text-[#0A66C2]">WORK COMPLETED</div>
-                <h2 class="text-3xl heading-font font-bold mt-3">Deliverables in detail</h2>
-                <ul class="grid md:grid-cols-2 gap-4 mt-7 text-gray-600 dark:text-gray-300">${project.work.map(item => `<li class="border-l-2 border-[#0A66C2] pl-4">${item}</li>`).join('')}</ul>
-            </div>
-
-            <div class="mt-12">
-                <div class="text-xs tracking-[3px] font-semibold text-[#16A34A]">OUTCOME</div>
-                <h2 class="text-3xl heading-font font-bold mt-3">Honest status of this work</h2>
-                <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">${project.outcome}</p>
-            </div>
-
-            <div class="mt-14 flex flex-wrap justify-between gap-4 border-t border-gray-200 dark:border-gray-700 pt-8">
-                ${PROJECTS[idx-1] ? `<a href="${PROJECTS[idx-1].url}" class="text-sm font-semibold text-[#0A66C2]">← ${PROJECTS[idx-1].title}</a>` : '<span></span>'}
-                ${PROJECTS[idx+1] ? `<a href="${PROJECTS[idx+1].url}" class="text-sm font-semibold text-[#0A66C2]">${PROJECTS[idx+1].title} →</a>` : ''}
-            </div>`;
     </script>
 </body>
 </html>
