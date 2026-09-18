@@ -15,6 +15,9 @@
     <meta name="description" content="A detailed project case study by freelance specialist Prosengit Kundu — project goal, role, tools, work completed and outcome.">
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://prosengitkundu.top/portfolio-details.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Project Case Study | Prosengit Kundu Portfolio">
     <meta property="og:description" content="A detailed project case study by freelance specialist Prosengit Kundu — project goal, role, tools, work completed and outcome.">
@@ -132,6 +135,13 @@
     <script>
         const idParam = parseInt(new URLSearchParams(window.location.search).get('id')) || 1;
         const idx = Math.max(0, PROJECTS.findIndex(p => p.id === idParam));
+        // Legacy URL handler: send ?id=N visitors to the static case-study page.
+        (function () {
+            if (!new URLSearchParams(window.location.search).get('id')) return;
+            const legacy = PROJECTS.find(p => p.id === idParam);
+            if (legacy && legacy.url) { window.location.replace(legacy.url); }
+        })();
+
         const project = PROJECTS[idx];
         const catLabel = PROJECT_CATEGORIES[project.cat] || project.cat;
 
@@ -185,8 +195,8 @@
             </div>
 
             <div class="mt-14 flex flex-wrap justify-between gap-4 border-t border-gray-200 dark:border-gray-700 pt-8">
-                ${PROJECTS[idx-1] ? `<a href="portfolio-details.html?id=${PROJECTS[idx-1].id}" class="text-sm font-semibold text-[#0A66C2]">← ${PROJECTS[idx-1].title}</a>` : '<span></span>'}
-                ${PROJECTS[idx+1] ? `<a href="portfolio-details.html?id=${PROJECTS[idx+1].id}" class="text-sm font-semibold text-[#0A66C2]">${PROJECTS[idx+1].title} →</a>` : ''}
+                ${PROJECTS[idx-1] ? `<a href="${PROJECTS[idx-1].url}" class="text-sm font-semibold text-[#0A66C2]">← ${PROJECTS[idx-1].title}</a>` : '<span></span>'}
+                ${PROJECTS[idx+1] ? `<a href="${PROJECTS[idx+1].url}" class="text-sm font-semibold text-[#0A66C2]">${PROJECTS[idx+1].title} →</a>` : ''}
             </div>`;
     </script>
 </body>

@@ -31,6 +31,9 @@
     <meta name="twitter:description" content="Client projects by freelance SEO & web development specialist Prosengit Kundu: custom websites, SEO systems, ad campaigns and B2B lead generation — each documented as a full case study.">
     <meta name="twitter:image" content="https://prosengitkundu.top/assets/images/og/prosengit-kundu-og.jpg">
     <link rel="canonical" href="https://prosengitkundu.top/portfolio.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <!-- ===== Shared design system (same loading + hover effects on every page) ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -220,7 +223,7 @@
                             <div class="font-medium">${p.duration}</div>
                             <div class="text-gray-400">${p.work.length} deliverables shown</div>
                         </div>
-                        <a href="portfolio-details.html?id=${p.id}" class="premium-btn mt-5 text-sm px-5 py-3 border border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white rounded-3xl w-full text-center font-semibold transition-colors">View Case Study</a>
+                        <a href="${p.url}" class="premium-btn mt-5 text-sm px-5 py-3 border border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white rounded-3xl w-full text-center font-semibold transition-colors">View Case Study</a>
                     </div>
                 </div>`).join('');
         }
