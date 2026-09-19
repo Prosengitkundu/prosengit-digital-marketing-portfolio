@@ -31,7 +31,7 @@
     var CONTACT = {
         name: 'Prosengit Kundu',
         fullName: 'Prosengit Kundu Utshob',
-        role: 'Digital Marketing Expert & SEO Specialist',
+        role: 'Digital Marketing Expert, Professional Trainer & Freelancer',
         avatar: 'assets/images/prosengit-kundu-professional-128.webp',
         phone: '+880 1701-059499',
         phoneShort: '01701059499',
@@ -610,6 +610,28 @@
                     { label: '💬 WhatsApp me', href: CONTACT.whatsapp, wa: true }
                 ],
                 chips: ['💰 Prices', '🔍 SEO', '📞 Contact me']
+            }
+        },
+        {
+            id: 'services-email-marketing',
+            weight: 6,
+            any: ['email marketing', 'email campaign', 'email outreach', 'b2b email marketing',
+                  'newsletter strategy', 'audience segmentation', 'outreach strategy', 'cold email campaign'],
+            answer: {
+                text: 'Yes — I provide email marketing and outreach planning as a scoped service:',
+                list: [
+                    '✉️ Campaign goals, audience segments and sending plan',
+                    '📝 Clear email content and practical call-to-action structure',
+                    '👥 B2B outreach support connected to qualified prospect research',
+                    '📊 Measurement planning for replies, clicks and meaningful enquiries',
+                    'Scope and pricing are confirmed after reviewing your audience, list and campaign needs.'
+                ],
+                links: [
+                    { label: '✉️ Email marketing services', href: PAGE.services + '#digital-marketing' },
+                    { label: '📞 Discuss a campaign', href: PAGE.contact },
+                    { label: '💬 WhatsApp me', href: CONTACT.whatsapp, wa: true }
+                ],
+                chips: ['👥 Lead generation', '💰 Prices', '📞 Contact me']
             }
         },
         {
@@ -1762,6 +1784,8 @@
           text: 'Paid advertising covers Google Ads (search, display, YouTube), Meta Ads (Facebook & Instagram) and social media management. The ad budget is always separate and paid by you directly to Google or Meta.' },
         { title: 'Web development detail', href: PAGE.services, kw: ['custom website', 'landing page', 'html website', 'javascript website', 'wordpress website', 'speed optimization', 'responsive', 'website redesign', 'search console setup', 'analytics setup'],
           text: 'Web development is custom-code-first: hand-written HTML, CSS and vanilla JavaScript, responsive and SEO-friendly. Landing pages, business sites, portfolio sites, WordPress, speed optimization and Google Search Console/Analytics setup are all available.' },
+        { title: 'Email marketing detail', href: PAGE.services + '#digital-marketing', kw: ['email marketing', 'email campaign', 'email outreach', 'b2b email marketing', 'audience segmentation', 'outreach strategy'],
+          text: 'Email marketing support covers campaign planning, audience segmentation, email content, B2B outreach strategy and measurement planning. The scope is based on the audience, list quality and campaign goal.' },
         { title: 'Lead generation detail', href: PAGE.services, kw: ['lead generation', 'b2b', 'b2c', 'lead list', 'prospect research', 'database', 'email list', 'data cleaning', 'verification'],
           text: 'Lead generation delivers verified, outreach-ready prospect lists: LinkedIn and Google Maps research, verified emails and phones, decision-maker titles, data cleaning and organized delivery.' },
         { title: 'Graphic design detail', href: PAGE.services, kw: ['logo', 'brand identity', 'business card', 'flyer', 'poster', 'banner', 'social media post', 'thumbnail', 'brochure', 'company profile', 'photoshop', 'illustrator'],
