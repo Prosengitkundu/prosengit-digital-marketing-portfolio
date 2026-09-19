@@ -33,6 +33,11 @@ function loadData(file, varname) {
 }
 const ARTICLES = loadData('assets/js/articles.js', 'ARTICLES');
 const PROJECTS = loadData('assets/js/projects.js', 'PROJECTS');
+/* Editorial case-study context is stored separately from the structured card
+   data so the listing remains lightweight while regeneration stays lossless. */
+const PORTFOLIO_EXPANSIONS = JSON.parse(
+  fs.readFileSync(path.join(ROOT, 'assets/data/portfolio-expansions.json'), 'utf8')
+);
 
 /* ---------------- template parts (reuse the real pages so design is identical) */
 function extractParts(templateFile, ctaStart) {
@@ -93,14 +98,27 @@ function setHead(prologue, { title, description, url, image, type, extraHead }) 
   return h;
 }
 
+const personRef = { '@type': 'Person', '@id': `${SITE}/#person`, name: 'Prosengit Kundu', url: `${SITE}/` };
+const breadcrumbs = (section, title, url) => ({
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: section, item: `${SITE}/${section.toLowerCase()}.html` },
+    { '@type': 'ListItem', position: 3, name: title, item: url }
+  ]
+});
 const articleSchema = (a, url) => `<script type="application/ld+json">${JSON.stringify({
   '@context': 'https://schema.org', '@type': 'Article',
   headline: a.title, description: a.excerpt,
-  image: absImg(a.img), datePublished: isoDate(a.date),
-  author: { '@type': 'Person', name: 'Prosengit Kundu', url: `${SITE}/` },
-  publisher: { '@type': 'Person', name: 'Prosengit Kundu' },
-  mainEntityOfPage: url
-})}</script>`;
+  image: absImg(a.img), datePublished: isoDate(a.date), dateModified: isoDate(a.date),
+  inLanguage: 'en', author: personRef, publisher: personRef,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': url }
+})}</script>\n<script type="application/ld+json">${JSON.stringify(breadcrumbs('Blog', a.title, url))}</script>`;
+
+const projectSchema = (p, url) => `<script type="application/ld+json">${JSON.stringify({
+  '@context': 'https://schema.org', '@type': 'CreativeWork', name: p.title,
+  description: p.focus, about: p.industry, image: absImg(p.image), url,
+  creator: personRef, mainEntityOfPage: url, inLanguage: 'en'
+})}</script>\n<script type="application/ld+json">${JSON.stringify(breadcrumbs('Portfolio', p.title, url))}</script>`;
 
 /* ---------------- article body processing (static TOC ids) ---------------- */
 function processBody(html) {
@@ -139,7 +157,7 @@ ARTICLES.forEach((a, i) => {
                     <div class="flex flex-wrap gap-3 items-center text-xs font-semibold"><span class="text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">${a.cat}</span><span class="text-gray-400">${a.date}</span><span class="text-gray-400">·</span><span class="text-gray-400">${a.read}</span></div>
                     <h1 class="text-4xl md:text-5xl heading-font tracking-tighter font-bold mt-5 leading-[1.1]">${esc(a.title)}</h1>
                     <p class="text-lg text-gray-600 dark:text-gray-300 mt-5 leading-relaxed">${esc(a.excerpt)}</p>
-                    <img src="/${a.img}" alt="${esc(a.title)} — illustrated article cover" class="w-full aspect-[16/9] object-cover rounded-3xl mt-10" width="1200" height="680" fetchpriority="high">
+                    <img src="${/^https?:/.test(a.img) ? a.img : `/${a.img.replace(/^\.\//, '')}`}" alt="${esc(a.title)} — illustrated article cover" class="w-full aspect-[16/9] object-cover rounded-3xl mt-10" width="1200" height="680" fetchpriority="high">
                     <div id="a-body" class="article-body mt-10">
 ${body}
                     </div>
@@ -236,9 +254,14 @@ PROJECTS.forEach((p, i) => {
 
   const head = setHead(CASE.prologue, {
     title: `${p.title} | Case Study | Prosengit Kundu`,
-    description, url, image: p.image, type: 'article', extraHead: ''
+    description, url, image: p.image, type: 'article', extraHead: projectSchema(p, url)
   });
-  const doc = absolutize(head + '\n' + main + '\n' + CASE.footer);
+  const expansion = PORTFOLIO_EXPANSIONS[p.slug] || '';
+  /* Keep the existing CTA order and place the editorial expansion before the
+     footer. This mirrors the public pages and prevents source regeneration
+     from discarding their human-written project context. */
+  const caseTail = CASE.footer.replace('<footer class="site-footer">', `${expansion}\n<footer class="site-footer">`);
+  const doc = absolutize(head + '\n' + main + '\n' + caseTail);
   fs.writeFileSync(path.join(ROOT, 'portfolio', `${p.slug}.html`), doc);
 });
 
