@@ -37,7 +37,8 @@
         'team-nilanjana.html': 'team.html',
         'team-sarna.html': 'team.html',
         'team-shamim.html': 'team.html',
-        'team-priyanka.html': 'team.html'
+        'team-priyanka.html': 'team.html',
+        'team-mashrur.html': 'team.html'
     };
 
     var CONTACT = {
