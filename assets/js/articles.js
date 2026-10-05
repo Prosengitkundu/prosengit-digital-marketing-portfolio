@@ -3,7 +3,7 @@
    ---------------------------------------------------------------------
    Each article object:
    id, title, cat, date, read, excerpt, img, body (HTML string)
-   Rendered by blog.html and blog-details.html
+   Rendered by /blog and /blog-details
    ===================================================================== */
 
 const ARTICLES = [
@@ -12,7 +12,7 @@ const ARTICLES = [
 {
   id: 1,
   slug: "how-to-choose-seo-service",
-  url: "/blog/how-to-choose-seo-service.html",
+  url: "/blog/how-to-choose-seo-service",
   title: "How to Choose the Right SEO Service for Your Business",
   cat: "SEO",
   date: "Aug 18, 2026",
@@ -60,7 +60,7 @@ const ARTICLES = [
   </ul>
 
   <h2>A practical way to start</h2>
-  <p>If you are unsure, begin with the smallest useful step: an audit or a starter package that covers audit + keyword research + on-page basics. This gives you a baseline, a prioritized action list and a working relationship you can evaluate — before you commit to anything larger. You can compare starting scopes and prices on the <a href="pricing.html">pricing page</a>, or browse the <a href="services.html">full SEO service list</a> to see each deliverable in detail.</p>
+  <p>If you are unsure, begin with the smallest useful step: an audit or a starter package that covers audit + keyword research + on-page basics. This gives you a baseline, a prioritized action list and a working relationship you can evaluate — before you commit to anything larger. You can compare starting scopes and prices on the <a href="/pricing">pricing page</a>, or browse the <a href="/services">full SEO service list</a> to see each deliverable in detail.</p>
   <p>Choosing the right SEO service is not about finding the biggest package. It is about finding the right next step — and building from there.</p>
   <h2>What changes when you hire an SEO freelancer internationally</h2>
   <p>Many businesses in the United States, United Kingdom, Canada and Australia now hire SEO specialists remotely — and the arrangement works well when it is structured properly. The SEO process itself does not change across borders: audits, keyword research, on-page fixes and reporting are the same. What changes is how you evaluate and manage the relationship.</p>
@@ -70,20 +70,20 @@ const ARTICLES = [
     <li><strong>Start with a bounded project.</strong> An audit or a starter package lets you evaluate working quality, communication and honesty before any monthly commitment. This is the lowest-risk way to test any new SEO provider, local or remote.</li>
     <li><strong>Keep ownership of everything.</strong> Your website, Search Console, Analytics and content stay yours. A trustworthy freelancer works inside your properties and documents every change.</li>
   </ul>
-  <p>International hiring also affects keyword strategy itself: spelling variations (optimize vs optimise), local terminology and country-specific search behavior all matter when your customers live in another market. That topic deserves its own guide — see <a href="/blog/international-seo-guide.html">International SEO: how to get clients in the USA, UK, Canada and beyond</a>.</p>
+  <p>International hiring also affects keyword strategy itself: spelling variations (optimize vs optimise), local terminology and country-specific search behavior all matter when your customers live in another market. That topic deserves its own guide — see <a href="/blog/international-seo-guide">International SEO: how to get clients in the USA, UK, Canada and beyond</a>.</p>
 
   <h2>Frequently asked questions</h2>
   <h3>How much should a small business pay for SEO?</h3>
-  <p>It depends on scope, not on a magic number. As a reference, my starting-from rates begin at $25 for an audit and $90 for a starter package covering audit, keyword research and on-page basics — see the full <a href="pricing.html">pricing page</a>. Be cautious of "full SEO" priced so low that real work is impossible, and of large retainers proposed before any audit exists.</p>
+  <p>It depends on scope, not on a magic number. As a reference, my starting-from rates begin at $25 for an audit and $90 for a starter package covering audit, keyword research and on-page basics — see the full <a href="/pricing">pricing page</a>. Be cautious of "full SEO" priced so low that real work is impossible, and of large retainers proposed before any audit exists.</p>
   <h3>How long does SEO take to show results?</h3>
   <p>Technical fixes can show effect within weeks. Content-driven gains typically mature over 2–4 months, and competitive terms take longer. Anyone guaranteeing a #1 ranking on a fixed date is selling risk, not results.</p>
   <h3>Should I choose SEO or Google Ads first?</h3>
-  <p>If you need customers immediately, start with ads while SEO compounds in the background. If you can invest patiently, SEO foundations first. The detailed comparison is in <a href="/blog/seo-vs-google-ads.html">SEO vs Google Ads: which is better for your business?</a></p>
+  <p>If you need customers immediately, start with ads while SEO compounds in the background. If you can invest patiently, SEO foundations first. The detailed comparison is in <a href="/blog/seo-vs-google-ads">SEO vs Google Ads: which is better for your business?</a></p>
   <h3>Can a freelancer handle SEO for a business in another country?</h3>
   <p>Yes — SEO deliverables are the same worldwide. What matters is the provider's process: research quality, honest reporting and communication rhythm. Start with a bounded audit or starter project to evaluate fit before committing monthly.</p>
 
   <h2>Continue reading</h2>
-  <p>If this guide helped, these three go deeper on the natural next steps: <a href="/blog/what-is-keyword-research.html">what keyword research involves and why it comes first</a>, <a href="/blog/on-page-seo-checklist-small-business.html">the on-page SEO checklist for small business websites</a>, and <a href="/blog/international-seo-guide.html">the international SEO guide for businesses targeting foreign markets</a>.</p>
+  <p>If this guide helped, these three go deeper on the natural next steps: <a href="/blog/what-is-keyword-research">what keyword research involves and why it comes first</a>, <a href="/blog/on-page-seo-checklist-small-business">the on-page SEO checklist for small business websites</a>, and <a href="/blog/international-seo-guide">the international SEO guide for businesses targeting foreign markets</a>.</p>
 `
 },
 
@@ -91,7 +91,7 @@ const ARTICLES = [
 {
   id: 2,
   slug: "what-is-keyword-research",
-  url: "/blog/what-is-keyword-research.html",
+  url: "/blog/what-is-keyword-research",
   title: "What Is Keyword Research and Why Is It Important for SEO?",
   cat: "SEO",
   date: "Aug 6, 2026",
@@ -149,7 +149,7 @@ const ARTICLES = [
     <li>Content gap observations — what competitors rank for that you do not</li>
     <li>Local keyword opportunities where relevant</li>
   </ul>
-  <p>Keyword research is the cheapest place to get SEO right and the most expensive place to get it wrong. If you want a second opinion on your current keyword targets — or a research project built from scratch — see the <a href="services.html">keyword research service</a> or <a href="contact.html">send me your website</a> and I will show you where the realistic opportunities are.</p>
+  <p>Keyword research is the cheapest place to get SEO right and the most expensive place to get it wrong. If you want a second opinion on your current keyword targets — or a research project built from scratch — see the <a href="/services">keyword research service</a> or <a href="/contact">send me your website</a> and I will show you where the realistic opportunities are.</p>
   <h2>Keyword research for international markets</h2>
   <p>When your customers live in another country, keyword research gains an extra layer. Search behavior, vocabulary and competition differ by market — and a keyword plan built for one country rarely transfers cleanly to another.</p>
   <ul>
@@ -158,20 +158,20 @@ const ARTICLES = [
     <li><strong>Local modifiers change everything.</strong> "SEO services" is a global battlefield; "SEO services for small businesses in Austin" is a winnable local query. For location-based businesses, service × city combinations are usually the highest-ROI targets.</li>
     <li><strong>SERP features differ by market.</strong> The same query can trigger a map pack in one country and shopping results in another. Study the actual results page in your target market (use a location-accurate search or a rank-checking tool set to that country) before planning content.</li>
   </ul>
-  <p>The full playbook for ranking across borders — targeting, structure and hreflang awareness — is covered in <a href="/blog/international-seo-guide.html">the international SEO guide</a>.</p>
+  <p>The full playbook for ranking across borders — targeting, structure and hreflang awareness — is covered in <a href="/blog/international-seo-guide">the international SEO guide</a>.</p>
 
   <h2>Frequently asked questions</h2>
   <h3>How many keywords should a small website target?</h3>
   <p>Fewer than most people think. Start with 10–30 keywords mapped one-per-page: a handful of commercial pages plus supporting informational content. Depth on a few winnable terms beats thin coverage of hundreds.</p>
   <h3>Which keyword research tools do you recommend?</h3>
-  <p>Google's own data first — Search Console, Keyword Planner and the search results themselves — supplemented by any reputable SEO tool for volume and difficulty estimates. Treat third-party numbers as directional, not exact; the SERP itself is the ground truth. Learn the habit in <a href="/blog/serp-analysis-seo-strategy.html">the SERP analysis guide</a>.</p>
+  <p>Google's own data first — Search Console, Keyword Planner and the search results themselves — supplemented by any reputable SEO tool for volume and difficulty estimates. Treat third-party numbers as directional, not exact; the SERP itself is the ground truth. Learn the habit in <a href="/blog/serp-analysis-seo-strategy">the SERP analysis guide</a>.</p>
   <h3>What is keyword cannibalization?</h3>
   <p>When multiple pages on your site target the same keyword, they split ranking signals and none of them wins. The fix is a keyword map: every target term assigned to exactly one page, with internal links reinforcing the assignment.</p>
   <h3>How often should keyword research be updated?</h3>
   <p>Review your map quarterly and rebuild it when you add services, enter a new market or notice traffic shifts. Search behavior evolves; a one-time list slowly goes stale.</p>
 
   <h2>Continue reading</h2>
-  <p>Natural next steps: <a href="/blog/serp-analysis-seo-strategy.html">how SERP analysis sharpens every keyword decision</a>, <a href="/blog/on-page-seo-checklist-small-business.html">the on-page checklist for putting keywords to work</a>, and <a href="/blog/international-seo-guide.html">international SEO for multi-country targeting</a>.</p>
+  <p>Natural next steps: <a href="/blog/serp-analysis-seo-strategy">how SERP analysis sharpens every keyword decision</a>, <a href="/blog/on-page-seo-checklist-small-business">the on-page checklist for putting keywords to work</a>, and <a href="/blog/international-seo-guide">international SEO for multi-country targeting</a>.</p>
 `
 },
 
@@ -179,7 +179,7 @@ const ARTICLES = [
 {
   id: 3,
   slug: "serp-analysis-seo-strategy",
-  url: "/blog/serp-analysis-seo-strategy.html",
+  url: "/blog/serp-analysis-seo-strategy",
   title: "How SERP Analysis Helps Build a Better SEO Strategy",
   cat: "SEO",
   date: "Jul 28, 2026",
@@ -229,17 +229,17 @@ const ARTICLES = [
   <p>That single insight is worth more than a month of blind publishing, and it cost twenty minutes of reading.</p>
 
   <h2>Make SERP analysis a habit</h2>
-  <p>Before every important page, spend twenty minutes on the SERP. It is the highest-leverage research habit in SEO — and it is exactly how I begin keyword and content projects. If you want this kind of evidence-first planning for your website, look at the <a href="services.html">SEO services overview</a> or <a href="contact.html">start a conversation</a> about your goals.</p>
+  <p>Before every important page, spend twenty minutes on the SERP. It is the highest-leverage research habit in SEO — and it is exactly how I begin keyword and content projects. If you want this kind of evidence-first planning for your website, look at the <a href="/services">SEO services overview</a> or <a href="/contact">start a conversation</a> about your goals.</p>
   <h2>Frequently asked questions</h2>
   <h3>How long does SERP analysis take per keyword?</h3>
   <p>About 15–20 minutes for an important keyword: open the top 10 results, note content types and angles, collect People-Also-Ask questions, and judge whether your site can realistically compete. It is the highest-leverage research habit in SEO.</p>
   <h3>Should I analyze the SERP in my target country?</h3>
-  <p>Yes — results differ by market. A keyword can show a map pack in one country and shopping results in another. Always study the results page your actual customers see; more in <a href="/blog/international-seo-guide.html">the international SEO guide</a>.</p>
+  <p>Yes — results differ by market. A keyword can show a map pack in one country and shopping results in another. Always study the results page your actual customers see; more in <a href="/blog/international-seo-guide">the international SEO guide</a>.</p>
   <h3>What if giants dominate page one for my keyword?</h3>
-  <p>Target longer-tail variations where smaller sites still rank, build authority there first, then work upward. The strategy is detailed in <a href="/blog/what-is-keyword-research.html">the keyword research guide</a>.</p>
+  <p>Target longer-tail variations where smaller sites still rank, build authority there first, then work upward. The strategy is detailed in <a href="/blog/what-is-keyword-research">the keyword research guide</a>.</p>
 
   <h2>Continue reading</h2>
-  <p>Pair this habit with <a href="/blog/what-is-keyword-research.html">keyword research fundamentals</a> and <a href="/blog/on-page-seo-checklist-small-business.html">the on-page SEO checklist</a> for a complete research-to-publish workflow.</p>
+  <p>Pair this habit with <a href="/blog/what-is-keyword-research">keyword research fundamentals</a> and <a href="/blog/on-page-seo-checklist-small-business">the on-page SEO checklist</a> for a complete research-to-publish workflow.</p>
 `
 },
 
@@ -247,7 +247,7 @@ const ARTICLES = [
 {
   id: 4,
   slug: "on-page-seo-checklist-small-business",
-  url: "/blog/on-page-seo-checklist-small-business.html",
+  url: "/blog/on-page-seo-checklist-small-business",
   title: "On-Page SEO Checklist for Small Business Websites",
   cat: "SEO",
   date: "Jul 15, 2026",
@@ -326,17 +326,17 @@ const ARTICLES = [
   <p>Ranking is only useful if the page convinces. Every service page should have a clear next step — a visible contact method, a quote button, a phone number — and trust signals like real work samples, testimonials and transparent pricing. SEO brings the visitor; on-page persuasion decides what happens next.</p>
 
   <h2>How to use this checklist</h2>
-  <p>Pick your five most important pages. Score each against the nine sections above, fix the gaps, then track impressions and clicks in Google Search Console over the following weeks. Most sites see movement from these basics alone — they are exactly what my <a href="pricing.html">SEO Starter package</a> covers. If you would rather have it done with you, see the <a href="services.html">on-page SEO service</a> or <a href="contact.html">request an audit</a> first.</p>
+  <p>Pick your five most important pages. Score each against the nine sections above, fix the gaps, then track impressions and clicks in Google Search Console over the following weeks. Most sites see movement from these basics alone — they are exactly what my <a href="/pricing">SEO Starter package</a> covers. If you would rather have it done with you, see the <a href="/services">on-page SEO service</a> or <a href="/contact">request an audit</a> first.</p>
   <h2>Frequently asked questions</h2>
   <h3>How long does on-page SEO take per page?</h3>
   <p>A focused pass takes 30–60 minutes per important page: title, meta description, headings, internal links, images and URL. Start with the pages closest to revenue, then work outward.</p>
   <h3>Can on-page SEO alone rank a website?</h3>
-  <p>For low-competition and local queries, often yes. For competitive terms, on-page is necessary but not sufficient — you also need technical health, content depth and authority. See the full roadmap in <a href="/blog/improve-website-search-visibility.html">improving search visibility step by step</a>.</p>
+  <p>For low-competition and local queries, often yes. For competitive terms, on-page is necessary but not sufficient — you also need technical health, content depth and authority. See the full roadmap in <a href="/blog/improve-website-search-visibility">improving search visibility step by step</a>.</p>
   <h3>Should each page target only one keyword?</h3>
-  <p>Each page should have one primary keyword plus natural variations — never five pages chasing the same term. The mapping method is explained in <a href="/blog/what-is-keyword-research.html">the keyword research guide</a>.</p>
+  <p>Each page should have one primary keyword plus natural variations — never five pages chasing the same term. The mapping method is explained in <a href="/blog/what-is-keyword-research">the keyword research guide</a>.</p>
 
   <h2>Continue reading</h2>
-  <p>Next: <a href="/blog/technical-seo-basics-new-websites.html">technical SEO basics for new websites</a> and <a href="/blog/image-seo-optimization.html">image optimization for SEO and speed</a>.</p>
+  <p>Next: <a href="/blog/technical-seo-basics-new-websites">technical SEO basics for new websites</a> and <a href="/blog/image-seo-optimization">image optimization for SEO and speed</a>.</p>
 `
 },
 
@@ -344,7 +344,7 @@ const ARTICLES = [
 {
   id: 5,
   slug: "technical-seo-basics-new-websites",
-  url: "/blog/technical-seo-basics-new-websites.html",
+  url: "/blog/technical-seo-basics-new-websites",
   title: "Technical SEO Basics for New Websites",
   cat: "SEO",
   date: "Jul 3, 2026",
@@ -409,17 +409,17 @@ const ARTICLES = [
     <li>Structured data added for organization/service types</li>
     <li>Checked from the outside: site:(yourdomain) search shows your pages</li>
   </ol>
-  <p>None of this requires a huge budget — it requires doing it deliberately, once, at the start. If your website missed some of these steps, a <a href="services.html">technical SEO audit</a> will pinpoint exactly what to fix, and the <a href="pricing.html">SEO packages</a> cover the remediation work. Questions about a specific issue? <a href="contact.html">Send me the URL</a> — I look at new websites all the time.</p>
+  <p>None of this requires a huge budget — it requires doing it deliberately, once, at the start. If your website missed some of these steps, a <a href="/services">technical SEO audit</a> will pinpoint exactly what to fix, and the <a href="/pricing">SEO packages</a> cover the remediation work. Questions about a specific issue? <a href="/contact">Send me the URL</a> — I look at new websites all the time.</p>
   <h2>Frequently asked questions</h2>
   <h3>How do I know if my site has technical SEO problems?</h3>
-  <p>Start with Google Search Console's Pages and Core Web Vitals reports — they show indexing and experience issues in Google's own words. A professional <a href="services.html">technical SEO audit</a> then prioritizes fixes by impact.</p>
+  <p>Start with Google Search Console's Pages and Core Web Vitals reports — they show indexing and experience issues in Google's own words. A professional <a href="/services">technical SEO audit</a> then prioritizes fixes by impact.</p>
   <h3>Can technical SEO be fixed without rebuilding the website?</h3>
-  <p>In most cases, yes: redirects, metadata, sitemaps, robots.txt, image compression and many speed fixes apply to existing sites. A rebuild is only worth it when the platform itself fights optimization — compare both paths in <a href="/blog/html-vs-wordpress.html">HTML vs WordPress</a>.</p>
+  <p>In most cases, yes: redirects, metadata, sitemaps, robots.txt, image compression and many speed fixes apply to existing sites. A rebuild is only worth it when the platform itself fights optimization — compare both paths in <a href="/blog/html-vs-wordpress">HTML vs WordPress</a>.</p>
   <h3>How often should technical SEO be checked?</h3>
   <p>A full audit yearly (or after redesigns and migrations), with Search Console reviewed monthly. New errors appear silently — monitoring beats rescue missions.</p>
 
   <h2>Continue reading</h2>
-  <p>Go deeper: <a href="/blog/website-speed-seo.html">how website speed affects SEO</a> and <a href="/blog/seo-friendly-website-essentials.html">the 12 essentials of an SEO-friendly website</a>.</p>
+  <p>Go deeper: <a href="/blog/website-speed-seo">how website speed affects SEO</a> and <a href="/blog/seo-friendly-website-essentials">the 12 essentials of an SEO-friendly website</a>.</p>
 `
 }
 ,
@@ -428,7 +428,7 @@ const ARTICLES = [
 {
   id: 6,
   slug: "seo-friendly-website-essentials",
-  url: "/blog/seo-friendly-website-essentials.html",
+  url: "/blog/seo-friendly-website-essentials",
   title: "What Makes a Website SEO-Friendly? 12 Essentials",
   cat: "SEO",
   date: "Jun 20, 2026",
@@ -475,17 +475,17 @@ const ARTICLES = [
     <li>Search <em>site:yourdomain.com</em> on Google. Are the right pages indexed — and is anything indexed that should not be?</li>
   </ol>
   <p>If most items pass, your foundation is sound and content/authority work will pay off. If several fail, fix structure first — content built on a broken foundation underperforms no matter how good it is.</p>
-  <p>My <a href="services.html">website development services</a> build these twelve essentials in from the first commit, and the <a href="pricing.html">Custom Website package</a> exists precisely for businesses that want an SEO-friendly site without platform compromises. Want a second opinion on your current site? <a href="contact.html">Ask for a free basic check</a>.</p>
+  <p>My <a href="/services">website development services</a> build these twelve essentials in from the first commit, and the <a href="/pricing">Custom Website package</a> exists precisely for businesses that want an SEO-friendly site without platform compromises. Want a second opinion on your current site? <a href="/contact">Ask for a free basic check</a>.</p>
   <h2>Frequently asked questions</h2>
   <h3>Is my current website SEO-friendly?</h3>
-  <p>Run through the twelve essentials above honestly — most sites fail on speed, heading structure, thin content or missing metadata. If you want a professional verdict, <a href="contact.html">request a free basic check</a>.</p>
+  <p>Run through the twelve essentials above honestly — most sites fail on speed, heading structure, thin content or missing metadata. If you want a professional verdict, <a href="/contact">request a free basic check</a>.</p>
   <h3>Can a WordPress site be SEO-friendly?</h3>
-  <p>Absolutely — with a lean theme, minimal plugins and proper configuration. The complete playbook is in <a href="/blog/wordpress-seo-optimization.html">WordPress SEO &amp; optimization</a>.</p>
+  <p>Absolutely — with a lean theme, minimal plugins and proper configuration. The complete playbook is in <a href="/blog/wordpress-seo-optimization">WordPress SEO &amp; optimization</a>.</p>
   <h3>What is the single most important SEO-friendly feature?</h3>
-  <p>Crawlable, fast pages with clear intent matching. Everything else amplifies that foundation. For the full build standard, see <a href="/blog/professional-business-website-trust.html">how to create a business website that builds trust</a>.</p>
+  <p>Crawlable, fast pages with clear intent matching. Everything else amplifies that foundation. For the full build standard, see <a href="/blog/professional-business-website-trust">how to create a business website that builds trust</a>.</p>
 
   <h2>Continue reading</h2>
-  <p>Related: <a href="/blog/professional-business-website-trust.html">business websites that build trust</a> and <a href="/blog/responsive-web-design-seo.html">why responsive design matters for SEO</a>.</p>
+  <p>Related: <a href="/blog/professional-business-website-trust">business websites that build trust</a> and <a href="/blog/responsive-web-design-seo">why responsive design matters for SEO</a>.</p>
 `
 },
 
@@ -493,7 +493,7 @@ const ARTICLES = [
 {
   id: 7,
   slug: "improve-website-search-visibility",
-  url: "/blog/improve-website-search-visibility.html",
+  url: "/blog/improve-website-search-visibility",
   title: "How to Improve Your Website's Search Visibility Step by Step",
   cat: "SEO",
   date: "Jun 8, 2026",
@@ -547,17 +547,17 @@ const ARTICLES = [
 
   <h2>What timeline should you expect?</h2>
   <p>Honest expectations: technical fixes can show effect in weeks; content gains typically take 2–4 months to mature; competitive head terms take longer and depend on the authority you accumulate along the way. Anyone promising overnight rankings is selling a lottery ticket.</p>
-  <p>If you want this roadmap executed for your website — as a one-time project or month by month — the <a href="pricing.html">SEO Growth package</a> is built exactly around it, and <a href="services.html">individual SEO services</a> cover each layer separately. Start with a <a href="contact.html">free basic check</a> if you just want to know where you stand.</p>
+  <p>If you want this roadmap executed for your website — as a one-time project or month by month — the <a href="/pricing">SEO Growth package</a> is built exactly around it, and <a href="/services">individual SEO services</a> cover each layer separately. Start with a <a href="/contact">free basic check</a> if you just want to know where you stand.</p>
   <h2>Frequently asked questions</h2>
   <h3>How long until visibility improves?</h3>
   <p>Technical fixes: weeks. Content-driven gains: typically 2–4 months. Competitive head terms: longer, depending on authority built along the way. Track impressions and average position in Search Console — they move before clicks do.</p>
   <h3>What should I track to measure visibility?</h3>
   <p>Impressions, average position and clicks in Search Console, plus conversions in Analytics. Rankings alone mislead; visibility that never converts is decoration.</p>
   <h3>Does this roadmap work for international websites?</h3>
-  <p>Yes — the layers are universal. Multi-country sites add targeting structure and hreflang on top, covered in <a href="/blog/international-seo-guide.html">the international SEO guide</a>.</p>
+  <p>Yes — the layers are universal. Multi-country sites add targeting structure and hreflang on top, covered in <a href="/blog/international-seo-guide">the international SEO guide</a>.</p>
 
   <h2>Continue reading</h2>
-  <p>Execute the roadmap with <a href="/blog/how-to-choose-seo-service.html">choosing the right SEO service</a> and <a href="/blog/technical-seo-basics-new-websites.html">technical SEO basics</a>.</p>
+  <p>Execute the roadmap with <a href="/blog/how-to-choose-seo-service">choosing the right SEO service</a> and <a href="/blog/technical-seo-basics-new-websites">technical SEO basics</a>.</p>
 `
 },
 
@@ -565,7 +565,7 @@ const ARTICLES = [
 {
   id: 8,
   slug: "seo-vs-google-ads",
-  url: "/blog/seo-vs-google-ads.html",
+  url: "/blog/seo-vs-google-ads",
   title: "SEO vs Google Ads: Which Is Better for Your Business?",
   cat: "Paid Ads",
   date: "May 26, 2026",
@@ -610,7 +610,7 @@ const ARTICLES = [
 
   <h2>A balanced starting framework</h2>
   <p>For most small and mid-sized businesses I recommend: fund ads at a level you can sustain for at least 90 days (enough to learn), invest in SEO continuously at a level you can sustain for a year (enough to compound), and review the split quarterly using one metric — cost per qualified lead, not cost per click. Manage to leads and the channel debate settles itself.</p>
-  <p>If you want help structuring either side, see <a href="services.html">Google Ads management and SEO services</a>, compare <a href="pricing.html">packages and pricing</a>, or <a href="contact.html">book a free consultation</a> to talk through your specific market.</p>
+  <p>If you want help structuring either side, see <a href="/services">Google Ads management and SEO services</a>, compare <a href="/pricing">packages and pricing</a>, or <a href="/contact">book a free consultation</a> to talk through your specific market.</p>
   <h2>How growing businesses usually combine both channels</h2>
   <p>In practice, the SEO-vs-ads debate is rarely either-or. A common pattern among small and mid-sized businesses — in Bangladesh as well as in the USA, UK, Canada and Australia — looks like this:</p>
   <ol>
@@ -624,14 +624,14 @@ const ARTICLES = [
   <h3>Is SEO or Google Ads better for a new business?</h3>
   <p>For immediate inquiries, Google Ads — it can deliver traffic within days. For durable, compounding visibility, SEO. Most new businesses benefit from ads first (to learn what converts) with SEO foundations built in parallel.</p>
   <h3>How much ad budget does a small business need to start?</h3>
-  <p>Start with an amount you could sustain for at least 90 days — enough for the platform to exit the learning phase and produce real data. A smaller budget run intelligently beats a large budget burned on broad targeting. The full budgeting walkthrough is in <a href="/blog/google-ads-management-guide.html">the Google Ads management guide</a>.</p>
+  <p>Start with an amount you could sustain for at least 90 days — enough for the platform to exit the learning phase and produce real data. A smaller budget run intelligently beats a large budget burned on broad targeting. The full budgeting walkthrough is in <a href="/blog/google-ads-management-guide">the Google Ads management guide</a>.</p>
   <h3>Does running Google Ads improve organic rankings?</h3>
   <p>No — ads do not directly boost SEO rankings. The indirect benefits are real though: faster learning about converting keywords, extra brand exposure, and retargeting audiences built from organic visitors.</p>
   <h3>Can one freelancer manage both SEO and ads?</h3>
-  <p>Yes, and there are advantages: shared keyword intelligence, aligned landing pages and unified reporting. My <a href="pricing.html">Digital Growth plan</a> coordinates both under one monthly process, or you can order <a href="services.html">each service individually</a>.</p>
+  <p>Yes, and there are advantages: shared keyword intelligence, aligned landing pages and unified reporting. My <a href="/pricing">Digital Growth plan</a> coordinates both under one monthly process, or you can order <a href="/services">each service individually</a>.</p>
 
   <h2>Continue reading</h2>
-  <p>Go deeper: <a href="/blog/google-ads-management-guide.html">Google Ads management — the complete small-business guide</a>, <a href="/blog/google-ads-vs-meta-ads.html">Google Ads vs Meta Ads — choosing the right platform</a>, and <a href="/blog/how-to-choose-seo-service.html">how to choose the right SEO service</a>.</p>
+  <p>Go deeper: <a href="/blog/google-ads-management-guide">Google Ads management — the complete small-business guide</a>, <a href="/blog/google-ads-vs-meta-ads">Google Ads vs Meta Ads — choosing the right platform</a>, and <a href="/blog/how-to-choose-seo-service">how to choose the right SEO service</a>.</p>
 `
 },
 
@@ -639,7 +639,7 @@ const ARTICLES = [
 {
   id: 9,
   slug: "google-ads-vs-meta-ads",
-  url: "/blog/google-ads-vs-meta-ads.html",
+  url: "/blog/google-ads-vs-meta-ads",
   title: "Google Ads vs Meta Ads: Choosing the Right Platform for Your Goals",
   cat: "Paid Ads",
   date: "May 12, 2026",
@@ -690,16 +690,16 @@ const ARTICLES = [
 
   <h2>What both platforms require to work</h2>
   <p>Neither platform compensates for a weak offer or a slow, confusing landing page. Before spending on ads, make sure: the offer is specific, the landing page matches the ad's promise and loads fast, forms or WhatsApp buttons work on mobile, and someone answers inquiries quickly. Ads multiply what exists — they do not fix what is broken.</p>
-  <p>I manage both Google Ads and Meta Ads campaigns, always with advertising budget kept separate and fully under the client's ownership. See the <a href="services.html">paid advertising services</a>, the <a href="pricing.html">Paid Advertising package</a>, or <a href="contact.html">start a conversation</a> about which platform fits your goals.</p>
+  <p>I manage both Google Ads and Meta Ads campaigns, always with advertising budget kept separate and fully under the client's ownership. See the <a href="/services">paid advertising services</a>, the <a href="/pricing">Paid Advertising package</a>, or <a href="/contact">start a conversation</a> about which platform fits your goals.</p>
   <h2>Budget thinking: how to split spend across Google and Meta</h2>
   <p>There is no universal percentage split — but there is a universal method. Start from your cost per qualified lead target and work backward:</p>
   <ol>
     <li><strong>Define a qualified lead in writing.</strong> Not a click or a form start — a genuinely sales-ready inquiry. Both platforms must be measured against this same definition.</li>
     <li><strong>Give each platform a fair learning budget.</strong> Launching with too little spend produces inconclusive data and wrong conclusions. Sustain the test long enough for each platform to exit its learning phase before judging.</li>
     <li><strong>Scale winners gradually.</strong> Increase budgets in controlled steps (not 10x overnight), keep audience definitions stable while you scale, and refresh creative before fatigue sets in.</li>
-    <li><strong>Keep retargeting always-on.</strong> Whichever platform wins prospecting, retargeting across both is usually the highest-ROI spend — see <a href="/blog/power-of-retargeting.html">the retargeting guide</a>.</li>
+    <li><strong>Keep retargeting always-on.</strong> Whichever platform wins prospecting, retargeting across both is usually the highest-ROI spend — see <a href="/blog/power-of-retargeting">the retargeting guide</a>.</li>
   </ol>
-  <p>For the full operational playbooks, read <a href="/blog/google-ads-management-guide.html">Google Ads management — the complete guide</a> and <a href="/blog/meta-ads-guide.html">Meta Ads (Facebook &amp; Instagram) — the practical guide</a>.</p>
+  <p>For the full operational playbooks, read <a href="/blog/google-ads-management-guide">Google Ads management — the complete guide</a> and <a href="/blog/meta-ads-guide">Meta Ads (Facebook &amp; Instagram) — the practical guide</a>.</p>
 
   <h2>Frequently asked questions</h2>
   <h3>Which is cheaper — Google Ads or Meta Ads?</h3>
@@ -707,12 +707,12 @@ const ARTICLES = [
   <h3>Can I run both platforms with a small budget?</h3>
   <p>Usually it is better to fund one platform properly than to starve two. Start where your buyers already show intent, prove the economics, then expand. An exception: always-on retargeting is cheap enough to justify on both.</p>
   <h3>Do I need a landing page for paid ads?</h3>
-  <p>In most cases, yes — sending paid traffic to a generic homepage wastes money. A message-matched landing page is typically the cheapest conversion win available. See <a href="/blog/high-converting-landing-pages.html">the landing page principles guide</a>.</p>
+  <p>In most cases, yes — sending paid traffic to a generic homepage wastes money. A message-matched landing page is typically the cheapest conversion win available. See <a href="/blog/high-converting-landing-pages">the landing page principles guide</a>.</p>
   <h3>Is my ad budget included in management pricing?</h3>
   <p>No — and be wary of any manager who bundles opaquely. Ad spend is paid by you directly to Google or Meta; management fees cover strategy, setup, optimization and reporting. Your accounts stay under your ownership.</p>
 
   <h2>Continue reading</h2>
-  <p>Next steps: <a href="/blog/google-ads-management-guide.html">Google Ads management — the complete guide</a>, <a href="/blog/meta-ads-guide.html">Meta Ads — the practical business guide</a>, and <a href="/blog/power-of-retargeting.html">the power of retargeting</a>.</p>
+  <p>Next steps: <a href="/blog/google-ads-management-guide">Google Ads management — the complete guide</a>, <a href="/blog/meta-ads-guide">Meta Ads — the practical business guide</a>, and <a href="/blog/power-of-retargeting">the power of retargeting</a>.</p>
 `
 },
 
@@ -720,7 +720,7 @@ const ARTICLES = [
 {
   id: 10,
   slug: "power-of-retargeting",
-  url: "/blog/power-of-retargeting.html",
+  url: "/blog/power-of-retargeting",
   title: "The Power of Retargeting: Turning Website Visitors into Customers",
   cat: "Paid Ads",
   date: "Apr 28, 2026",
@@ -771,17 +771,17 @@ const ARTICLES = [
 
   <h2>Getting started, practically</h2>
   <p>Install the Meta pixel and Google tag now — audiences start accumulating from day one, even before you spend a taka on showing ads. Segment your top pages. Then launch one modest campaign to the warmest segment with your best-performing organic message. Measure cost per returned visitor and per inquiry, and expand only what proves out.</p>
-  <p>Retargeting setup is included in my <a href="services.html">ads management services</a> and the <a href="pricing.html">Paid Advertising package</a> (ad budget always separate and yours). If your site gets traffic but inquiries stall, <a href="contact.html">ask for a free basic check</a> — retargeting is usually the first recommendation.</p>
+  <p>Retargeting setup is included in my <a href="/services">ads management services</a> and the <a href="/pricing">Paid Advertising package</a> (ad budget always separate and yours). If your site gets traffic but inquiries stall, <a href="/contact">ask for a free basic check</a> — retargeting is usually the first recommendation.</p>
   <h2>Frequently asked questions</h2>
   <h3>How much traffic do I need before retargeting works?</h3>
   <p>Platforms need minimum audience sizes (typically 100–1,000 members depending on network). Even small sites can retarget effectively if tracking has been collecting for a few months — install pixels now, profit later.</p>
   <h3>Does retargeting work for B2B?</h3>
-  <p>Yes — B2B buying cycles are long, which makes staying visible especially valuable. Pair retargeting with a strong <a href="/blog/how-to-generate-b2b-leads.html">B2B lead generation</a> foundation for best results.</p>
+  <p>Yes — B2B buying cycles are long, which makes staying visible especially valuable. Pair retargeting with a strong <a href="/blog/how-to-generate-b2b-leads">B2B lead generation</a> foundation for best results.</p>
   <h3>How do I avoid annoying people with retargeting ads?</h3>
   <p>Cap frequency, exclude converters, rotate creative, and set membership durations that match your sales cycle. Thoughtful retargeting feels like a reminder; careless retargeting feels like stalking.</p>
 
   <h2>Continue reading</h2>
-  <p>Complete the paid-ads picture with <a href="/blog/google-ads-management-guide.html">Google Ads management</a> and <a href="/blog/meta-ads-guide.html">Meta Ads for businesses</a>.</p>
+  <p>Complete the paid-ads picture with <a href="/blog/google-ads-management-guide">Google Ads management</a> and <a href="/blog/meta-ads-guide">Meta Ads for businesses</a>.</p>
 `
 },
 
@@ -789,7 +789,7 @@ const ARTICLES = [
 {
   id: 11,
   slug: "how-to-generate-b2b-leads",
-  url: "/blog/how-to-generate-b2b-leads.html",
+  url: "/blog/how-to-generate-b2b-leads",
   title: "How to Generate B2B Leads: A Practical Framework",
   cat: "Lead Generation",
   date: "Apr 14, 2026",
@@ -852,7 +852,7 @@ const ARTICLES = [
   </ul>
 
   <h2>Where this service fits</h2>
-  <p>I provide B2B lead generation as a done-for-you research service: audience definition, prospect research, targeted lead lists, contact research, data cleaning and organized delivery in your preferred format — scoped per project and priced transparently on the <a href="pricing.html">pricing page</a>. Agencies, SaaS companies, consultants and local service providers use these lists for cold email, ads audiences and direct sales. If your team has capacity but lacks precision targets, <a href="contact.html">let's scope your ideal profile</a> together.</p>
+  <p>I provide B2B lead generation as a done-for-you research service: audience definition, prospect research, targeted lead lists, contact research, data cleaning and organized delivery in your preferred format — scoped per project and priced transparently on the <a href="/pricing">pricing page</a>. Agencies, SaaS companies, consultants and local service providers use these lists for cold email, ads audiences and direct sales. If your team has capacity but lacks precision targets, <a href="/contact">let's scope your ideal profile</a> together.</p>
   <h2>B2B lead generation for international markets</h2>
   <p>The framework above works in any country — but cross-border prospecting adds practical considerations worth planning for:</p>
   <ul>
@@ -861,20 +861,20 @@ const ARTICLES = [
     <li><strong>Localize personalization.</strong> Reference the prospect's market reality — local competitors, local industry events, local terminology. A first line that could only have been written for that company beats any template.</li>
     <li><strong>Verify more strictly across borders.</strong> Bounce rates hurt deliverability everywhere, but recovery is slower when you cannot pick up the phone easily. Verify every address at mailbox level before the first send.</li>
   </ul>
-  <p>The dedicated international playbook — market selection, sourcing, verification and outreach-ready formatting — is in <a href="/blog/b2b-lead-generation-international-markets.html">B2B lead generation for international markets</a>.</p>
+  <p>The dedicated international playbook — market selection, sourcing, verification and outreach-ready formatting — is in <a href="/blog/b2b-lead-generation-international-markets">B2B lead generation for international markets</a>.</p>
 
   <h2>Frequently asked questions</h2>
   <h3>How many leads do I need to start outbound?</h3>
   <p>Start with a tightly defined batch of 100–300 ideal-fit prospects rather than thousands of loose matches. Quality signals from a small precise list teach you more than silence from a large vague one.</p>
   <h3>What fields should a B2B lead list include?</h3>
-  <p>At minimum: company, industry, company size indicators, contact name, verified title, verified email, phone where available, LinkedIn URL, source, and a personalization note. The full field standard is in <a href="/blog/build-targeted-lead-list.html">how to build a targeted lead list</a>.</p>
+  <p>At minimum: company, industry, company size indicators, contact name, verified title, verified email, phone where available, LinkedIn URL, source, and a personalization note. The full field standard is in <a href="/blog/build-targeted-lead-list">how to build a targeted lead list</a>.</p>
   <h3>Should I buy a lead database or build a custom list?</h3>
   <p>Bulk databases trade precision for volume — and stale data kills deliverability. A custom-built, verified list matched to a strict ICP costs more per contact but converts better and protects your sender reputation.</p>
   <h3>Do you build lead lists for specific countries or industries?</h3>
-  <p>Yes — lists are built around your ICP sentence, including country, industry, company size and decision-maker titles. See <a href="services.html">lead generation services</a> or <a href="contact.html">send your ICP</a> for an honest feasibility answer.</p>
+  <p>Yes — lists are built around your ICP sentence, including country, industry, company size and decision-maker titles. See <a href="/services">lead generation services</a> or <a href="/contact">send your ICP</a> for an honest feasibility answer.</p>
 
   <h2>Continue reading</h2>
-  <p>Go deeper: <a href="/blog/build-targeted-lead-list.html">how to build a targeted lead list for sales and ads</a>, <a href="/blog/b2b-lead-generation-international-markets.html">B2B lead generation for international markets</a>, and <a href="/blog/small-business-digital-marketing.html">how small businesses can start with digital marketing</a>.</p>
+  <p>Go deeper: <a href="/blog/build-targeted-lead-list">how to build a targeted lead list for sales and ads</a>, <a href="/blog/b2b-lead-generation-international-markets">B2B lead generation for international markets</a>, and <a href="/blog/small-business-digital-marketing">how small businesses can start with digital marketing</a>.</p>
 `
 }
 ,
@@ -883,7 +883,7 @@ const ARTICLES = [
 {
   id: 12,
   slug: "build-targeted-lead-list",
-  url: "/blog/build-targeted-lead-list.html",
+  url: "/blog/build-targeted-lead-list",
   title: "How to Build a Targeted Lead List for Sales and Ads",
   cat: "Lead Generation",
   date: "Mar 30, 2026",
@@ -949,17 +949,17 @@ const ARTICLES = [
 
   <h2>From list to pipeline</h2>
   <p>A targeted list feeds three machines: cold outreach (email + LinkedIn), custom audiences for Meta and Google ads, and manual sales prospecting. Used across all three, one well-researched list becomes a full demand-generation layer for a quarter.</p>
-  <p>If building this in-house is slower than it is worth, that is exactly what my <a href="services.html">lead generation services</a> cover — targeted lead lists, prospect research, data cleaning and organized delivery, priced transparently on the <a href="pricing.html">pricing page</a>. Tell me your ICP sentence and I will tell you honestly whether I can build you a list worth calling.</p>
+  <p>If building this in-house is slower than it is worth, that is exactly what my <a href="/services">lead generation services</a> cover — targeted lead lists, prospect research, data cleaning and organized delivery, priced transparently on the <a href="/pricing">pricing page</a>. Tell me your ICP sentence and I will tell you honestly whether I can build you a list worth calling.</p>
   <h2>Frequently asked questions</h2>
   <h3>How long does it take to build a quality lead list?</h3>
   <p>Manual research runs roughly 15–30 verified contacts per hour depending on niche difficulty. A 500-contact list is typically a 1–2 week project including verification and cleaning.</p>
   <h3>Which sources produce the best B2B contacts?</h3>
   <p>LinkedIn, Google Maps, industry directories and company websites — combined, then verified. No single source is enough; cross-referencing is what makes data trustworthy.</p>
   <h3>Can lead lists target specific countries?</h3>
-  <p>Yes — geography is part of the ideal customer profile. The cross-border playbook is in <a href="/blog/b2b-lead-generation-international-markets.html">B2B lead generation for international markets</a>.</p>
+  <p>Yes — geography is part of the ideal customer profile. The cross-border playbook is in <a href="/blog/b2b-lead-generation-international-markets">B2B lead generation for international markets</a>.</p>
 
   <h2>Continue reading</h2>
-  <p>Related: <a href="/blog/how-to-generate-b2b-leads.html">the B2B lead generation framework</a> and <a href="/blog/b2b-lead-generation-international-markets.html">international lead generation</a>.</p>
+  <p>Related: <a href="/blog/how-to-generate-b2b-leads">the B2B lead generation framework</a> and <a href="/blog/b2b-lead-generation-international-markets">international lead generation</a>.</p>
 `
 },
 
@@ -967,7 +967,7 @@ const ARTICLES = [
 {
   id: 13,
   slug: "professional-business-website-trust",
-  url: "/blog/professional-business-website-trust.html",
+  url: "/blog/professional-business-website-trust",
   title: "How to Create a Professional Business Website That Builds Trust",
   cat: "Web Development",
   date: "Mar 18, 2026",
@@ -1016,7 +1016,7 @@ const ARTICLES = [
   </ul>
 
   <h2>Custom code or CMS?</h2>
-  <p>For most small business sites, a hand-coded HTML/CSS/JavaScript website is the cleaner path: only the code the design needs, faster loading, fewer security updates, stronger SEO control and no monthly plugin treadmill. A CMS like WordPress makes sense when non-technical staff will publish content frequently. Choose based on who maintains the site after launch — and if that maintainer is a developer (or me), custom code wins on nearly every axis. I compare the options honestly in the <a href="/blog/html-vs-wordpress.html">HTML vs WordPress article</a>.</p>
+  <p>For most small business sites, a hand-coded HTML/CSS/JavaScript website is the cleaner path: only the code the design needs, faster loading, fewer security updates, stronger SEO control and no monthly plugin treadmill. A CMS like WordPress makes sense when non-technical staff will publish content frequently. Choose based on who maintains the site after launch — and if that maintainer is a developer (or me), custom code wins on nearly every axis. I compare the options honestly in the <a href="/blog/html-vs-wordpress">HTML vs WordPress article</a>.</p>
 
   <h2>Pre-launch checklist</h2>
   <ol>
@@ -1028,17 +1028,17 @@ const ARTICLES = [
     <li>No lorem ipsum, no "coming soon", no broken links</li>
     <li>Favicon installed — it is the small trust detail in every browser tab</li>
   </ol>
-  <p>A professional website is not a design project; it is a trust project with a design layer. My <a href="pricing.html">Custom Website package</a> delivers exactly this blueprint — hand-coded, responsive, SEO-friendly — and the <a href="portfolio.html">portfolio</a> shows the approach in practice. Questions about your project? <a href="contact.html">Send a message</a>.</p>
+  <p>A professional website is not a design project; it is a trust project with a design layer. My <a href="/pricing">Custom Website package</a> delivers exactly this blueprint — hand-coded, responsive, SEO-friendly — and the <a href="/portfolio">portfolio</a> shows the approach in practice. Questions about your project? <a href="/contact">Send a message</a>.</p>
   <h2>Frequently asked questions</h2>
   <h3>How many pages does a small business website need?</h3>
   <p>Five to eight well-built pages cover most businesses: Home, Services (one per core service), About, Pricing/Process, Contact — plus a blog if you commit to publishing. Depth beats page count.</p>
   <h3>Should my business website be custom-coded or WordPress?</h3>
-  <p>It depends on who updates it and how much performance matters. The honest, detailed answer is in <a href="/blog/html-vs-wordpress.html">HTML vs WordPress for business websites</a>.</p>
+  <p>It depends on who updates it and how much performance matters. The honest, detailed answer is in <a href="/blog/html-vs-wordpress">HTML vs WordPress for business websites</a>.</p>
   <h3>How much does a professional business website cost?</h3>
-  <p>My custom-coded business websites start from $350 (international) with scope confirmed in writing — see <a href="pricing.html">pricing</a>. Whatever you pay anyone, insist on responsive design, on-page SEO setup and ownership of all files.</p>
+  <p>My custom-coded business websites start from $350 (international) with scope confirmed in writing — see <a href="/pricing">pricing</a>. Whatever you pay anyone, insist on responsive design, on-page SEO setup and ownership of all files.</p>
 
   <h2>Continue reading</h2>
-  <p>Related: <a href="/blog/seo-friendly-website-essentials.html">what makes a website SEO-friendly</a> and <a href="/blog/high-converting-landing-pages.html">landing page principles that convert</a>.</p>
+  <p>Related: <a href="/blog/seo-friendly-website-essentials">what makes a website SEO-friendly</a> and <a href="/blog/high-converting-landing-pages">landing page principles that convert</a>.</p>
 `
 },
 
@@ -1046,7 +1046,7 @@ const ARTICLES = [
 {
   id: 14,
   slug: "html-vs-wordpress",
-  url: "/blog/html-vs-wordpress.html",
+  url: "/blog/html-vs-wordpress",
   title: "HTML vs WordPress for Business Websites: An Honest Comparison",
   cat: "Web Development",
   date: "Mar 5, 2026",
@@ -1100,27 +1100,27 @@ const ARTICLES = [
   </ol>
 
   <h2>My position, declared</h2>
-  <p>I build both. My primary offering is custom HTML/CSS/JavaScript development because most of my clients need fast, secure, SEO-friendly marketing sites that rarely change structurally — the exact profile where raw code wins. For clients who need to run a blog-heavy or content-edited site themselves, I set up WordPress properly and keep it lean. Either way the decision is made on your requirements, not my preferences. Compare both routes on the <a href="pricing.html">pricing page</a>, browse <a href="portfolio.html">work samples</a>, or <a href="contact.html">ask for a recommendation</a> with your actual requirements.</p>
+  <p>I build both. My primary offering is custom HTML/CSS/JavaScript development because most of my clients need fast, secure, SEO-friendly marketing sites that rarely change structurally — the exact profile where raw code wins. For clients who need to run a blog-heavy or content-edited site themselves, I set up WordPress properly and keep it lean. Either way the decision is made on your requirements, not my preferences. Compare both routes on the <a href="/pricing">pricing page</a>, browse <a href="/portfolio">work samples</a>, or <a href="/contact">ask for a recommendation</a> with your actual requirements.</p>
   <h2>SEO and international considerations in the HTML vs WordPress decision</h2>
   <p>Beyond performance and cost, two factors often tip the decision for businesses planning to grow:</p>
   <ul>
     <li><strong>SEO control.</strong> Custom HTML gives you direct control over every ranking-relevant detail — semantic markup, heading hierarchy, metadata, structured data, sitemaps, hreflang and URL structure. WordPress can achieve all of this, but through plugins and theme layers that need ongoing maintenance to stay correct. If organic search is your primary channel, weigh implementation control heavily.</li>
-    <li><strong>Multi-market structure.</strong> Businesses targeting several countries eventually need a clear international structure (subfolders, subdomains or separate domains with proper hreflang). This is straightforward to implement cleanly in custom code; in WordPress it depends on multilingual plugins done right. Plan the structure before you build — retrofitting international SEO is expensive on any platform. The strategy is covered in <a href="/blog/international-seo-guide.html">the international SEO guide</a>.</li>
+    <li><strong>Multi-market structure.</strong> Businesses targeting several countries eventually need a clear international structure (subfolders, subdomains or separate domains with proper hreflang). This is straightforward to implement cleanly in custom code; in WordPress it depends on multilingual plugins done right. Plan the structure before you build — retrofitting international SEO is expensive on any platform. The strategy is covered in <a href="/blog/international-seo-guide">the international SEO guide</a>.</li>
     <li><strong>Maintenance reality.</strong> Custom sites need almost no maintenance beyond content updates and hosting. WordPress needs core, theme and plugin updates plus security monitoring — either your time or a maintenance arrangement. Factor this honestly into total cost of ownership.</li>
   </ul>
 
   <h2>Frequently asked questions</h2>
   <h3>Is WordPress bad for SEO?</h3>
-  <p>No — WordPress can rank very well when it is lean, fast and configured properly. The SEO problems people blame on WordPress usually come from bloated themes, plugin overload and neglected maintenance. See <a href="/blog/wordpress-seo-optimization.html">WordPress SEO &amp; optimization</a> for the full playbook.</p>
+  <p>No — WordPress can rank very well when it is lean, fast and configured properly. The SEO problems people blame on WordPress usually come from bloated themes, plugin overload and neglected maintenance. See <a href="/blog/wordpress-seo-optimization">WordPress SEO &amp; optimization</a> for the full playbook.</p>
   <h3>When is custom HTML the clearly better choice?</h3>
   <p>Marketing sites, landing pages, company sites and portfolios where speed, SEO control and low maintenance matter more than daily content editing. If your team rarely touches the site, custom code wins on total cost of ownership.</p>
   <h3>When is WordPress the clearly better choice?</h3>
   <p>Blog-heavy sites, teams that publish weekly, and projects needing CMS features (user roles, scheduled publishing, e-commerce via WooCommerce). Choose it deliberately for its editing strengths — not by default.</p>
   <h3>Can you migrate my WordPress site to custom HTML, or vice versa?</h3>
-  <p>Migration direction depends on your goals and content volume. Either way, URL mapping and redirect planning come first — a migration without a redirect map is how rankings get lost. <a href="contact.html">Send your URL</a> for an honest recommendation.</p>
+  <p>Migration direction depends on your goals and content volume. Either way, URL mapping and redirect planning come first — a migration without a redirect map is how rankings get lost. <a href="/contact">Send your URL</a> for an honest recommendation.</p>
 
   <h2>Continue reading</h2>
-  <p>Related guides: <a href="/blog/wordpress-seo-optimization.html">WordPress SEO &amp; optimization — speed, security and rankings</a>, <a href="/blog/professional-business-website-trust.html">how to create a business website that builds trust</a>, and <a href="/blog/seo-friendly-website-essentials.html">what makes a website SEO-friendly</a>.</p>
+  <p>Related guides: <a href="/blog/wordpress-seo-optimization">WordPress SEO &amp; optimization — speed, security and rankings</a>, <a href="/blog/professional-business-website-trust">how to create a business website that builds trust</a>, and <a href="/blog/seo-friendly-website-essentials">what makes a website SEO-friendly</a>.</p>
 `
 },
 
@@ -1128,7 +1128,7 @@ const ARTICLES = [
 {
   id: 15,
   slug: "responsive-web-design-seo",
-  url: "/blog/responsive-web-design-seo.html",
+  url: "/blog/responsive-web-design-seo",
   title: "Why Responsive Web Design Matters for SEO and Conversions",
   cat: "Web Development",
   date: "Feb 20, 2026",
@@ -1181,17 +1181,17 @@ const ARTICLES = [
   <p>When I hand-code a site in HTML, CSS and JavaScript, responsive behavior is designed at the same moment as the desktop layout — not patched afterward. Breakpoints are chosen for the content, images are served at sensible sizes, and interactions are tested on real devices across the common range from 360px phones to 1920px desktops. This is also the practical answer for Core Web Vitals: layouts that were designed mobile-first simply score better.</p>
 
   <h2>The bottom line</h2>
-  <p>Responsive design is not a feature to list on a proposal — it is the frame the whole painting goes in. If your current site fights phones, that is the first thing to fix, before any additional marketing spend multiplies the problem. The <a href="pricing.html">Custom Website package</a> builds responsive-first by default, and I audit mobile usability as part of every <a href="services.html">SEO audit</a>. Want yours checked? <a href="contact.html">Send the URL</a>.</p>
+  <p>Responsive design is not a feature to list on a proposal — it is the frame the whole painting goes in. If your current site fights phones, that is the first thing to fix, before any additional marketing spend multiplies the problem. The <a href="/pricing">Custom Website package</a> builds responsive-first by default, and I audit mobile usability as part of every <a href="/services">SEO audit</a>. Want yours checked? <a href="/contact">Send the URL</a>.</p>
   <h2>Frequently asked questions</h2>
   <h3>How do I test if my site is mobile-friendly?</h3>
   <p>Browse it on a real phone (not just resizing your desktop browser), test every form with your thumbs, and check Google Search Console's mobile usability and Core Web Vitals reports for issues Google itself has flagged.</p>
   <h3>Is responsive design enough for mobile SEO?</h3>
-  <p>It is the requirement, not the complete strategy. Pair it with fast loading (<a href="/blog/website-speed-seo.html">speed guide</a>), readable typography and thumb-friendly navigation for the full mobile experience Google rewards.</p>
+  <p>It is the requirement, not the complete strategy. Pair it with fast loading (<a href="/blog/website-speed-seo">speed guide</a>), readable typography and thumb-friendly navigation for the full mobile experience Google rewards.</p>
   <h3>Should I build a separate mobile site instead?</h3>
   <p>No — one responsive site is Google's recommended approach and far easier to maintain. Separate mobile URLs create duplicate-content and maintenance problems that responsive design avoids entirely.</p>
 
   <h2>Continue reading</h2>
-  <p>Related: <a href="/blog/website-speed-seo.html">website speed and SEO</a> and <a href="/blog/professional-business-website-trust.html">business websites that build trust</a>.</p>
+  <p>Related: <a href="/blog/website-speed-seo">website speed and SEO</a> and <a href="/blog/professional-business-website-trust">business websites that build trust</a>.</p>
 `
 },
 
@@ -1199,7 +1199,7 @@ const ARTICLES = [
 {
   id: 16,
   slug: "high-converting-landing-pages",
-  url: "/blog/high-converting-landing-pages.html",
+  url: "/blog/high-converting-landing-pages",
   title: "Designing High-Converting Landing Pages: Principles That Matter",
   cat: "Web Development",
   date: "Feb 6, 2026",
@@ -1264,7 +1264,7 @@ const ARTICLES = [
   <p>Launch is the start, not the finish. Watch three numbers: conversion rate, bounce rate and where scroll dies. Change one element at a time — headline, proof order, form length — and give each change enough traffic to mean something. Small pages, tested honestly, beat beautiful pages assumed to work.</p>
 
   <h2>When to order a landing page as a service</h2>
-  <p>Landing pages are the highest-leverage small build in digital marketing: one page, one offer, measurable results. My <a href="pricing.html">Landing Page pricing</a> covers a custom-coded, fast, mobile-first page designed around your specific campaign — and the <a href="services.html">web development services</a> list the full scope. Running ads to your homepage? <a href="contact.html">Let's fix that first</a> — it is usually the cheapest conversion win available.</p>
+  <p>Landing pages are the highest-leverage small build in digital marketing: one page, one offer, measurable results. My <a href="/pricing">Landing Page pricing</a> covers a custom-coded, fast, mobile-first page designed around your specific campaign — and the <a href="/services">web development services</a> list the full scope. Running ads to your homepage? <a href="/contact">Let's fix that first</a> — it is usually the cheapest conversion win available.</p>
   <h2>Frequently asked questions</h2>
   <h3>How long should a landing page be?</h3>
   <p>As long as the offer needs and no longer. Simple offers with warm traffic convert on short pages; expensive or unfamiliar offers need more proof and objection handling. Let the buying decision dictate length.</p>
@@ -1274,7 +1274,7 @@ const ARTICLES = [
   <p>Benchmarks vary wildly by industry and offer. Measure against your own baseline, improve one element at a time, and judge by cost per qualified lead — not by someone else's published average.</p>
 
   <h2>Continue reading</h2>
-  <p>Related: <a href="/blog/google-ads-management-guide.html">Google Ads management</a> and <a href="/blog/professional-business-website-trust.html">business websites that build trust</a>.</p>
+  <p>Related: <a href="/blog/google-ads-management-guide">Google Ads management</a> and <a href="/blog/professional-business-website-trust">business websites that build trust</a>.</p>
 `
 }
 ,
@@ -1283,7 +1283,7 @@ const ARTICLES = [
 {
   id: 17,
   slug: "website-speed-seo",
-  url: "/blog/website-speed-seo.html",
+  url: "/blog/website-speed-seo",
   title: "How Website Speed Affects User Experience and SEO",
   cat: "Website Optimization",
   date: "Jan 22, 2026",
@@ -1333,17 +1333,17 @@ const ARTICLES = [
 
   <h2>What to expect from an optimization service</h2>
   <p>A professional speed optimization should deliver: before/after measurements you can verify yourself, a prioritized list of what was fixed, and honest notes on anything hosting-related outside the optimizer's control. Beware anyone who "guarantees 100/100" — lab scores can be gamed; real-user metrics are what Google and your visitors experience.</p>
-  <p>Speed work is included in my <a href="services.html">website optimization services</a> and every custom build on the <a href="pricing.html">pricing page</a>. Got a slow site? <a href="contact.html">Send the URL</a> — I will tell you the likely culprits before you pay anything.</p>
+  <p>Speed work is included in my <a href="/services">website optimization services</a> and every custom build on the <a href="/pricing">pricing page</a>. Got a slow site? <a href="/contact">Send the URL</a> — I will tell you the likely culprits before you pay anything.</p>
   <h2>Frequently asked questions</h2>
   <h3>What is a good page load time?</h3>
   <p>Aim for Largest Contentful Paint under 2.5 seconds on real mobile connections — that is Google's "good" threshold. Every second beyond that measurably increases bounce likelihood on commercial pages.</p>
   <h3>What usually makes business websites slow?</h3>
-  <p>Unoptimized images first, then bloated themes and plugin overload, render-blocking scripts, and cheap shared hosting. Images alone are often half the problem — see <a href="/blog/image-seo-optimization.html">image optimization</a>.</p>
+  <p>Unoptimized images first, then bloated themes and plugin overload, render-blocking scripts, and cheap shared hosting. Images alone are often half the problem — see <a href="/blog/image-seo-optimization">image optimization</a>.</p>
   <h3>Will a faster site rank higher automatically?</h3>
   <p>Speed is a ranking factor, but its bigger wins are user-side: lower bounce, more pages per visit, higher conversion. Fast sites earn the engagement signals that support rankings.</p>
 
   <h2>Continue reading</h2>
-  <p>Related: <a href="/blog/image-seo-optimization.html">image optimization for SEO and speed</a> and <a href="/blog/technical-seo-basics-new-websites.html">technical SEO basics</a>.</p>
+  <p>Related: <a href="/blog/image-seo-optimization">image optimization for SEO and speed</a> and <a href="/blog/technical-seo-basics-new-websites">technical SEO basics</a>.</p>
 `
 },
 
@@ -1351,7 +1351,7 @@ const ARTICLES = [
 {
   id: 18,
   slug: "image-seo-optimization",
-  url: "/blog/image-seo-optimization.html",
+  url: "/blog/image-seo-optimization",
   title: "How to Optimize Images for SEO and Faster Loading Pages",
   cat: "Website Optimization",
   date: "Jan 10, 2026",
@@ -1417,7 +1417,7 @@ const ARTICLES = [
     <li>Lazy-load below the fold; eager-load the hero</li>
     <li>Re-test the page in PageSpeed Insights</li>
   </ol>
-  <p>Do this for every image going forward and backfill your ten most-visited pages — page weight falls, LCP improves, and your images start earning their own search visibility. Image optimization is included in every custom build I deliver and available standalone under <a href="services.html">website optimization services</a>; see <a href="pricing.html">pricing</a> or <a href="contact.html">send me your heaviest page</a> and I will show you what it should weigh.</p>
+  <p>Do this for every image going forward and backfill your ten most-visited pages — page weight falls, LCP improves, and your images start earning their own search visibility. Image optimization is included in every custom build I deliver and available standalone under <a href="/services">website optimization services</a>; see <a href="/pricing">pricing</a> or <a href="/contact">send me your heaviest page</a> and I will show you what it should weigh.</p>
   <h2>Frequently asked questions</h2>
   <h3>Which image format is best for websites?</h3>
   <p>WebP for photos and most graphics (broad support, excellent compression), with fallbacks where needed. Keep originals archived; serve optimized derivatives.</p>
@@ -1427,7 +1427,7 @@ const ARTICLES = [
   <p>Yes — Google Images drives meaningful traffic for visual businesses, tutorials and products. Descriptive filenames, alt text, captions and surrounding context all contribute.</p>
 
   <h2>Continue reading</h2>
-  <p>Related: <a href="/blog/website-speed-seo.html">website speed and SEO</a> and <a href="/blog/on-page-seo-checklist-small-business.html">the on-page SEO checklist</a>.</p>
+  <p>Related: <a href="/blog/website-speed-seo">website speed and SEO</a> and <a href="/blog/on-page-seo-checklist-small-business">the on-page SEO checklist</a>.</p>
 `
 },
 
@@ -1435,7 +1435,7 @@ const ARTICLES = [
 {
   id: 19,
   slug: "small-business-digital-marketing",
-  url: "/blog/small-business-digital-marketing.html",
+  url: "/blog/small-business-digital-marketing",
   title: "How Small Businesses Can Start With Digital Marketing",
   cat: "Digital Marketing",
   date: "Dec 15, 2025",
@@ -1503,17 +1503,17 @@ const ARTICLES = [
   </ul>
 
   <h2>Where a consultant actually saves you money</h2>
-  <p>The right hire at small-business stage is not someone who runs everything — it is someone who tells you what <em>not</em> to spend on yet. My role for most clients starts with a <a href="pricing.html">free digital growth check</a>: look at the website, search presence and one competitor, then recommend the single highest-value starting point. From there, services are scoped individually (see <a href="services.html">the full list</a>) so you buy exactly the next step — not a package built for someone else's business.</p>
+  <p>The right hire at small-business stage is not someone who runs everything — it is someone who tells you what <em>not</em> to spend on yet. My role for most clients starts with a <a href="/pricing">free digital growth check</a>: look at the website, search presence and one competitor, then recommend the single highest-value starting point. From there, services are scoped individually (see <a href="/services">the full list</a>) so you buy exactly the next step — not a package built for someone else's business.</p>
   <h2>Frequently asked questions</h2>
   <h3>What is the first thing a small business should do in digital marketing?</h3>
   <p>Fix the foundations: a fast, trustworthy website, correct Google Business Profile, and basic conversion tracking. Only then add traffic channels — otherwise marketing spend multiplies a broken funnel.</p>
   <h3>How much budget does a small business need to start?</h3>
-  <p>Start with one focused service, not a little of everything. My starting-from rates begin at $25–$90 for audits and starter work — see <a href="pricing.html">pricing</a>. Expand only when results justify it.</p>
+  <p>Start with one focused service, not a little of everything. My starting-from rates begin at $25–$90 for audits and starter work — see <a href="/pricing">pricing</a>. Expand only when results justify it.</p>
   <h3>Should small businesses hire a freelancer or an agency?</h3>
   <p>Freelancers suit focused scopes and tight budgets — you work directly with the person doing the work. Agencies suit multi-channel programs needing several specialists at once. Many small businesses start freelance and graduate later.</p>
 
   <h2>Continue reading</h2>
-  <p>Related: <a href="/blog/how-to-choose-seo-service.html">choosing the right SEO service</a> and <a href="/blog/social-media-marketing-small-business.html">social media marketing for small businesses</a>.</p>
+  <p>Related: <a href="/blog/how-to-choose-seo-service">choosing the right SEO service</a> and <a href="/blog/social-media-marketing-small-business">social media marketing for small businesses</a>.</p>
 `
 },
 
@@ -1521,7 +1521,7 @@ const ARTICLES = [
 {
   id: 20,
   slug: "social-media-marketing-small-business",
-  url: "/blog/social-media-marketing-small-business.html",
+  url: "/blog/social-media-marketing-small-business",
   title: "Social Media Marketing for Small Businesses: Where to Start",
   cat: "Social Media",
   date: "Nov 28, 2025",
@@ -1580,17 +1580,17 @@ const ARTICLES = [
   </ul>
 
   <h2>Getting help where it pays</h2>
-  <p>Delegate selectively: a content strategy session to set pillars, a set of professional design templates for visual consistency, or monthly management when in-house time runs out — all available under <a href="services.html">social media services</a> with transparent <a href="pricing.html">starting prices</a>. If you want a second opinion on which platform deserves your next three months, <a href="contact.html">book a free 15-minute consultation</a>.</p>
+  <p>Delegate selectively: a content strategy session to set pillars, a set of professional design templates for visual consistency, or monthly management when in-house time runs out — all available under <a href="/services">social media services</a> with transparent <a href="/pricing">starting prices</a>. If you want a second opinion on which platform deserves your next three months, <a href="/contact">book a free 15-minute consultation</a>.</p>
   <h2>Frequently asked questions</h2>
   <h3>Which social media platform is best for small businesses?</h3>
   <p>The one where your buyers already spend time — for most local and B2C businesses that is Facebook and Instagram; for B2B, LinkedIn. One platform done well beats five done thinly.</p>
   <h3>How often should a small business post?</h3>
   <p>Consistency beats volume: 3–4 quality posts per week on one platform outperforms daily filler everywhere. Build a sustainable rhythm you can maintain for a year, not a sprint you abandon in a month.</p>
   <h3>When should small businesses start paid social ads?</h3>
-  <p>When organic content has proven which messages resonate — then amplify winners with budget. The paid playbook is in <a href="/blog/meta-ads-guide.html">Meta Ads for businesses</a>.</p>
+  <p>When organic content has proven which messages resonate — then amplify winners with budget. The paid playbook is in <a href="/blog/meta-ads-guide">Meta Ads for businesses</a>.</p>
 
   <h2>Continue reading</h2>
-  <p>Related: <a href="/blog/meta-ads-guide.html">Meta Ads (Facebook &amp; Instagram) guide</a> and <a href="/blog/small-business-digital-marketing.html">starting digital marketing as a small business</a>.</p>
+  <p>Related: <a href="/blog/meta-ads-guide">Meta Ads (Facebook &amp; Instagram) guide</a> and <a href="/blog/small-business-digital-marketing">starting digital marketing as a small business</a>.</p>
 `
 },
 
@@ -1598,7 +1598,7 @@ const ARTICLES = [
 {
   id: 21,
   slug: "freelance-portfolio-guide",
-  url: "/blog/freelance-portfolio-guide.html",
+  url: "/blog/freelance-portfolio-guide",
   title: "How to Build a Professional Freelance Portfolio That Wins Clients",
   cat: "Freelancing",
   date: "Nov 10, 2025",
@@ -1670,17 +1670,17 @@ const ARTICLES = [
     <li><strong>Week 3:</strong> launch a simple fast portfolio site (3–5 pages is enough), fully labeled</li>
     <li><strong>Week 4:</strong> publish, share within your networks, start honest outreach using the demo work as evidence</li>
   </ol>
-  <p>My own portfolio follows every rule in this article — labeled demo sections, consistent case-study structure, honest outcomes — you can see it <a href="portfolio.html">here</a>. If you want a portfolio site built the same way, look at the <a href="pricing.html">pricing options</a> or <a href="contact.html">send a message</a> about your services and I will suggest the right structure.</p>
+  <p>My own portfolio follows every rule in this article — labeled demo sections, consistent case-study structure, honest outcomes — you can see it <a href="/portfolio">here</a>. If you want a portfolio site built the same way, look at the <a href="/pricing">pricing options</a> or <a href="/contact">send a message</a> about your services and I will suggest the right structure.</p>
   <h2>Frequently asked questions</h2>
   <h3>Can I build a portfolio with zero clients?</h3>
   <p>Yes — with clearly labeled demo and concept projects that demonstrate your process and deliverable quality. Honest labeling builds more trust than vague claims ever could.</p>
   <h3>How many projects should a freelance portfolio show?</h3>
   <p>Six to twelve strong case studies beat fifty thumbnails. Each should show the goal, your process and the honest outcome — quality of evidence over quantity of images.</p>
   <h3>Should freelancers show pricing on their portfolio?</h3>
-  <p>Starting-from ranges filter inquiries and attract serious clients. Transparency about pricing signals confidence — see how mine works on the <a href="pricing.html">pricing page</a>.</p>
+  <p>Starting-from ranges filter inquiries and attract serious clients. Transparency about pricing signals confidence — see how mine works on the <a href="/pricing">pricing page</a>.</p>
 
   <h2>Continue reading</h2>
-  <p>Related: <a href="/blog/professional-business-website-trust.html">business websites that build trust</a> and the live example — my own <a href="portfolio.html">portfolio</a>.</p>
+  <p>Related: <a href="/blog/professional-business-website-trust">business websites that build trust</a> and the live example — my own <a href="/portfolio">portfolio</a>.</p>
 `
 },
 
@@ -1688,7 +1688,7 @@ const ARTICLES = [
 {
   id: 22,
   slug: "international-seo-guide",
-  url: "/blog/international-seo-guide.html",
+  url: "/blog/international-seo-guide",
   title: "International SEO: How to Get Customers in the USA, UK, Canada and Beyond",
   cat: "SEO",
   date: "Sep 16, 2026",
@@ -1739,7 +1739,7 @@ const ARTICLES = [
     <li><strong>SERP layout:</strong> the same query can trigger map packs, shopping units or different feature mixes by country. Study each market's actual results page.</li>
     <li><strong>Local modifiers:</strong> service × city combinations ("emergency plumber Austin") are usually the highest-ROI targets for location businesses expanding abroad.</li>
   </ul>
-  <p>The research method itself is covered step by step in <a href="/blog/what-is-keyword-research.html">the keyword research guide</a> — apply it once per target market.</p>
+  <p>The research method itself is covered step by step in <a href="/blog/what-is-keyword-research">the keyword research guide</a> — apply it once per target market.</p>
 
   <h2>Step 5: Build local relevance signals</h2>
   <p>Rankings follow relevance. For each target market, strengthen the signals Google associates with local trust:</p>
@@ -1773,19 +1773,19 @@ const ARTICLES = [
   <h3>How long does international SEO take?</h3>
   <p>Similar to standard SEO: technical and targeting fixes show effect in weeks; content-driven gains mature over 2–4 months per market. New markets start from lower authority, so patience plus consistent publishing wins.</p>
   <h3>Can a freelancer manage international SEO remotely?</h3>
-  <p>Yes — research, technical implementation guidance, content planning and reporting are all location-independent. What matters is per-market research discipline and honest reporting, which is exactly how my <a href="services.html">SEO services</a> are structured.</p>
+  <p>Yes — research, technical implementation guidance, content planning and reporting are all location-independent. What matters is per-market research discipline and honest reporting, which is exactly how my <a href="/services">SEO services</a> are structured.</p>
   <h3>Should I translate my site or rewrite it per market?</h3>
   <p>Rewrite key commercial pages per market; translation (human-reviewed, never raw machine output) can support the rest. US/UK English versions must differ substantively to avoid doorway-page risk.</p>
 
   <h2>Continue reading</h2>
-  <p>Build the foundations with <a href="/blog/what-is-keyword-research.html">keyword research</a>, <a href="/blog/technical-seo-basics-new-websites.html">technical SEO basics</a> and <a href="/blog/how-to-choose-seo-service.html">choosing the right SEO service</a>. Ready for help? Compare <a href="pricing.html">SEO packages</a> or <a href="contact.html">request an international SEO audit</a>.</p>`
+  <p>Build the foundations with <a href="/blog/what-is-keyword-research">keyword research</a>, <a href="/blog/technical-seo-basics-new-websites">technical SEO basics</a> and <a href="/blog/how-to-choose-seo-service">choosing the right SEO service</a>. Ready for help? Compare <a href="/pricing">SEO packages</a> or <a href="/contact">request an international SEO audit</a>.</p>`
 },
 
 /* -------------------------------------------------- 23 */
 {
   id: 23,
   slug: "google-ads-management-guide",
-  url: "/blog/google-ads-management-guide.html",
+  url: "/blog/google-ads-management-guide",
   title: "Google Ads Management: The Complete Small-Business Guide",
   cat: "Paid Ads",
   date: "Sep 16, 2026",
@@ -1796,7 +1796,7 @@ const ARTICLES = [
   <p>Google Ads can be the fastest customer-acquisition channel a small business ever uses — or the fastest way to burn a marketing budget. The difference is never luck. It is structure: tight keyword grouping, honest conversion tracking, disciplined budgets and weekly optimization. This guide walks through the complete management playbook I use for client accounts, written so you can audit your own campaigns or evaluate any manager you hire.</p>
 
   <h2>How Google Ads fits your marketing</h2>
-  <p>Google captures existing demand — people actively searching for what you sell. That makes Search campaigns ideal for high-intent services (plumbers, lawyers, B2B software, clinics), while Display and YouTube work better for awareness, remarketing and visual offers. Before spending anything, confirm the demand exists: if nobody searches for your offer, Google Search cannot create customers — you need demand-creation channels like Meta Ads or SEO content first. The strategic comparison is in <a href="/blog/seo-vs-google-ads.html">SEO vs Google Ads</a>.</p>
+  <p>Google captures existing demand — people actively searching for what you sell. That makes Search campaigns ideal for high-intent services (plumbers, lawyers, B2B software, clinics), while Display and YouTube work better for awareness, remarketing and visual offers. Before spending anything, confirm the demand exists: if nobody searches for your offer, Google Search cannot create customers — you need demand-creation channels like Meta Ads or SEO content first. The strategic comparison is in <a href="/blog/seo-vs-google-ads">SEO vs Google Ads</a>.</p>
 
   <h2>Account structure that scales</h2>
   <p>Clean structure is what separates managed accounts from money fires:</p>
@@ -1826,7 +1826,7 @@ const ARTICLES = [
     <li><strong>Search terms review:</strong> add negatives, harvest new exact-match positives.</li>
     <li><strong>Bid and budget check:</strong> shift spend toward campaigns hitting target CPA; cap or pause chronic underperformers.</li>
     <li><strong>Ad and extension review:</strong> pause weak variants, draft challengers, fill extension gaps.</li>
-    <li><strong>Landing page alignment:</strong> check message match and speed on pages receiving spend — see <a href="/blog/high-converting-landing-pages.html">landing page principles</a>.</li>
+    <li><strong>Landing page alignment:</strong> check message match and speed on pages receiving spend — see <a href="/blog/high-converting-landing-pages">landing page principles</a>.</li>
     <li><strong>Report in plain language:</strong> spend, qualified leads, cost per lead, what changed and why.</li>
   </ol>
 
@@ -1841,23 +1841,23 @@ const ARTICLES = [
 
   <h2>Frequently asked questions</h2>
   <h3>How much does Google Ads management cost?</h3>
-  <p>My setup starts from $60 and monthly management from $100 — ad spend always separate and paid by you directly to Google. See <a href="pricing.html">pricing</a>. Industry-wide, expect management to make sense when monthly spend justifies professional attention; tiny budgets often do better with a one-time setup plus coaching.</p>
+  <p>My setup starts from $60 and monthly management from $100 — ad spend always separate and paid by you directly to Google. See <a href="/pricing">pricing</a>. Industry-wide, expect management to make sense when monthly spend justifies professional attention; tiny budgets often do better with a one-time setup plus coaching.</p>
   <h3>How fast do Google Ads results come?</h3>
   <p>Traffic within days; reliable cost-per-lead data within 2–6 weeks depending on volume. Judgment before the learning phase completes is just guessing.</p>
   <h3>Should I run Google Ads and SEO together?</h3>
-  <p>Usually yes — ads deliver now and reveal converting keywords; SEO compounds durable visibility. The combined playbook is in <a href="/blog/seo-vs-google-ads.html">SEO vs Google Ads</a>.</p>
+  <p>Usually yes — ads deliver now and reveal converting keywords; SEO compounds durable visibility. The combined playbook is in <a href="/blog/seo-vs-google-ads">SEO vs Google Ads</a>.</p>
   <h3>Do you guarantee results from Google Ads?</h3>
   <p>No honest manager guarantees ROAS or lead volumes — offer strength, market and pricing sit outside anyone's control. What I guarantee: professional structure, disciplined testing, honest reporting and fast course-correction.</p>
 
   <h2>Continue reading</h2>
-  <p>Related: <a href="/blog/google-ads-vs-meta-ads.html">Google Ads vs Meta Ads</a>, <a href="/blog/power-of-retargeting.html">the power of retargeting</a> and <a href="/blog/high-converting-landing-pages.html">landing pages that convert</a>. Want management? See <a href="services.html">paid advertising services</a> or <a href="contact.html">book a free consultation</a>.</p>`
+  <p>Related: <a href="/blog/google-ads-vs-meta-ads">Google Ads vs Meta Ads</a>, <a href="/blog/power-of-retargeting">the power of retargeting</a> and <a href="/blog/high-converting-landing-pages">landing pages that convert</a>. Want management? See <a href="/services">paid advertising services</a> or <a href="/contact">book a free consultation</a>.</p>`
 },
 
 /* -------------------------------------------------- 24 */
 {
   id: 24,
   slug: "meta-ads-guide",
-  url: "/blog/meta-ads-guide.html",
+  url: "/blog/meta-ads-guide",
   title: "Meta Ads (Facebook & Instagram): A Practical Guide for Businesses",
   cat: "Paid Ads",
   date: "Sep 16, 2026",
@@ -1868,7 +1868,7 @@ const ARTICLES = [
   <p>Meta Ads — Facebook and Instagram advertising — create demand instead of capturing it. Nobody opens Instagram looking for your service, which means success depends on interrupting the right people with the right creative and giving them a frictionless next step. This guide covers the practical system: objectives, audiences, creative testing, lead handling and retargeting, without hype and without jargon.</p>
 
   <h2>How Meta Ads differ from Google Ads</h2>
-  <p>Google answers existing intent; Meta manufactures attention. Consequences: Meta needs stronger creative (the ad <em>is</em> the targeting, increasingly), simpler offers work better, and lead quality varies more — which is why qualification inside the funnel matters so much. Many businesses ultimately run both: Google for high-intent capture, Meta for prospecting and retargeting. The full comparison is in <a href="/blog/google-ads-vs-meta-ads.html">Google Ads vs Meta Ads</a>.</p>
+  <p>Google answers existing intent; Meta manufactures attention. Consequences: Meta needs stronger creative (the ad <em>is</em> the targeting, increasingly), simpler offers work better, and lead quality varies more — which is why qualification inside the funnel matters so much. Many businesses ultimately run both: Google for high-intent capture, Meta for prospecting and retargeting. The full comparison is in <a href="/blog/google-ads-vs-meta-ads">Google Ads vs Meta Ads</a>.</p>
 
   <h2>Objectives: choose the outcome, not the activity</h2>
   <ul>
@@ -1882,7 +1882,7 @@ const ARTICLES = [
   <ul>
     <li><strong>Cold:</strong> interest stacks, lookalikes of customers or quality leads, broad with creative-led targeting. Keep audiences large enough to learn; hyper-narrow targeting usually backfires now.</li>
     <li><strong>Warm:</strong> video viewers, page engagers, site visitors — the bridge between cold reach and conversion.</li>
-    <li><strong>Hot/retargeting:</strong> form starters who didn't submit, pricing-page visitors, past customers for upsell. Almost always the highest-ROI segment — see <a href="/blog/power-of-retargeting.html">the retargeting guide</a>.</li>
+    <li><strong>Hot/retargeting:</strong> form starters who didn't submit, pricing-page visitors, past customers for upsell. Almost always the highest-ROI segment — see <a href="/blog/power-of-retargeting">the retargeting guide</a>.</li>
   </ul>
   <p>Separate cold, warm and retargeting into distinct campaigns so budgets, messages and frequency stay controlled per temperature.</p>
 
@@ -1917,7 +1917,7 @@ const ARTICLES = [
 
   <h2>Frequently asked questions</h2>
   <h3>How much should a small business spend on Meta Ads?</h3>
-  <p>Enough to sustain a 60–90 day learning period at meaningful volume — exact figures depend on your market and lead value. Start controlled, prove cost per qualified lead, then scale. Management starts from $50 setup — see <a href="pricing.html">pricing</a>.</p>
+  <p>Enough to sustain a 60–90 day learning period at meaningful volume — exact figures depend on your market and lead value. Start controlled, prove cost per qualified lead, then scale. Management starts from $50 setup — see <a href="/pricing">pricing</a>.</p>
   <h3>Are Facebook Ads still effective?</h3>
   <p>Yes — with proper structure. What stopped working is lazy advertising: boosted posts, broad messages, no follow-up. Structured campaigns with strong creative and fast lead handling still deliver in most B2C and many B2B niches.</p>
   <h3>Should I use instant forms or website landing pages?</h3>
@@ -1926,14 +1926,14 @@ const ARTICLES = [
   <p>Yes — ad accounts, audiences and reporting are location-independent, and I schedule reviews around your timezone. Ad spend is paid by you directly to Meta; your account stays under your ownership.</p>
 
   <h2>Continue reading</h2>
-  <p>Related: <a href="/blog/google-ads-vs-meta-ads.html">Google Ads vs Meta Ads</a>, <a href="/blog/power-of-retargeting.html">the power of retargeting</a> and <a href="/blog/social-media-marketing-small-business.html">social media marketing for small businesses</a>. Need management? See <a href="services.html">paid advertising services</a> or <a href="contact.html">start a conversation</a>.</p>`
+  <p>Related: <a href="/blog/google-ads-vs-meta-ads">Google Ads vs Meta Ads</a>, <a href="/blog/power-of-retargeting">the power of retargeting</a> and <a href="/blog/social-media-marketing-small-business">social media marketing for small businesses</a>. Need management? See <a href="/services">paid advertising services</a> or <a href="/contact">start a conversation</a>.</p>`
 },
 
 /* -------------------------------------------------- 25 */
 {
   id: 25,
   slug: "local-seo-google-business-profile",
-  url: "/blog/local-seo-google-business-profile.html",
+  url: "/blog/local-seo-google-business-profile",
   title: "Local SEO & Google Business Profile: The Complete Guide for Service Businesses",
   cat: "SEO",
   date: "Sep 16, 2026",
@@ -1962,7 +1962,7 @@ const ARTICLES = [
     <li>Create dedicated location/service pages with genuinely distinct content — local proof, area-specific details, relevant FAQs. Never clone pages with only the city name swapped.</li>
     <li>Target "near me" intent through relevance and proximity signals, not by stuffing "near me" into content — nobody types naturally that way into page copy.</li>
   </ul>
-  <p>The underlying research method is in <a href="/blog/what-is-keyword-research.html">the keyword research guide</a>; local SEO applies it geographically.</p>
+  <p>The underlying research method is in <a href="/blog/what-is-keyword-research">the keyword research guide</a>; local SEO applies it geographically.</p>
 
   <h2>Citations and NAP consistency</h2>
   <p>Your Name, Address and Phone number must match exactly across your website, Google Business Profile and directories (Yelp, industry directories, local chambers, data aggregators). Inconsistencies confuse both customers and algorithms. Audit quarterly: one canonical format everywhere, duplicates removed, closed listings claimed.</p>
@@ -1993,19 +1993,19 @@ const ARTICLES = [
   <h3>Can local SEO work without a physical storefront?</h3>
   <p>Yes — service-area businesses (plumbers, cleaners, freelancers serving a city) can rank with a properly configured service-area profile and strong local content. Rules differ slightly; setup must follow Google's service-area guidelines.</p>
   <h3>Do I need a website for local SEO?</h3>
-  <p>A profile alone can generate calls, but a fast, trustworthy website multiplies conversion and supports location-page rankings. The build standard is in <a href="/blog/professional-business-website-trust.html">business websites that build trust</a>.</p>
+  <p>A profile alone can generate calls, but a fast, trustworthy website multiplies conversion and supports location-page rankings. The build standard is in <a href="/blog/professional-business-website-trust">business websites that build trust</a>.</p>
   <h3>Do you provide local SEO for businesses outside Bangladesh?</h3>
-  <p>Yes — local SEO process is the same in any country; only the market data changes. Audits, GBP optimization and location strategy are all available remotely — see <a href="services.html">SEO services</a> and <a href="pricing.html">pricing</a>.</p>
+  <p>Yes — local SEO process is the same in any country; only the market data changes. Audits, GBP optimization and location strategy are all available remotely — see <a href="/services">SEO services</a> and <a href="/pricing">pricing</a>.</p>
 
   <h2>Continue reading</h2>
-  <p>Related: <a href="/blog/what-is-keyword-research.html">keyword research</a>, <a href="/blog/on-page-seo-checklist-small-business.html">the on-page SEO checklist</a> and <a href="/blog/international-seo-guide.html">international SEO</a>. Want help? <a href="contact.html">Request a local SEO audit</a>.</p>`
+  <p>Related: <a href="/blog/what-is-keyword-research">keyword research</a>, <a href="/blog/on-page-seo-checklist-small-business">the on-page SEO checklist</a> and <a href="/blog/international-seo-guide">international SEO</a>. Want help? <a href="/contact">Request a local SEO audit</a>.</p>`
 },
 
 /* -------------------------------------------------- 26 */
 {
   id: 26,
   slug: "wordpress-seo-optimization",
-  url: "/blog/wordpress-seo-optimization.html",
+  url: "/blog/wordpress-seo-optimization",
   title: "WordPress SEO & Optimization: Speed, Security and Rankings",
   cat: "Web Development",
   date: "Sep 16, 2026",
@@ -2014,7 +2014,7 @@ const ARTICLES = [
   img: "assets/images/work/business-website-design.jpg",
   body: `
   <p>WordPress powers an enormous share of business websites — and an enormous share of slow, bloated, hacked business websites. The platform is not the problem; undisciplined implementation is. A lean, properly configured WordPress site can be fast, secure and excellent at SEO. This guide covers the complete optimization standard: setup, speed, security and search configuration.</p>
-  <p>Context: my primary recommendation for marketing sites remains custom HTML/CSS/JavaScript (see <a href="/blog/html-vs-wordpress.html">the honest HTML vs WordPress comparison</a>). But when your team needs a CMS — frequent publishing, multiple editors, WooCommerce — WordPress done right is a solid choice. This is how to do it right.</p>
+  <p>Context: my primary recommendation for marketing sites remains custom HTML/CSS/JavaScript (see <a href="/blog/html-vs-wordpress">the honest HTML vs WordPress comparison</a>). But when your team needs a CMS — frequent publishing, multiple editors, WooCommerce — WordPress done right is a solid choice. This is how to do it right.</p>
 
   <h2>Foundation: hosting, theme and plugin discipline</h2>
   <ul>
@@ -2026,13 +2026,13 @@ const ARTICLES = [
 
   <h2>Speed optimization, in priority order</h2>
   <ol>
-    <li><strong>Images:</strong> WebP conversion, proper sizing, lazy loading — usually half the problem. Full method in <a href="/blog/image-seo-optimization.html">image optimization</a>.</li>
+    <li><strong>Images:</strong> WebP conversion, proper sizing, lazy loading — usually half the problem. Full method in <a href="/blog/image-seo-optimization">image optimization</a>.</li>
     <li><strong>Caching:</strong> page cache plus object cache (Redis/Memcached where available), configured — not just installed.</li>
     <li><strong>Asset cleanup:</strong> dequeue unused CSS/JS per page; limit webfont weights; defer non-critical scripts.</li>
     <li><strong>Database hygiene:</strong> clean revisions, transients, spam and orphaned metadata on a schedule.</li>
     <li><strong>CDN:</strong> serve static assets from edge locations, essential for international visitors.</li>
   </ol>
-  <p>Measure with PageSpeed Insights and Search Console's Core Web Vitals — real-user data, not just lab scores. The metric meanings are explained in <a href="/blog/website-speed-seo.html">the speed guide</a>.</p>
+  <p>Measure with PageSpeed Insights and Search Console's Core Web Vitals — real-user data, not just lab scores. The metric meanings are explained in <a href="/blog/website-speed-seo">the speed guide</a>.</p>
 
   <h2>SEO configuration checklist</h2>
   <ul>
@@ -2063,21 +2063,21 @@ const ARTICLES = [
   <h3>Is WordPress good for SEO?</h3>
   <p>Yes, when lean and configured properly. WordPress SEO problems almost always trace to bloated themes, plugin overload or neglected maintenance — all fixable. Follow the checklists above or hire it done properly.</p>
   <h3>How much does WordPress optimization cost?</h3>
-  <p>My WordPress customization starts from $80 and full WordPress websites from $180 — see <a href="pricing.html">pricing</a>. Speed and SEO remediation is scoped per site after an audit.</p>
+  <p>My WordPress customization starts from $80 and full WordPress websites from $180 — see <a href="/pricing">pricing</a>. Speed and SEO remediation is scoped per site after an audit.</p>
   <h3>Should I use WooCommerce for my online store?</h3>
   <p>WooCommerce suits small-to-mid catalogs where WordPress familiarity matters. Large or high-traffic stores should evaluate dedicated platforms. Either way, the speed and security disciplines above apply doubly to stores.</p>
   <h3>Can you migrate my site to or from WordPress?</h3>
-  <p>Yes — in either direction, with URL mapping and redirect planning first so rankings survive the move. <a href="contact.html">Send your URL</a> for an honest recommendation.</p>
+  <p>Yes — in either direction, with URL mapping and redirect planning first so rankings survive the move. <a href="/contact">Send your URL</a> for an honest recommendation.</p>
 
   <h2>Continue reading</h2>
-  <p>Related: <a href="/blog/html-vs-wordpress.html">HTML vs WordPress — honest comparison</a>, <a href="/blog/website-speed-seo.html">website speed and SEO</a> and <a href="/blog/on-page-seo-checklist-small-business.html">the on-page SEO checklist</a>.</p>`
+  <p>Related: <a href="/blog/html-vs-wordpress">HTML vs WordPress — honest comparison</a>, <a href="/blog/website-speed-seo">website speed and SEO</a> and <a href="/blog/on-page-seo-checklist-small-business">the on-page SEO checklist</a>.</p>`
 },
 
 /* -------------------------------------------------- 27 */
 {
   id: 27,
   slug: "youtube-seo-marketing",
-  url: "/blog/youtube-seo-marketing.html",
+  url: "/blog/youtube-seo-marketing",
   title: "YouTube SEO & Marketing: Grow Search Traffic with Video",
   cat: "Digital Marketing",
   date: "Sep 16, 2026",
@@ -2097,7 +2097,7 @@ const ARTICLES = [
     <li>Cross-check Google: queries with video carousels in web search are dual-rank opportunities — one video earning traffic from both engines.</li>
     <li>Prioritize answerable, evergreen topics in your expertise zone; trend-chasing without authority rarely compounds.</li>
   </ul>
-  <p>The underlying research discipline mirrors web SEO — see <a href="/blog/what-is-keyword-research.html">the keyword research guide</a> — applied to video intent.</p>
+  <p>The underlying research discipline mirrors web SEO — see <a href="/blog/what-is-keyword-research">the keyword research guide</a> — applied to video intent.</p>
 
   <h2>Packaging: titles, thumbnails and the first 30 seconds</h2>
   <ul>
@@ -2136,19 +2136,19 @@ const ARTICLES = [
   <h3>How long should YouTube videos be?</h3>
   <p>As long as the topic needs — retention percentage matters more than raw length. A 6-minute video holding 60% beats a 20-minute video holding 20% for most goals.</p>
   <h3>Do you provide YouTube SEO services?</h3>
-  <p>Yes — channel audits, keyword research, title/description optimization, thumbnail design direction and content strategy, plus YouTube Ads for offers. See <a href="services.html">services</a> and <a href="pricing.html">pricing</a>.</p>
+  <p>Yes — channel audits, keyword research, title/description optimization, thumbnail design direction and content strategy, plus YouTube Ads for offers. See <a href="/services">services</a> and <a href="/pricing">pricing</a>.</p>
   <h3>Should my business be on YouTube or TikTok/Reels?</h3>
   <p>For searchable, evergreen expertise content, YouTube compounds best. For discovery and personality-led reach, short-form wins. Many businesses run YouTube as the library and cut shorts from it for distribution.</p>
 
   <h2>Continue reading</h2>
-  <p>Related: <a href="/blog/what-is-keyword-research.html">keyword research</a>, <a href="/blog/social-media-marketing-small-business.html">social media marketing</a> and <a href="/blog/high-converting-landing-pages.html">landing pages that convert video traffic</a>. Want channel help? <a href="contact.html">Request a YouTube audit</a>.</p>`
+  <p>Related: <a href="/blog/what-is-keyword-research">keyword research</a>, <a href="/blog/social-media-marketing-small-business">social media marketing</a> and <a href="/blog/high-converting-landing-pages">landing pages that convert video traffic</a>. Want channel help? <a href="/contact">Request a YouTube audit</a>.</p>`
 },
 
 /* -------------------------------------------------- 28 */
 {
   id: 28,
   slug: "b2b-lead-generation-international-markets",
-  url: "/blog/b2b-lead-generation-international-markets.html",
+  url: "/blog/b2b-lead-generation-international-markets",
   title: "B2B Lead Generation for International Markets: Lists That Actually Convert",
   cat: "Lead Generation",
   date: "Sep 16, 2026",
@@ -2157,7 +2157,7 @@ const ARTICLES = [
   img: "assets/images/work/lead-generation-database.jpg",
   body: `
   <p>Selling across borders starts with knowing exactly who to contact. International B2B lead generation is the process of building verified, compliant prospect lists in foreign markets — the right companies, the right decision-makers, accurate contact data, formatted for outreach. Done well, it fills pipelines in the USA, UK, Canada, Australia and beyond. Done badly, it burns domains, wastes SDR time and risks regulatory trouble. This guide covers the complete cross-border playbook.</p>
-  <p>Foundation first: the core framework — ICP, sourcing, verification, outreach, measurement — is detailed in <a href="/blog/how-to-generate-b2b-leads.html">how to generate B2B leads</a> and <a href="/blog/build-targeted-lead-list.html">how to build a targeted lead list</a>. This article adds the international layer on top.</p>
+  <p>Foundation first: the core framework — ICP, sourcing, verification, outreach, measurement — is detailed in <a href="/blog/how-to-generate-b2b-leads">how to generate B2B leads</a> and <a href="/blog/build-targeted-lead-list">how to build a targeted lead list</a>. This article adds the international layer on top.</p>
 
   <h2>Step 1: Select markets with evidence, not ambition</h2>
   <ul>
@@ -2199,16 +2199,16 @@ const ARTICLES = [
 
   <h2>Frequently asked questions</h2>
   <h3>Which countries can you build B2B lead lists for?</h3>
-  <p>Any market with accessible public business data — commonly the USA, UK, Canada, Australia, Ireland, Europe, Singapore and the Gulf. Feasibility depends on your niche and ICP precision; <a href="contact.html">send your ICP sentence</a> for an honest answer.</p>
+  <p>Any market with accessible public business data — commonly the USA, UK, Canada, Australia, Ireland, Europe, Singapore and the Gulf. Feasibility depends on your niche and ICP precision; <a href="/contact">send your ICP sentence</a> for an honest answer.</p>
   <h3>How many leads should I start with?</h3>
   <p>A tightly defined batch of 100–300 ideal-fit prospects beats thousands of loose matches. Prove messaging and ICP fit small, then scale what converts.</p>
   <h3>Do you write the outreach emails too?</h3>
-  <p>Core service is research and list building with personalization notes per lead. Full cold-email copywriting and sending infrastructure can be scoped as a custom package — see <a href="services.html">services</a>.</p>
+  <p>Core service is research and list building with personalization notes per lead. Full cold-email copywriting and sending infrastructure can be scoped as a custom package — see <a href="/services">services</a>.</p>
   <h3>How much does B2B lead generation cost?</h3>
-  <p>Starting from $80 per scoped project (international), depending on list size, criteria strictness and verification level — see <a href="pricing.html">pricing</a>.</p>
+  <p>Starting from $80 per scoped project (international), depending on list size, criteria strictness and verification level — see <a href="/pricing">pricing</a>.</p>
 
   <h2>Continue reading</h2>
-  <p>Related: <a href="/blog/how-to-generate-b2b-leads.html">the B2B lead generation framework</a>, <a href="/blog/build-targeted-lead-list.html">building targeted lead lists</a> and <a href="/blog/international-seo-guide.html">international SEO</a>. Ready for a list? <a href="contact.html">Let's scope your ideal profile</a>.</p>`
+  <p>Related: <a href="/blog/how-to-generate-b2b-leads">the B2B lead generation framework</a>, <a href="/blog/build-targeted-lead-list">building targeted lead lists</a> and <a href="/blog/international-seo-guide">international SEO</a>. Ready for a list? <a href="/contact">Let's scope your ideal profile</a>.</p>`
 },
 ];
 /* END OF ARTICLES DATA */

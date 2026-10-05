@@ -269,7 +269,7 @@ const Cms = (() => {
   };
   const navForm = (it = {}) => `
     ${field('Label', `<input class="input" id="navLabel" value="${esc(it.label || '')}">`)}
-    ${field('URL', `<input class="input" id="navUrl" value="${esc(it.url || '')}" placeholder="/about.html or https://…">`)}
+    ${field('URL', `<input class="input" id="navUrl" value="${esc(it.url || '')}" placeholder="/about or https://…">`)}
     <div class="row">
       ${field('Position (number)', `<input class="input" type="number" id="navPos" value="${it.position != null ? it.position : (it.__next || 1)}">`)}
       ${field('Parent ID', `<input class="input" type="number" id="navParent" value="${it.parent_id != null ? it.parent_id : ''}" placeholder="0 (top-level)">`)}
@@ -565,7 +565,7 @@ const Cms = (() => {
       <div class="section-head"><h2>Pages</h2><p>Edit the main heading and content blocks for each page.</p></div>
       ${data.map(p => `
         <div class="card mt-24">
-          <div class="flex items-center justify-between"><div><h3 style="margin:0">${esc(p.title)}</h3><div class="card__muted">/ ${esc(p.slug)}</div></div>
+          <div class="flex items-center justify-between"><div><h3 style="margin:0">${esc(p.title)}</h3><div class="card__muted">/blog/${esc(p.slug)}</div></div>
           <button class="btn btn-ghost btn-sm" onclick="Cms.pageForm('${esc(p.slug)}')">${ICONS.edit} Edit</button></div>
           <div class="text-sm text-muted mt-8">Heading: <b>${esc(p.heading || '—')}</b></div>
           ${p.sections && p.sections.length ? `<div class="mt-8">${p.sections.map(s => `<div class="text-sm text-muted" style="padding:5px 0"><b>${esc(s.section_key)}</b> — ${esc(s.heading || '')}</div>`).join('')}</div>` : ''}
@@ -636,7 +636,7 @@ const Cms = (() => {
         ${field('Focus keyword', `<input class="input" id="seoKeyword" value="${esc(s.focus_keyword || '')}">`)}
         ${field('Robots', `<input class="input" id="seoRobots" value="${esc(s.robots || 'index, follow')}">`)}
       </div>
-      ${field('Canonical URL', `<input class="input" id="seoCanonical" value="${esc(s.canonical_url || '')}" placeholder="/about.html">`)}
+      ${field('Canonical URL', `<input class="input" id="seoCanonical" value="${esc(s.canonical_url || '')}" placeholder="/about">`)}
       <div class="divider"></div><h3 style="margin:6px 0">Open Graph / Twitter</h3>
       <div class="row">
         ${field('OG title', `<input class="input" id="ogTitle" value="${esc(s.og_title || '')}">`)}

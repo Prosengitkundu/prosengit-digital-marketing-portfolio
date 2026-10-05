@@ -6,7 +6,9 @@
    rendered content only via JavaScript (invisible to non-JS crawlers, shared
    generic metadata, missing from sitemap).
 
-   This script generates fully static HTML pages:
+   This script generates fully static HTML pages (the .html files are kept
+   because GitHub Pages serves them for the clean URLs /blog/<slug> and
+   /portfolio/<slug>; every link and metadata URL inside is extension-less):
      /blog/<slug>.html        (28 articles, from assets/js/articles.js)
      /portfolio/<slug>.html   (12 case studies, from assets/js/projects.js)
 
@@ -67,12 +69,18 @@ function isoDate(d) {
 const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const absImg = img => /^https?:/.test(img) ? img : `${SITE}/${img.replace(/^\.\//,'')}`;
 
-/* Make every relative href/src root-absolute (pages live one level deep). */
+/* Make every relative href/src root-absolute (pages live one level deep) and
+   use clean, extension-less page URLs (/about → not about.html or /about.html). */
+const PAGE_NAMES = 'index|about|team|services|pricing|portfolio|blog|testimonials|faq|contact|privacy-policy|terms|disclaimer|404|thank-you|team-eitykona|team-nilanjana|team-sarna|team-shamim|team-priyanka|team-mashrur';
+
 function absolutize(html) {
   return html
     .replace(/(href|src)="assets\//g, '$1="/assets/')
-    .replace(/href="((?:index|about|team|services|pricing|portfolio|blog|testimonials|faq|contact|privacy-policy|terms|disclaimer|404|thank-you|team-eitykona|team-nilanjana|team-sarna|team-shamim|team-priyanka)\.html)/g, 'href="/$1')
-    .replace(/href="(portfolio-details|blog-details)\.html/g, 'href="/$1.html');
+    .replace(new RegExp(`href="\\/?\\.?\\.?/?(?:${PAGE_NAMES})(?:\\.html)?"`, 'g'), (m) => {
+      const page = m.replace(/^href="\/?\.?\.?\/?/, '').replace(/(\.html)?"$/, '');
+      return `href="${page === 'index' ? '/' : '/' + page}"`;
+    })
+    .replace(/href="\/?\.?\.?\/?(portfolio-details|blog-details)(?:\.html)?/g, 'href="/$1');
 }
 
 /* Per-page head rewrite */
@@ -103,7 +111,7 @@ const personRef = { '@type': 'Person', '@id': `${SITE}/#person`, name: 'Prosengi
 const breadcrumbs = (section, title, url) => ({
   '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
-    { '@type': 'ListItem', position: 2, name: section, item: `${SITE}/${section.toLowerCase()}.html` },
+    { '@type': 'ListItem', position: 2, name: section, item: `${SITE}/${section.toLowerCase()}` },
     { '@type': 'ListItem', position: 3, name: title, item: url }
   ]
 });
@@ -200,7 +208,7 @@ function buildArticleWorkbook(a) {
   <h3>Can this process guarantee a result?</h3>
   <p>No. This ${esc(a.title)} process improves decision quality and implementation discipline; it cannot control competition, platform auctions, algorithm changes, customer demand or sales follow-up. Be cautious with anyone who guarantees rankings, leads or revenue without those dependencies.</p>
   <h3>How does Prosengit Kundu approach this work?</h3>
-  <p>For work related to ${esc(a.title)}, Prosengit Kundu connects the ${esc(a.cat)} decision with its technical destination where relevant: content, advertising, social or YouTube marketing, B2B research, and custom HTML/CSS/JavaScript or WordPress development. The scope begins with the goal and available evidence. Review the <a href="/services.html">digital marketing and website services</a>, see related <a href="/portfolio.html">case studies</a>, or <a href="/contact.html">describe the project</a>.</p>`;
+  <p>For work related to ${esc(a.title)}, Prosengit Kundu connects the ${esc(a.cat)} decision with its technical destination where relevant: content, advertising, social or YouTube marketing, B2B research, and custom HTML/CSS/JavaScript or WordPress development. The scope begins with the goal and available evidence. Review the <a href="/services">digital marketing and website services</a>, see related <a href="/portfolio">case studies</a>, or <a href="/contact">describe the project</a>.</p>`;
 }
 
 /* ---------------- generate articles ---------------- */
@@ -208,7 +216,7 @@ fs.mkdirSync(path.join(ROOT, 'blog'), { recursive: true });
 fs.mkdirSync(path.join(ROOT, 'portfolio'), { recursive: true });
 
 ARTICLES.forEach((a, i) => {
-  const url = `${SITE}/blog/${a.slug}.html`;
+  const url = `${SITE}/blog/${a.slug}`;
   const { out: body, h2s } = processBody(`${a.body.trim()}\n${buildArticleWorkbook(a)}`);
   const prev = ARTICLES[i-1], next = ARTICLES[i+1];
   const related = ARTICLES.filter(r => r.cat === a.cat && r.id !== a.id).slice(0, 3);
@@ -226,7 +234,7 @@ ARTICLES.forEach((a, i) => {
 
   const main = `
     <div class="max-w-7xl mx-auto px-8 pt-16 pb-20">
-        <a href="/blog.html" class="text-sm font-semibold text-[#0A66C2]">← Back to All Articles</a>
+        <a href="/blog" class="text-sm font-semibold text-[#0A66C2]">← Back to All Articles</a>
         <div class="grid lg:grid-cols-12 gap-12 mt-8">
             <article class="lg:col-span-8">
                 <div id="article-content">
@@ -241,8 +249,8 @@ ${body}
                         <h2 class="text-2xl heading-font font-bold">Work With Me</h2>
                         <p class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Enjoyed this guide? I provide freelance SEO, international SEO, custom HTML/CSS/JavaScript web development, Google &amp; Meta Ads management, B2B lead generation and complete digital growth plans — for clients in Bangladesh and remotely worldwide.</p>
                         <div class="flex flex-wrap gap-3 mt-6">
-                            <a href="/pricing.html" class="premium-btn px-7 py-3 bg-[#0A66C2] text-white font-semibold rounded-3xl">View Pricing</a>
-                            <a href="/contact.html" class="premium-btn px-7 py-3 border border-gray-300 dark:border-gray-600 font-semibold rounded-3xl">Start a Project</a>
+                            <a href="/pricing" class="premium-btn px-7 py-3 bg-[#0A66C2] text-white font-semibold rounded-3xl">View Pricing</a>
+                            <a href="/contact" class="premium-btn px-7 py-3 border border-gray-300 dark:border-gray-600 font-semibold rounded-3xl">Start a Project</a>
                         </div>
                     </div>
                     <div class="grid sm:grid-cols-2 gap-4 mt-10" id="prev-next">
@@ -336,18 +344,18 @@ function buildProjectReview(p) {
     <h3 class="text-xl heading-font font-bold mt-7">Does this case study guarantee the same outcome?</h3>
     <p class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">No. It documents the existing project scope and delivered status. Search, advertising, sales and website outcomes depend on factors beyond a single deliverable. Any new project should begin with its own baseline and written scope.</p>
     <h3 class="text-xl heading-font font-bold mt-7">What should be provided for a similar quotation?</h3>
-    <p class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Share the goal, relevant URL or account context, audience and location, available content or data, deadline and preferred communication route. Use the <a href="/contact.html" class="text-[#0A66C2] font-semibold">contact page</a> to discuss the scope, or compare the documented starting points on the <a href="/pricing.html" class="text-[#0A66C2] font-semibold">pricing page</a>.</p>
+    <p class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Share the goal, relevant URL or account context, audience and location, available content or data, deadline and preferred communication route. Use the <a href="/contact" class="text-[#0A66C2] font-semibold">contact page</a> to discuss the scope, or compare the documented starting points on the <a href="/pricing" class="text-[#0A66C2] font-semibold">pricing page</a>.</p>
   </section>`;
 }
 
 PROJECTS.forEach((p, i) => {
-  const url = `${SITE}/portfolio/${p.slug}.html`;
+  const url = `${SITE}/portfolio/${p.slug}`;
   const prev = PROJECTS[i-1], next = PROJECTS[i+1];
   const description = `${p.focus} — case study by Prosengit Kundu. Full project documentation: goal, role, tools, work completed and outcome.`;
 
   const main = `
     <main id="caseStudy" class="max-w-5xl mx-auto px-8 pt-16 pb-16">
-        <a href="/portfolio.html" class="text-sm font-semibold text-[#0A66C2]">← Back to Portfolio</a>
+        <a href="/portfolio" class="text-sm font-semibold text-[#0A66C2]">← Back to Portfolio</a>
         <div class="mt-8">
             <div class="text-xs tracking-[3px] font-semibold text-[#F59E0B]">${(CATS[p.cat] || p.cat).toUpperCase()}</div>
             <h1 class="text-4xl md:text-6xl heading-font tracking-tighter font-bold mt-4 leading-[1.05]">${esc(p.title)}</h1>

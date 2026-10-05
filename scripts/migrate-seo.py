@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 """
+HISTORICAL — already applied, do not re-run.
+
+This one-time migration ran before the clean-URL migration. Every page URL it
+writes below (about.html, blog.html, /blog/<slug>.html, blog-details.html?id=N …)
+has since been replaced by the extension-less structure documented in README
+§ "Clean URLs": /about, /blog, /blog/<slug>, /blog-details?id=N. Re-running it
+would restore the old .html links, so it is kept only as a record of that step.
+
 Migration: static-content SEO fixes (approved changes only).
 1. Add slug/url fields to articles.js + projects.js
 2. Point all blog-details.html?id=N / portfolio-details.html?id=N links to new static URLs

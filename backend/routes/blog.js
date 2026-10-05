@@ -1,7 +1,7 @@
 'use strict';
 const express = require('express');
 const { db } = require('../db');
-const { ok, fail, parseJson, slugify, absoluteUrl } = require('../utils/helpers');
+const { ok, fail, parseJson, slugify, absoluteUrl, cleanPageUrl, staticPageExists } = require('../utils/helpers');
 const { requireAuth } = require('../middleware/auth');
 
 const router = express.Router();
@@ -20,16 +20,31 @@ function publicPost(r) {
     author: r.author,
     publish_date: r.publish_date,
     read_time: r.read_time,
+    // Clean static article URL: /blog/<slug>. If the generated page is missing
+    // (a record whose slug predates the static build), fall back to the
+    // JS-rendered /blog-details?id= page so the link never 404s.
+    url: staticPageExists(`/blog/${r.slug}`) ? `/blog/${r.slug}` : `/blog-details?id=${r.id}`,
     published: !!r.published,
     featured: !!r.featured,
     seo_title: r.seo_title,
     seo_description: r.seo_description,
-    canonical_url: r.canonical_url,
+    canonical_url: postCanonical(r),
     og_title: r.og_title,
     og_description: r.og_description,
     og_image: absoluteUrl(r.og_image || r.image, BASE),
     twitter_card: r.twitter_card
   };
+}
+
+/* The canonical URL of a post is its own clean static page. Legacy or generic
+   stored values (/blog-details.html, /blog, …) are ignored rather than
+   published as a duplicate-content signal. */
+function postCanonical(r) {
+  const fallback = `/blog/${r.slug}`;
+  const clean = cleanPageUrl(r.canonical_url, fallback);
+  if (/^(https?:)?\/\//i.test(clean)) return clean;
+  if (!clean || clean === '/' || clean === '/blog' || clean === '/blog-details') return fallback;
+  return clean;
 }
 
 function uniqueSlug(title, excludeId) {

@@ -14,7 +14,38 @@
   if (!window.fetch) return;
 
   var API = '';
-  var PAGE = (window.location.pathname.split('/').pop() || 'index.html').split('?')[0];
+  /* Public URLs are clean and extension-less: /, /about, /blog, /blog/<slug>,
+     /portfolio/<slug>, /blog-details?id=N, /portfolio-details?id=N, … */
+  var PATH = window.location.pathname.replace(/\/+$/, '') || '/';
+  var SEGMENTS = PATH.split('/').filter(Boolean);
+  var PAGE = (SEGMENTS.length ? SEGMENTS[SEGMENTS.length - 1] : 'index').replace(/\.html?$/i, '');
+
+  /* Page → nav section (mirrors assets/js/site.js so the header stays consistent) */
+  var SECTION_ALIASES = {
+    'blog-details': 'blog',
+    'portfolio-details': 'portfolio',
+    'thank-you': 'contact',
+    'team-eitykona': 'team',
+    'team-nilanjana': 'team',
+    'team-sarna': 'team',
+    'team-shamim': 'team',
+    'team-priyanka': 'team',
+    'team-mashrur': 'team'
+  };
+  function sectionOf(href) {
+    if (!href) return '';
+    var path = String(href).split('#')[0].split('?')[0];
+    if (/^[a-z][a-z0-9+.-]*:\/\//i.test(path)) {
+      try { path = new window.URL(path).pathname; } catch (e) { return ''; }
+    }
+    var segments = path.split('/').filter(Boolean);
+    if (!segments.length) return 'index';
+    var first = segments[0].replace(/\.html?$/i, '');
+    if (segments.length > 1 && (first === 'blog' || first === 'portfolio')) return first;
+    if (first === 'index') return 'index';
+    return SECTION_ALIASES[first] || first;
+  }
+  var SECTION = sectionOf(PATH);
 
   function q(s, root) { return (root || document).querySelector(s); }
   function qa(s, root) { return Array.prototype.slice.call((root || document).querySelectorAll(s)); }
@@ -25,10 +56,10 @@
   function safe(fn) { try { fn(); } catch (e) { /* never break the page */ } }
   function initials(name) { return (name || '').split(' ').map(function (w) { return w[0]; }).slice(0, 2).join('').toUpperCase(); }
   // Prefer the static-slug URL that lives on each record (project.url / article.url).
-  // The site's canonical architecture is /portfolio/{slug}.html and /blog/{slug}.html;
+  // The site's canonical architecture is /portfolio/{slug} and /blog/{slug};
   // only fall back to a legacy ?id= link if a record has no static url at all.
-  function projectUrl(p) { return (p && p.url) ? p.url : 'portfolio-details.html?id=' + esc(p && p.id); }
-  function articleUrl(a) { return (a && a.url) ? a.url : 'blog-details.html?id=' + esc(a && a.id); }
+  function projectUrl(p) { return (p && p.url) ? p.url : '/portfolio-details?id=' + esc(p && p.id); }
+  function articleUrl(a) { return (a && a.url) ? a.url : '/blog-details?id=' + esc(a && a.id); }
   function colorFor(name) {
     var colors = ['#0A66C2', '#DB2777', '#16A34A', '#F59E0B', '#7C3AED'];
     var sum = 0; for (var i = 0; i < (name || '').length; i++) sum += name.charCodeAt(i);
@@ -87,14 +118,14 @@
     var nav = q('.site-nav');
     if (nav) {
       nav.innerHTML = items.map(function (it) {
-        var cls = (it.url && it.url.replace(/\.html$/, '').replace(/^\//, '') === active.replace(/\.html$/, '').replace(/^\//, '')) ? ' class="nav-link is-active"' : ' class="nav-link"';
+        var cls = (sectionOf(it.url) === active) ? ' class="nav-link is-active"' : ' class="nav-link"';
         return '<a href="' + esc(it.url) + '"' + cls + '>' + esc(it.label) + '</a>';
       }).join('');
     }
     var mobile = q('.mobile-menu__inner');
     if (mobile) {
       var links = items.map(function (it) {
-        var cls = (it.url && it.url.replace(/\.html$/, '').replace(/^\//, '') === active.replace(/\.html$/, '').replace(/^\//, '')) ? ' class="is-active"' : '';
+        var cls = (sectionOf(it.url) === active) ? ' class="is-active"' : '';
         return '<a href="' + esc(it.url) + '"' + cls + '>' + esc(it.label) + '</a>';
       }).join('');
       var wa = q('a[href*="wa.me"].btn.btn-primary', mobile);
@@ -102,7 +133,7 @@
     }
   }
 
-  function activeHref() { return PAGE; }
+  function activeHref() { return SECTION; }
 
   function applyHero(page) {
     if (!page || !page.page) return;
@@ -229,7 +260,7 @@
       var cs = q('#caseStudy');
       if (!cs) return;
       cs.innerHTML =
-        '<a href="portfolio.html" class="text-sm font-semibold text-[#0A66C2]">\u2190 Back to Portfolio</a>' +
+        '<a href="/portfolio" class="text-sm font-semibold text-[#0A66C2]">\u2190 Back to Portfolio</a>' +
         '<div class="mt-10"><div class="flex flex-wrap gap-3 items-center"><div class="text-xs tracking-[3px] font-semibold text-[#0A66C2]">' + esc((catLabel || '').toUpperCase()) + '</div></div>' +
         '<h1 class="text-4xl md:text-6xl heading-font tracking-tighter font-bold mt-4 leading-[1.05]">' + esc(project.title) + '</h1>' +
         '<p class="text-xl text-gray-600 dark:text-gray-300 mt-5 max-w-3xl">' + esc(project.industry || '') + '</p></div>' +
@@ -269,16 +300,16 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       }).then(function (r) { return r.json(); }).then(function (d) {
-        if (d.success) { window.location.href = 'thank-you.html'; }
+        if (d.success) { window.location.href = '/thank-you'; }
         else { alert(d.error || 'Something went wrong. Please try again.'); if (btn) { btn.disabled = false; btn.textContent = 'Send Message'; } }
       }).catch(function () { if (btn) { btn.disabled = false; btn.textContent = 'Send Message'; } alert('Network error. Please try again.'); });
     });
   }
 
   function init() {
-    if (PAGE === 'blog-details.html') { safe(hydrateBlogDetails); return; }
-    if (PAGE === 'portfolio-details.html') { safe(hydrateProjectDetails); return; }
-    if (PAGE === 'contact.html') { safe(hydrateContactForm); }
+    if (PAGE === 'blog-details') { safe(hydrateBlogDetails); return; }
+    if (PAGE === 'portfolio-details') { safe(hydrateProjectDetails); return; }
+    if (SECTION === 'contact') { safe(hydrateContactForm); }
 
     get('/settings').then(applySettings).catch(function () {});
     get('/navigation').then(applyNav).catch(function () {});
@@ -286,14 +317,14 @@
 
     get('/services').then(function (list) { if (list && list.length) renderServices(list); }).catch(function () {});
 
-    var isPortfolio = PAGE === 'portfolio.html';
+    var isPortfolio = SECTION === 'portfolio';
     get(isPortfolio ? '/projects' : '/projects/featured').then(function (list) {
       if (list && list.length) renderProjects(isPortfolio ? list : list.slice(0, 6));
       else if (!isPortfolio) get('/projects').then(function (all) { if (all && all.length) renderProjects(all.slice(0, 6)); }).catch(function () {});
     }).catch(function () {});
 
     get('/blog').then(function (list) {
-      if (list && list.length) renderBlog(PAGE === 'blog.html' ? list : list.slice(0, 3));
+      if (list && list.length) renderBlog(SECTION === 'blog' ? list : list.slice(0, 3));
     }).catch(function () {});
 
     get('/testimonials').then(function (list) { if (list && list.length) renderTestimonials(list); }).catch(function () {});

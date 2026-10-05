@@ -1,7 +1,7 @@
 'use strict';
 const express = require('express');
 const { db } = require('../db');
-const { ok, fail, parseJson, slugify, absoluteUrl } = require('../utils/helpers');
+const { ok, fail, parseJson, slugify, absoluteUrl, cleanPageUrl, staticPageExists } = require('../utils/helpers');
 const { requireAuth } = require('../middleware/auth');
 
 const router = express.Router();
@@ -31,7 +31,11 @@ function publicProject(r, images) {
     outcome: r.outcome,
     results: r.results,
     image: absoluteUrl(r.image, BASE),
-    url: r.url,
+    // Clean static case-study URL: /portfolio/<slug> (a custom/external URL
+    // stored in admin is preserved, legacy .html values are normalised).
+    url: staticPageExists(cleanPageUrl(r.url, `/portfolio/${r.slug}`))
+      ? cleanPageUrl(r.url, `/portfolio/${r.slug}`)
+      : `/portfolio-details?id=${r.id}`,
     project_date: r.project_date,
     featured: !!r.featured,
     sort_order: r.sort_order,

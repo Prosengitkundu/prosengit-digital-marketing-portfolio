@@ -10,7 +10,7 @@ const PROJECTS = [
   {
     id: 1,
     slug: "custom-business-website",
-    url: "/portfolio/custom-business-website.html",
+    url: "/portfolio/custom-business-website",
     cat: "web",
     title: "Custom Business Website — HTML/CSS/JavaScript",
     industry: "Local Professional Services",
@@ -37,7 +37,7 @@ const PROJECTS = [
   {
     id: 2,
     slug: "high-converting-landing-page-design",
-    url: "/portfolio/high-converting-landing-page-design.html",
+    url: "/portfolio/high-converting-landing-page-design",
     cat: "web",
     title: "High-Converting Landing Page Design",
     industry: "Digital Marketing / Lead Capture",
@@ -62,7 +62,7 @@ const PROJECTS = [
   {
     id: 3,
     slug: "photographer-portfolio-website",
-    url: "/portfolio/photographer-portfolio-website.html",
+    url: "/portfolio/photographer-portfolio-website",
     cat: "web",
     title: "Photographer Portfolio Website",
     industry: "Creative / Photography",
@@ -86,7 +86,7 @@ const PROJECTS = [
   {
     id: 4,
     slug: "local-seo-growth-system",
-    url: "/portfolio/local-seo-growth-system.html",
+    url: "/portfolio/local-seo-growth-system",
     cat: "seo",
     title: "Local SEO Growth System",
     industry: "Local Service Business",
@@ -111,7 +111,7 @@ const PROJECTS = [
   {
     id: 5,
     slug: "keyword-research-content-mapping",
-    url: "/portfolio/keyword-research-content-mapping.html",
+    url: "/portfolio/keyword-research-content-mapping",
     cat: "seo",
     title: "Keyword Research & Content Mapping",
     industry: "Content / Blog Strategy",
@@ -135,7 +135,7 @@ const PROJECTS = [
   {
     id: 6,
     slug: "technical-seo-audit-report",
-    url: "/portfolio/technical-seo-audit-report.html",
+    url: "/portfolio/technical-seo-audit-report",
     cat: "seo",
     title: "Technical SEO Audit — Full Report",
     industry: "Business Website",
@@ -160,7 +160,7 @@ const PROJECTS = [
   {
     id: 7,
     slug: "meta-ads-lead-campaign",
-    url: "/portfolio/meta-ads-lead-campaign.html",
+    url: "/portfolio/meta-ads-lead-campaign",
     cat: "ads",
     title: "Meta Ads Lead Campaign Structure",
     industry: "B2B Service",
@@ -185,7 +185,7 @@ const PROJECTS = [
   {
     id: 8,
     slug: "google-ads-search-campaign",
-    url: "/portfolio/google-ads-search-campaign.html",
+    url: "/portfolio/google-ads-search-campaign",
     cat: "ads",
     title: "Google Ads Search Campaign Blueprint",
     industry: "Service Business",
@@ -210,7 +210,7 @@ const PROJECTS = [
   {
     id: 9,
     slug: "b2b-targeted-lead-list",
-    url: "/portfolio/b2b-targeted-lead-list.html",
+    url: "/portfolio/b2b-targeted-lead-list",
     cat: "lead",
     title: "B2B Targeted Lead List Build",
     industry: "Digital Agencies / SaaS",
@@ -235,7 +235,7 @@ const PROJECTS = [
   {
     id: 10,
     slug: "prospect-research-data-cleaning",
-    url: "/portfolio/prospect-research-data-cleaning.html",
+    url: "/portfolio/prospect-research-data-cleaning",
     cat: "lead",
     title: "Prospect Research & Data Cleaning",
     industry: "Outbound Sales Support",
@@ -259,7 +259,7 @@ const PROJECTS = [
   {
     id: 11,
     slug: "social-media-design-pack",
-    url: "/portfolio/social-media-design-pack.html",
+    url: "/portfolio/social-media-design-pack",
     cat: "design",
     title: "Social Media Design Pack",
     industry: "Small Business Brand",
@@ -283,7 +283,7 @@ const PROJECTS = [
   {
     id: 12,
     slug: "youtube-thumbnail-design-set",
-    url: "/portfolio/youtube-thumbnail-design-set.html",
+    url: "/portfolio/youtube-thumbnail-design-set",
     cat: "design",
     title: "YouTube Thumbnail Design Set",
     industry: "Education / Content Creator",
