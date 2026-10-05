@@ -175,6 +175,64 @@ app.get('/admin/dashboard.html', requireAuth, (req, res) => res.sendFile(path.jo
 app.get('/admin/settings', requireAuth, (req, res) => res.sendFile(path.join(ADMIN_PUBLIC, 'index.html')));
 
 /* ---------------------------------------------------------------------------
+   Clean URLs — public pages are served without the .html extension.
+   ---------------------------------------------------------------------------
+     • /about.html, /blog/some-post.html, /index.html …  → 301 to the clean URL
+     • /about,  /blog/some-post,  /                  → served from the .html file
+     • /blog/, /about/                               → 301 to the slash-less URL
+
+   Only real page files are redirected and only same-file single hops are used,
+   so there are no redirect chains or loops. The API, the admin dashboard and
+   uploaded media are never touched. The .html files stay on disk: they are the
+   source content and the fallback for hosts that cannot rewrite (GitHub Pages).
+--------------------------------------------------------------------------- */
+const RESERVED_PATH = /^\/(api|admin|uploads)(\/|$)/;
+
+function publicFileExists(urlPath) {
+  const abs = path.join(SITE_ROOT, urlPath);
+  try {
+    return fs.existsSync(abs) && fs.statSync(abs).isFile();
+  } catch (err) {
+    return false;
+  }
+}
+
+/* Canonical clean URL for a requested page path: strips a trailing ".html" and
+   a trailing slash, and normalises every homepage variant (/index, /index/,
+   /index.html) to "/" so there is never a chain of redirects. */
+function cleanUrlFor(urlPath) {
+  if (/^\/index(\.html?)?\/?$/i.test(urlPath)) return '/';
+  return urlPath.replace(/\.html?$/i, '').replace(/\/+$/, '');
+}
+
+app.use((req, res, next) => {
+  if (req.method !== 'GET' && req.method !== 'HEAD') return next();
+  const urlPath = req.path.split('?')[0];
+  if (RESERVED_PATH.test(urlPath)) return next();
+
+  const queryIndex = req.originalUrl.indexOf('?');
+  const query = queryIndex === -1 ? '' : req.originalUrl.slice(queryIndex);
+
+  // 1. Legacy .html URL → its clean equivalent (single permanent redirect).
+  if (/\.html?$/i.test(urlPath)) {
+    if (!publicFileExists(urlPath)) return next(); // unknown file → normal 404
+    return res.redirect(301, cleanUrlFor(urlPath) + query);
+  }
+
+  // 2. Trailing slash → the canonical slash-less URL (only for real pages).
+  if (urlPath.length > 1 && urlPath.endsWith('/')) {
+    const trimmed = urlPath.replace(/\/+$/, '');
+    if (publicFileExists(trimmed + '.html')) return res.redirect(301, cleanUrlFor(trimmed) + query);
+    return next();
+  }
+
+  // 3. Bare /index → the homepage (single hop, no /index → /index/ → / chain).
+  if (/^\/index$/i.test(urlPath)) return res.redirect(301, '/' + query);
+
+  return next();
+});
+
+/* ---------------------------------------------------------------------------
    SEO injection — inject DB-driven meta/title into the existing static HTML.
    Falls back to whatever the page already hardcodes, so existing SEO is never
    damaged when the DB has nothing for a page.
@@ -185,9 +243,17 @@ const SEO_FIELDS = [
 ];
 
 function injectSeo(html, pathname) {
+  /* DB-managed SEO rows exist for the root pages only (home, about, services,
+     portfolio, blog, contact …). Nested content pages — /blog/<slug> and
+     /portfolio/<slug> — carry their own generated title/canonical/OG tags, so
+     injecting the listing row here would overwrite them with the wrong
+     canonical. They are therefore left untouched. */
+  const segments = pathname.replace(/^\//, '').split('/').filter(Boolean);
+  if (segments.length > 1) return html;
+
   let slug = 'home';
-  const file = pathname.replace(/^\//, '').split('/')[0];
-  if (file && file !== '') {
+  const file = segments[0] || '';
+  if (file) {
     const name = file.replace(/\.html$/, '');
     slug = name && name !== 'index' ? name : 'home';
   }
@@ -249,7 +315,18 @@ app.use((req, res, next) => {
 
   let file = urlPath;
   if (file === '/') file = '/index.html';
-  const abs = path.join(SITE_ROOT, file);
+  let abs = path.join(SITE_ROOT, file);
+  // Clean URL → underlying .html page (e.g. /about → /about.html,
+  // /blog/some-post → /blog/some-post.html). Files with an extension are
+  // always requested literally so assets are never shadowed.
+  // Note: /blog and /portfolio exist both as a listing page (blog.html,
+  // portfolio.html) and as a directory of generated pages — the page must win
+  // for the clean URL, otherwise express.static would bounce it to /blog/.
+  if (!path.extname(file) && fs.existsSync(abs + '.html')) {
+    let isPlainFile = false;
+    try { isPlainFile = fs.statSync(abs).isFile(); } catch (err) { isPlainFile = false; }
+    if (!isPlainFile) abs += '.html';
+  }
   if (fs.existsSync(abs) && fs.statSync(abs).isFile() && /\.html?$/i.test(abs)) {
     let html = fs.readFileSync(abs, 'utf8');
     html = injectSeo(html, urlPath);

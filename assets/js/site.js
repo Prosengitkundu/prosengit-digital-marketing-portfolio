@@ -13,32 +13,53 @@
     'use strict';
 
     /* ----------------------------------------------------------------------
+       Legacy .html URL → clean URL
+       ----------------------------------------------------------------------
+       Public URLs are extension-less (/about, /blog/<slug>, …). GitHub Pages
+       serves static files and cannot send an HTTP 301, so on that host a
+       request that still arrives with a .html extension is forwarded to its
+       clean URL here. On the Node/CMS deployment the server sends the 301
+       before any HTML is delivered, so this block normally does nothing.
+       It never runs for the clean URLs themselves, and file:// previews are
+       ignored because they have no http(s) protocol.
+    ---------------------------------------------------------------------- */
+    (function redirectLegacyHtmlUrl() {
+        var loc = window.location;
+        if (loc.protocol !== 'http:' && loc.protocol !== 'https:') return;
+        if (!/\.html?$/i.test(loc.pathname)) return;
+        if (/\/404\.html?$/i.test(loc.pathname)) return;
+        var clean = loc.pathname.replace(/\/index\.html?$/i, '/').replace(/\.html?$/i, '');
+        if (clean === loc.pathname) return;
+        loc.replace(clean + loc.search + loc.hash);
+    })();
+
+    /* ----------------------------------------------------------------------
        Config
        ---------------------------------------------------------------------- */
     var NAV_ITEMS = [
-        { label: 'Home',         href: 'index.html' },
-        { label: 'About',        href: 'about.html' },
-        { label: 'Team',         href: 'team.html' },
-        { label: 'Services',     href: 'services.html' },
-        { label: 'Pricing',      href: 'pricing.html' },
-        { label: 'Portfolio',    href: 'portfolio.html' },
-        { label: 'Blog',         href: 'blog.html' },
-        { label: 'Testimonials', href: 'testimonials.html' },
-        { label: 'FAQ',          href: 'faq.html' },
-        { label: 'Contact',      href: 'contact.html' }
+        { label: 'Home',         href: '/' },
+        { label: 'About',        href: '/about' },
+        { label: 'Team',         href: '/team' },
+        { label: 'Services',     href: '/services' },
+        { label: 'Pricing',      href: '/pricing' },
+        { label: 'Portfolio',    href: '/portfolio' },
+        { label: 'Blog',         href: '/blog' },
+        { label: 'Testimonials', href: '/testimonials' },
+        { label: 'FAQ',          href: '/faq' },
+        { label: 'Contact',      href: '/contact' }
     ];
 
-    /* Pages that are "children" of a main nav item */
+    /* Pages that are "children" of a main nav section */
     var NAV_ALIASES = {
-        'portfolio-details.html': 'portfolio.html',
-        'blog-details.html': 'blog.html',
-        'thank-you.html': 'contact.html',
-        'team-eitykona.html': 'team.html',
-        'team-nilanjana.html': 'team.html',
-        'team-sarna.html': 'team.html',
-        'team-shamim.html': 'team.html',
-        'team-priyanka.html': 'team.html',
-        'team-mashrur.html': 'team.html'
+        'blog-details': 'blog',
+        'portfolio-details': 'portfolio',
+        'thank-you': 'contact',
+        'team-eitykona': 'team',
+        'team-nilanjana': 'team',
+        'team-sarna': 'team',
+        'team-shamim': 'team',
+        'team-priyanka': 'team',
+        'team-mashrur': 'team'
     };
 
     var CONTACT = {
@@ -57,16 +78,34 @@
 
     /* ----------------------------------------------------------------------
        Helpers
-       ---------------------------------------------------------------------- */
+       ----------------------------------------------------------------------
+       URLs are clean and extension-less: /, /about, /blog, /blog/<slug>,
+       /portfolio/<slug>, /team-<name>, /blog-details?id=N, … Every page maps
+       to one nav section so exactly one menu item is highlighted.
+    ---------------------------------------------------------------------- */
     function currentPage() {
-        var path = window.location.pathname.split('/').pop();
-        if (!path) return 'index.html';
-        return path;
+        var segments = window.location.pathname.split('/').filter(Boolean);
+        if (!segments.length) return 'index';
+        return segments[segments.length - 1].replace(/\.html?$/i, '');
+    }
+
+    /* Resolve any path/URL to its section key (used for nav highlighting) */
+    function sectionOf(href) {
+        if (!href) return '';
+        var path = String(href).split('#')[0].split('?')[0];
+        if (/^[a-z][a-z0-9+.-]*:\/\//i.test(path)) {
+            try { path = new window.URL(path).pathname; } catch (e) { return ''; }
+        }
+        var segments = path.split('/').filter(Boolean);
+        if (!segments.length) return 'index';
+        var first = segments[0].replace(/\.html?$/i, '');
+        if (segments.length > 1 && (first === 'blog' || first === 'portfolio')) return first;
+        if (first === 'index') return 'index';
+        return NAV_ALIASES[first] || first;
     }
 
     function activeNavHref() {
-        var page = currentPage();
-        return NAV_ALIASES[page] || page;
+        return sectionOf(window.location.pathname);
     }
 
     function el(html) {
@@ -109,7 +148,7 @@
        ---------------------------------------------------------------------- */
     function navMarkup(active, mobile) {
         return NAV_ITEMS.map(function (item) {
-            var isActive = item.href === active;
+            var isActive = sectionOf(item.href) === active;
             var cls = mobile
                 ? (isActive ? 'is-active' : '')
                 : 'nav-link' + (isActive ? ' is-active' : '');
@@ -125,7 +164,7 @@
         var header = el(
             '<header class="site-header" id="siteHeader">' +
                 '<div class="site-header__inner">' +
-                    '<a href="index.html" class="brand" aria-label="Prosengit Kundu — home">' +
+                    '<a href="/" class="brand" aria-label="Prosengit Kundu — home">' +
                         '<span class="brand__mark">PK</span>' +
                         '<span>' +
                             '<span class="brand__name">Prosengit Kundu</span>' +
@@ -137,7 +176,7 @@
                         '<button type="button" class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">' +
                             '<span id="themeIcon" aria-hidden="true">🌙</span>' +
                         '</button>' +
-                        '<a href="contact.html" class="btn btn-primary hidden-sm" id="headerCta">Hire Me</a>' +
+                        '<a href="/contact" class="btn btn-primary hidden-sm" id="headerCta">Hire Me</a>' +
                         '<button type="button" class="icon-btn nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">' +
                             '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">' +
                                 '<path d="M4 7h16M4 12h16M4 17h16"/>' +
@@ -224,17 +263,17 @@
             return '<a href="' + item.href + '">' + item.label + '</a>';
         }).join('');
 
-        var more = '<a href="blog.html">Blog</a>' +
-            '<a href="testimonials.html">Testimonials</a>' +
-            '<a href="faq.html">FAQ</a>' +
-            '<a href="contact.html">Contact</a>' +
-            '<a href="disclaimer.html">Disclaimer</a>';
+        var more = '<a href="/blog">Blog</a>' +
+            '<a href="/testimonials">Testimonials</a>' +
+            '<a href="/faq">FAQ</a>' +
+            '<a href="/contact">Contact</a>' +
+            '<a href="/disclaimer">Disclaimer</a>';
 
         var footer = el(
             '<footer class="site-footer">' +
                 '<div class="site-footer__inner">' +
                     '<div>' +
-                        '<a href="index.html" class="footer-brand">' +
+                        '<a href="/" class="footer-brand">' +
                             '<span class="footer-brand__mark">PK</span>' +
                             '<span>' +
                                 '<span class="footer-brand__name">Prosengit Kundu</span>' +
@@ -275,9 +314,9 @@
                 '<div class="site-footer__bottom">' +
                     '<div>© ' + YEAR + ' Prosengit Kundu. All rights reserved.</div>' +
                     '<div class="site-footer__legal">' +
-                        '<a href="privacy-policy.html">Privacy Policy</a>' +
-                        '<a href="terms.html">Terms</a>' +
-                        '<a href="disclaimer.html">Disclaimer</a>' +
+                        '<a href="/privacy-policy">Privacy Policy</a>' +
+                        '<a href="/terms">Terms</a>' +
+                        '<a href="/disclaimer">Disclaimer</a>' +
                     '</div>' +
                 '</div>' +
             '</footer>'
@@ -515,7 +554,9 @@
             if (/^(https?:)?\/\//i.test(href) && href.indexOf(window.location.host) === -1) return;
             if (/^(mailto:|tel:|javascript:)/i.test(href)) return;
             if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
-            if (href.indexOf('.html') === -1 && href !== '/') return;
+            // Skip non-page files (downloads, images, documents, feeds) — only
+            // real page URLs get the exit transition, .html or clean.
+            if (/\.(pdf|jpe?g|png|gif|webp|avif|svg|ico|zip|rar|7z|docx?|xlsx?|pptx?|csv|txt|css|js|json|xml|mp4|webm|mp3|wav)$/i.test(href.split('#')[0].split('?')[0])) return;
 
             e.preventDefault();
             document.body.classList.add('is-leaving');
@@ -557,7 +598,7 @@
         if (window.PkChatbot || document.getElementById('pk-chatbot-script')) return;
         var s = document.createElement('script');
         s.id = 'pk-chatbot-script';
-        s.src = 'assets/js/chatbot.js';
+        s.src = '/assets/js/chatbot.js';
         s.async = true;
         document.head.appendChild(s);
     }
@@ -614,12 +655,12 @@
    Shared page helpers used by inline page scripts
    ========================================================================== */
 function selectPlan(plan) {
-    window.location.href = 'contact.html?plan=' + encodeURIComponent(plan);
+    window.location.href = '/contact?plan=' + encodeURIComponent(plan);
 }
 
 function submitContactForm(e) {
     e.preventDefault();
     var nameField = document.getElementById('name');
     var name = nameField && nameField.value ? nameField.value : 'Friend';
-    window.location.href = 'thank-you.html?name=' + encodeURIComponent(name);
+    window.location.href = '/thank-you?name=' + encodeURIComponent(name);
 }

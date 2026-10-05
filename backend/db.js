@@ -337,14 +337,14 @@ function seed() {
     // ---- Navigation -------------------------------------------------------
     const navItems = [
       { label: 'Home', url: '/', position: 1 },
-      { label: 'About', url: '/about.html', position: 2 },
-      { label: 'Services', url: '/services.html', position: 3 },
-      { label: 'Pricing', url: '/pricing.html', position: 4 },
-      { label: 'Portfolio', url: '/portfolio.html', position: 5 },
-      { label: 'Blog', url: '/blog.html', position: 6 },
-      { label: 'Testimonials', url: '/testimonials.html', position: 7 },
-      { label: 'FAQ', url: '/faq.html', position: 8 },
-      { label: 'Contact', url: '/contact.html', position: 9 }
+      { label: 'About', url: '/about', position: 2 },
+      { label: 'Services', url: '/services', position: 3 },
+      { label: 'Pricing', url: '/pricing', position: 4 },
+      { label: 'Portfolio', url: '/portfolio', position: 5 },
+      { label: 'Blog', url: '/blog', position: 6 },
+      { label: 'Testimonials', url: '/testimonials', position: 7 },
+      { label: 'FAQ', url: '/faq', position: 8 },
+      { label: 'Contact', url: '/contact', position: 9 }
     ];
     const insNav = db.prepare('INSERT INTO navigation (label,url,position,active) VALUES (?,?,?,1)');
     for (const n of navItems) insNav.run(n.label, n.url, n.position);
@@ -366,7 +366,7 @@ function seed() {
         meta_title: 'About Prosengit Kundu | Digital Marketing Expert in Khulna',
         meta_description: 'Learn about Prosengit Kundu — digital marketing expert, professional trainer and custom web developer based in Khulna, Bangladesh.',
         focus_keyword: 'about prosengit kundu',
-        canonical_url: '/about.html',
+        canonical_url: '/about',
         og_title: 'About Prosengit Kundu',
         og_description: 'Digital marketing expert, professional trainer & custom web developer based in Khulna, Bangladesh.'
       },
@@ -375,7 +375,7 @@ function seed() {
         meta_title: 'Digital Marketing & SEO Services | Prosengit Kundu',
         meta_description: 'SEO, Google Ads, Meta Ads, web development, lead generation and graphic design services with clear scope and pricing.',
         focus_keyword: 'digital marketing services',
-        canonical_url: '/services.html',
+        canonical_url: '/services',
         og_title: 'Digital Marketing & SEO Services',
         og_description: 'SEO, Google Ads, Meta Ads, web development, lead generation and graphic design services.'
       },
@@ -384,7 +384,7 @@ function seed() {
         meta_title: 'Portfolio | Prosengit Kundu — Web, SEO, Ads & Design',
         meta_description: 'Concept and client portfolio of Prosengit Kundu: custom websites, SEO systems, paid ads, lead generation and graphic design.',
         focus_keyword: 'digital marketing portfolio',
-        canonical_url: '/portfolio.html',
+        canonical_url: '/portfolio',
         og_title: 'Portfolio — Prosengit Kundu',
         og_description: 'Custom websites, SEO systems, paid ads, lead generation and graphic design work.'
       },
@@ -393,7 +393,7 @@ function seed() {
         meta_title: 'Blog | Prosengit Kundu — Digital Marketing Insights',
         meta_description: 'Articles on SEO, Google & Meta Ads, lead generation, web development and digital marketing from Prosengit Kundu.',
         focus_keyword: 'digital marketing blog',
-        canonical_url: '/blog.html',
+        canonical_url: '/blog',
         og_title: 'Blog — Prosengit Kundu',
         og_description: 'Insights on SEO, paid ads, lead generation and web development.'
       },
@@ -402,7 +402,7 @@ function seed() {
         meta_title: 'Contact Prosengit Kundu | SEO & Digital Marketing Expert',
         meta_description: 'Contact Prosengit Kundu in Khulna, Bangladesh for SEO, digital marketing, ads, graphic design, web development or training.',
         focus_keyword: 'contact prosengit kundu',
-        canonical_url: '/contact.html',
+        canonical_url: '/contact',
         og_title: 'Contact Prosengit Kundu',
         og_description: 'Reach out for SEO, digital marketing, ads, graphic design, web development or training.'
       }
@@ -441,7 +441,7 @@ function seed() {
     const catMap = { web: 'Web Development', seo: 'SEO', lead: 'Lead Generation', ads: 'Paid Ads', design: 'Graphic Design' };
     projects.forEach((p, i) => {
       insProject.run(
-        p.title, slugify(p.title), p.cat || 'web', (catMap[p.cat] || ''),
+        p.title, p.slug || slugify(p.title), p.cat || 'web', (catMap[p.cat] || ''),
         p.client || '', p.industry || '', p.focus || '', p.duration || '',
         p.goal || '', p.role || '', JSON.stringify(p.tools || []), JSON.stringify(p.work || []),
         p.outcome || '', p.image || '', p.featured ? 1 : 0, i + 1
@@ -463,10 +463,10 @@ function seed() {
       const cat = a.cat || 'Digital Marketing';
       if (!seenCats.has(cat)) { insCat.run(cat, slugify(cat)); seenCats.add(cat); }
       insArticle.run(
-        a.title, slugify(a.title), a.excerpt || '', a.body || '', cat,
+        a.title, a.slug || slugify(a.title), a.excerpt || '', a.body || '', cat,
         a.img || '', 'Prosengit Kundu', a.date || seedDate, a.read || '',
         a.title.replace(/[^A-Za-z0-9 ]/g, '').slice(0, 60) + ' | Prosengit Kundu',
-        a.excerpt || '', '/blog-details.html'
+        a.excerpt || '', a.url || ('/blog/' + (a.slug || slugify(a.title)))
       );
     });
 
