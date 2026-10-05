@@ -84,7 +84,10 @@ for (const page of htmlPages) {
     while ((m = re.exec(html))) {
       const raw = m[1].trim();
       if (!raw || raw.startsWith('#') || /^(mailto:|tel:|javascript:|data:)/i.test(raw)) continue;
-      if (raw.includes('${') || raw.includes('{{')) continue; // template expression
+      // Skip template expressions. Written without literal double-brace or
+      // brace-percent sequences so a Jekyll build can never read this file as
+      // Liquid markup.
+      if (raw.includes('$' + '{') || /[{][{]/.test(raw)) continue;
 
       // Legacy extension-less entry in an href → must not be a public page link
       if (re === HREF_RE && /\.html?($|[?#])/i.test(raw)) {
