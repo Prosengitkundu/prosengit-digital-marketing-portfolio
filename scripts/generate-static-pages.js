@@ -71,7 +71,7 @@ const absImg = img => /^https?:/.test(img) ? img : `${SITE}/${img.replace(/^\.\/
 
 /* Make every relative href/src root-absolute (pages live one level deep) and
    use clean, extension-less page URLs (/about → not about.html or /about.html). */
-const PAGE_NAMES = 'index|about|team|services|pricing|portfolio|blog|testimonials|faq|contact|privacy-policy|terms|disclaimer|404|thank-you|team-eitykona|team-nilanjana|team-sarna|team-shamim|team-priyanka|team-mashrur';
+const PAGE_NAMES = 'index|about|team|services|pricing|portfolio|blog|testimonials|faq|contact|privacy-policy|terms|disclaimer|404|thank-you|team-eitykona|team-nilanjana|team-sarna|team-priyanka|team-mashrur';
 
 function absolutize(html) {
   return html

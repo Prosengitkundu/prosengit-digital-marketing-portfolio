@@ -1,0 +1,16 @@
+/* Progressive enhancement: without JavaScript the original grids remain intact. */
+.home-carousel { min-width: 0; }
+.home-carousel--packages { max-width: 1200px; margin-inline: auto; }
+.home-carousel--testimonials { max-width: 72rem; margin-inline: auto; }
+.home-carousel__viewport { overflow: hidden; touch-action: pan-y; }
+.home-carousel__track { display: flex !important; gap: 1.5rem; max-width: none !important; margin: 0 !important; will-change: transform; }
+.home-carousel--team .home-carousel__track, .home-carousel--blog .home-carousel__track { gap: 1.75rem; }
+.home-carousel__track > * { flex: 0 0 calc((100% - 3rem) / 3); min-width: 0; }
+.home-carousel--team .home-carousel__track > *, .home-carousel--blog .home-carousel__track > * { flex-basis: calc((100% - 3.5rem) / 3); }
+.home-carousel__track > .reveal { opacity: 1; transform: none; }
+.home-carousel__controls { display: flex; justify-content: flex-end; gap: .5rem; margin-top: 1rem; }
+.home-carousel__controls button { border: 1px solid #d1d5db; border-radius: 9999px; padding: .4rem .85rem; color: #0a66c2; background: transparent; font-size: .875rem; font-weight: 600; }
+.home-carousel__controls button:hover { background: #0a66c2; color: white; }
+.home-carousel__controls button:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+@media (max-width: 1023px) { .home-carousel__track > * { flex-basis: calc((100% - 1.5rem) / 2); } .home-carousel--team .home-carousel__track > *, .home-carousel--blog .home-carousel__track > * { flex-basis: calc((100% - 1.75rem) / 2); } }
+@media (max-width: 767px) { .home-carousel__track > *, .home-carousel--team .home-carousel__track > *, .home-carousel--blog .home-carousel__track > * { flex-basis: 100%; } }

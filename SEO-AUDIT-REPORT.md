@@ -61,7 +61,6 @@ The site is a static website (GitHub Pages, custom domain) with an optional CMS 
 | 9 | /team-eitykona.html | Team profile | Eitykona Paul — Digital Marketing Strategist | ~900 words (Detailed) | Eitykona Paul (name keyword) | Worldwide | Navigational | Moderate |
 | 10 | /team-nilanjana.html | Team profile | Nilanjana Mondal — Strategist & SEO Specialist | ~1,690 words (Very detailed) | Nilanjana Mondal (name keyword) | Worldwide | Navigational | Good (minor grammar, §19) |
 | 11 | /team-sarna.html | Team profile | Sarna Haldar — Strategist, WordPress, SEO & Ads | ~1,280 words (Very detailed) | Sarna Haldar (name keyword) | Worldwide | Navigational | Good |
-| 12 | /team-shamim.html | Team profile | Md. Shamim Hasan — Video Editor | ~580 words (Moderate) | Md. Shamim Hasan (name keyword) | Worldwide | Navigational | Moderate |
 | 13 | /team-priyanka.html | Team profile | Priyanka Saha — Digital Marketing Professional | ~830 words (Detailed) | Priyanka Saha (name keyword) | Worldwide | Navigational | Moderate |
 | 14 | /faq.html | FAQ | 40 Q&As in 7 categories | ~2,765 words (Very detailed) | hiring a freelance SEO specialist (FAQ) | Worldwide incl. USA/UK/CA/AU question | Informational + commercial | Strong |
 | 15 | /testimonials.html | Testimonials | 9 reviews + submission form + publishing policy | ~1,235 words (Detailed) | client reviews (SEO/ads/web dev/training) | UK, US, AU, CA, UAE, IE, BD | Trust/Navigational | Moderate (see §30) |
@@ -277,7 +276,6 @@ Format: Page — Title tag quality / H1 alignment / keyword-intent match / depth
 - **No robotic/AI-template repetition across pages** — intros are distinct per page (verified across all 22 pages); recurring elements are only nav/footer/contact (normal).
 - **Minor duplicate imagery:** several articles/cards reuse the same stock images across different posts (e.g., `seo-analytics-dashboard.jpg` used by articles 1, 7, 22, 25; `lead-generation-database.jpg` by 11, 12, 28). Not an SEO penalty but a quality/originality weakness.
 - **Third-party content dependence:** 26 image references load from images.pexels.com (services/blog cards). If Pexels is unreachable those images break; licenses remain Pexels' (this is correctly disclosed in disclaimer.html).
-- Thin sections: blog hub and portfolio grid raw HTML are thin without JS (§28); team-shamim profile (~584 words) is the lightest profile but proportionate to role.
 
 **Verdict on §13 criteria:** natural ✓, humanized ✓, professional ✓, clear/simple English ✓, detailed ✓ (pages), ✓/− (articles moderate — §14), helpful ✓, client-focused ✓, commercially relevant ✓, intent-focused ✓. Keyword stuffing ✗ none found. Repetition ✗ none harmful. Robotic writing ✗ none. Country spam ✗ none. Duplicate content — none across static pages (template duplication issue is technical, §28).
 
@@ -403,7 +401,6 @@ Factual observations:
 | Eitykona Paul | Digital Marketing Strategist | ~900 words; strategy, social, SEO/SEM, campaigns | NSDA Level 3 | Excerpt consistent across home/team/profile ✓ |
 | Nilanjana Mondal | Digital Marketing Strategist, SEO Specialist | ~1,690 words; deepest profile; keyword research, content, lead gen | NSDA Level 3 | **Grammar residue present** (§13 examples) |
 | Sarna Haldar | Digital Marketing Strategist (title also: WordPress Designer, SEO & Ads Specialist) | ~1,280 words | Creative/strategy framing | Title-role wording differs slightly between pages (harmonized enough) |
-| Md. Shamim Hasan | Video Editor & Post-Production (Shamim Edits) | ~584 words | "Since 2018" experience | Lightest profile; proportionate |
 | Priyanka Saha | Digital Marketing Professional | ~830 words | Creative Marketing Strategist | OK |
 
 - **Photo status (confirmed):** all 5 profile photos reference `.jpg` files that **do not exist on the server (404)**; `onerror` falls back to initials-SVG placeholders. Visitors see letter avatars, not faces.

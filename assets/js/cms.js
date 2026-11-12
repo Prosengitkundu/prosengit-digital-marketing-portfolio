@@ -28,7 +28,7 @@
     'team-eitykona': 'team',
     'team-nilanjana': 'team',
     'team-sarna': 'team',
-    'team-shamim': 'team',
+
     'team-priyanka': 'team',
     'team-mashrur': 'team'
   };
