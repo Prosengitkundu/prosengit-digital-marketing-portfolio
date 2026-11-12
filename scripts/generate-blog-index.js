@@ -12,7 +12,7 @@ const esc = value => String(value == null ? '' : value).replace(/[&<>"']/g, c =>
 function card(a, featured = false) {
   if (!/^\/blog\/[a-z0-9-]+$/.test(a.url)) throw new Error('Invalid article URL: ' + a.url);
   return `<a href="${esc(a.url)}" class="blog-card ${featured ? 'md:col-span-2 lg:col-span-3 grid md:grid-cols-2' : ''} bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
-                <img src="${esc(a.img)}" alt="${esc(a.title)} — article cover" class="w-full ${featured ? 'h-full min-h-[260px]' : 'aspect-[16/9]'} object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <img src="${esc(a.img)}" alt="${esc(a.alt || `${a.title} — article cover`)}" class="w-full ${featured ? 'h-full min-h-[260px]' : 'aspect-[16/9]'} object-cover" width="900" height="520" loading="lazy" decoding="async">
                 <div class="p-7">
                     <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">${esc(a.cat)}</span><span class="text-gray-400">${esc(a.date)}</span><span class="text-gray-400">·</span><span class="text-gray-400">${esc(a.read)}</span></div>
                     <div class="font-bold ${featured ? 'text-2xl md:text-3xl' : 'text-xl'} mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">${esc(a.title)}</div>

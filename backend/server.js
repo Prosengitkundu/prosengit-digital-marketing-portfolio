@@ -343,7 +343,7 @@ app.use((req, res, next) => {
     // Inject the CMS hydration script (defer so it runs after site.js builds
     // the shared header/footer). It gracefully falls back if the API is down.
     if (!/cms\.js/.test(html)) {
-      html = html.replace('</body>', '<script src="assets/js/cms.js" defer></script>\n</body>');
+      html = html.replace('</body>', '<script src="/assets/js/cms.js" defer></script>\n</body>');
     }
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     return res.send(html);

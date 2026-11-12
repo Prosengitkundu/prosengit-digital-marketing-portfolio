@@ -465,7 +465,7 @@ function seed() {
       insArticle.run(
         a.title, a.slug || slugify(a.title), a.excerpt || '', a.body || '', cat,
         a.img || '', 'Prosengit Kundu', a.date || seedDate, a.read || '',
-        a.title.replace(/[^A-Za-z0-9 ]/g, '').slice(0, 60) + ' | Prosengit Kundu',
+        a.seoTitle || (a.title.replace(/[^A-Za-z0-9 ]/g, '').slice(0, 60) + ' | Prosengit Kundu'),
         a.excerpt || '', a.url || ('/blog/' + (a.slug || slugify(a.title)))
       );
     });

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F1F3XD9BKH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F1F3XD9BKH');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Analytics Setup for Lead Generation: Buyer's Guide | Prosengit Kundu</title>
+    <meta name="description" content="Plan analytics setup for a lead-generation website, including event definitions, consent, testing, ownership and a usable handover.">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://prosengitkundu.top/blog/google-analytics-setup-lead-generation">
+    <meta property="og:site_name" content="Prosengit Kundu">
+    <meta property="og:title" content="Google Analytics Setup for Lead Generation: Buyer's Guide | Prosengit Kundu">
+    <meta property="og:description" content="Plan analytics setup for a lead-generation website, including event definitions, consent, testing, ownership and a usable handover.">
+    <meta property="og:image" content="https://prosengitkundu.top/assets/images/blog/20-analytics-setup.webp">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://prosengitkundu.top/blog/google-analytics-setup-lead-generation">
+    <meta name="twitter:title" content="Google Analytics Setup for Lead Generation: Buyer's Guide | Prosengit Kundu">
+    <meta name="twitter:description" content="Plan analytics setup for a lead-generation website, including event definitions, consent, testing, ownership and a usable handover.">
+    <meta name="twitter:image" content="https://prosengitkundu.top/assets/images/blog/20-analytics-setup.webp">
+    <link rel="canonical" href="https://prosengitkundu.top/blog/google-analytics-setup-lead-generation">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- ===== Shared design system (same loading + hover effects on every page) ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <script>
+        /* Apply the saved theme before paint so pages never flash. */
+        (function () {
+            try {
+                var t = localStorage.getItem('pk-theme');
+                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="/assets/js/site.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Google Analytics Setup for Lead-Generation Websites: What to Ask For","description":"Plan analytics setup for a lead-generation website, including event definitions, consent, testing, ownership and a usable handover.","image":"https://prosengitkundu.top/assets/images/blog/20-analytics-setup.webp","datePublished":"2026-11-12","dateModified":"2026-11-12","inLanguage":"en","author":{"@type":"Person","@id":"https://prosengitkundu.top/#person","name":"Prosengit Kundu","url":"https://prosengitkundu.top/"},"publisher":{"@type":"Person","@id":"https://prosengitkundu.top/#person","name":"Prosengit Kundu","url":"https://prosengitkundu.top/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://prosengitkundu.top/blog/google-analytics-setup-lead-generation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://prosengitkundu.top/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://prosengitkundu.top/blog"},{"@type":"ListItem","position":3,"name":"Google Analytics Setup for Lead-Generation Websites: What to Ask For","item":"https://prosengitkundu.top/blog/google-analytics-setup-lead-generation"}]}</script>
+</head>
+<body class="site-body">
+<div class="page-shell">
+    <div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+    <header class="site-header" id="siteHeader">
+        <div class="site-header__inner">
+            <a href="/" class="brand" aria-label="Prosengit Kundu — home">
+                <img class="brand__mark" src="/assets/images/logo.png" alt="" width="52" height="52">
+                <span>
+                    <span class="brand__name">Prosengit Kundu</span>
+                    <span class="brand__role">Digital Marketing Expert</span>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="Main navigation"><a href="/" class="nav-link">Home</a><a href="/about" class="nav-link">About</a><a href="/team" class="nav-link">Team</a><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/portfolio" class="nav-link">Portfolio</a><a href="/blog" class="nav-link is-active" aria-current="page">Blog</a><a href="/testimonials" class="nav-link">Testimonials</a><a href="/faq" class="nav-link">FAQ</a><a href="/contact" class="nav-link">Contact</a></nav>
+            <div class="header-actions">
+                <button type="button" class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <span id="themeIcon" aria-hidden="true">🌙</span>
+                </button>
+                <a href="/contact" class="btn btn-primary hidden-sm" id="headerCta">Hire Me</a>
+                <button type="button" class="icon-btn nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                        <path d="M4 7h16M4 12h16M4 17h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu__inner"><a href="/">Home</a><a href="/about">About</a><a href="/team">Team</a><a href="/services">Services</a><a href="/pricing">Pricing</a><a href="/portfolio">Portfolio</a><a href="/blog" class="is-active" aria-current="page">Blog</a><a href="/testimonials">Testimonials</a><a href="/faq">FAQ</a><a href="/contact">Contact</a>
+                <a href="https://wa.me/8801701059499" class="btn btn-primary" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-8 pt-16 pb-20">
+        <a href="/blog" class="text-sm font-semibold text-[#0A66C2]">← Back to All Articles</a>
+        <div class="grid lg:grid-cols-12 gap-12 mt-8">
+            <article class="lg:col-span-8">
+                <div id="article-content">
+                    <div class="flex flex-wrap gap-3 items-center text-xs font-semibold"><span class="text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Web Development</span><span class="text-gray-400">Nov 12, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">13 min read</span><span class="text-gray-400">·</span><span class="text-gray-400">By Prosengit Kundu</span></div>
+                    <h1 class="text-4xl md:text-5xl heading-font tracking-tighter font-bold mt-5 leading-[1.1]">Google Analytics Setup for Lead-Generation Websites: What to Ask For</h1>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mt-5 leading-relaxed">Plan analytics setup for a lead-generation website, including event definitions, consent, testing, ownership and a usable handover.</p>
+                    <img src="/assets/images/blog/20-analytics-setup.webp" alt="Consultant mapping a customer journey beside a laptop displaying charts" class="w-full aspect-[16/9] object-cover rounded-3xl mt-10" width="1200" height="675" fetchpriority="high">
+                    <div id="a-body" class="article-body mt-10">
+<p>A business owner may know that people visit the website but not know which inquiries arrived through its forms or whether a campaign is attracting the right audience. Analytics can help answer some of those questions, provided the business defines the events carefully and understands what the data cannot show. Simply installing a tag is not the same as creating a reliable measurement plan.</p>
+<p>Google Analytics setup for lead generation can include an account and property review, event definitions, implementation coordination, testing and a handover. It may also involve a tag management system, advertising platforms or a customer relationship management tool. Each connection has an owner and a purpose. The work does not automatically include legal advice, complete attribution or a guarantee that every visitor will be measured.</p>
+<p>This guide helps a business commission a practical setup. It focuses on a website whose primary action is an inquiry rather than an online sale. The right configuration depends on the site's technology, consent choices and the business's actual follow-up process.</p>
+<h2 id="s-0">Begin with the business question</h2>
+<p>Write down the decisions the business wants to support. A consultant may want to know whether visitors reach the contact form from relevant service pages. A company running paid campaigns may want to compare submitted inquiries with feedback from its sales team. A local business may want to understand whether visitors use its telephone link or contact form. Each question requires a clear definition and may involve a different data source.</p>
+<p>Do not begin by asking the freelancer to track every possible click. More events create more configuration, review and privacy responsibilities. Prioritize actions that help the business understand the customer journey or verify that an important feature works. Document who will use the report and what decision they expect to make from it.</p>
+<p>Separate website activity from business outcomes. A form submission is not automatically a qualified prospect, a booked meeting or a sale. A telephone link click does not prove that a call was connected. The business should define those stages and decide where each can be recorded reliably.</p>
+<h2 id="s-1">Keep account ownership with the business</h2>
+<p>The business should retain control of its analytics account, property and related assets. Create individual access for the freelancer with permissions appropriate to the agreed work rather than sharing a personal password. Record the business owner, administrator and any external providers who need access.</p>
+<p>If a previous provider created the account, establish access and ownership before removing permissions. Review the relationships among the website, analytics property, tag management account and advertising accounts. A linked account is not the same as ownership, and each product may have its own permission model.</p>
+<p>At handover, confirm that the business can sign in and locate the property. Remove unnecessary access after the project and document who can grant access in the future. Consult Google's <a href="https://support.google.com/analytics/answer/9303323">Analytics account structure guidance</a> and current permission documentation because product interfaces and roles can change.</p>
+<h2 id="s-2">Define events in a measurement plan</h2>
+<p>A measurement plan is a shared description of what will be recorded and why. For each event, state the business question, the trigger, the page or component involved, the data parameters allowed, the owner and the test. For example, a successful inquiry event should be tied to a confirmed successful submission, not merely a click on the submit button.</p>
+<p>Distinguish actions that look similar. A visitor may open a form, attempt to submit it, receive an error or complete it. Counting all four as the same conversion would make the report misleading. A booking link click may be useful to observe, but a confirmed appointment may require information from a separate booking system.</p>
+<p>Agree on naming and documentation before implementation. Avoid sending names, email addresses, telephone numbers or other prohibited personal information to analytics as event parameters or page URLs. Google's <a href="https://support.google.com/analytics/answer/6366371">policy on identifying data in Analytics</a> should be reviewed alongside the business's own privacy obligations. A qualified privacy adviser should address legal questions for the markets involved.</p>
+<h2 id="s-3">Map the actual inquiry journey</h2>
+<p>Trace the path a visitor takes from a service page to a successful contact. Does the form submit without leaving the page, redirect to a confirmation page or use a third-party service? Does it display an error when required information is missing? Does the business receive the message in a monitored inbox or CRM?</p>
+<p>The measurement method must match that behavior. A confirmation-page view may be useful if the page is reached only after a successful submission and cannot be triggered by an unrelated visit. An event from a form integration may be appropriate if it reliably signals success. The developer should verify the actual implementation rather than assuming a common pattern applies to every site.</p>
+<p>Test alternative paths too. A visitor may call, email, use a booking tool or leave the site before completing a form. Some of these actions may be observable only as clicks, while others may occur offline. Document the limitations so that a report does not present an incomplete picture as a complete count of customers.</p>
+<h2 id="s-4">Coordinate consent and privacy requirements</h2>
+<p>Analytics setup should be planned with the business's privacy and consent process, not added afterward. The applicable requirements depend on jurisdiction, technology and the data collected. The business should obtain appropriate legal advice and decide what information and choices must be presented to visitors. The freelancer can implement an approved technical configuration within the agreed scope.</p>
+<p>Identify the consent tool, its account owner and how it interacts with analytics and advertising tags. Test the relevant consent states where appropriate. A tag that does not fire under a restricted choice may be behaving as intended; a missing event is not automatically a technical defect. Document what the reports can and cannot show under the chosen configuration.</p>
+<p>Minimize data collection. Do not send form contents, email addresses or other identifying details to Analytics simply to make a report more detailed. Review page URLs and event parameters for accidental personal information. Establish who can access the data, how it is retained and how changes will be approved.</p>
+<h2 id="s-5">Understand the role of a tag manager</h2>
+<p>A tag management system can help organize website tags and event triggers, but it introduces another account, permission model and publishing process. It is not mandatory for every site and does not eliminate the need to understand the code and data flow. Ask the specialist whether it is appropriate for your website and who will maintain it.</p>
+<p>If one is used, the business should control the account and container. Document the tags, triggers and variables relevant to the project, who can edit them and who can publish changes. A preview or testing mode can help validate a change before publication, but the production website still needs a final check after deployment.</p>
+<p>Avoid duplicate implementations. An analytics tag installed directly in the website and again through a manager can produce misleading data. The specialist should review the existing setup before adding a new one and explain how any duplicate or obsolete configuration will be handled. Changes should be approved and recorded, especially when advertising and consent tools depend on the same container.</p>
+<h2 id="s-6">Test success and failure cases</h2>
+<p>A useful test plan names the page, action, expected result, responsible person and evidence to collect. For a form, test a valid submission with permission and confirm that the business receives it. Also test a validation failure to ensure it is not counted as a successful inquiry. Use test data that does not expose unnecessary personal information and label or remove test records according to the business's process.</p>
+<p>Use the relevant platform's current debugging and real-time tools to inspect events, while recognizing that reports can have different processing delays and definitions. Google's <a href="https://support.google.com/analytics/answer/7201382">Analytics event testing guidance</a> provides a starting point. A visible debug event is evidence of a test, not a guarantee that all future data will be complete.</p>
+<p>Test at agreed device sizes and browsers, including the page or form used by a campaign. If the form is provided by a third party, coordinate with its owner. A website can display a confirmation while a notification fails, or an inquiry can reach the business while an analytics event is missing. Validate the business outcome and the measurement separately.</p>
+<h2 id="s-7">Define key events and advertising connections carefully</h2>
+<p>An analytics event may be designated as important for reporting, and an advertising account may use a conversion action for bidding or reporting. These configurations have consequences. Ask the specialist to explain which event is being used, why it represents the business goal and who approves a change.</p>
+<p>Do not assume that every link click should be treated as a primary conversion. If a campaign optimizes toward a low-quality signal, the account may make decisions based on behavior that does not match the business's objective. Conversely, a qualified sale may not be available as a timely online event. The team should document the trade-offs and review available data with the advertising manager.</p>
+<p>Linking Analytics and an advertising platform requires the appropriate permissions and an understanding of what data is shared. The business should control both accounts and approve the connection. If an existing campaign depends on a conversion action, avoid changing it without a transition plan, a change log and a way to monitor effects.</p>
+<h2 id="s-8">Build reports that answer practical questions</h2>
+<p>A handover can include a simple report or exploration showing the agreed events, relevant pages and a date range. The report should identify the property, filters and definitions. A business owner should be able to understand what a number represents without relying on a mysterious dashboard label.</p>
+<p>Compare analytics data with the business's inquiry records where appropriate and lawful. Differences may result from consent choices, ad blockers, duplicate submissions, reporting delays, cross-device behavior or a failed integration. Investigate the process rather than forcing the numbers to match by assumption. Some inquiries may arrive through telephone or email without a measurable website event.</p>
+<p>Avoid attributing every sale to the last recorded channel. A customer may encounter the business several times before contacting it, and the available data may not capture every interaction. Use reports to support decisions, acknowledge uncertainty and combine them with feedback from the people handling inquiries.</p>
+<h2 id="s-9">Protect the live site during implementation</h2>
+<p>Identify who can edit the website, publish tags and change account settings. Use a staging or preview process where practical, but account for differences between test and production environments. A third-party form may behave differently when embedded on the live domain, so agree on a safe production check after release.</p>
+<p>Keep a change log with the date, affected component, reason, approver and test result. If an existing tag or event is changed, record the prior state and the potential effect on historical comparisons. Avoid making several unrelated changes at once if that would make troubleshooting difficult.</p>
+<p>Prepare an escalation path for a broken form or unexpected data collection. The business should know who can pause or revert the change and who can contact the website or platform administrator. Analytics work should not leave the business unable to receive inquiries while the team investigates a reporting issue.</p>
+<h2 id="s-10">Compare setup proposals fairly</h2>
+<p>Give each prospective specialist the same website, business questions, current account information and intended inquiry paths. Ask whether the scope includes an audit of existing tags, a measurement plan, implementation, consent coordination, testing, reports and documentation. A tag installation alone is not equivalent to a tested lead-measurement project.</p>
+<p>Clarify dependencies and exclusions. Website development, CRM integration, legal review and advertising management may require separate work. Ask who owns each account, what access is needed and how the provider will handle unexpected duplicate tags or a form that cannot emit a reliable success signal.</p>
+<p>Be cautious of a promise of perfect attribution or guaranteed sales. Analytics reports depend on configuration, visitor choices and platform behavior. A credible provider should explain uncertainty and provide a testable plan. Review the site's <a href="/pricing">pricing information</a> and request a written quote for the actual implementation.</p>
+<h2 id="s-11">A hypothetical service-business setup</h2>
+<p>Imagine a small web development business with a contact form and a telephone link. The owner wants to understand how visitors use those options, but the sales team records qualified projects separately. The measurement plan defines a successful form submission and a telephone-link click as distinct events; neither is labeled a sale.</p>
+<p>The specialist reviews the existing tag setup, coordinates with the website owner and tests a successful form submission and a validation error. The business confirms that the test message reaches its inbox. Consent behavior and any data-sharing questions are reviewed with the appropriate advisers. The event definitions and test results are recorded in a handover.</p>
+<p>Later, the owner compares the analytics report with inquiry records and notices a difference. The team investigates definitions and limitations rather than assuming that one system is wrong. This is a fictional illustration of a process, not a claim about a real client or a guarantee of complete measurement.</p>
+<h2 id="s-12">Check the configuration after a website release</h2>
+<p>Measurement can stop working when a developer changes a form, replaces a page template or moves a confirmation page. Add analytics to the website release checklist rather than assuming the original setup will continue indefinitely. Identify the events that represent important actions and the person who can test each one after a change. The person publishing the website should know how to contact the analytics or tag manager owner if a test fails.</p>
+<p>Use a controlled test account or clearly labeled test submission where the business's process permits. Verify the website behavior, delivery to the recipient and the analytics event separately. If advertising relies on the event, coordinate with the campaign owner before modifying the conversion configuration. Record the test date and any differences between staging and production.</p>
+<p>A missing event may have more than one explanation. Consent settings, a changed form selector, a third-party service or a reporting delay can all be relevant. The specialist should investigate the agreed scope and document what is known before recommending a fix. If the issue belongs to another provider, the handover should identify the dependency and the information that provider needs to help.</p>
+<h2 id="s-13">Establish a review cadence and ownership</h2>
+<p>A one-time setup does not maintain itself. Agree who will review the measurement plan when the business adds a service, launches a new campaign or changes its contact process. An occasional review can compare the documented events with the current site and remove obsolete configuration where appropriate. The frequency should reflect the rate of change and the business's capacity, not an arbitrary promise of constant monitoring.</p>
+<p>The person reviewing the data should understand the difference between a reporting anomaly and a business problem. A sudden drop in a form event warrants a check of the form and tagging, but it does not by itself establish that demand has disappeared. Likewise, a rise in link clicks does not prove more qualified inquiries. Keep an issue log and involve the website, marketing and sales owners when their evidence is needed.</p>
+<h2 id="s-14">Make the handover usable</h2>
+<p>The final documentation should identify account and property owners, user roles, relevant tags and events, key event settings, connected products, consent dependencies, test results and known limitations. Include instructions for a routine check and the name or role of the person responsible for maintaining the configuration. Do not include passwords or unnecessary personal data.</p>
+<p>Ask the provider to demonstrate how an authorized user can locate the agreed report and how a developer can test the form after a website change. Confirm who will update the measurement plan if the business adds a new service, changes its form or replaces a booking tool. The setup should be understandable to a future provider without relying on undocumented knowledge.</p>
+<p>Analytics is useful when it helps a business make better decisions, not when it creates a false sense of precision. A clear event definition, a tested customer journey and honest reporting limitations are more valuable than a large collection of unexplained metrics.</p>
+<h2 id="s-15">Frequently asked questions</h2>
+<h3>Is installing an Analytics tag enough to track leads?</h3>
+<p>Not necessarily. Define the inquiry event, implement an appropriate trigger and test the full form and notification journey.</p>
+<h3>Is a form submission the same as a sale?</h3>
+<p>No. It is an inquiry event. Qualification, meetings and sales may be recorded in other systems and should be defined separately.</p>
+<h3>Can Analytics measure every visitor?</h3>
+<p>No. Consent choices, technical limitations and platform behavior can affect measurement. Reports should acknowledge those limits.</p>
+<h3>Should the freelancer own the Analytics account?</h3>
+<p>The business should retain control and grant appropriate individual access. Document ownership and remove unnecessary access after the project.</p>
+<h3>Does setup include legal compliance advice?</h3>
+<p>Not automatically. Seek advice from a qualified professional and have the specialist implement the approved technical requirements.</p>
+<h2 id="s-16">Discuss your lead measurement plan</h2>
+<p>If you need help defining and testing website inquiry events, <a href="/contact">contact Prosengit Kundu</a> with your website, current tools and the actions you want to understand. Explore the <a href="/services">website and digital marketing services</a> and request a scope covering ownership, testing and handover.</p>
+                    </div>
+                    <div class="mt-14 p-7 md:p-9 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl">
+                        <h2 class="text-2xl heading-font font-bold">Work With Me</h2>
+                        <p class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Enjoyed this guide? I provide freelance SEO, international SEO, custom HTML/CSS/JavaScript web development, Google &amp; Meta Ads management, B2B lead generation and complete digital growth plans — for clients in Bangladesh and remotely worldwide.</p>
+                        <div class="flex flex-wrap gap-3 mt-6">
+                            <a href="/pricing" class="premium-btn px-7 py-3 bg-[#0A66C2] text-white font-semibold rounded-3xl">View Pricing</a>
+                            <a href="/contact" class="premium-btn px-7 py-3 border border-gray-300 dark:border-gray-600 font-semibold rounded-3xl">Start a Project</a>
+                        </div>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-4 mt-10" id="prev-next">
+                        <a href="/blog/google-search-console-setup-services" class="block p-5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl group"><div class="text-xs text-gray-400">← Previous</div><div class="font-semibold mt-1 group-hover:text-[#0A66C2]">Google Search Console Setup Services for a New Business Website</div></a>
+                        <a href="/blog/logo-design-services-small-business" class="block p-5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl group text-right"><div class="text-xs text-gray-400">Next →</div><div class="font-semibold mt-1 group-hover:text-[#0A66C2]">Logo Design Services for a Small Business: From Brief to Files</div></a>
+                    </div>
+                </div>
+            </article>
+            <aside class="lg:col-span-4 space-y-8">
+                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-7 sticky top-28">
+                    <div class="text-xs tracking-[3px] font-semibold text-[#0A66C2]">IN THIS ARTICLE</div>
+                    <nav class="toc-link mt-4 space-y-0">
+                    <a href="#s-0">Begin with the business question</a>
+                    <a href="#s-1">Keep account ownership with the business</a>
+                    <a href="#s-2">Define events in a measurement plan</a>
+                    <a href="#s-3">Map the actual inquiry journey</a>
+                    <a href="#s-4">Coordinate consent and privacy requirements</a>
+                    <a href="#s-5">Understand the role of a tag manager</a>
+                    <a href="#s-6">Test success and failure cases</a>
+                    <a href="#s-7">Define key events and advertising connections carefully</a>
+                    <a href="#s-8">Build reports that answer practical questions</a>
+                    <a href="#s-9">Protect the live site during implementation</a>
+                    <a href="#s-10">Compare setup proposals fairly</a>
+                    <a href="#s-11">A hypothetical service-business setup</a>
+                    <a href="#s-12">Check the configuration after a website release</a>
+                    <a href="#s-13">Establish a review cadence and ownership</a>
+                    <a href="#s-14">Make the handover usable</a>
+                    <a href="#s-15">Frequently asked questions</a>
+                    <a href="#s-16">Discuss your lead measurement plan</a>
+                    </nav>
+                    <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                        <div class="text-xs tracking-[3px] font-semibold text-[#16A34A]">RELATED READING</div>
+                        <div class="mt-4 space-y-4">
+            <a href="/blog/professional-business-website-trust" class="block group">
+                <div class="text-xs font-semibold text-[#0A66C2]">Web Development</div>
+                <div class="font-semibold text-sm mt-1 group-hover:text-[#0A66C2] leading-snug">How to Create a Professional Business Website That Builds Trust</div>
+                <div class="text-xs text-gray-400 mt-1">14 min read</div>
+            </a>
+            <a href="/blog/html-vs-wordpress" class="block group">
+                <div class="text-xs font-semibold text-[#0A66C2]">Web Development</div>
+                <div class="font-semibold text-sm mt-1 group-hover:text-[#0A66C2] leading-snug">HTML vs WordPress for Business Websites: An Honest Comparison</div>
+                <div class="text-xs text-gray-400 mt-1">16 min read</div>
+            </a>
+            <a href="/blog/responsive-web-design-seo" class="block group">
+                <div class="text-xs font-semibold text-[#0A66C2]">Web Development</div>
+                <div class="font-semibold text-sm mt-1 group-hover:text-[#0A66C2] leading-snug">Why Responsive Web Design Matters for SEO and Conversions</div>
+                <div class="text-xs text-gray-400 mt-1">11 min read</div>
+            </a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+<footer class="site-footer">
+        <div class="site-footer__inner">
+            <div>
+                <a href="/" class="footer-brand">
+                    <img class="footer-brand__mark" src="/assets/images/logo.png" alt="" width="52" height="52">
+                    <span>
+                        <span class="footer-brand__name">Prosengit Kundu</span>
+                        <span class="footer-brand__role">Digital Marketing Expert</span>
+                    </span>
+                </a>
+                <p class="site-footer__about">Prosengit Kundu — freelance digital marketing expert, SEO specialist and custom web developer based in Khulna, Bangladesh, providing remote SEO, Google & Meta Ads, B2B lead generation and hand-coded website services for businesses in the USA, UK, Canada, Australia and worldwide.</p>
+                <div class="social-row">
+                    <a href="https://www.linkedin.com/in/prosengitkundu/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.6c0-1.34-.03-3.07-1.9-3.07-1.9 0-2.2 1.46-2.2 2.97V21H9z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/Prosengit95" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.54-1.5h1.66V4.6c-.29-.04-1.28-.13-2.43-.13-2.4 0-4.05 1.47-4.05 4.17v2.26H7.5V14h2.72v8z"/></svg>
+                    </a>
+                    <a href="https://wa.me/8801701059499" target="_blank" rel="noopener" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.3 4.7 4.83-1.27A9.9 9.9 0 1 0 12.04 2zm0 1.8a8.1 8.1 0 1 1-4.13 15.06l-.3-.18-2.86.75.76-2.79-.19-.31A8.1 8.1 0 0 1 12.04 3.8zm4.66 10.2c-.25-.13-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12s-.64.8-.79.97c-.14.16-.29.18-.54.06a6.6 6.6 0 0 1-1.95-1.2 7.3 7.3 0 0 1-1.35-1.68c-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.31-.22.25-.84.82-.84 2s.86 2.32.98 2.48c.12.17 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.5.58.19 1.1.16 1.51.1.46-.07 1.42-.58 1.62-1.15.2-.56.2-1.05.14-1.15-.06-.1-.22-.16-.47-.28z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3>Explore</h3>
+                <div class="site-footer__links"><a href="/">Home</a><a href="/about">About</a><a href="/team">Team</a><a href="/services">Services</a><a href="/pricing">Pricing</a><a href="/portfolio">Portfolio</a></div>
+            </div>
+            <div>
+                <h3>More</h3>
+                <div class="site-footer__links"><a href="/blog">Blog</a><a href="/testimonials">Testimonials</a><a href="/faq">FAQ</a><a href="/contact">Contact</a><a href="/disclaimer">Disclaimer</a></div>
+            </div>
+            <div>
+                <h3>Get in touch</h3>
+                <div class="site-footer__links">
+                    <a href="tel:+8801701059499">+880 1701-059499</a>
+                    <a href="mailto:Prosengit95@gmail.com">Prosengit95@gmail.com</a>
+                    <a href="https://wa.me/8801701059499" target="_blank" rel="noopener">WhatsApp chat</a>
+                    <a href="https://www.google.com/maps/search/Khulna,+Bangladesh" target="_blank" rel="noopener">Khulna, Bangladesh</a>
+                </div>
+            </div>
+        </div>
+        <div class="site-footer__bottom">
+            <div>© 2026 Prosengit Kundu. All rights reserved.</div>
+            <div class="site-footer__legal">
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms">Terms</a>
+                <a href="/disclaimer">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
