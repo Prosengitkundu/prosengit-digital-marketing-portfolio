@@ -323,8 +323,25 @@
       else if (!isPortfolio) get('/projects').then(function (all) { if (all && all.length) renderProjects(all.slice(0, 6)); }).catch(function () {});
     }).catch(function () {});
 
-    get('/blog').then(function (list) {
-      if (list && list.length) renderBlog(SECTION === 'blog' ? list : list.slice(0, 3));
+    get('/api/blog').then(function (list) {
+      if (!list || !list.length) return;
+      // Keep the crawlable static catalogue and its filters intact. Add CMS-only
+      // published records without replacing or duplicating static articles.
+      if (SECTION === 'blog' && typeof ARTICLES !== 'undefined' && typeof window.renderBlog === 'function') {
+        var slugs = new Set(ARTICLES.map(function (a) { return a.slug; }));
+        list.forEach(function (a) {
+          if (!a.slug || slugs.has(a.slug)) return;
+          var url = articleUrl(a);
+          if (!/^\/blog\/[a-z0-9-]+$/.test(url) && !/^\/blog-details\?id=\d+$/.test(url)) return;
+          var image = String(a.image || '');
+          if (!/^(https?:\/\/|\/|assets\/)/i.test(image)) image = '';
+          ARTICLES.push({ slug: a.slug, url: url, title: a.title || '', cat: a.category || '', date: a.publish_date || '', read: a.read_time || '', excerpt: a.excerpt || '', img: image, alt: a.title || '' });
+          slugs.add(a.slug);
+        });
+        window.renderBlog();
+      } else if (SECTION !== 'blog') {
+        renderBlog(list.slice(0, 3));
+      }
     }).catch(function () {});
 
     get('/testimonials').then(function (list) { if (list && list.length) renderTestimonials(list); }).catch(function () {});

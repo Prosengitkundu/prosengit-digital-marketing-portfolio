@@ -1437,6 +1437,12 @@ details.faq-item[open] > *:not(summary) {
     }
 }
 
+@media (max-width: 639px) {
+    /* The generic .btn rule appears later than .hidden-sm. Keep the mobile
+       navigation toggle visible by enforcing the intended compact header. */
+    .header-actions .hidden-sm { display: none; }
+}
+
 @media (max-width: 640px) {
     .site-header__inner { padding: 0 1.1rem; }
     .mobile-menu__inner { padding: 1rem 1.1rem 1.4rem; }

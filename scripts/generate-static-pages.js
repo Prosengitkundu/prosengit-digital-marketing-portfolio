@@ -216,8 +216,9 @@ fs.mkdirSync(path.join(ROOT, 'blog'), { recursive: true });
 fs.mkdirSync(path.join(ROOT, 'portfolio'), { recursive: true });
 
 ARTICLES.forEach((a, i) => {
+  if (process.argv.includes('--new-only') && !a.originalLongform) return;
   const url = `${SITE}/blog/${a.slug}`;
-  const { out: body, h2s } = processBody(`${a.body.trim()}\n${buildArticleWorkbook(a)}`);
+  const { out: body, h2s } = processBody(a.originalLongform ? a.body.trim() : `${a.body.trim()}\n${buildArticleWorkbook(a)}`);
   const prev = ARTICLES[i-1], next = ARTICLES[i+1];
   const related = ARTICLES.filter(r => r.cat === a.cat && r.id !== a.id).slice(0, 3);
 
@@ -238,10 +239,10 @@ ARTICLES.forEach((a, i) => {
         <div class="grid lg:grid-cols-12 gap-12 mt-8">
             <article class="lg:col-span-8">
                 <div id="article-content">
-                    <div class="flex flex-wrap gap-3 items-center text-xs font-semibold"><span class="text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">${a.cat}</span><span class="text-gray-400">${a.date}</span><span class="text-gray-400">·</span><span class="text-gray-400">${a.read}</span></div>
+                    <div class="flex flex-wrap gap-3 items-center text-xs font-semibold"><span class="text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">${esc(a.cat)}</span><span class="text-gray-400">${esc(a.date)}</span><span class="text-gray-400">·</span><span class="text-gray-400">${esc(a.read)}</span>${a.originalLongform ? '<span class="text-gray-400">·</span><span class="text-gray-400">By Prosengit Kundu</span>' : ''}</div>
                     <h1 class="text-4xl md:text-5xl heading-font tracking-tighter font-bold mt-5 leading-[1.1]">${esc(a.title)}</h1>
                     <p class="text-lg text-gray-600 dark:text-gray-300 mt-5 leading-relaxed">${esc(a.excerpt)}</p>
-                    <img src="${/^https?:/.test(a.img) ? a.img : `/${a.img.replace(/^\.\//, '')}`}" alt="${esc(a.title)} — illustrated article cover" class="w-full aspect-[16/9] object-cover rounded-3xl mt-10" width="1200" height="680" fetchpriority="high">
+                    <img src="${/^https?:/.test(a.img) ? a.img : `/${a.img.replace(/^\.\//, '')}`}" alt="${esc(a.alt || `${a.title} — illustrated article cover`)}" class="w-full aspect-[16/9] object-cover rounded-3xl mt-10" width="1200" height="675" fetchpriority="high">
                     <div id="a-body" class="article-body mt-10">
 ${body}
                     </div>
@@ -277,11 +278,11 @@ ${body}
 `;
 
   const head = setHead(BLOG.prologue, {
-    title: `${a.title} | Prosengit Kundu Blog`,
+    title: a.seoTitle || `${a.title} | Prosengit Kundu Blog`,
     description: a.excerpt, url, image: a.img, type: 'article',
     extraHead: articleSchema(a, url)
   });
-  const doc = absolutize(head + '\n' + main + '\n' + BLOG.footer);
+  const doc = absolutize(head + '\n' + main + '\n' + BLOG.footer).replace(/^[ \t]+$/gm, '');
   fs.writeFileSync(path.join(ROOT, 'blog', `${a.slug}.html`), doc);
 });
 
@@ -349,6 +350,7 @@ function buildProjectReview(p) {
 }
 
 PROJECTS.forEach((p, i) => {
+  if (process.argv.includes('--new-only')) return;
   const url = `${SITE}/portfolio/${p.slug}`;
   const prev = PROJECTS[i-1], next = PROJECTS[i+1];
   const description = `${p.focus} — case study by Prosengit Kundu. Full project documentation: goal, role, tools, work completed and outcome.`;
