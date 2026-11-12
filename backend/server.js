@@ -152,6 +152,16 @@ app.get('/api', (req, res) => {
 // Generic API 404 & error handlers
 app.use('/api', (req, res) => res.status(404).json({ success: false, error: 'Not found' }));
 
+// Editorial drafts must never be served by the public static-file middleware,
+// including requests with percent-encoded path components.
+app.use((req, res, next) => {
+  let pathname;
+  try { pathname = path.posix.normalize(decodeURIComponent(req.path).replace(/\\/g, '/')).toLowerCase(); }
+  catch (_) { return res.status(400).send('Bad request'); }
+  if (pathname === '/_drafts' || pathname.startsWith('/_drafts/')) return res.status(404).send('Not found');
+  next();
+});
+
 /* ---------------------------------------------------------------------------
    Admin dashboard & media
 --------------------------------------------------------------------------- */

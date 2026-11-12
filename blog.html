@@ -31,8 +31,9 @@
     <meta name="twitter:description" content="Practical, freelance-tested guides on SEO, keyword research, Google & Meta Ads, B2B lead generation, web development and digital marketing by Prosengit Kundu.">
     <meta name="twitter:image" content="https://prosengitkundu.top/assets/images/og/prosengit-kundu-og.jpg">
     <link rel="canonical" href="https://prosengitkundu.top/blog">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <!-- ===== Shared design system (same loading + hover effects on every page) ===== -->
@@ -127,15 +128,266 @@
             <button onclick="filterBlog('Social Media', this)" class="filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">Social Media</button>
             <button onclick="filterBlog('Freelancing', this)" class="filter-btn px-5 py-2 text-sm font-medium rounded-full bg-white dark:bg-gray-800 border">Freelancing</button>
         </div>
-        <p class="text-sm text-gray-500 mt-4" id="result-count"></p>
+        <p class="text-sm text-gray-500 mt-4" id="result-count">Showing 28 articles</p>
     </div>
 
-    <!-- Featured article -->
-    <div class="max-w-screen-2xl mx-auto px-8" id="featured-wrap"></div>
+    <!-- BLOG INDEX STATIC START -->
+    <div class="max-w-screen-2xl mx-auto px-8" id="featured-wrap"><div class="text-xs tracking-[3px] font-semibold text-[#F59E0B] mb-4">FEATURED ARTICLE</div><div class="grid gap-6"><a href="/blog/how-to-choose-seo-service" class="blog-card md:col-span-2 lg:col-span-3 grid md:grid-cols-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/seo-analytics-dashboard.jpg" alt="How to Choose the Right SEO Service for Your Business — article cover" class="w-full h-full min-h-[260px] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">SEO</span><span class="text-gray-400">Aug 18, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">16 min read</span></div>
+                    <div class="font-bold text-2xl md:text-3xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">How to Choose the Right SEO Service for Your Business</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">SEO is not one service — it is a family of them. Here is how to match the right type of SEO support to your business stage, budget and goals.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a></div></div>
 
     <div class="max-w-screen-2xl mx-auto px-8 py-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="blog-grid">
-        <!-- Populated by JS -->
+        <a href="/blog/what-is-keyword-research" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/keyword-research-spreadsheet.jpg" alt="What Is Keyword Research and Why Is It Important for SEO? — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">SEO</span><span class="text-gray-400">Aug 6, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">17 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">What Is Keyword Research and Why Is It Important for SEO?</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Keyword research is the foundation every other SEO task stands on. Learn what it involves, how search intent works, and how to find keywords you can actually win.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/serp-analysis-seo-strategy" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=680" alt="How SERP Analysis Helps Build a Better SEO Strategy — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">SEO</span><span class="text-gray-400">Jul 28, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">13 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">How SERP Analysis Helps Build a Better SEO Strategy</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Google already tells you what it wants to rank for every keyword. SERP analysis is how you listen — before you write a single word.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/on-page-seo-checklist-small-business" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="https://images.pexels.com/photos/6248959/pexels-photo-6248959.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=680" alt="On-Page SEO Checklist for Small Business Websites — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">SEO</span><span class="text-gray-400">Jul 15, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">15 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">On-Page SEO Checklist for Small Business Websites</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">A practical, no-fluff checklist of on-page SEO essentials — titles, meta descriptions, headings, internal links, URLs and image optimization — you can apply page by page.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/technical-seo-basics-new-websites" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="https://images.pexels.com/photos/270360/pexels-photo-270360.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=680" alt="Technical SEO Basics for New Websites — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">SEO</span><span class="text-gray-400">Jul 3, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">14 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">Technical SEO Basics for New Websites</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Crawling, indexing, sitemaps, robots.txt, canonicals, speed and structured data — the technical foundations every new website should get right from day one.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/seo-friendly-website-essentials" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=680" alt="What Makes a Website SEO-Friendly? 12 Essentials — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">SEO</span><span class="text-gray-400">Jun 20, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">12 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">What Makes a Website SEO-Friendly? 12 Essentials</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">An SEO-friendly website is built, not retrofitted. These twelve essentials separate sites that rank from sites that forever fight their own platform.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/improve-website-search-visibility" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/seo-analytics-dashboard.jpg" alt="How to Improve Your Website&#39;s Search Visibility Step by Step — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">SEO</span><span class="text-gray-400">Jun 8, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">13 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">How to Improve Your Website&#39;s Search Visibility Step by Step</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Visibility is earned in layers: fix the technical base, aim at the right keywords, strengthen pages, earn authority and measure everything. A realistic roadmap.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/seo-vs-google-ads" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=680" alt="SEO vs Google Ads: Which Is Better for Your Business? — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Paid Ads</span><span class="text-gray-400">May 26, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">15 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">SEO vs Google Ads: Which Is Better for Your Business?</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">One earns visibility over time, the other buys it today. A practical comparison of cost, speed, risk and long-term value — and why the best answer is usually both.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/google-ads-vs-meta-ads" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=680" alt="Google Ads vs Meta Ads: Choosing the Right Platform for Your Goals — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Paid Ads</span><span class="text-gray-400">May 12, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">15 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">Google Ads vs Meta Ads: Choosing the Right Platform for Your Goals</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Google captures existing demand; Meta creates it. Understanding that single difference makes the platform decision almost automatic.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/power-of-retargeting" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/meta-ads-dashboard.jpg" alt="The Power of Retargeting: Turning Website Visitors into Customers — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Paid Ads</span><span class="text-gray-400">Apr 28, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">11 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">The Power of Retargeting: Turning Website Visitors into Customers</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Most of your visitors leave without buying. Retargeting is how you stay in front of them until they&#39;re ready — often the highest-ROI money in marketing.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/how-to-generate-b2b-leads" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/lead-generation-database.jpg" alt="How to Generate B2B Leads: A Practical Framework — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Lead Generation</span><span class="text-gray-400">Apr 14, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">16 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">How to Generate B2B Leads: A Practical Framework</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">B2B lead generation fails when it&#39;s random. A complete framework: define the ideal profile, build targeted lists, verify data, reach out properly and measure everything.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/build-targeted-lead-list" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/lead-generation-database.jpg" alt="How to Build a Targeted Lead List for Sales and Ads — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Lead Generation</span><span class="text-gray-400">Mar 30, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">12 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">How to Build a Targeted Lead List for Sales and Ads</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">A step-by-step guide to building lead lists that convert: sources, fields, verification, organization and the quality rules that keep outreach alive.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/professional-business-website-trust" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/business-website-design.jpg" alt="How to Create a Professional Business Website That Builds Trust — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Web Development</span><span class="text-gray-400">Mar 18, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">14 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">How to Create a Professional Business Website That Builds Trust</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">A business website has one job: convert strangers into inquiries. Structure, content, speed and proof — how to plan a website that earns trust from the first click.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/html-vs-wordpress" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=680" alt="HTML vs WordPress for Business Websites: An Honest Comparison — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Web Development</span><span class="text-gray-400">Mar 5, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">16 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">HTML vs WordPress for Business Websites: An Honest Comparison</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">No dogma, no &#39;always better&#39; — a straight comparison of custom-coded websites and WordPress across performance, SEO, security, cost and maintenance.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/responsive-web-design-seo" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/landing-page-design.jpg" alt="Why Responsive Web Design Matters for SEO and Conversions — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Web Development</span><span class="text-gray-400">Feb 20, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">11 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">Why Responsive Web Design Matters for SEO and Conversions</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Mobile-friendliness is both a ranking requirement and a conversion requirement. What responsive design really means, how Google evaluates it, and where most sites fail.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/high-converting-landing-pages" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/landing-page-design.jpg" alt="Designing High-Converting Landing Pages: Principles That Matter — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Web Development</span><span class="text-gray-400">Feb 6, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">13 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">Designing High-Converting Landing Pages: Principles That Matter</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">A landing page has one job and one moment to do it. Message match, hierarchy, proof, friction and speed — the principles behind pages that convert.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/website-speed-seo" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="https://images.pexels.com/photos/8217724/pexels-photo-8217724.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=680" alt="How Website Speed Affects User Experience and SEO — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Website Optimization</span><span class="text-gray-400">Jan 22, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">12 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">How Website Speed Affects User Experience and SEO</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Speed is where user experience and search rankings meet. Core Web Vitals explained in plain language, plus the fixes that recover most lost milliseconds.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/image-seo-optimization" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/social-media-designs.jpg" alt="How to Optimize Images for SEO and Faster Loading Pages — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Website Optimization</span><span class="text-gray-400">Jan 10, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">11 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">How to Optimize Images for SEO and Faster Loading Pages</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Images are the heaviest thing on most pages and an underused SEO signal. Formats, sizes, filenames, alt text and lazy loading — the complete, practical guide.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/small-business-digital-marketing" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="https://images.pexels.com/photos/7691715/pexels-photo-7691715.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=680" alt="How Small Businesses Can Start With Digital Marketing — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Digital Marketing</span><span class="text-gray-400">Dec 15, 2025</span><span class="text-gray-400">·</span><span class="text-gray-400">13 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">How Small Businesses Can Start With Digital Marketing</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">No budget for everything? Good — you don&#39;t need everything. A prioritized, realistic starting plan for small businesses with more ambition than budget.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/social-media-marketing-small-business" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/social-media-designs.jpg" alt="Social Media Marketing for Small Businesses: Where to Start — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Social Media</span><span class="text-gray-400">Nov 28, 2025</span><span class="text-gray-400">·</span><span class="text-gray-400">12 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">Social Media Marketing for Small Businesses: Where to Start</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">You don&#39;t need every platform — you need one done well. Platform selection, content pillars, a realistic posting system and when to start paying for reach.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/freelance-portfolio-guide" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="https://images.pexels.com/photos/8546649/pexels-photo-8546649.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1200&amp;h=680" alt="How to Build a Professional Freelance Portfolio That Wins Clients — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Freelancing</span><span class="text-gray-400">Nov 10, 2025</span><span class="text-gray-400">·</span><span class="text-gray-400">13 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">How to Build a Professional Freelance Portfolio That Wins Clients</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Clients don&#39;t hire skills — they hire evidence. How to build a portfolio that proves competence honestly, even when you&#39;re starting with zero clients.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/international-seo-guide" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/seo-analytics-dashboard.jpg" alt="International SEO: How to Get Customers in the USA, UK, Canada and Beyond — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">SEO</span><span class="text-gray-400">Sep 16, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">18 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">International SEO: How to Get Customers in the USA, UK, Canada and Beyond</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Ranking in another country takes more than translation. Targeting, site structure, hreflang, local signals and content strategy — the complete international SEO playbook.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/google-ads-management-guide" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/google-ads-dashboard.jpg" alt="Google Ads Management: The Complete Small-Business Guide — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Paid Ads</span><span class="text-gray-400">Sep 16, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">19 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">Google Ads Management: The Complete Small-Business Guide</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed"> Search, Display and YouTube campaigns that waste nothing: account structure, keyword strategy, ad copy, conversion tracking, budgets and weekly optimization routines.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/meta-ads-guide" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/meta-ads-dashboard.jpg" alt="Meta Ads (Facebook &amp; Instagram): A Practical Guide for Businesses — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Paid Ads</span><span class="text-gray-400">Sep 16, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">18 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">Meta Ads (Facebook &amp; Instagram): A Practical Guide for Businesses</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Stop boosting posts and start running campaigns: objectives, audience layers, creative testing, lead forms, retargeting and optimization for Facebook &amp; Instagram Ads.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/local-seo-google-business-profile" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/seo-analytics-dashboard.jpg" alt="Local SEO &amp; Google Business Profile: The Complete Guide for Service Businesses — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">SEO</span><span class="text-gray-400">Sep 16, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">17 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">Local SEO &amp; Google Business Profile: The Complete Guide for Service Businesses</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Win the map pack and local searches: Google Business Profile optimization, local keywords, citations, reviews and location pages — the highest-ROI channel for local businesses.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/wordpress-seo-optimization" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/business-website-design.jpg" alt="WordPress SEO &amp; Optimization: Speed, Security and Rankings — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Web Development</span><span class="text-gray-400">Sep 16, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">17 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">WordPress SEO &amp; Optimization: Speed, Security and Rankings</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">WordPress can rank superbly — when it&#39;s lean. Theme selection, plugin discipline, speed optimization, security hardening and SEO configuration, step by step.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/youtube-seo-marketing" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/youtube-thumbnail-designs.jpg" alt="YouTube SEO &amp; Marketing: Grow Search Traffic with Video — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Digital Marketing</span><span class="text-gray-400">Sep 16, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">16 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">YouTube SEO &amp; Marketing: Grow Search Traffic with Video</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">YouTube is the world&#39;s second search engine. Keyword research, titles, thumbnails, retention and channel strategy — how videos rank and turn viewers into customers.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
+        <a href="/blog/b2b-lead-generation-international-markets" class="blog-card  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden rounded-3xl block group">
+                <img src="assets/images/work/lead-generation-database.jpg" alt="B2B Lead Generation for International Markets: Lists That Actually Convert — article cover" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                <div class="p-7">
+                    <div class="flex flex-wrap gap-3 items-center text-xs"><span class="font-semibold text-[#0A66C2] bg-blue-50 dark:bg-gray-900 px-3 py-1 rounded-full">Lead Generation</span><span class="text-gray-400">Sep 16, 2026</span><span class="text-gray-400">·</span><span class="text-gray-400">17 min read</span></div>
+                    <div class="font-bold text-xl mt-4 leading-tight group-hover:text-[#0A66C2] transition-colors">B2B Lead Generation for International Markets: Lists That Actually Convert</div>
+                    <div class="text-sm mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">Cross-border prospecting done right: market selection, ICP design, sourcing, verification, compliance and outreach-ready formatting for the USA, UK, Canada, Australia &amp; beyond.</div>
+                    <div class="mt-6 text-sm font-semibold text-[#0A66C2]">Read Full Article →</div>
+                </div>
+            </a>
     </div>
+    <!-- BLOG INDEX STATIC END -->
 
     <section class="bg-[#0A66C2] text-white"><div class="max-w-3xl mx-auto px-8 py-14 text-center">
         <h2 class="text-3xl md:text-4xl heading-font font-bold">Reading is good. Ranking is better.</h2>

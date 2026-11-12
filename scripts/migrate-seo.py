@@ -152,7 +152,7 @@ edit('faq.html', fix_faq)
 
 # ---------- 9. team photo 404 fix ----------
 team_pages = ['index.html', 'team.html', 'team-eitykona.html', 'team-nilanjana.html',
-              'team-sarna.html', 'team-shamim.html', 'team-priyanka.html']
+              'team-sarna.html', 'team-priyanka.html']
 def fix_teamimg(src):
     return re.sub(r'<img src="(assets/images/team/[a-z0-9.-]+)\.jpg" onerror="[^"]*"',
                   r'<img src="\1.svg"', src)
@@ -160,11 +160,12 @@ for f in team_pages:
     edit(f, fix_teamimg)
 
 # ---------- 10. favicon links in every page head ----------
-FAV = ('    <link rel="icon" type="image/svg+xml" href="/favicon.svg">\n'
-       '    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">\n'
+FAV = ('    <link rel="icon" href="/favicon.ico" sizes="any">\n'
+       '    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">\n'
+       '    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">\n'
        '    <link rel="apple-touch-icon" href="/apple-touch-icon.png">\n')
 def add_favicon(src):
-    if 'favicon.svg' in src:
+    if 'favicon.ico' in src:
         return src
     m = re.search(r'([ \t]*<link rel="canonical"[^>]*>\n)', src)
     if m:

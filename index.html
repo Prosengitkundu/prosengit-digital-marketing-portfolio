@@ -45,8 +45,9 @@
     <meta name="twitter:description" content="Prosengit Kundu is a digital marketing expert, performance marketer, web developer and professional trainer providing SEO, paid ads and practical digital services worldwide.">
     <meta name="twitter:image" content="https://prosengitkundu.top/assets/images/og/prosengit-kundu-og.jpg">
     <link rel="canonical" href="https://prosengitkundu.top/">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <!-- Schema.org JSON-LD -->
@@ -82,6 +83,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link rel="stylesheet" href="assets/css/home-carousels.css">
     <script>
         /* Apply the saved theme before paint so pages never flash. */
         (function () {
@@ -458,7 +460,7 @@
             <p class="mt-5 text-gray-600 dark:text-gray-300 leading-relaxed">Honest freelance pricing with defined deliverables — quoted in BDT for Bangladesh and USD for international clients. Start small, then scale only when results justify it.</p>
         </div>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1200px] mx-auto"><div class="pricing-card relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 rounded-3xl">
+        <div id="home-packages" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1200px] mx-auto"><div class="pricing-card relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 rounded-3xl">
                 
                 <div class="font-semibold">SEO Starter</div>
                 <div class="mt-5 grid grid-cols-2 gap-2 text-center">
@@ -546,8 +548,66 @@
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
-            <!-- Populated by JS -->
-        </div>
+                <article class="portfolio-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">
+                    <img src="assets/images/work/business-website-design.jpg" alt="Custom Business Website project preview" class="w-full aspect-video object-cover" width="900" height="520" loading="lazy" decoding="async">
+                    <div class="p-7 relative z-10">
+                        <div class="flex gap-2 items-center"><span class="text-xs font-semibold tracking-widest text-[#0A66C2]">WEB</span></div>
+                        <div class="font-bold text-xl mt-2">Custom Business Website</div>
+                        <div class="text-sm mt-1 text-gray-500">Client project · HTML/CSS/JS</div>
+                        <div class="mt-5 text-sm font-medium">Fast, responsive, SEO-friendly custom-coded build</div>
+                        <a href="/portfolio/custom-business-website" class="inline-block mt-4 text-sm font-semibold text-[#0A66C2]">View case study →</a>
+                    </div>
+                </article>
+                <article class="portfolio-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">
+                    <img src="assets/images/work/seo-analytics-dashboard.jpg" alt="Local SEO Growth System project preview" class="w-full aspect-video object-cover" width="900" height="520" loading="lazy" decoding="async">
+                    <div class="p-7 relative z-10">
+                        <div class="flex gap-2 items-center"><span class="text-xs font-semibold tracking-widest text-[#0A66C2]">SEO</span></div>
+                        <div class="font-bold text-xl mt-2">Local SEO Growth System</div>
+                        <div class="text-sm mt-1 text-gray-500">Client project · Local business</div>
+                        <div class="mt-5 text-sm font-medium">Audit → keyword map → Google Business Profile plan</div>
+                        <a href="/portfolio/local-seo-growth-system" class="inline-block mt-4 text-sm font-semibold text-[#0A66C2]">View case study →</a>
+                    </div>
+                </article>
+                <article class="portfolio-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">
+                    <img src="assets/images/work/meta-ads-dashboard.jpg" alt="Meta Ads Lead Campaign Structure project preview" class="w-full aspect-video object-cover" width="900" height="520" loading="lazy" decoding="async">
+                    <div class="p-7 relative z-10">
+                        <div class="flex gap-2 items-center"><span class="text-xs font-semibold tracking-widest text-[#0A66C2]">ADS</span></div>
+                        <div class="font-bold text-xl mt-2">Meta Ads Lead Campaign Structure</div>
+                        <div class="text-sm mt-1 text-gray-500">Client project · B2B service</div>
+                        <div class="mt-5 text-sm font-medium">Clean campaign architecture + creative test plan</div>
+                        <a href="/portfolio/meta-ads-lead-campaign" class="inline-block mt-4 text-sm font-semibold text-[#0A66C2]">View case study →</a>
+                    </div>
+                </article>
+                <article class="portfolio-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">
+                    <img src="assets/images/work/social-media-designs.jpg" alt="Social Media Design Pack project preview" class="w-full aspect-video object-cover" width="900" height="520" loading="lazy" decoding="async">
+                    <div class="p-7 relative z-10">
+                        <div class="flex gap-2 items-center"><span class="text-xs font-semibold tracking-widest text-[#0A66C2]">DESIGN</span></div>
+                        <div class="font-bold text-xl mt-2">Social Media Design Pack</div>
+                        <div class="text-sm mt-1 text-gray-500">Client project · Small brand</div>
+                        <div class="mt-5 text-sm font-medium">Consistent post and story template system</div>
+                        <a href="/portfolio/social-media-design-pack" class="inline-block mt-4 text-sm font-semibold text-[#0A66C2]">View case study →</a>
+                    </div>
+                </article>
+                <article class="portfolio-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">
+                    <img src="assets/images/work/landing-page-design.jpg" alt="High-Converting Landing Page project preview" class="w-full aspect-video object-cover" width="900" height="520" loading="lazy" decoding="async">
+                    <div class="p-7 relative z-10">
+                        <div class="flex gap-2 items-center"><span class="text-xs font-semibold tracking-widest text-[#0A66C2]">WEB</span></div>
+                        <div class="font-bold text-xl mt-2">High-Converting Landing Page</div>
+                        <div class="text-sm mt-1 text-gray-500">Client project · Lead capture</div>
+                        <div class="mt-5 text-sm font-medium">Single-goal page built for campaigns</div>
+                        <a href="/portfolio/high-converting-landing-page-design" class="inline-block mt-4 text-sm font-semibold text-[#0A66C2]">View case study →</a>
+                    </div>
+                </article>
+                <article class="portfolio-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">
+                    <img src="assets/images/work/keyword-research-spreadsheet.jpg" alt="Keyword Research & Content Map project preview" class="w-full aspect-video object-cover" width="900" height="520" loading="lazy" decoding="async">
+                    <div class="p-7 relative z-10">
+                        <div class="flex gap-2 items-center"><span class="text-xs font-semibold tracking-widest text-[#0A66C2]">SEO</span></div>
+                        <div class="font-bold text-xl mt-2">Keyword Research & Content Map</div>
+                        <div class="text-sm mt-1 text-gray-500">Client project · Content strategy</div>
+                        <div class="mt-5 text-sm font-medium">Keyword-to-page mapping document</div>
+                        <a href="/portfolio/keyword-research-content-mapping" class="inline-block mt-4 text-sm font-semibold text-[#0A66C2]">View case study →</a>
+                    </div>
+                </article></div>
     </section>
 
     <!-- BLOG SECTION -->
@@ -562,8 +622,30 @@
         </div>
         
         <div class="grid md:grid-cols-3 gap-7" id="blog-grid">
-            <!-- Populated dynamically via JS -->
-        </div>
+                <article class="blog-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">
+                    <img src="assets/images/work/seo-analytics-dashboard.jpg" alt="How to Choose the Right SEO Service for Your Business" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                    <div class="p-7 relative z-10">
+                        <div class="text-xs font-semibold text-[#16A34A]">SEO</div>
+                        <div class="font-bold text-xl mt-3 leading-tight">How to Choose the Right SEO Service for Your Business</div>
+                        <a href="/blog/how-to-choose-seo-service" class="block mt-5 text-sm text-[#0A66C2] font-semibold">Read Full Article →</a>
+                    </div>
+                </article>
+                <article class="blog-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">
+                    <img src="assets/images/work/meta-ads-dashboard.jpg" alt="Google Ads vs Meta Ads: Choosing the Right Platform" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                    <div class="p-7 relative z-10">
+                        <div class="text-xs font-semibold text-[#16A34A]">Paid Ads</div>
+                        <div class="font-bold text-xl mt-3 leading-tight">Google Ads vs Meta Ads: Choosing the Right Platform</div>
+                        <a href="/blog/google-ads-vs-meta-ads" class="block mt-5 text-sm text-[#0A66C2] font-semibold">Read Full Article →</a>
+                    </div>
+                </article>
+                <article class="blog-card bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden">
+                    <img src="assets/images/work/business-website-design.jpg" alt="HTML vs WordPress for Business Websites: An Honest Comparison" class="w-full aspect-[16/9] object-cover" width="900" height="520" loading="lazy" decoding="async">
+                    <div class="p-7 relative z-10">
+                        <div class="text-xs font-semibold text-[#16A34A]">Web Development</div>
+                        <div class="font-bold text-xl mt-3 leading-tight">HTML vs WordPress for Business Websites: An Honest Comparison</div>
+                        <a href="/blog/html-vs-wordpress" class="block mt-5 text-sm text-[#0A66C2] font-semibold">Read Full Article →</a>
+                    </div>
+                </article></div>
     </section>
 
     <!-- TESTIMONIALS -->
@@ -574,7 +656,49 @@
             <div class="mt-4 inline-flex items-center gap-2 text-sm font-semibold"><span class="text-[#F59E0B] tracking-widest">★★★★★</span><span>Rated 5.0</span><span class="text-gray-400 font-normal">·</span><a href="/testimonials" class="text-[#0A66C2]">9 published client &amp; learner reviews</a></div>
             <p class="text-gray-600 dark:text-gray-300 mt-4">Feedback from businesses and learners across SEO, ads, web development, lead generation and training — international and Bangladeshi clients.</p>
         </div>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6" id="home-testimonials"></div>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6" id="home-testimonials">
+                <div class="modern-card p-7 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl">
+                    <div class="relative z-10">
+                        <div class="text-[#F59E0B] tracking-widest text-sm">★★★★★</div>
+                        <p class="text-sm mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">“One of the clearest SEO audits I have received from any freelancer — a prioritized list instead of a generic report. Honest about what was worth doing and what was not.”</p>
+                        <div class="mt-5 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center gap-3">
+                            <div class="avatar" style="background:#0A66C2">MA</div>
+                            <div>
+                                <div class="font-bold text-sm">Michael Anderson</div>
+                                <div class="text-xs text-gray-500">Business Consultant · United Kingdom</div>
+                                <div class="text-xs text-[#0A66C2] font-semibold">SEO Audit & Strategy</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modern-card p-7 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl">
+                    <div class="relative z-10">
+                        <div class="text-[#F59E0B] tracking-widest text-sm">★★★★★</div>
+                        <p class="text-sm mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">“A fast, clean, hand-coded site — no bloated theme, excellent Core Web Vitals, proper on-page SEO built in from the start. Delivers when he says he will.”</p>
+                        <div class="mt-5 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center gap-3">
+                            <div class="avatar" style="background:#DB2777">EJ</div>
+                            <div>
+                                <div class="font-bold text-sm">Emily Johnson</div>
+                                <div class="text-xs text-gray-500">Marketing Consultant · Canada</div>
+                                <div class="text-xs text-[#0A66C2] font-semibold">Custom Web Development</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modern-card p-7 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl">
+                    <div class="relative z-10">
+                        <div class="text-[#F59E0B] tracking-widest text-sm">★★★★★</div>
+                        <p class="text-sm mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">“Verified, targeted prospect list that exceeded the brief — clean formatting, decision-maker titles, verified emails, minimal bounce rates. Lead generation done as a craft.”</p>
+                        <div class="mt-5 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center gap-3">
+                            <div class="avatar" style="background:#16A34A">DC</div>
+                            <div>
+                                <div class="font-bold text-sm">Daniel Carter</div>
+                                <div class="text-xs text-gray-500">Digital Agency Owner · Australia</div>
+                                <div class="text-xs text-[#0A66C2] font-semibold">B2B Lead Generation</div>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
         <div class="max-w-6xl mx-auto mt-8 flex flex-wrap gap-4 items-center justify-between bg-white dark:bg-gray-800 border rounded-3xl p-6">
             <p class="text-sm text-gray-500">Real client and learner reviews, published word-for-word with each reviewer’s permission. <a href="/testimonials" class="text-[#0A66C2] font-semibold">Read all testimonials →</a></p>
             <a href="/testimonials#submit-testimonial" class="text-sm font-semibold text-[#16A34A] whitespace-nowrap">Share your experience →</a>
@@ -592,7 +716,7 @@
             <a href="/team" class="text-sm font-medium flex items-center gap-x-1 hidden md:flex">Meet the Team <span class="text-xl">→</span></a>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div id="home-team" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
             <article class="team-card bg-[#F8FAFC] dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 p-7 flex flex-col">
                 <div class="team-photo-frame">
                     <img src="assets/images/team/eitykona-paul-digital-marketing-strategist.jpeg" alt="Eitykona Paul — Digital Marketing Strategist" width="900" height="675" loading="lazy" decoding="async">
@@ -630,19 +754,6 @@
                 <div class="text-sm font-medium text-[#0A66C2] mt-1">Digital Marketing Strategist</div>
                 <p class="team-excerpt mt-3">Sarna Haldar is a results-driven digital marketing strategist who helps businesses build stronger online identities. She focuses on understanding target audiences, shaping clear brand messaging, and turning digital opportunities — across SEO, content and social channels — into measurable business growth.</p>
                 <a href="/team-sarna" class="premium-btn mt-5 block text-center w-full py-3 text-sm font-semibold border border-[#0A66C2] text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white rounded-3xl transition-colors">View Profile</a>
-            </article>
-
-            <article class="team-card bg-[#F8FAFC] dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 p-7 flex flex-col">
-                <div class="team-photo-frame">
-                    <img src="assets/images/team/md-shamim-hasan-video-editor-post-production-specialist.jpeg" alt="Md. Shamim Hasan — Video Editor and Post-Production Specialist" width="900" height="675" loading="lazy" decoding="async">
-                </div>
-                <div class="mt-5">
-                    <span class="team-badge team-badge--amber">Shamim Edits</span>
-                </div>
-                <h3 class="font-bold text-xl heading-font mt-3">Md. Shamim Hasan</h3>
-                <div class="text-sm font-medium text-[#0A66C2] mt-1">Video Editor &amp; Post-Production Specialist</div>
-                <p class="team-excerpt mt-3">Since 2018, Shamim has turned unpolished footage into scroll-stopping video content that holds attention until the final second. As the founder and lead editor of Shamim Edits, he believes great editing is not about stitching clips together — it is about engineering a story audiences cannot look away from, from YouTube videos to ad creatives and social reels.</p>
-                <a href="/team-shamim" class="premium-btn mt-5 block text-center w-full py-3 text-sm font-semibold border border-[#0A66C2] text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white rounded-3xl transition-colors">View Profile</a>
             </article>
 
             <article class="team-card bg-[#F8FAFC] dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 p-7 flex flex-col">
@@ -915,6 +1026,7 @@
         renderBlogOnHome();
         renderTestimonialsOnHome();
     </script>
+    <script src="assets/js/home-carousels.js" defer></script>
     <script type="application/ld+json">
 {
     "@context": "https://schema.org",

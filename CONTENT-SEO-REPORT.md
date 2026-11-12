@@ -108,8 +108,8 @@ run-ons, missing commas); thin SEO value.
 **SEO target** — Primary: digital marketing team · Secondary: SEO specialists,
 marketing strategists · Intent: navigational/commercial.
 
-**Added:** all 5 excerpts rewritten (same facts, professional grammar) on team.html +
-index.html; profile bodies polished (Eitykona, Nilanjana, Sarna, Shamim, Priyanka);
+**Added:** excerpts rewritten (same facts, professional grammar) on team.html +
+index.html; profile bodies polished (Eitykona, Nilanjana, Sarna, Priyanka);
 role comma fix; hero + CTA expanded; unique meta description per profile. No invented
 qualifications, clients, or awards.
 
